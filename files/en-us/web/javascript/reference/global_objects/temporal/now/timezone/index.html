@@ -13,5 +13,33 @@ tags:
 ---
 <div>{{JSRef}}</div>
 
-<p class="summary"><span class="seoSummary">This is a summary.</span></p>
+<p class="summary"><span class="seoSummary">The <code>Temporal.now.timeZone()</code> method gets the current system time zone.</span></p>
 
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js notranslate">
+Temporal.now.timeZone()
+</pre>
+
+<p>
+There are no parameters.
+</p>
+
+
+<h2 id="return-value">Return value</h2>
+
+A <code>Temporal.TimeZone</code> object representing the current system time zone. This will often be a named <a href="https://www.iana.org/time-zones">IANA time zone</a> (e.g., <code>Europe/Madrid</code> or <code>Africa/Kigali</code>) as that is how most people configure their computers, but other values are possible.</p>
+
+<h2 id="examples">Example</h2>
+
+<pre class="brush: js">
+// When is the next daylight saving change from now, in the current location?
+tz = Temporal.now.timeZone();
+now = Temporal.now.instant();
+nextTransition = tz.getNextTransition(now);
+before = tz.getOffsetStringFor(nextTransition.subtract({ nanoseconds: 1 }));
+after = tz.getOffsetStringFor(nextTransition.add({ nanoseconds: 1 }));
+console.log(`At ${nextTransition.toZonedDateTimeISO(tz)} the offset will change from UTC ${before} to ${after}`);
+// example output:
+// At 2021-03-14T03:00:00-07:00[America/Los_Angeles] the offset will change from UTC -08:00 to -07:00
+</pre>

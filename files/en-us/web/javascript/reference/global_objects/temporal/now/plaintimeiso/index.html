@@ -13,5 +13,29 @@ tags:
 ---
 <div>{{JSRef}}</div>
 
-<p class="summary"><span class="seoSummary">This is a summary.</span></p>
+<p class="summary"><span class="seoSummary">The <code>Temporal.now.plainTimeISO()</code> method gets the current time, excluding any date information, according to the system settings, reckoned using the ISO 8601 calendar. Optionally, a time zone can be given in which the time is computed, instead of the current system time zone.</span></p>
 
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js notranslate">
+Temporal.now.plainTimeISO([timeZone])
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>timeZone</var></code> {{optional_inline}}</dt>
+<dd>The time zone to get the current date and time in.  Either a <code>Temporal.TimeZone</code> object, an object that implements the Temporal time zone protocol, or a string.  If ommitted, the current system time zone is used.</dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+A <code>Temporal.PlainTime</code> object representing the current system time in the reckoning of the ISO 8601 calendar. Note: There is no corresponding <code>Temporal.now.plainTime()</code>.</p>
+
+<h2 id="examples">Example</h2>
+
+<pre class="brush: js">
+// Is it lunchtime?
+time = Temporal.now.plainTimeISO();
+if (time.hour === 12) console.log('Lunchtime!');
+</pre>

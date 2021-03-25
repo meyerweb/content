@@ -13,5 +13,35 @@ tags:
 ---
 <div>{{JSRef}}</div>
 
-<p class="summary"><span class="seoSummary">This is a summary.</span></p>
+<p class="summary"><span class="seoSummary">The <code>Temporal.now.instant()</code> method returns an object representing the current system time. It works like the old-style JavaScript {{jsxref("date/now","<code>Date.now()</code>")}}, but with accuracy in nanoseconds instead of milliseconds.</p>
 
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js notranslate">
+Temporal.now.instant()
+</pre>
+<p>There are no parameters.</p>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A <code>Temporal.Instant</code> object representing the current system time, <strong>without</strong> regard to calendar or time zone, measured in nanoseconds. By default, the system time is measured as nanoseconds elapsed since January 1, 1970 00:00:00 UTC.</p>
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">var <var>timestamp</var> = Temporal.now.instant();</pre>
+
+<pre class="brush: js">
+function timeit(func) {
+  start = Temporal.now.instant();
+  try {
+    return func();
+  } finally {
+    end = Temporal.now.instant();
+    console.log(`The function took ${end.since(start)}`);
+  }
+}
+timeit(() => JSON.parse(someData));
+// Console output:
+// The function took PT0.001031756S
+</pre>
