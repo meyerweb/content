@@ -1,0 +1,48 @@
+---
+title: Temporal.TimeZone.getNextTransition()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/TimeZone/getNextTransition
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+<div>{{JSRef}}</div>
+
+<p class="summary"><span class="seoSummary">A method to return a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the next DST (Daylight Saving Time) transition in a given time zone.</span> </p>
+<p>When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this method should be overridden if the time zone changes offsets. Single-offset time zones can use the default implementation, which returns <code>null</code>.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js notranslate">
+timeZone.getNextTransition(startingInstant)
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>startingInstant</var></code></dt>
+<dd>Time after which to find the next DST transition. If <code><var>startingInstant</var></code> is not a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/Instant/from','Temporal.Instant.from()')}}</code>.</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the next DST transition in this time zone, or <code>null</code> if no transitions later than <code><var>startingInstant</var></code> could be found. Note that if the time zone was constructed from a UTC offset, there will be no DST transitions.
+</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js notranslate">
+// How long until the next DST change from now, in the current location?
+tz = Temporal.now.timeZone();
+now = Temporal.now.instant();
+nextTransition = tz.getNextTransition(now);
+duration = nextTransition.since(now);
+duration.toLocaleString(); // output will vary
+</pre>

@@ -1,0 +1,38 @@
+---
+title: Temporal.TimeZone.toJSON()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/TimeZone/toJSON
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+<div>{{JSRef}}</div>
+
+<p class="summary"><span class="seoSummary">A method that returns the string of the time zone’s ID.</span> It is usually not called directly, but it can be called automatically by <code>JSON.stringify()</code>. The reverse operation, recovering a <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object from a string, is <code>{{jsxref('Temporal/TimeZone/from','Temporal.TimeZone.from()')}}</code>, but it cannot be called automatically by <code>JSON.parse()</code>.</p>
+<p>When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this method doesn’t need to be overridden because the default implementation returns the result of calling <code>timeZone.toString()</code>.
+</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js notranslate">
+timeZone.toJSON()
+</pre>
+
+<p>There are no parameters.</p>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A string given by <code>{{jsxref('Temporal/TimeZone/id','timeZone.id')}}</code>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js notranslate">
+// EXAMPLE TK
+</pre>

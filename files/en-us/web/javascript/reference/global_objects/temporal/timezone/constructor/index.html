@@ -1,0 +1,60 @@
+---
+title: Temporal.TimeZone constructor
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/TimeZone/constructor
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - constructor
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+<div>{{JSRef}}</div>
+
+<p class="summary"><span class="seoSummary">The constructor for a <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object.</span>
+Use this constructor directly if you have a string that is <strong>known</strong> to be a correct time zone identifier, or else represents a UTC offset. If you have an ISO 8601 date-time string, <code>{{jsxref("Temporal/TimeZone/from","Temporal.TimeZone.from()")}}</code> is probably more convenient.</p>
+
+<p><strong>NOTE:</strong> The returned time zone object behaves slightly differently depending on whether an IANA time zone name (e.g. <code>Europe/Berlin</code>) is given, or a UTC offset (e.g. <code>+01:00</code>). IANA time zones may have associated DST transitions, and UTC offsets do not.</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js notranslate">
+new Temporal.TimeZone(timeZoneIdentifier)
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>timeZoneIdentifier</var></code></dt>
+<dd>A string which is canonicalized before being used to determine the time zone. For example, values like <code>+01</code> will be understood to mean <code>+01:00</code>, and capitalization will be corrected. If no time zone can be determined from <code>timeZoneIdentifier</code>, then a <code>RangeError</code> is thrown.
+</dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js notranslate">
+tz = new Temporal.TimeZone('UTC');
+tz = new Temporal.TimeZone('Africa/Cairo');
+tz = new Temporal.TimeZone('america/VANCOUVER');
+tz = new Temporal.TimeZone('Asia/Katmandu'); // alias of Asia/Kathmandu
+tz = new Temporal.TimeZone('-04:00');
+tz = new Temporal.TimeZone('+0645');
+
+/* WRONG */
+tz = new Temporal.TimeZone('local'); // not a time zone, so throws a RangeError
+</pre>
+
+<pre class="brush: js notranslate">
+tz1 = new Temporal.TimeZone('-08:00');
+tz2 = new Temporal.TimeZone('America/Vancouver');
+inst = Temporal.ZonedDateTime.from({ year: 2020, month: 1, day: 1, timeZone: tz2 }).toInstant();
+tz1.getNextTransition(inst); // => null; UTC offsets do not have DST schedules
+tz2.getPreviousTransition(inst); // => 2020-03-08T10:00Z
+</pre>
