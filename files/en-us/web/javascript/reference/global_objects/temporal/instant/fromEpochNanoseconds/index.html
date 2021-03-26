@@ -1,0 +1,45 @@
+---
+title: Temporal.Instant.fromEpochNanoseconds()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Instant/fromEpochNanoseconds
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+<div>{{JSRef}}</div>
+
+<p class="summary"><span class="seoSummary">This static method creates a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object from a number of nanoseconds from the Unix epoch.</span> Equivalent to <code>new Temporal.Instant(<var>nanoseconds</var>)</code>.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js notranslate">
+Temporal.Instant.fromEpochNanoseconds(<var>nanoseconds</var>)
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>nanoseconds</var></code></dt>
+<dd>
+The number of nanoseconds (10<sup>-9</sup> seconds) between the Unix epoch (midnight <abbr title="Coordinated Universal Time">UTC</abbr> on January 1, 1970) and the desired time. <code><var>nanoseconds</var></code> <strong>must</strong> be typed as a {{jsxref('BigInt','BigInt')}} value, even if the value is small enough to be a regular integer.
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing an exact time that is <code><var>nanoseconds</var></code> from the Unix epoch.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js notranslate">
+instant = Temporal.Instant.fromEpochNanoseconds(BigInt(1553906700000000000)); // => 2019-03-30T00:45:00Z
+epoch = Temporal.Instant.fromEpochNanoseconds(BigInt(0)); // => 1970-01-01T00:00Z
+turnOfTheCentury = Temporal.Instant.fromEpochNanoseconds(BigInt(-2208988800000000000)); // => 1900-01-01T00:00Z
+</pre>

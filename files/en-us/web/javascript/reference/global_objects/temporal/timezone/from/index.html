@@ -32,7 +32,7 @@ Temporal.TimeZone.from(timeZoneObject)
 <li>If the value is another <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object, or an object that implements the time zone protocol, the same object is returned.
 </li>
 <li>If the value is another Temporal object that carries a time zone, or an object with a <code>timeZone</code> property, such as <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code>, the object's time zone is returned.</li>
-<li>Any other value is converted to a string, which is expected to be either a string that is accepted by <code>new Temporal.TimeZone()</code>, or a string in the ISO 8601 format including a time zone offset part. Note that an ISO 8601 string can optionally be extended with an IANA time zone name in square brackets appended to it.
+<li>Any other value is converted to a string, which is expected to be either a string that is accepted by <code>new Temporal.TimeZone()</code>, or a string in the ISO 8601 format including a time zone offset part. Note that an ISO 8601 string can optionally be extended with an <abbr title="Internet Assigned Numbers Authority">IANA</abbr> time zone name in square brackets appended to it.
 </li>
 </ul>
 </dd>

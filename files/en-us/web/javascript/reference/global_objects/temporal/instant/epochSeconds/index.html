@@ -1,0 +1,35 @@
+---
+title: Temporal.Instant.epochSeconds
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Instant/epochSeconds
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+<div>{{JSRef}}</div>
+
+<p class="summary"><span class="seoSummary">The value of this property is the number of seconds between the Unix epoch and the <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object.</span> The number of seconds since the Unix epoch is a common measure of exact time in many computer systems. Use this property if you need to interface with such a system.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js notranslate">
+instant.epochSeconds
+</pre>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>An integer representation of the number of seconds between the Unix epoch (midnight <abbr title="Coordinated Universal Time">UTC</abbr> on January 1, 1970) and <code>instant</code>. The number of seconds is truncated towards zero.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js notranslate">
+instant = Temporal.Instant.from('2019-03-30T01:45+01:00');
+instant.epochSeconds; // => 1554000300
+</pre>
