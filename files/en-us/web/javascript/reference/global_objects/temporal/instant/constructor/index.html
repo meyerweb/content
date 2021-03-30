@@ -1,5 +1,5 @@
 ---
-title: Temporal.Instant constructor
+title: Temporal.Instant() constructor
 slug: Web/JavaScript/Reference/Global_Objects/Temporal/Instant/constructor
 tags:
   - Class
@@ -14,8 +14,8 @@ tags:
 ---
 <div>{{JSRef}}</div>
 
-<p class="summary"><span class="seoSummary">The constructor for a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object.</span>
-Use this constructor directly if you know the precise number of nanoseconds already and have it in bigint form, for example from a database. Otherwise, <code>{{jsxref('Temporal/Instant/from','Temporal.Instant.from()')}}</code>, which accepts more kinds of input, is probably more convenient.
+<p class="summary"><span class="seoSummary">The <strong><code>Temporal.Instant()</code></strong> constructor creates a new <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object which represents a specific instant in time.</span></p>
+<p>Use this constructor directly if you know the precise number of nanoseconds already and have it in bigint form, for example from a database. Otherwise, use <code>{{jsxref('Temporal/Instant/from','Temporal.Instant.from()')}}</code>, which accepts more kinds of input.
 </p>
 
 <p></p>
@@ -23,7 +23,7 @@ Use this constructor directly if you know the precise number of nanoseconds alre
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js notranslate">
-new Temporal.Instant(epochNanoseconds)
+var rightNow = new Temporal.Instant(epochNanoseconds)
 </pre>
 
 <h3 id="parameters">Parameters</h3>

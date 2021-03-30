@@ -13,13 +13,14 @@ tags:
 ---
 <div>{{JSRef}}</div>
 
-<p class="summary"><span class="seoSummary">This static method compares two points in time and returns an integer indicating which comes before the other.</span></p>
+<p class="summary"><span class="seoSummary">The <strong><code>compare()</code></strong> static method compares two points in time and returns an integer indicating which comes before the other.</span></p>
+<p>If you don’t care about the order in which the two times occur, but instead merely want to know if they’re the same or not, use <code>{{jsxref('Temporal/Instant/equals','Temporal.Instant.equals()')}}</code> instead.</p>
 
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js notranslate">
-Temporal.Instant.compare(<var>timeOne</var>, <var>timeTwo</code>)
+var timeOrder = Temporal.Instant.compare(<var>timeOne</var>, <var>timeTwo</code>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -42,7 +43,6 @@ Either a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, 
 <li><code>0</code> if <code><var>timeOne</var></code> and <code><var>timeTwo</var></code> represent the same time;
 <li><code>1</code> if <code><var>timeOne</var></code> comes after <code><var>timeTwo</var></code>.
 </ul>
-<p>If you don’t care about the order in which the two times occur, but instead merely want to know if they’re the same or not, use <code>{{jsxref('Temporal/Instant/equals','Temporal.Instant.equals()')}}</code> instead.</p>
 
 <h2 id="examples">Examples</h2>
 

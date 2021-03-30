@@ -13,14 +13,14 @@ tags:
 ---
 <div>{{JSRef}}</div>
 
-<p class="summary"><span class="seoSummary">A method to return a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the next DST (Daylight Saving Time) transition in a given time zone.</span> </p>
+<p class="summary"><span class="seoSummary">The <strong><code>getNextTransition()</code></strong> method returns a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the next DST (Daylight Saving Time) transition in a given time zone.</span> </p>
 <p>When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this method should be overridden if the time zone changes offsets. Single-offset time zones can use the default implementation, which returns <code>null</code>.</p>
 
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js notranslate">
-timeZone.getNextTransition(startingInstant)
+var nextDSTchange = timeZone.getNextTransition(startingInstant);
 </pre>
 
 <h3 id="parameters">Parameters</h3>

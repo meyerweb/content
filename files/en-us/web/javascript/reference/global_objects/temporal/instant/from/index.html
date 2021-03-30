@@ -13,13 +13,13 @@ tags:
 ---
 <div>{{JSRef}}</div>
 
-<p class="summary"><span class="seoSummary">This static method creates a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object from another such object, or a string representing a point in time.</span></p>
+<p class="summary"><span class="seoSummary">The <strong><code>from()</code></strong> static method creates a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object from another such object, or from a string, representing a specific point in time.</span></p>
 
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js notranslate">
-Temporal.Instant.from(<var>moment</var>)
+var newTime = Temporal.Instant.from(<var>moment</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -27,16 +27,16 @@ Temporal.Instant.from(<var>moment</var>)
 <dl>
 <dt><code><var>moment</var></code></dt>
 <dd>
-Either a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, or a value that can be converted to a string containing an ISO 8601 formatted date and time.
+<p>Either a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, or a string value.</p>
+<p>If <code><var>moment</var></code> is another <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, the returned object represents the exact same time. Any other value is converted to a string, which is expected to be in ISO 8601 format, including a date, a time, and a time zone. The time zone name, if given, is ignored; only the time zone offset is taken into account.
+</p>
 </dd>
 </dl>
 
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object from another value. If <code><var>moment</var></code> is another <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, the returned object represents the exact same time.</p>
-<p>Any other value is converted to a string, which is expected to be in ISO 8601 format, including a date, a time, and a time zone. The time zone name, if given, is ignored; only the time zone offset is taken into account.
-</p>
+<p>A new <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object.</p>
 
 <h2 id="examples">Examples</h2>
 
