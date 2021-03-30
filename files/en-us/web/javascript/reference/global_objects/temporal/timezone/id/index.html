@@ -11,9 +11,9 @@ tags:
   - Unix Epoch
   - timeStamp
 ---
-<div>{{JSRef}}</div>
+{{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>id</code></strong> read-only property returning an unambigious time zone identifier from a <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object.</span> When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this property doesn't need to be overridden because the default implementation gives the result of calling <code>toString()</code>.
+<p class="summary"><span class="seoSummary">The <strong><code>id</code></strong> read-only property returns an unambigious time zone identifier from a <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object.</span> When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this property doesn't need to be overridden because the default implementation gives the result of calling <code>toString()</code>.
 </p>
 
 
@@ -24,7 +24,7 @@ var tzID = timeZone.id;
 </pre>
 
 
-<h2 id="return-value">Return value</h2>
+<h2 id="value">Value</h2>
 
 <p>A string containing an unambiguous identifier for the time zone. Effectively, this is the canonicalized version of whatever <code>timeZoneIdentifier</code> was passed as a parameter to the constructor.
 </p>
