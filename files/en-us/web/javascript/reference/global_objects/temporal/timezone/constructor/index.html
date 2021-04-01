@@ -21,7 +21,7 @@ Use this constructor directly if you have a string that is <strong>known</strong
 
 <h2 id="syntax">Syntax</h2>
 
-<pre class="brush: js notranslate">
+<pre class="brush: js">
 new Temporal.TimeZone(timeZoneIdentifier)
 </pre>
 
@@ -39,7 +39,7 @@ new Temporal.TimeZone(timeZoneIdentifier)
 
 <h2 id="examples">Examples</h2>
 
-<pre class="brush: js notranslate">
+<pre class="brush: js">
 tz = new Temporal.TimeZone('UTC');
 tz = new Temporal.TimeZone('Africa/Cairo');
 tz = new Temporal.TimeZone('america/VANCOUVER');
@@ -51,7 +51,7 @@ tz = new Temporal.TimeZone('+0645');
 tz = new Temporal.TimeZone('local'); // not a time zone, so throws a RangeError
 </pre>
 
-<pre class="brush: js notranslate">
+<pre class="brush: js">
 tz1 = new Temporal.TimeZone('-08:00');
 tz2 = new Temporal.TimeZone('America/Vancouver');
 inst = Temporal.ZonedDateTime.from({ year: 2020, month: 1, day: 1, timeZone: tz2 }).toInstant();

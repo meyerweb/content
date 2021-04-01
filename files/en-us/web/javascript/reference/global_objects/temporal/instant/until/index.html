@@ -20,7 +20,7 @@ tags:
 
 <h2 id="syntax">Syntax</h2>
 
-<pre class="brush: js notranslate">
+<pre class="brush: js">
 var timeUntil = instant.until(<var>moment</var> [, <var>options</var>]);
 </pre>
 
@@ -76,7 +76,7 @@ A string defining how to deal with any remainders. If <code>roundingMode</code> 
 
 <h2 id="examples">Examples</h2>
 
-<pre class="brush: js notranslate">
+<pre class="brush: js">
 startOfMoonMission = Temporal.Instant.from('1969-07-16T13:32:00Z');
 endOfMoonMission = Temporal.Instant.from('1969-07-24T16:50:35Z');
 missionLength = startOfMoonMission.until(endOfMoonMission, { largestUnit: 'days' });
