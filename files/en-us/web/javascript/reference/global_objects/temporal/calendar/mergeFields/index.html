@@ -1,0 +1,55 @@
+---
+title: Temporal.Calendar.mergeFields()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Calendar/fields
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - Time
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>mergeFields()</code></strong> method TK.</span>  This method does not need to be called directly except in specialized code. It is called indirectly when using the <code>from()</code> and <code>with()</code> methods of the
+<code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code>,
+<code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code>,
+<code>{{jsxref('Temporal/PlainMonthDay','Temporal.PlainMonthDay')}}</code>,
+<code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code>,
+ and
+<code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code>,
+ classes.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+fields(<var>fieldList</var>, <var>additionalFields</var>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>fieldList</var></code></dt>
+<dd>
+<p>A list of field names represented as an array of strings or other iterable yielding strings.  TK</p>
+</dd>
+<dt><code><var>additionalFields</var></code></dt>
+<dd>
+<p>Another plain object with properties representing calendar units. TK</p>
+</dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new object with properties from both <var>fieldList</var> and <var>additionalFields</var>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+// In built-in calendars, this method copies properties, taking `month`
+// and `monthCode` into account
+Temporal.Calendar.from('iso8601').mergeFields(
+  { year: 2006, month: 7, day: 31 },
+  { monthCode: 'M08' }
+);
+// => { year: 2006, monthCode: 'M08', day: 31 }
+</pre>

@@ -1,0 +1,38 @@
+---
+title: Temporal.Calendar.toString()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Calendar/toString
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">Returns TK.
+
+This method subclasses <code>{{jsxref('Global_Objects/Object/toString','Object.prototype.toString()')}}</code> and provides the calendar's <code>id</code> property as a human-readable description.
+</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+Calendar.toString();
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A string representing the calendar’s ID.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+Temporal.PlainDate.from('2020-05-29[u-ca=gregory]').calendar.toString();
+// => 'gregory'
+</pre>

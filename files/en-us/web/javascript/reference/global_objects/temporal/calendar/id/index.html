@@ -1,0 +1,38 @@
+---
+title: Temporal.Calendar.id
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Calendar/id
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>id</code></strong> read-only property returns an unambiguous identifier for the calendar.
+
+When subclassing <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code>, this property doesn't need to be overridden because the default implementation gives the result of calling <code>{{jsxref('Temporal.Calendar.toString()','Temporal.Calendar.toString()')}}</code>.
+</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var calendarID = Calendar.id;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A string containing an unambiguous identifier for the calendar. Effectively, this is the canonicalized version of whatever <code>calendarIdentifier</code> was passed as a parameter to {{jsxref('Temporal/calendar/constructor','the constructor')}}.
+</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+// EXAMPLE TK
+</pre>

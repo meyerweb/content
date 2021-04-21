@@ -1,0 +1,37 @@
+---
+title: Temporal.Calendar.toJSON()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Calendar/toJSON
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">Returns TK.
+
+This method is the same as <code>{{jsxref('Temporal/Calendar/toString','Temporal.Calendar.toString()')}}</code>. It is usually not called directly, but it can be called automatically by <code>{{jsxref('JSON.stringify','JSON.stringify()')}}</code>.
+</p>
+<p>
+The reverse operation, recovering a <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object from a string, is <code>{{jsxref('Temporal/Calendar/from','Temporal.Calendar.from()')}}</code>, but it cannot be called automatically by <code>{{jsxref('JSON.parse','JSON.parse()')}}</code>. If you need to rebuild a <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object from a JSON string, then you need to know the names of the keys that should be interpreted as <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code>s. In that case, you can build a custom “reviver” function for your use case.
+</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+Calendar.toJSON();
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A string representing the calendar’s ID.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+Temporal.PlainDate.from('2020-05-29[u-ca=gregory]').calendar.toJSON();
+// => 'gregory'
+</pre>

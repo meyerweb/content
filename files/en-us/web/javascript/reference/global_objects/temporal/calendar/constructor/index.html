@@ -1,0 +1,48 @@
+---
+title: Temporal.Calendar constructor
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Calendar/constructor
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - constructor
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The constructor for a <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object.</span>
+Use this constructor directly</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+new Temporal.Calendar(calendarIdentifier)
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>CalendarIdentifier</var></code></dt>
+<dd><p>A string which corresponds to a built-in calendar system. For a list of calendar identifiers, see the documentation for <code>{{jsxref('Intl/Locale/calendar','Intl.Locale.prototype.calendar')}}</code>. If <code>CalendarIdentifier</code> is not a built-in calendar, then a <code>RangeError</code> is thrown.</p>
+<p>Use this constructor directly if you have a string that is known to be a correct built-in calendar identifier. If you have an ISO 8601 date-time string with a <code>[u-ca=<em>identifier</em>]</code> annotation, then <code>{{jsxref('Temporal/Calendar/from','Temporal.Calendar.from()')}}</code> is more convenient than parsing the identifier out of the string, and also the only way to parse strings annotated with a non-built-in calendar.</p>
+</dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+cal = new Temporal.Calendar('iso8601');
+cal = new Temporal.Calendar('gregory');
+
+/* WRONG */
+cal = new Temporal.Calendar('discordian'); // => throws, not a built-in calendar
+</pre>
