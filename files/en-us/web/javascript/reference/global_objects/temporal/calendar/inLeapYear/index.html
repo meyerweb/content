@@ -50,8 +50,8 @@ const date2 = Temporal.PlainDate.from('2021-04-20').withCalendar('iso8601');
 date2.inLeapYear; // => false
 date2.calendar.inLeapYear(date2); // same result, but calling the method directly
 
-const date3 = Temporal.PlainDate.from('2021-04-20').withCalendar('hebrew');
-date3.inLeapYear; // => true
+const date3 = Temporal.PlainDate.from('2022-04-20').withCalendar('iso8601');
+date3.inLeapYear; // => false
 date3.calendar.inLeapYear(date3); // same result, but calling the method directly
 
 const date4 = Temporal.PlainDate.from('2022-04-20').withCalendar('hebrew');

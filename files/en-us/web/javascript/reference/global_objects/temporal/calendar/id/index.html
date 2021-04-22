@@ -15,7 +15,7 @@ tags:
 
 <p class="summary"><span class="seoSummary">The <strong><code>id</code></strong> read-only property returns an unambiguous identifier for the calendar.
 
-When subclassing <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code>, this property doesn't need to be overridden because the default implementation gives the result of calling <code>{{jsxref('Temporal.Calendar.toString()','Temporal.Calendar.toString()')}}</code>.
+When subclassing <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code>, this property doesn't need to be overridden because the default implementation gives the result of calling <code>{{jsxref('Temporal/Calendar/toString','Temporal.Calendar.toString()')}}</code>.
 </p>
 
 
@@ -34,5 +34,6 @@ var calendarID = Calendar.id;
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+date = Temporal.Calendar.from('gregory');
+date.id; // => "gregory"
 </pre>

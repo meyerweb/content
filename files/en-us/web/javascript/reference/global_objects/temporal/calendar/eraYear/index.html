@@ -41,5 +41,8 @@ var calEraYear = date.eraYear(<em>date</em>);
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+date = Temporal.Calendar.from('gregory').dateFromFields(
+  { year: 2021, month: 4, day: 20 }
+);
+date.eraYear; // => 2021
 </pre>

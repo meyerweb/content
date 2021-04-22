@@ -41,5 +41,15 @@ var calEra = date.era(<em>date</em>);
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+date = Temporal.Calendar.from('gregory').dateFromFields(
+  { year: 2021, month: 4, day: 20 }
+);
+date.era; // => "ce"
+</pre>
+
+<pre class="brush: js">
+date = Temporal.Calendar.from('gregory').dateFromFields(
+  { year: -2021, month: 4, day: 20 }
+);
+date.era; // => "bce"
 </pre>
