@@ -1,0 +1,37 @@
+---
+title: Temporal.PlainYearMonth.year
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainYearMonth/year
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>year</code></strong> read-only property returns a number that identifies the year in which the date occurs.</span></p>
+
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var dateYear = date.year;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A signed integer representing the number of years relative to a calendar-specific anchor date.</p>
+<p>For calendars that use eras, the anchor is usually aligned with the latest era so that <code>eraYear === year</code> for all dates in that era.  However, some calendars (like Japanese) may use a different anchor.</p>
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+ym = Temporal.PlainYearMonth.from('2019-06');
+ym.year; // => 2019
+
+ym = Temporal.PlainYearMonth.from('2019-02-23[u-ca=hebrew]');
+ym.year; // => 5779
+</pre>

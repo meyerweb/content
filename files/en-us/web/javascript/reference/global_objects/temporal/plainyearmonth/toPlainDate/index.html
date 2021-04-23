@@ -1,0 +1,46 @@
+---
+title: Temporal.PlainYearMonth.toPlainDate()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainYearMonth/toPlainDate
+tags:
+  - Class
+  - Date
+  - Time
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>toPlainDate()</code></strong> method converts a <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> object into a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object</span>, by supplying a day to be used with the year and month of the original <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code>.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+yearMonth.toPlainDate(<var>day</var>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>day</var></code></dt>
+<dd>
+<p>An object representing a valid day of the month to be used in constructing the <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>.  If the day value is out of range for the month, a <code>RangeError</code> will be thrown.</p>
+</dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object that represents the new calendar date.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+ym = Temporal.PlainYearMonth.from('2021-04');
+ym.toPlainDate({ day: 23 }); // => 2021-04-23
+</pre>
+
+<pre class="brush: js">
+ym = Temporal.PlainYearMonth.from('2021-04');
+ym.toPlainDate({ day: 37 });
+  // => Uncaught RangeError: value out of range: 1 <= 37 <= 30
+</pre>

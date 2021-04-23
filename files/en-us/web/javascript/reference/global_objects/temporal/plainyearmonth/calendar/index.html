@@ -1,0 +1,35 @@
+---
+title: Temporal.PlainYearMonth.calendar
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainYearMonth/calendar
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>calendar</code></strong> read-only property returns an object containing the calendar in which the <code>{{jsxref('Temporal/PlainYearMonth/year','year')}}</code> and <code>{{jsxref('Temporal/PlainYearMonth/month','month')}}</code> properties are interpreted.</span></p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var dateCalendar = date.calendar;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object representing the calendar system used to determine the month and day.</p>
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+md = Temporal.PlainYearMonth.from('08-24');
+md.calendar; // returns a Temporal.Calendar object of the ISO 8601 calendar
+
+md = Temporal.PlainYearMonth.from('2019-02-20[u-ca=hebrew]');
+md.calendar; // returns a Temporal.Calendar object of the Hebrew calendar
+</pre>

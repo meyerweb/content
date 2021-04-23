@@ -1,0 +1,45 @@
+---
+title: Temporal.PlainYearMonth.subtract()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainYearMonth/subtract
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>subtract()</code></strong> method creates a new <code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code> object by subtracting a span of time from the <code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code>.</span></p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var newMonth = PlainYearMonth.subtract(<var>duration</var>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>duration</var></code></dt>
+<dd>
+<p>An object with properties denoting a duration, such as <code>{ hours: 5, minutes: 30 }</code>, or a string value such as <code>PT5H30M</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code> object representing the year and month indicated by the original <code>PlainYearMonth</code> minus <code><var>duration</var></code>. If the result is earlier or later than the range that <code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code> can represent (just over half a million years centered on the Unix epoch), a <code>RangeError</code> will be thrown.
+</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+ym = Temporal.PlainYearMonth.from('2019-06');
+ym.subtract({ years: 20, months: 4 }); // => 1999-02
+</pre>

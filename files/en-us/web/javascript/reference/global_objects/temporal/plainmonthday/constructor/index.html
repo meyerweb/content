@@ -20,7 +20,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-new Temporal.PlainMonthDay(<var>isoMonth</var>, <var>isoDay</var>, <var>calendar</var>, <var>isoYearReference</var>)
+new Temporal.PlainMonthDay(<var>isoMonth</var>, <var>isoDay</var>, <var>calendar</var>, <var>referenceISOYear</var>)
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -28,7 +28,10 @@ new Temporal.PlainMonthDay(<var>isoMonth</var>, <var>isoDay</var>, <var>calendar
 <dl>
 <dt><code><var>isoMonth</var></code></dt>
 <dd>
-<p>A number from 1 to 12 inclusive, identifying an ISO 8601 month.  <strong>Note:</strong> this is different from legacy {{jsxref('Date')}} API, where months are represented by zero-based indices (0 to 11 inclusive).</p>
+<p>A number from 1 to 12 inclusive, identifying an ISO 8601 month.</p>
+<div class="notecard note">
+<p><strong>Note:</strong> this is different from the legacy {{jsxref('Date')}} API, where months are represented by zero-based indices (0 to 11 inclusive).</p>
+</div>
 </dd>
 <dt><code><var>isoDay</var></code></dt>
 <dd>
@@ -37,12 +40,16 @@ new Temporal.PlainMonthDay(<var>isoMonth</var>, <var>isoDay</var>, <var>calendar
 <dt><code><var>calendar</var></code> {{ optional_inline }}(see notes)</dt>
 <dd>
 <p>A calendar to project the ISO 8601 date into, in order to reckon the date by that calendar’s date system.</p>
+<div class="notecard note">
 <p><strong>Note:</strong> if this parameter is anything other than the default value of <code>iso8601</code>, the <var>referenceISOYear</var> parameter is <strong>required</strong>, not optional.</p>
+</div>
 </dd>
 <dt><code><var>referenceISOYear</var></code> {{ optional_inline }}(see note)</dt>
 <dd>
 <p>A reference year in the ISO 8601 calendar, to be used for disambiguation.  If this parameter is not supplied, the default value is the first leap year after the Unix epoch (i.e., 1972 in the ISO 8601 calendar).  Therefore, if you want to construct a PlainMonthDay object for any other ISO 8601 year, use this parameter.</p>
+<div class="notecard note">
 <p><strong>Note:</strong> this parameter is optional when using the ISO 8601 calendar, but required for all other calendar systems.  If you’re not sure what value to supply here, use <code>{{jsxref('Temporal/PlainMonthDay/from','Temporal.PlainMonthDay.from()')}}</code> instead.</p>
+</div>
 </dd>
 </dl>
 

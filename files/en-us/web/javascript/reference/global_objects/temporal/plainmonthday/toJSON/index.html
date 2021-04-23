@@ -29,3 +29,26 @@ Calendar.toJSON();
 <h2 id="return-value">Return Value</h2>
 
 <p>A string representing the month and day in ISO 8601 format.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+const holiday = {
+  name: 'Canada Day',
+  holidayMonthDay: Temporal.PlainMonthDay.from({ monthCode: 'M07', day: 1 })
+};
+const str = JSON.stringify(holiday, null, 2);
+console.log(str);
+// =>
+// {
+//   "name": "Canada Day",
+//   "holidayMonthDay": "07-01"
+// }
+
+// To rebuild from the string:
+function reviver(key, value) {
+  if (key.endsWith('MonthDay')) return Temporal.PlainMonthDay.from(value);
+  return value;
+}
+JSON.parse(str, reviver);
+</pre>

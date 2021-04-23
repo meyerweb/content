@@ -48,8 +48,8 @@ var timeUntil = instant.until(<var>moment</var> [, <var>options</var>]);
 <p> The returned <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of two hours will become 7200 seconds when <code>largestUnit</code> is <code>'seconds'</code>, for example. However, a difference of 30 seconds will still be 30 seconds even if <code>largestUnit</code> is <code>'hours'</code>.</p>
 <p>Take care when using milliseconds, microseconds, or nanoseconds as the largest unit. For some durations, the resulting value may overflow <code>Number.MAX_SAFE_INTEGER</code> and lose precision in its least significant digit(s). Nanoseconds values will overflow and lose precision after about 104 days. Microseconds can fit about 285 years without losing precision, and milliseconds can handle about 285,000 years without losing precision.</p>
 </dd>
-<dt><code>largestUnit</code></dt>
-<dd>A string defining the largest unit of time allowed in the returned object.  Valid values are the same as for <code>largestUnit</code>.</dd>
+<dt><code>smallestUnit</code></dt>
+<dd>A string defining the smallest unit of time allowed in the returned object.  Valid values are the same as for <code>largestUnit</code>.</dd>
 <dt><code>roundingIncrement</code></dt>
 <dd>An integer defining the granularity of the rounding of the unit given by <code>smallestUnit</code>. The default is <code>1</code>.
 <dt><code>roundingMode</code></dt>

@@ -1,0 +1,83 @@
+---
+title: Temporal.PlainYearMonth.until()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainYearMonth/until
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>until()</code></strong> method computes the elapsed time from the month represented by <code>PlainYearMonth</code> until the another month, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second month is earlier than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainYearMonth/since','Temporal.PlainYearMonth.since()')}}</code>, but reversed.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var timeBetween = PlainYearMonth.until(<var>otherMonthYear</var> [, <var>options</var>]);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>otherMonthYear</var></code></dt>
+<dd>Another month as either a <code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code> object, or a value that will be converted to one as if passed to <code>{{jsxref('Temporal/PlainYearMonth.from()','Temporal.PlainYearMonth.from()')}}</code>.</dd>
+<dt><code><var>options</var></code> {{optional_inline}}</dt>
+<dd>
+<p>An object with properties defining how the rounding operation should be carried out.  The allowed properties are:</p>
+<dl>
+<dt><code>largestUnit</code></dt>
+<dd>A string defining the largest unit of time allowed in the returned object.  Valid values are:
+<ul>
+<li><code>'auto'</code> (default)</li>
+<li><code>'years'</code></li>
+<li><code>'months'</code></li>
+</ul>
+<p>The <code>largestUnit</code> option controls how the resulting duration is expressed. A value of <code>'auto'</code> means <code>'years'</code>.</p>
+<p>The returned <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of one year and two months will become 14 months when <code>largestUnit</code> is <code>'months'</code>, for example. However, a difference of one month will still be one month even if <code>largestUnit</code> is <code>'years'</code>.</p>
+<div class="note">
+<p>Unlike other Temporal types, weeks and lower are not allowed for either <code>largestUnit</code> or <code>smallestUnit</code>, because the data model of <code>Temporal.PlainYearMonth</code> doesn't have that accuracy.
+If you need to calculate the difference between two YearMonths in days, convert them to <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> objects and use <code>{{jsxref('Temporal.PlainDate/until','Temporal.PlainDate.until()')}}</code> instead.
+</p>
+</div>
+</dd>
+<dt><code>smallestUnit</code></dt>
+<dd>A string defining the smallest unit of time allowed in the returned object.  Valid values are the same as for <code>largestUnit</code>.</dd>
+<dt><code>roundingIncrement</code></dt>
+<dd>An integer defining the granularity of the rounding of the unit given by <code>smallestUnit</code>. The default is <code>1</code>.
+<dt><code>roundingMode</code></dt>
+<dd>
+A string defining how to deal with any remainders. If <code>roundingMode</code> is not defined, then no rounding will be performed. The valid values are:
+<dl>
+<dt><code>'ceil'</code></dt>
+<dd>Always round up, toward the end of time.</dd>
+<dt><code>'floor'</code></dt>
+<dt><code>'trunc'</code> (default)</dt>
+<dd>Always round down, toward the beginning of time.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.until()','Temporal.Duration.until()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
+<dt><code>'halfExpand'</code></dt>
+<dd>Round to the nearest of the values allowed by <code>roundingIncrement</code> and <code>smallestUnit</code>. If there is a tie, round up, toward the end of time.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object representing the difference between <code>PlainYearMonth</code> and <var>otherMonthYear</var>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+ym = Temporal.PlainYearMonth.from('2006-08');
+other = Temporal.PlainYearMonth.from('2019-06');
+ym.until(other);                            // => P12Y10M
+ym.until(other, { largestUnit: 'months' }); // => P154M
+other.until(ym, { largestUnit: 'months' }); // => -P154M
+</pre>
