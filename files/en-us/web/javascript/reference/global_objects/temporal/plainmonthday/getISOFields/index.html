@@ -1,0 +1,51 @@
+---
+title: Temporal.PlainMonthDay.getISOFields()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainMonthDay/getISOFields
+tags:
+  - Class
+  - Date
+  - Time
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>getISOFields()</code></strong> method returns an object containing the ISO 8601 calendar fields and values that correspond to the month and day.</span> This method is mainly useful if you are implementing a custom calendar.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+date.getISOFields();
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>None.</p>
+
+<h2 id="return-value">Return value</h2>
+
+<p>An object containing the <code>isoYear</code>, <code>isoMonth</code>, <code>isoDay</code>, and <code>calendar</code> properties.  The value of the <code>isoYear</code> property will be equal to the <code>referenceISOYear</code> constructor argument passed when the <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object was {{jsxref('Temporal/PlainMonthDay/constructor','constructed')}}.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+md = Temporal.PlainMonthDay.from('04-22');
+md.getISOFields().isoDay;   // => 22
+md.getISOFields().isoMonth; // => 4
+md.getISOFields().isoYear;  // => 1972
+</pre>
+
+<pre class="brush: js">
+md = new Temporal.PlainMonthDay(4, 22, 'iso8601', 2021);
+md.getISOFields().isoDay;   // => 22
+md.getISOFields().isoMonth; // => 4
+md.getISOFields().isoYear;  // => 2021
+</pre>
+
+<pre class="brush: js">
+md = new Temporal.PlainMonthDay(4, 22, 'hebrew', 5781);
+md.getISOFields().isoDay;   // => 22
+md.getISOFields().isoMonth; // => 4
+md.getISOFields().isoYear;  // => 5781  TK TK TK
+</pre>
