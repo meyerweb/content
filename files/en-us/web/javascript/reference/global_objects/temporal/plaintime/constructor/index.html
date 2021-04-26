@@ -1,0 +1,48 @@
+---
+title: Temporal.PlainTime constructor
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainTime/constructor
+tags:
+  - Class
+  - JavaScript
+  - Time
+  - constructor
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The constructor for a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object.</span>  Use this constructor if you have the correct parameters for the time as individual number values in the ISO 8601 calendar. Otherwise, use <code>{{jsxref('Temporal.PlainTime/from','Temporal.PlainTime.from()')}}</code>, which accepts more kinds of input and allows control of value overflow behaviour.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+new Temporal.PlainTime(<var>isoHour</var>, <var>isoMinute</var>, <var>isoSecond</var>, <var>isoMillisecond</var>, <var>isoMillisecond</var>, <var>isoNanosecond</var>)
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>All parameters are numbers, and default to <code>0</code> (zero).</p>
+<dl>
+<dt><code><var>isoHour</var></code> {{optional_inline}}</dt>
+<dd><p>An hour of the day, ranging from 0 to 23, inclusive.</p></dd>
+<dt><code><var>isoMinute</var></code> {{optional_inline}}</dt>
+<dd><p>A number of minutes, ranging from 0 to 59, inclusive.</p></dd>
+<dt><code><var>isoSecond</var></code> {{optional_inline}}</dt>
+<dd><p>A number of seconds, ranging from 0 to 59, inclusive.</p></dd>
+<dt><code><var>isoMillisecond</var></code> {{optional_inline}}</dt>
+<dd><p>A number of milliseconds, ranging from 0 to 999, inclusive.</p></dd>
+<dt><code><var>isoMicrosecond</var></code> {{optional_inline}}</dt>
+<dd><p>A number of microseconds, ranging from 0 to 999, inclusive.</p></dd>
+<dt><code><var>isoNanosecond</var></code> {{optional_inline}}</dt>
+<dd><p>A number of nanoseconds, ranging from 0 to 999, inclusive.</p></dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+// Leet hour
+leetTime = new Temporal.PlainTime(13, 37); // => 13:37:00.000000000
+</pre>

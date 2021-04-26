@@ -1,0 +1,47 @@
+---
+title: Temporal.PlainTime.equals()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainTime/equals
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">This method determines whether a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object is exactly the same as another wall-clock time.</span></p>
+<p>This function exists because it’s not possible to compare using <code>plainTime == other</code> or <code>plainTime === other</code>, due to ambiguity in the primitive representation and between Temporal types.</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var isSameTime = storedTime.equals(<var>other</var>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>other</var></code></dt>
+<dd>
+<p>Another wall-clock time to compare.  Either a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object, or a value that will be converted to one as if passed to <code>{{jsxref('Temporal/PlainTime.from()','Temporal.PlainTime.from()')}}</code>.</p>
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A boolean <code>true</code> if <code>PlainTime</code> and <code><var>other</var></code> are equal; otherwise, <code>false</code>. If you also need to know the order in which the two times occur when they are not equal, use <code>{{jsxref('Temporal/PlainTime/compare','Temporal.PlainTime.compare()')}}</code> instead.</p>
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+time = Temporal.PlainTime.from('19:39:09.068346205');
+other = Temporal.PlainTime.from('20:13:20.971398099');
+time.equals(other); // => false
+time.equals(time); // => true
+</pre>

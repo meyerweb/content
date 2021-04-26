@@ -3,53 +3,73 @@ title: Temporal.PlainTime
 slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainTime
 tags:
   - Class
-  - Date
-  - Epoch
   - JavaScript
   - Time
-  - now
-  - Unix Epoch
-  - timeStamp
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">This is the summary.</span></p>
+<p class="summary"><span class="seoSummary">A <code>Temporal.PlainTime</code> object represents a wall-clock time, with a precision in nanoseconds, and without any time zone.</span>   “Wall-clock time” refers to the concept of a time as expressed in everyday usage; that is, the time that you read off the clock on the wall. For example, it could be used to represent an event that happens daily at a certain time, no matter what the time zone.  If you need to refer to a specific time on a specific day, use <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>.
+</p>
 
 <h2>Constructor</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/PlainTime()','Temporal.PlainTime()')}}</code></dt>
+<dt><code>new {{jsxref('Temporal/PlainTime/constructor','Temporal.PlainTime()')}}</code></dt>
+<dd><p>Creates a new <code>Temporal.PlainTime</code> object which represents a wall-clock time.</p></dd>
 </dl>
 
 <h2>Properties</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/PlainTime/hour','hour')}}</code> {{readonlyinline}}</dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/minute','minute')}}</code> {{readonlyinline}}</dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/second','second')}}</code> {{readonlyinline}}</dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/millisecond','millisecond')}}</code> {{readonlyinline}}</dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/microsecond','microsecond')}}</code> {{readonlyinline}}</dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/nanosecond','nanosecond')}}</code> {{readonlyinline}}</dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/calendar','calendar')}}</code> {{readonlyinline}}</dt></dt>
+<dt><code>{{jsxref('Temporal/PlainTime/hour','hour')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the hour component of the <code>Temporal.PlainTime</code> object.</p>
+<dt><code>{{jsxref('Temporal/PlainTime/minute','minute')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the minute component of the <code>Temporal.PlainTime</code> object.</p>
+<dt><code>{{jsxref('Temporal/PlainTime/second','second')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the second component of the <code>Temporal.PlainTime</code> object.</p>
+<dt><code>{{jsxref('Temporal/PlainTime/millisecond','millisecond')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the millisecond component of the <code>Temporal.PlainTime</code> object.</p>
+<dt><code>{{jsxref('Temporal/PlainTime/microsecond','microsecond')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the microsecond component of the <code>Temporal.PlainTime</code> object.</p>
+<dt><code>{{jsxref('Temporal/PlainTime/nanosecond','nanosecond')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the nanosecond component of the <code>Temporal.PlainTime</code> object.</p>
+<dt><code>{{jsxref('Temporal/PlainTime/calendar','calendar')}}</code> {{readonlyinline}}</dt>
+<dd><p>A {{jsxref('Temporal/Calendar','Temporal.Calendar')}} object containing the ISO 8601 calendar.</p>
 </dl>
 
 <h2>Methods</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/PlainTime/from','from()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/compare','compare()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/with','with()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/add','add()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/subtract','subtract()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/until','until()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/since','since()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/round','round()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/equals','equals()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/toString','toString()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/toLocaleString','toLocaleString()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/toJSON','toJSON()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/valueOf','valueOf()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/toZonedDateTime','toZonedDateTime()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/toPlainDateTime','toPlainDateTime()')}}</code></dt></dt>
-<dt><code>{{jsxref('Temporal/PlainTime/getISOFields','getISOFields()')}}</code></dt></dt>
+<dt><code>{{jsxref('Temporal/PlainTime/from','from()')}}</code></dt>
+<dd><p>Creates a new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object from another value.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/compare','compare()')}}</code></dt>
+<dd><p>Compares two times and returns an integer indicating which comes before the other.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/with','with()')}}</code></dt>
+<dd><p>Returns a new <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object which is a modification of the original object using new property values.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/add','add()')}}</code></dt>
+<dd><p>Creates a new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object by adding a duration to a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/subtract','subtract()')}}</code></dt>
+<dd><p>Creates a new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object by subtracting a duration from a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/until','until()')}}</code></dt>
+<dd><p>Computes the elapsed time from the month represented by <code>PlainTime</code> until another wall-clock time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/since','since()')}}</code></dt>
+<dd><p>Computes the elapsed time from the wall-clock time represented by <code>PlainTime</code> since another wall-clock time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/round','round()')}}</code></dt>
+<dd><p>Creates a new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object by rounding a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/equals','equals()')}}</code></dt>
+<dd><p>Determines whether a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object is exactly the same as another wall-clock time.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/valueOf','valueOf()')}}</code></dt>
+<dd><p>Overrides <code>{{jsxref('Object/valueOf','Object.prototype.valueOf()')}}</code> and <strong>always</strong> throws an exception.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/toZonedDateTime','toZonedDateTime()')}}</code></dt>
+<dd><p>Converts a <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object into a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/toPlainDateTime','toPlainDateTime()')}}</code></dt>
+<dd><p>Converts a <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object into a <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object, by supplying a date to be used with the wall-clock time of the original <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code>.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/getISOFields','getISOFields()')}}</code></dt>
+<dd><p>Returns an object containing the ISO 8601 calendar fields and values that correspond to the wall-clock time.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/toLocaleString','toLocaleString()')}}</code></dt>
+<dd><p>Returns a human-readable, language-sensitive representation of the <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> value.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/toString','toString()')}}</code></dt>
+<dd><p>Returns a string representing the wall-clock time in ISO 8601 format.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainTime/toJSON','toJSON()')}}</code></dt>
+<dd><p>Returns a string representing the wall-clock time in ISO 8601 format.</p></dd>
 </dl>

@@ -1,0 +1,47 @@
+---
+title: Temporal.PlainTime.subtract()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainTime/subtract
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>subtract()</code></strong> method creates a new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object by subtracting a duration from a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object.</span>  Subtracting a negative duration is equivalent to {{jsxref('Temporal.PlainTime/add','adding')}} the absolute value of that duration.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var newTime = PlainTime.subtract(<var>duration</var>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>duration</var></code></dt>
+<dd>
+<p>An object with properties denoting a duration, such as <code>{ hours: 5, minutes: 30 }</code>, or a string value such as <code>PT5H30M</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to a string as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
+<p>If the subtraction of the <var>duration</var> from the original time takes it below 0 hours, the time will be “wrapped around” to 24 hours.  Thus, the returned wall-clock time may be either in the future or in the past relative to the original time, or even the same time.</p>
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object representing the wall-clock time indicated by <code>PlainTime</code> minus <code><var>duration</var></code>.
+</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+time = Temporal.PlainTime.from('19:39:09.068346205');
+time.subtract({ minutes: 5, nanoseconds: 800 }); // => 19:34:09.068345405
+time.subtract({ hours: 12 }); // => <07:39:09.068346205>
+</pre>

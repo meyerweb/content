@@ -1,0 +1,40 @@
+---
+title: Temporal.PlainTime.toPlainDateTime()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainTime/toPlainDateTime
+tags:
+  - Class
+  - Date
+  - Time
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>toPlainDateTime()</code></strong> method converts a <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object into a <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object, by supplying a date to be used with the wall-clock time of the original <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code></span>.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+time.toPlainDateTime(<var>date</var>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>date</var></code></dt>
+<dd>An object representing the date into which the wall-clock time should be placed.  If date is not a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal.PlainDate/from','Temporal.PlainDate.from()')}}</code>.
+</dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object that represents the combination of date and time.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+time = Temporal.PlainTime.from('15:23:30.003');
+date = Temporal.PlainDate.from('2006-08-24');
+time.toPlainDateTime(date); // => 2006-08-24T15:23:30.003
+</pre>
