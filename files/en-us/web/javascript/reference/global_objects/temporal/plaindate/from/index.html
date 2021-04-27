@@ -1,0 +1,90 @@
+---
+title: Temporal.PlainDate.from()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/from
+tags:
+  - Class
+  - JavaScript
+  - date
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>from()</code></strong> static method creates a new <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object from another value.</span>
+</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var theDate = Temporal.PlainDate.from(<var>date</var>, <var>options</var>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>value</var></code></dt>
+<dd><p>A representation of the desired date, either as an object or a string in valid ISO 8601 format.</p>
+<p>If the value is another <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object, a new object representing the same date is returned.  If the value is any other object, it must contain, at a minimum:</p>
+<ul>
+<li>A <code>year</code> or <code>eraYear</code> property.</li>
+<li>If <code>eraYear</code> is used, and <code>era</code> must also be supplied.</li>
+<li>Either a <code>month</code> or a <code>monthCode</code> property.</li>
+<li>A <code>day</code> property.</li>
+</ul>
+<p>The object may also contain a <code>calendar</code> property.  If omitted, the ISO 8601 calendar is used.</p>
+<p>Any non-object, non-string value will be converted to a string, which is expected to be in ISO 8601 format. For other calendars, the calendar is also parsed in addition to year and month. Any other parts of the string, such as those relating to time or time zone, are optional and will be ignored.  If the string is invalid according to ISO 8601, then a <code>RangeError</code> will be thrown regardless of the value of the <code>overflow</code> option (see next).</p>
+</dd>
+<dt><code><var>options</var></code> {{optional_inline}}</dt>
+<dd>
+<p>An object containing properties that represent options for constructing the new <code>Temporal.PlainDate</code> object. These are:</p>
+<dl>
+<dt><code>overflow</code></dt>
+<dd>Determines how out-of-range values in <var>fields</var> are handled.  There are two options:
+<dl>
+<dt><code>'constrain'</code> (default)</dt>
+<dd>Out-of-range values are clamped to the nearest in-range value.</dd>
+<dt><code>'reject'</code></dt>
+<dd>Out-of-range values will cause the function to throw a <code>RangeError</code>.</dd>
+</dl>
+<div class="note">
+<p>If <var>date</var> is a string, the <code>overflow</code> property’s value is ignored.</p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object.  If the result is earlier or later than the range of dates <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> can represent (approximately half a million years centered on the Unix epoch), this function will throw a <code>RangeError</code> regardless of the value of <code>overflow</code>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+date = Temporal.PlainDate.from('2006-08-24'); // => 2006-08-24
+date = Temporal.PlainDate.from('2006-08-24T15:43:27'); // => 2006-08-24
+date = Temporal.PlainDate.from('2006-08-24T15:43:27Z'); // => 2006-08-24
+date = Temporal.PlainDate.from('2006-08-24T15:43:27+01:00[Europe/Brussels]');
+  // => 2006-08-24
+date === Temporal.PlainDate.from(date); // => false
+
+date = Temporal.PlainDate.from({year: 2006, month: 8, day: 24}); // => 2006-08-24
+date = Temporal.PlainDate.from(Temporal.PlainDateTime.from('2006-08-24T15:43:27'));
+  // => 2006-08-24
+  // same as above; Temporal.PlainDateTime has year, month, and day properties
+
+calendar = Temporal.Calendar.from('islamic');
+date = Temporal.PlainDate.from({ year: 1427, month: 8, day: 1, calendar }); // => 2006-08-24[u-ca=islamic]
+date = Temporal.PlainDate.from({ year: 1427, month: 8, day: 1, calendar: 'islamic' });
+  // => 2006-08-24[u-ca=islamic]
+  // same as above
+
+// Different overflow modes
+date = Temporal.PlainDate.from({ year: 2001, month: 13, day: 1 }, { overflow: 'constrain' });
+  // => 2001-12-01
+date = Temporal.PlainDate.from({ year: 2001, month: 1, day: 32 }, { overflow: 'constrain' });
+  // => 2001-01-31
+date = Temporal.PlainDate.from({ year: 2001, month: 13, day: 1 }, { overflow: 'reject' });
+  // => throws
+date = Temporal.PlainDate.from({ year: 2001, month: 1, day: 32 }, { overflow: 'reject' });
+  // => throws
+</pre>

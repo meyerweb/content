@@ -1,0 +1,31 @@
+---
+title: Temporal.PlainDate.valueOf()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/valueOf
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>valueOf()</code></strong> method overrides {{jsxref('Object/valueOf','Object.prototype.valueOf')}} and <strong>always</strong> throws an exception.</span>  This is because it’s not possible to compare <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> objects with the relational operators <code>&lt;</code>, <code>&gt;=</code>, <code>&gt;</code>, or <code>&gt;=</code>. Use <code>{{jsxref('Temporal/PlainDate/compare','Temporal.PlainDate.compare()')}}</code> for this, or <code>{{jsxref('Temporal/PlainDate/equals','Temporal.PlainDate.equals()')}}</code> for equality.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+<var>date</var>.valueOf();
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>None.</p>
+
+<h2 id="return-value">Return value</h2>
+
+<p>An exception.</p>

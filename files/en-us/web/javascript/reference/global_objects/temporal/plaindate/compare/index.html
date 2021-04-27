@@ -1,0 +1,63 @@
+---
+title: Temporal.PlainDate.compare()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/compare
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>compare()</code></strong> static method compares two dates and returns an integer indicating which comes before the other.</span></p>
+<p>If you don’t care about the order in which the two date occur, but instead merely want to know if they’re the same or not, use <code>{{jsxref('Temporal/PlainDate/equals','Temporal.PlainDate.equals()')}}</code> instead.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var dateOrder = Temporal.PlainDate.compare(<var>dateOne</var>, <var>dateTwo</code>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>dateOne</var></code></dt>
+<dt><code><var>dateTwo</var></code></dt>
+<dd>
+Either a <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object, or a value that will be converted to one as if passed to <code>{{jsxref('Temporal/PlainDate/from','Temporal.PlainDate.from()')}}</code>.
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>An integer indicating whether <code><var>dateTwo</var></code> comes before, comes after, or is equal to <code><var>dateTwo</var></code>.  The possible returned values are:</p>
+
+<ul>
+<li><code>−1</code> if <code><var>dateOne</var></code> comes before <code><var>dateTwo</var></code>;
+<li><code>0</code> if <code><var>dateOne</var></code> and <code><var>dateTwo</var></code> represent the same date;
+<li><code>1</code> if <code><var>dateOne</var></code> comes after <code><var>dateTwo</var></code>.
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+one = Temporal.PlainDate.from('2006-08-24');
+two = Temporal.PlainDate.from('2015-07-14');
+Temporal.PlainDate.compare(one, two); // => -1
+</pre>
+
+<p>In the following example, <code>compare()</code> is used to sort an array of <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> objects.</p>
+
+<pre class="brush: js">
+one = Temporal.PlainDate.from('2006-08-24');
+two = Temporal.PlainDate.from('2015-07-14');
+three = Temporal.PlainDate.from('1930-02-18');
+sorted = [one, two, three].sort(Temporal.PlainDate.compare);
+sorted.join(' | '); // => '1930-02-18 | 2006-08-24 | 2015-07-14'
+</pre>

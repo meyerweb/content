@@ -1,0 +1,85 @@
+---
+title: Temporal.PlainDate.since()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/since
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>since()</code></strong> method computes the elapsed time between the date represented by <code>PlainDate</code> and another date in the past, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second date is later than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainDate/until','Temporal.PlainDate.until()')}}</code>, but reversed.</p>
+<div class="warning">
+<p>Computing the difference between dates in different calendar systems is not supported.  If you need to do this, choose the calendar in which the computation takes place by converting one of the dates with using the method <code>{{jsxref('Temporal.PlainDate/withCalendar','withCalendar()')}}</code>.</p>
+</div>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var timeBetween = PlainDate.since(<var>otherDate</code> [, <var>options</var>])
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>otherDate</var></code></dt>
+<dd>Another date as either a <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object, or a value that will be converted to one as if passed to <code>{{jsxref('Temporal/PlainDate.from()','Temporal.PlainDate.from()')}}</code>.</dd>
+<dt><code><var>options</var></code> {{optional_inline}}</dt>
+<dd>
+<p>An object with properties defining how the rounding operation should be carried out.  The allowed properties are:</p>
+<dl>
+<dt><code>largestUnit</code></dt>
+<dd>A string defining the largest unit of time allowed in the returned object.  Valid values are:
+<ul>
+<li><code>'auto'</code> (default)</li>
+<li><code>'years'</code></li>
+<li><code>'months'</code></li>
+<li><code>'weeks'</code></li>
+<li><code>'days'</code></li>
+</ul>
+<p>The <code>largestUnit</code> option controls how the resulting duration is expressed. A value of <code>'auto'</code> means to match the value of <code>smallestUnit</code>.</p>
+<p>The returned <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of one year and two months will become 14 months when <code>largestUnit</code> is <code>'months'</code>, for example. However, a difference of one month will still be one month even if <code>largestUnit</code> is <code>'years'</code>.</p>
+<div class="note">
+<p>Unlike some other Temporal types, hours and lower are not allowed for either <code>largestUnit</code> or <code>smallestUnit</code>, because the data model of <code>Temporal.PlainDate</code> doesn't have that accuracy.
+</p>
+</div>
+</dd>
+<dt><code>smallestUnit</code></dt>
+<dd>A string defining the smallest unit of time allowed in the returned object.  Valid values are the same as for <code>largestUnit</code>, escept the default value is <code>'days'</code>, which means no rounding will occur.</dd>
+<dt><code>roundingIncrement</code></dt>
+<dd>An integer defining the granularity of the rounding of the unit given by <code>smallestUnit</code>. The default is <code>1</code>.
+<dt><code>roundingMode</code></dt>
+<dd>
+A string defining how to deal with any remainders. If <code>roundingMode</code> is not defined, then no rounding will be performed. The valid values are:
+<dl>
+<dt><code>'ceil'</code></dt>
+<dd>Always round up, toward the end of time.</dd>
+<dt><code>'floor'</code></dt>
+<dt><code>'trunc'</code> (default)</dt>
+<dd>Always round down, toward the beginning of time.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.until()','Temporal.Duration.until()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
+<dt><code>'halfExpand'</code></dt>
+<dd>Round to the nearest of the values allowed by <code>roundingIncrement</code> and <code>smallestUnit</code>. If there is a tie, round up, toward the end of time.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object representing the difference between the two dates.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+earlier = Temporal.PlainDate.from('2006-08-24');
+later = Temporal.PlainDate.from('2019-01-31');
+later.since(earlier); // => P4543D
+</pre>

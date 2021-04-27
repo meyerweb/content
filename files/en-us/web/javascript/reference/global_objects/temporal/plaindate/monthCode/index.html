@@ -1,0 +1,36 @@
+---
+title: Temporal.PlainDate.monthCode
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/monthCode
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>monthCode</code></strong> read-only property returns a calendar-specific string that identifies the month in a year-independent manner.</span></p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var monthLabel = date.monthCode;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A string containing a calendar-specific string that identifies the month in a year-independent way.</p>
+<p>For common (non-leap) months, <code>monthCode</code> should be <code>M{month}</code>, where <code>{month}</code> is zero-padded up to two digits. For uncommon (leap) months in lunisolar calendars like Hebrew or Chinese, the month code is the previous month's code with with an <code>L</code> suffix appended.</p>
+<p>Examples: <code>'M02'</code> is returned for February; <code>'M08L'</code> is returned for the repeated 8th month in the Chinese calendar; <code>'M05L'</code> is returned for Adar I in the Hebrew calendar.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+date = Temporal.PlainDate.from('2019-02-23');
+date.monthCode; // => 'M02'
+
+date = Temporal.PlainDate.from('2019-02-23[u-ca=hebrew]');
+date.monthCode; // => 'M05L'
+</pre>

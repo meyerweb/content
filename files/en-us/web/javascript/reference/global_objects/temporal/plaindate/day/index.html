@@ -1,0 +1,36 @@
+---
+title: Temporal.PlainDate.day
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/day
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>day</code></strong> read-only property returns a number that identifies the day of the month on which the date occurs.</span></p>
+
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var dateDay = date.day;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A number representing the day of the month.</p>
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+md = Temporal.PlainDate.from('2019-02-23');
+md.day; // => 23
+
+md = Temporal.PlainDate.from('2019-02-23[u-ca=hebrew]');
+md.day; // => 15
+</pre>

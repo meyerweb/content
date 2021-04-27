@@ -1,0 +1,56 @@
+---
+title: Temporal.PlainDate.toJSON()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/toJSON
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>toJSON()</code></strong> method returns a string representing the date in ISO 8601 format.</span>  This method provides a useful value when a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object is passed to <code>{{jsxref('JSON.stringify','JSON.stringify()')}}</code>.  It is rarely useful in any other context.</p>
+</p>
+<p>
+The reverse operation, recovering a <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object from a string, is accomplished by using <code>{{jsxref('Temporal/PlainDate/from','Temporal.PlainDate.from()')}}</code>, but that method cannot be called automatically by <code>{{jsxref('JSON.parse','JSON.parse()')}}</code>. If you need to rebuild a <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object from a JSON string, then you need to know the names of the keys that should be interpreted as <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> properties. In that case, you can build a custom “reviver” function for your use case.
+</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+Date.toJSON();
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>None.</p>
+
+<h2 id="return-value">Return Value</h2>
+
+<p>A string representing the date in ISO 8601 format.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+const student = {
+  id: 429,
+  name: 'Emilia Connor',
+  birthDate: Temporal.PlainDate.from('1997-09-08')
+};
+const str = JSON.stringify(student, null, 2);
+console.log(str);
+// =>
+// {
+//   "id": 429,
+//   "name": "Emilia Connor",
+//   "birthDate": "1997-09-08"
+// }
+
+// To rebuild from the string:
+function reviver(key, value) {
+  if (key.endsWith('Date')) return Temporal.PlainDate.from(value);
+  return value;
+}
+JSON.parse(str, reviver);
+</pre>

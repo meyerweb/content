@@ -1,0 +1,35 @@
+---
+title: Temporal.PlainDate.toPlainMonthDay()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/toPlainMonthDay
+tags:
+  - Class
+  - Date
+  - Time
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>toPlainMonthDay()</code></strong> method converts a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object into a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object that is the same as the month and day components of the <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object.</span></p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+date.toPlainMonthDay();
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>None.</p>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object that replicates the month and day components of the original <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+date = Temporal.PlainDate.from('2006-08-24');
+date.toPlainMonthDay(); // => 08-24
+</pre>
