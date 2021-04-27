@@ -72,11 +72,11 @@ instant = Temporal.Instant.from('2019-03-30T02:45:59.999999999Z');
 // Round to a particular unit
 instant.round({ smallestUnit: 'second' }); // => 2019-03-30T02:46Z
 
-// Round to an increment of a unit, e.g. an hour:
-instant.round({ roundingIncrement: 60, smallestUnit: 'minute' });
+// Round to an increment of a unit, e.g. half an hour:
+instant.round({ roundingIncrement: 30, smallestUnit: 'minute' });
 // => 2019-03-30T03:00Z
 
 // Round to the same increment but round down instead:
-instant.round({ roundingIncrement: 60, smallestUnit: 'minute', roundingMode: 'floor' });
-// => 2019-03-30T02:00Z
+instant.round({ roundingIncrement: 30, smallestUnit: 'minute', roundingMode: 'floor' });
+// => 2019-03-30T02:30Z
 </pre>

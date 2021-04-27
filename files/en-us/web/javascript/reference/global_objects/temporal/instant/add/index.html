@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>add()</code></strong> method creates a new <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object by adding a span of time to a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object.</span></p>
+<p class="summary"><span class="seoSummary">The <strong><code>add()</code></strong> method creates a new <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object by adding a span of time to a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object.</span>  Adding a negative duration to the instant is equivalent to {{jsxref('Temporal.Instant/subtract','subtracting')}} the absolute value of that duration.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -28,7 +28,7 @@ var nextTime = instant.add(<var>duration</var>);
 <dt><code><var>duration</var></code></dt>
 <dd>
 <p>An object with properties denoting a duration, such as <code>{ hours: 5, minutes: 30 }</code>, or a string such as <code>PT5H30M</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
-<p>Note that the<code> years</code>, <code>months</code>, <code>weeks</code>, and <code>days</code> fields of <code><var>duration</var></code> must be zero. <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> is independent of time zones and calendars, and so years, months, weeks, and days may be different lengths depending on which calendar or time zone they are reckoned in. This makes an addition with those units ambiguous. If you need to do this, convert the <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> to a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> by specifying the desired calendar and time zone, add the duration with <code>{{jsxref('Temporal/PlainDateTime/add','Temporal.PlainDateTime.add()')}}</code>, and then convert it back to <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code>.</p>
+<p>Note that the <code>years</code>, <code>months</code>, <code>weeks</code>, and <code>days</code> fields of <code><var>duration</var></code> must be zero. <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> is independent of time zones and calendars, and so years, months, weeks, and days may be different lengths depending on which calendar or time zone they are reckoned in. This makes an addition with those units ambiguous. If you need to do this, convert the <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> to a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> by specifying the desired calendar and time zone, add the duration with <code>{{jsxref('Temporal/PlainDateTime/add','Temporal.PlainDateTime.add()')}}</code>, and then convert it back to <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code>.</p>
 </dd>
 </dl>
 

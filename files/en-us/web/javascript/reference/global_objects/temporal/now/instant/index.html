@@ -27,7 +27,7 @@ Temporal.now.instant()
 
 <h2 id="return-value">Return value</h2>
 
-<p>A <code>Temporal.Instant</code> object representing the current system time, <strong>without</strong> regard to calendar or time zone, measured in nanoseconds. By default, the system time is measured as nanoseconds elapsed since January 1, 1970 00:00:00 <abbr title="Coordinated Universal Time">UTC</abbr>.</p>
+<p>A <code>Temporal.Instant</code> object representing the current system time, <strong>without</strong> regard to calendar or time zone, measured in nanoseconds.</p>
 
 
 <h2 id="examples">Examples</h2>
@@ -35,16 +35,5 @@ Temporal.now.instant()
 <pre class="brush: js">var <var>timestamp</var> = Temporal.now.instant();</pre>
 
 <pre class="brush: js">
-function timeit(func) {
-  start = Temporal.now.instant();
-  try {
-    return func();
-  } finally {
-    end = Temporal.now.instant();
-    console.log(`The function took ${end.since(start)}`);
-  }
-}
-timeit(() => JSON.parse(someData));
-// Console output:
-// The function took PT0.001031756S
+// EXAMPLE TK
 </pre>
