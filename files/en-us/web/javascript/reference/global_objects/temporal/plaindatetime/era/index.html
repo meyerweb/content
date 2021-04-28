@@ -1,0 +1,36 @@
+---
+title: Temporal.PlainDateTime.era
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime/era
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>era</code></strong> read-only property returns a string of the era in which the date and time occurs, in calendar systems that use eras.</span></p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var datetimeEra = datetime.era;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A string rendering of the era’s label, or <code>undefined</code> in calendar systems that do not use eras.</p>
+
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+datetime = Temporal.PlainDateTime.from('2019-02-23');
+datetime.era; // => undefined
+
+datetime = Temporal.PlainDateTime.from('2019-02-23[u-ca=gregory]');
+datetime.era; // => "ce"
+</pre>

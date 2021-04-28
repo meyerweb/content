@@ -20,13 +20,13 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var recurrentDate = Temporal.PlainMonthDay.from(<var>value</var>, <var>options</var>);
+var recurrentDate = Temporal.PlainMonthDay.from(<var>date</var>, <var>options</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-<dt><code><var>value</var></code></dt>
+<dt><code><var>date</var></code></dt>
 <dd>A representation of the desired month and day.  This can be represented in a number of ways:
 <ul>
 <li>A <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object.</li>
@@ -50,7 +50,7 @@ The object may also contain a <code>calendar</code> property.  If omitted, the I
 <p>An object containing properties that represent options for constructing the new <code>Temporal.PlainMonthDay</code> object. These are:</p>
 <dl>
 <dt><code>overflow</code></dt>
-<dd>Determines how out-of-range values in <var>fields</var> are handled.  There are two options:
+<dd>Determines how out-of-range values in <var>date</var> are handled.  There are two options:
 <dl>
 <dt><code>'constrain'</code> (default)</dt>
 <dd>Out-of-range values are clamped to the nearest in-range value.</dd>

@@ -35,8 +35,9 @@ var eventMonth = Temporal.PlainYearMonth.from(<var>value</var>, <var>options</va
 <li>A <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.</li>
 <li>An object that contains, at a minimum:
 <ul>
-<li>A <code>year</code> or <code>eraYear</code> property.</li>
-<li>If <code>eraYear</code> is used, and <code>era</code> must also be supplied.</li>
+<li>A <code>year</code> or <code>eraYear</code> property.
+<ul><li>If <code>eraYear</code> is used, an <code>era</code> must also be supplied.</li></ul>
+</li>
 <li>Either a <code>month</code> or a <code>monthCode</code> property.</li>
 </ul>
 The object may also contain a <code>calendar</code> property.  If omitted, the ISO 8601 calendar is used.
@@ -50,7 +51,7 @@ The object may also contain a <code>calendar</code> property.  If omitted, the I
 <p>An object containing properties that represent options for constructing the new <code>Temporal.PlainYearMonth</code> object. These are:</p>
 <dl>
 <dt><code>overflow</code></dt>
-<dd>Determines how out-of-range values in <var>fields</var> are handled.  There are two options:
+<dd>Determines how out-of-range values in <var>value</var> are handled.  There are two options:
 <dl>
 <dt><code>'constrain'</code> (default)</dt>
 <dd>Out-of-range values are clamped to the nearest in-range value.</dd>

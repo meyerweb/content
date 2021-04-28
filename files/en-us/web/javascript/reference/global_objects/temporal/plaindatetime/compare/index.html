@@ -1,0 +1,64 @@
+---
+title: Temporal.PlainDateTime.compare()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime/compare
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>compare()</code></strong> static method compares two dates and returns an integer indicating which comes before the other.</span></p>
+<p>If you don’t care about the order in which the two date occur, but instead merely want to know if they’re the same or not, use <code>{{jsxref('Temporal/PlainDateTime/equals','Temporal.PlainDateTime.equals()')}}</code> instead.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var dateOrder = Temporal.PlainDateTime.compare(<var>dateTimeOne</var>, <var>dateTimeTwo</code>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>dateTimeOne</var></code></dt>
+<dt><code><var>dateTimeTwo</var></code></dt>
+<dd>
+Either a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object, or a value that will be converted to one as if passed to <code>{{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>.
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>An integer indicating whether <code><var>dateTimeTwo</var></code> comes before, comes after, or is equal to <code><var>dateTimeTwo</var></code>.  The possible returned values are:</p>
+
+<ul>
+<li><code>−1</code> if <code><var>dateTimeOne</var></code> comes before <code><var>dateTimeTwo</var></code>;
+<li><code>0</code> if <code><var>dateTimeOne</var></code> and <code><var>dateTimeTwo</var></code> represent the same date;
+<li><code>1</code> if <code><var>dateTimeOne</var></code> comes after <code><var>dateTimeTwo</var></code>.
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+one = Temporal.PlainDateTime.from('2006-08-24');
+two = Temporal.PlainDateTime.from('2015-07-14');
+Temporal.PlainDateTime.compare(one, two); // => -1
+</pre>
+
+<p>In the following example, <code>compare()</code> is used to sort an array of <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> objects.</p>
+
+<pre class="brush: js">
+one = Temporal.PlainDateTime.from('1995-12-07T03:24');
+two = Temporal.PlainDateTime.from('1995-12-07T01:24');
+three = Temporal.PlainDateTime.from('2015-12-07T01:24');
+sorted = [one, two, three].sort(Temporal.PlainDateTime.compare);
+sorted.join(' | ');
+// => '1995-12-07T01:24:00 | 1995-12-07T03:24:00 | 2015-12-07T01:24:00'
+</pre>

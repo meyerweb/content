@@ -1,0 +1,31 @@
+---
+title: Temporal.PlainDateTime.dayOfWeek
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime/dayOfWeek
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>dayOfWeek</code></strong> read-only property gives the weekday number on which the date falls.</span>  In the ISO 8601 calendar, the weekday number is defined as in the ISO 8601 standard: a value between <code>1</code> and <code>7</code>, inclusive, with Monday being <code>1</code>, and Sunday <code>7</code>.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var weekDay = datetime.dayOfWeek;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>An integer representing the weekday number on which the date falls.  In the ISO 8601 calendar, this is always <code>7</code>, but in other calendar systems the value may vary from week to week.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+datetime = Temporal.PlainDateTime.from('2021-04-27');
+datetime.dayOfWeek; // => 2
+</pre>
