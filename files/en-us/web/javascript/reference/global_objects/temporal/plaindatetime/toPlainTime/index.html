@@ -1,0 +1,36 @@
+---
+title: Temporal.PlainDateTime.toPlainTime()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime/toPlainTime
+tags:
+  - Class
+  - JavaScript
+  - Time
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>toPlainTime()</code></strong> method converts the date and time to a new <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object corresponding to the time of the original date and time.</span>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var justTheTime = datetime.toPlainTime();
+</pre>
+
+
+<h3 id="parameters">Parameters</h3>
+
+<p>None.</p>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+dt = Temporal.PlainDateTime.from('1995-12-07T03:24:30.000003500');
+dt.toPlainTime(); // => 03:24:30.0000035
+</pre>
+
