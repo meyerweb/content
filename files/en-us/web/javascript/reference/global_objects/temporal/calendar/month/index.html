@@ -10,12 +10,12 @@ tags:
 {{JSRef}}
 
 <p class="summary"><span class="seoSummary">The <strong><code>month()</code></strong> method returns the month component of the supplied date, as determined by the calendar system associated with that date.</span></p>
-<p>This method is called indirectly when reading the <code>month</code> properties of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code>, and <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.month()</code> directly.</p>
+<p>This method is called indirectly when reading the <code>month</code> properties of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, and <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.month()</code> directly.</p>
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var calMonth = date.month(<var>date</var>);
+var calMonth = calendar.month(<var>date</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>

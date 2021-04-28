@@ -10,12 +10,12 @@ tags:
 {{JSRef}}
 
 <p class="summary"><span class="seoSummary">The <strong><code>day()</code></strong> method returns the day component of the supplied date, as determined by the calendar system associated with that date.</span></p>
-<p>This method is called indirectly when reading the <code>day</code> properties of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code>, and <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.day()</code> directly.</p>
+<p>This method is called indirectly when reading the <code>day</code> properties of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, and <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.day()</code> directly.</p>
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var calDay = date.day(<var>date</var>);
+var calDay = calendar.day(<var>date</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -28,7 +28,7 @@ var calDay = date.day(<var>date</var>);
 <li><code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code></li>
 <li><code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code></li>
 <li><code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code></li>
-<li><code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code></li>
+<li><code>{{jsxref('Temporal/PlainMonthDay','Temporal.PlainMonthDay')}}</code></li>
 </ul>
 <p>If the parameter’s value is not one of those objects, it will be converted to a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> as if it were passed to <code>{{jsxref('Temporal.PlainDate.from()','Temporal.PlainDate.from()')}}</code>.</p>
 </dd>

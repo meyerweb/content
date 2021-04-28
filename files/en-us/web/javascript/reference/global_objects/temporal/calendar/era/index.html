@@ -15,7 +15,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var calEra = date.era(<em>date</em>);
+var calEra = calendar.era(<em>date</em>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -36,7 +36,8 @@ var calEra = date.era(<em>date</em>);
 
 <h2 id="return-value">Return value</h2>
 
-<p>A string representing the date’s era as determined by the date’s calendar system, or <code>undefined</code> if there is no era associated with the date.</p>
+<p>A string representing the date’s era as determined by the date’s calendar system, or <code>undefined</code> if there is no era associated with the date.
+The <code>iso8601</code> calendar has no eras, so <code>Temporal.Calendar.from('iso8601').era(date)</code> always returns <code>undefined</code>.</p>
 
 <h2 id="examples">Examples</h2>
 
