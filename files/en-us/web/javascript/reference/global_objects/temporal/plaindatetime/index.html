@@ -13,63 +13,118 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">This is the summary.</span></p>
+<p class="summary"><span class="seoSummary">A <code>Temporal.PlainDateTime</code> represents a calendar date and wall-clock time, with a precision in nanoseconds, and without any time zone.</span>  Because <code>Temporal.PlainDateTime</code> does not represent an exact point in time, most date/time use cases are better handled using exact time types like <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> and <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code>.</p>
+<p>That said, there are cases where Temporal.PlainDateTime is the correct type to use.  For example:</p>
+
+<ul>
+	<li>Modeling events that happen at the same local time in every time zone. For example, the British Commonwealth observes a two minute silence every November 11th at 11:00AM in local time.</li>
+	<li>Representing timezone-specific events where the time zone is not stored together with the date/time data.</li>
+	<li>Passing data to/from a component that is unaware of time zones, such as a date/time picker.</li>
+	<li>Cases where time zone is irrelevant; e.g., a sleep-tracking device that only cares about the local time you went to sleep and woke up.</li>
+	<li>Parsing local time from ISO 8601 strings like 2020-04-09T16:08-08:00 that have a numeric offset without an IANA time zone.</li>
+	<li>Performing date-and-time arithmetic that deliberately ignores <abbr title="Daylight Saving Time">DST</abbr>.</li>
+</ul>
+
 
 <h2>Constructor</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/PlainDateTime/constructor','Temporal.PlainDateTime()')}}</code></dt>
+<dt><code>{{jsxref('Temporal/PlainDateTime/constructor','new Temporal.PlainDateTime()')}}</code></dt>
+<dd><p>Creates a new <code>Temporal.PlainDateTime</code> object which represents a wall-clock time on a specific date.</p></dd>
 </dl>
 
 <h2>Properties</h2>
 
 <dl>
 <dt><code>{{jsxref('Temporal/PlainDateTime/year','year')}}</code> {{readonlyinline}}</dt>
+<dd><p>The year in which the date and time occurs.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/era','era')}}</code> {{readonlyinline}}</dt>
+<dd><p>The era in which the date and time occurs, in calendar systems that use eras..</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/eraYear','eraYear')}}</code> {{readonlyinline}}</dt>
+<dd><p>The year of the era in which the date and time occurs, in calendar systems that use eras..</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/month','month')}}</code> {{readonlyinline}}</dt>
+<dd><p>The number of the month in which the date and time occurs.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/monthCode','monthCode')}}</code> {{readonlyinline}}</dt>
+<dd><p>A calendar-specific string identifying the date and time’s month in a year-independent manner.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/day','day')}}</code> {{readonlyinline}}</dt>
+<dd><p>The day of the month on which the date and time occurs.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/hour','hour')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the hour component of the date and time.</p>
 <dt><code>{{jsxref('Temporal/PlainDateTime/minute','minute')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the minute component of the date and time.</p>
 <dt><code>{{jsxref('Temporal/PlainDateTime/second','second')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the second component of the date and time.</p>
 <dt><code>{{jsxref('Temporal/PlainDateTime/millisecond','millisecond')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the millisecond component of the date and time.</p>
 <dt><code>{{jsxref('Temporal/PlainDateTime/microsecond','microsecond')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the microsecond component of the date and time.</p>
 <dt><code>{{jsxref('Temporal/PlainDateTime/nanosecond','nanosecond')}}</code> {{readonlyinline}}</dt>
+<dd><p>A number that identifies the nanosecond component of the date and time.</p>
 <dt><code>{{jsxref('Temporal/PlainDateTime/calendar','calendar')}}</code> {{readonlyinline}}</dt>
+<dd><p>An object containing the calendar in which the date and time properties are interpreted.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/dayOfWeek','dayOfWeek')}}</code> {{readonlyinline}}</dt>
+<dd><p>The weekday number on which the date and time falls.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/dayOfYear','dayOfYear')}}</code> {{readonlyinline}}</dt>
+<dd><p>The ordinal day of the year on which the date and time falls.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/weekOfYear','weekOfYear')}}</code> {{readonlyinline}}</dt>
+<dd><p>The ISO week number in which the date and time falls.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/daysInWeek','daysInWeek')}}</code> {{readonlyinline}}</dt>
+<dd><p>The number of days in the week containing the date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/daysInMonth','daysInMonth')}}</code> {{readonlyinline}}</dt>
+<dd><p>The number of days in the month containing the date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/daysInYear','daysInYear')}}</code> {{readonlyinline}}</dt>
+<dd><p>The number of days in the year containing the date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/monthsInYear','monthsInYear')}}</code> {{readonlyinline}}</dt>
+<dd><p>The number of months in the year containing the date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/inLeapYear','inLeapYear')}}</code> {{readonlyinline}}</dt>
+<dd><p>Indicates whether the date and time occurs in a leap year.</p></dd>
 </dl>
 
 <h2>Methods</h2>
 
 <dl>
 <dt><code>{{jsxref('Temporal/PlainDateTime/from','from()')}}</code></dt>
+<dd><p>Creates a new <code>Temporal.PlainDateTime</code> object from another value.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/compare','compare()')}}</code></dt>
+<dd><p>Compares two dates and returns an integer indicating which comes before the other.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/with','with()')}}</code></dt>
+<dd><p>Returns a new <code>Temporal.PlainDateTime</code> object which is a modification of the original object using new property values.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/withPlainTime','withPlainTime()')}}</code></dt>
+<dd><p>Returns a new <code>Temporal.PlainDateTime</code> object which is a modification of the original date and time with a new time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/withPlainDate','withPlainDate()')}}</code></dt>
+<dd><p>Returns a new <code>Temporal.PlainDateTime</code> object which is a modification of the original date and time with a new date.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/withCalendar','withCalendar()')}}</code></dt>
+<dd><p>Returns a <code>Temporal.PlainDateTime</code> object of the date and time projected into a specified calendar.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/add','add()')}}</code></dt>
+<dd><p>Creates a new <code>Temporal.PlainDateTime</code> object by adding a duration to the date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/subtract','subtract()')}}</code></dt>
+<dd><p>Creates a new <code>Temporal.PlainDateTime</code> object by subtracting a duration from the date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/until','until()')}}</code></dt>
+<dd><p>Computes the elapsed time from the date and time represented by the <code>Temporal.PlainDateTime</code> object until another date and time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/since','since()')}}</code></dt>
+<dd><p>Computes the elapsed time from the date and time between the <code>Temporal.PlainDateTime</code> object until another date and time in the past, optionally rounds it, and returns it as a <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/round','round()')}}</code></dt>
+<dd><p>Creates a new <code>Temporal.PlainDateTime</code> object by rounding the date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/equals','equals()')}}</code></dt>
-<dt><code>{{jsxref('Temporal/PlainDateTime/toString','toString()')}}</code></dt>
-<dt><code>{{jsxref('Temporal/PlainDateTime/toLocaleString','toLocaleString()')}}</code></dt>
-<dt><code>{{jsxref('Temporal/PlainDateTime/toJSON','toJSON()')}}</code></dt>
-<dt><code>{{jsxref('Temporal/PlainDateTime/valueOf','valueOf()')}}</code></dt>
+<dd><p>Determines whether the date and time is exactly the same as another date and time. </p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/toZonedDateTime','toZonedDateTime()')}}</code></dt>
+<dd><p>Converts a <code>Temporal.PlainDateTime</code> object into a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/toPlainDate','toPlainDate()')}}</code></dt>
+<dd><p>Converts the date and time to a new <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object corresponding to the date portion of the original date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/toPlainYearMonth','toPlainYearMonth()')}}</code></dt>
+<dd><p>Converts a <code>Temporal.PlainDateTime</code> object into a <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/toPlainMonthDay','toPlainMonthDay()')}}</code></dt>
+<dd><p>Converts a <code>Temporal.PlainDateTime</code> object into a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/toPlainTime','toPlainTime()')}}</code></dt>
+<dd><p>Converts the date and time to a new <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object corresponding to the time portion of the original date and time.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainDateTime/toLocaleString','toLocaleString()')}}</code></dt>
+<dd><p>Returns a human-readable, language-sensitive representation of the date and time.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainDateTime/toString','toString()')}}</code></dt>
+<dd><p>Returns a string representing the date and time in ISO 8601 format.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainDateTime/toJSON','toJSON()')}}</code></dt>
+<dd><p>Returns a string representing the date and time in ISO 8601 format.</p></dd>
 <dt><code>{{jsxref('Temporal/PlainDateTime/getISOFields','getISOFields()')}}</code></dt>
+<dd><p>Rreturns an object containing the ISO 8601 calendar fields and values corresponding to the date and time.</p></dd>
+<dt><code>{{jsxref('Temporal/PlainDateTime/valueOf','valueOf()')}}</code></dt>
+<dd><p>Overrides {{jsxref('Object/valueOf','Object.prototype.valueOf')}} and <strong>always</strong> throws an exception.</p></dd>
 </dl>
