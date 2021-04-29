@@ -1,0 +1,41 @@
+---
+title: Temporal.ZonedDateTime.hoursInDay
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/hoursInDay
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>hoursInDay</code></strong> read-only property gives the number of real-world hours between the start of the current day (usually midnight) to the start of the next calendar day in the same time zone.</span>  Normally days will be 24 hours long, but on days where there are DST (Daylight Saving Time) changes or other time zone transitions, this property may return <code>23</code> or <code>25</code>.  In rare cases, other integers or even non-integer values may be returned; e.g., when time zone definitions change by less than one hour.</p>
+
+<div class="note">
+<p>Note that transitions that skip entire days (like the 2011 change of <code>Pacific/Apia</code> to the opposite side of the International Date Line) will return <code>24</code>, because there are 24 real-world hours between one day’s midnight and the next day’s midnight.</p>
+</div>
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var dayLength = datetime.hoursInDay;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A number representing the number of hours in the date.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+Temporal.ZonedDateTime.from('2020-01-01T12:00-08:00[America/Los_Angeles]').hoursInDay;
+  // => 24
+  // (normal day)
+Temporal.ZonedDateTime.from('2020-03-08T12:00-07:00[America/Los_Angeles]').hoursInDay;
+  // => 23
+  // (DST starts on this day)
+Temporal.ZonedDateTime.from('2020-11-01T12:00-08:00[America/Los_Angeles]').hoursInDay;
+  // => 25
+  // (DST ends on this day)
+</pre>

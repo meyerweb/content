@@ -33,12 +33,12 @@ var instant = timeZone.getInstantFor(<var>dateTime</var> [, <var>options</var>])
 <dt><code>disambiguation</code></dt>
 <dd>How to disambiguate if the date and time given by <code><var>dateTime</var></code> does not exist in the time zone, or exists more than once.  Allowed values are:
 <ul>
-<li><code>compatible</code> (default) - Acts like <code>earlier</code> for backward transitions and <code>later</code> for forward transitions.</li>
-<li><code>earlier</code> - The earlier of two possible times.</li>
-<li><code>later</code> - The later of two possible times.</li>
-<li><code>reject</code> - Throw a <code>RangeError</code> instead.</li>
+<li><code>'compatible'</code> (default) - Acts like <code>earlier</code> for backward transitions and <code>later</code> for forward transitions.</li>
+<li><code>'earlier'</code> - The earlier of two possible times.</li>
+<li><code>'later'</code> - The later of two possible times.</li>
+<li><code>'reject'</code> - Throw a <code>RangeError</code> instead.</li>
 </ul>
-<p>When interoperating with existing code or services, <code>compatible</code> disambiguation matches the behavior of legacy {{jsxref('Date','Date')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).</p>
+<p>When interoperating with existing code or services, <code>'compatible'</code> disambiguation matches the behavior of legacy {{jsxref('Date','Date')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).</p>
 </dd>
 </dl>
 </dd>

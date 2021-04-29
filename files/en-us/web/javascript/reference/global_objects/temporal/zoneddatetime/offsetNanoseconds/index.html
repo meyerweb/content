@@ -1,0 +1,35 @@
+---
+title: Temporal.ZonedDateTime.offsetNanoseconds
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/offsetNanoseconds
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>offsetNanoseconds</code></strong> read-only property is the offset (in nanoseconds) relative to UTC of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object’s time zone.</span>  The value of this field will change after DST (Daylight Saving Time) transitions or after political changes to a time zone, e.g. a country switching to a new time zone.</p>
+
+<p>The <code>offsetNanoseconds</code> property is ignored in <code>{{jsxref('Temporal/ZonedDateTime/with','.with()')}}</code> and <code>{{jsxref('Temporal/ZonedDateTime/from','.from()')}}</code>.  To change the offset using <code>{{jsxref('Temporal/ZonedDateTime/with','.with()')}}</code> (or from using an object instead of a string), use the string-typed <code>{{jsxref('Temporal/ZonedDateTime/offset','offset')}}</code> property.</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var offsetNS = datetime.offsetNanoseconds;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>An integer.</p>
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+zdt = Temporal.ZonedDateTime.from('2020-11-01T01:30-07:00[America/Los_Angeles]');
+zdt.offsetNanoseconds;
+  // => -25200000000000
+  // (-7 * 3600 * 1e9)
+</pre>

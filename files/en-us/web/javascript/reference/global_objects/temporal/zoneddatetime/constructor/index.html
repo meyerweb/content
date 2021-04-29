@@ -1,0 +1,47 @@
+---
+title: Temporal.ZonedDateTime constructor
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/constructor
+tags:
+  - Class
+  - JavaScript
+  - Time
+  - constructor
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The constructor for a <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.</span>  Instead of the constructor, the <code>{{jsxref('Temporal/ZonedDateTime/from','from()')}}</code> method is preferred, because it accepts more kinds of input and provides options for handling ambiguity and overflow.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+new Temporal.ZonedDateTime(<var>epochNanoseconds</var>, <var>calendar</var>)
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>epochNanoseconds</var></code></dt>
+<dd>
+<p>A {{jsxref('BigInt')}} number of nanoseconds.</p>
+</dd>
+<dt><code><var>calendar</var></code> {{ optional_inline }}</dt>
+<dd>
+<p>A calendar used to interpret the value of <var>epochNanoseconds</var>, in order to reckon the date and time by that calendar system.</p>
+</dd>
+</dl>
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.  The range of allowed values for this type is the same as the old-style JavaScript {{jsxref('Date')}}: 100 million (10<sup>8</sup>) days before or after the Unix epoch. This range covers approximately half a million years. If <var>epochNanoseconds</var> is outside of this range, a <code>RangeError</code> will be thrown.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+// UNIX epoch in California
+new Temporal.ZonedDateTime(0n, Temporal.TimeZone.from('America/Los_Angeles'), Temporal.Calendar.from('iso8601'));
+  // => 1969-12-31T16:00:00-08:00[America/Los_Angeles]
+new Temporal.ZonedDateTime(0n, 'America/Los_Angeles');
+  // => 1969-12-31T16:00:00-08:00[America/Los_Angeles]
+  // same, but shorter
+</pre>

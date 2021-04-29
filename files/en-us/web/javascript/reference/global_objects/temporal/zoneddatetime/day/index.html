@@ -1,0 +1,36 @@
+---
+title: Temporal.ZonedDateTime.day
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/day
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>day</code></strong> read-only property returns a number that identifies the day of the month on which the date and time occurs.</span></p>
+
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var datetimeDay = datetime.day;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>A positive integer representing the day of the month.</p>
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+datetime = Temporal.ZonedDateTime.from('2019-02-23');
+datetime.day; // => 23
+
+datetime = Temporal.ZonedDateTime.from('2019-02-23[u-ca=hebrew]');
+datetime.day; // => 15
+</pre>
