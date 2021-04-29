@@ -52,7 +52,7 @@ A string defining how to deal with any remainder.  The valid values are:
 <dd>Always round up, toward 23:59:59.999999999.</dd>
 <dt><code>'floor'</code></dt>
 <dt><code>'trunc'</code></dt>
-<dd>Always round down, toward 00:00.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.until()','Temporal.Duration.until()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
+<dd>Always round down, toward 00:00.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
 <dt><code>'halfExpand'</code> (default)</dt>
 <dd>Round to the nearest of the values allowed by <code>roundingIncrement</code> and <code>smallestUnit</code>. If there is a tie, round up, toward 23:59:59.999999999.</dd>
 </dl>

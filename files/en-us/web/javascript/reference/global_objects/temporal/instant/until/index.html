@@ -28,7 +28,7 @@ var timeUntil = instant.until(<var>moment</var> [, <var>options</var>]);
 
 <dl>
 <dt><code><var>moment</var></code></dt>
-<dd>An exact time as either a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, or a value that will be converted to one as if passed to <code>{{jsxref('Temporal/Instant.from()','Temporal.Instant.from()')}}</code>.</dd>
+<dd>An exact time as either a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, or a value that can be converted to one as if passed to <code>{{jsxref('Temporal/Instant.from()','Temporal.Instant.from()')}}</code>.</dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>
 <p>An object with properties defining how the rounding operation should be carried out.  The allowed properties are:</p>
@@ -60,7 +60,7 @@ A string defining how to deal with any remainders. If <code>roundingMode</code> 
 <dd>Always round up, toward the end of time.</dd>
 <dt><code>'floor'</code></dt>
 <dt><code>'trunc'</code> (default)</dt>
-<dd>Always round down, toward the beginning of time.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.until()','Temporal.Duration.until()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
+<dd>Always round down, toward the beginning of time.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
 <dt><code>'halfExpand'</code></dt>
 <dd>Round to the nearest of the values allowed by <code>roundingIncrement</code> and <code>smallestUnit</code>. If there is a tie, round up, toward the end of time.</dd>
 </dl>

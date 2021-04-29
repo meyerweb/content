@@ -1,6 +1,6 @@
 ---
-title: Temporal.PlainTime.toString()
-slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainTime/toString
+title: Temporal.Duration.toString()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Duration/toString
 tags:
   - Class
   - JavaScript
@@ -8,7 +8,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>toString()</code></strong> method returns a string representing the wall-clock time in ISO 8601 format.</span>  This method overrides the <code>{{jsxref('Object.toString','Object.prototype.toString()')}}</code> method and provides a convenient, unambiguous string representation of a wall-clock time. The string can be passed to <code>{{jsxref('Temporal.PlainTime/from','Temporal.PlainTime.from()')}}</code> to create a new <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object.</p>
+<p class="summary"><span class="seoSummary">The <strong><code>toString()</code></strong> method returns a string representing the length of the duration in ISO 8601 format.</span>  This method overrides the <code>{{jsxref('Object.toString','Object.prototype.toString()')}}</code> method and provides a convenient, unambiguous string representation of a duration’s length. The string can be passed to <code>{{jsxref('Temporal.Duration/from','Temporal.Duration.from()')}}</code> to create a new <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -37,6 +37,9 @@ time.toString(<var>options</var>);
 <div class="note">
 <p>If <code>smallestUnit</code> is defined, it overrides the value of <code>fractionalSecondDigits</code>.</p>
 </div>
+<div class="warning">
+<p><strong>NOTE:</strong> If any of <code>duration.milliseconds</code>, <code>duration.microseconds</code>, or <code>duration.nanoseconds</code> are over 999, then deserializing from the result of <code>duration.toString()</code> will yield an equal but different object.</p>
+</div>
 </dd>
 <dt><code>roundingMode</code></dt>
 <dd>
@@ -58,12 +61,12 @@ A string defining how to deal with any remainder.  The valid values are:
 
 <h2 id="return-value">Return Value</h2>
 
-<p>A string representing the wall-clock time in ISO 8601 format.</p>
+<p>A string representing the length of the duration in ISO 8601 format.</p>
 
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-time = Temporal.PlainTime.from('19:39:09.068346205');
+time = Temporal.Duration.from('19:39:09.068346205');
 time.toString(); // => '19:39:09.068346205'
 time.toString({ smallestUnit: 'minute' }); // => '19:39'
 time.toString({ fractionalSecondDigits: 0 }); // => '19:39:09'

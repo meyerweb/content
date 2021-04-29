@@ -1,0 +1,86 @@
+---
+title: Temporal.Duration.total()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Duration/total
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>total()</code></strong> method returns the number of instances of a particular time unit equal to the <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the duration is not evenly divisible by the desired unit, then a fractional remainder will be present in the result.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var durationChopped = duration.total(<var>options</var>);
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt><code><var>options</var></code></dt>
+<dd>
+<p>An object with properties defining how the totaling operation should be carried out.  The allowed properties are:</p>
+<dl>
+<dt><code>unit</code></dt>
+<dd>A string defining the largest unit of time to allow in the totaled result.  Valid values are:
+<ul>
+<li><code>'years'</code></li>
+<li><code>'months'</code></li>
+<li><code>'weeks'</code></li>
+<li><code>'days'</code></li>
+<li><code>'hours'</code></li>
+<li><code>'minutes'</code></li>
+<li><code>'seconds'</code></li>
+<li><code>'milliseconds'</code></li>
+<li><code>'microseconds'</code></li>
+<li><code>'nanoseconds'</code></li>
+</ul>
+<p>This property is required, so there is no default value.</p>
+</dd>
+<dt><code>relativeTo</code> {{optional_inline}}(see note)</dt>
+<dd>
+<p>The starting point to use when converting between years, months, weeks, and days, expressed as a <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object, or else a value convertible to one.</p>
+<div class="warning">
+<strong>NOTE:</strong> If <code>unit</code> is <code>'years'</code>, <code>'months'</code>, or <code>'weeks'</code>, the <code>relativeTo</code> option is <strong>required</strong>.
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A floating-point number representing the number of specified time units in the <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.
+</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+// How many seconds in 18 hours and 20 minutes?
+d = Temporal.Duration.from({ hours: 130, minutes: 20 });
+d.total({ unit: 'seconds' }); // => 469200
+
+// How many 24-hour days is 123456789 seconds?
+d = Temporal.Duration.from('PT123456789S');
+d.total({ unit: 'days' }); // 1428.8980208333332
+
+// Find totals in months, with and without taking DST into account
+d = Temporal.Duration.from({ hours: 2756 });
+d.total({
+   relativeTo: '2020-01-01T00:00+01:00[Europe/Rome]',
+   unit: 'months'
+}); // => 3.7958333333333334
+d.total({
+  unit: 'months',
+  relativeTo: '2020-01-01'
+}); // => 3.7944444444444443
+</pre>
