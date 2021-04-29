@@ -66,7 +66,7 @@ Temporal.Instant.compare(one.toInstant(), two.toInstant());
   // (because `Temporal.Instant` and `Temporal.ZonedDateTime` both compare real-world exact times)
 </pre>
 
-<p>In cases where the exact timestamps are equal, but the calendar or timezone portions are different, then the calendar <code>id</code>s will be compared lexicographically, in order to ensure a deterministic sort order.  If those are the same, then the timezone <code>id</code>s will be compared lexicographically.</p>
+<p>In cases where the exact timestamps are equal, but the calendar or time zone portions are different, then the calendar <code>id</code>s will be compared lexicographically, in order to ensure a deterministic sort order.  If those are the same, then the time zone <code>id</code>s will be compared lexicographically.</p>
 
 <pre class="brush: js">
 arr = [
