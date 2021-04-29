@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary"><code>Temporal.ZonedDateTime</code> is a timezone-aware, calendar-aware date/time type that represents a real event that has happened (or will happen) at a particular instant from the perspective of a particular region on Earth.</span> As the broadest Temporal type, <code>Temporal.ZonedDateTime</code> can be considered a combination of <code>{{jsxref('Temporal.TimeZone','Temporal.TimeZone')}}</code>, <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code>, and <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> (which includes <code>{{jsxref('Temporal.Calendar','Temporal.Calendar')}}</code>).</p>
+<p class="summary"><span class="seoSummary"><code>Temporal.ZonedDateTime</code> is a time-zone-aware, calendar-aware date-and-time type that represents a real event that has happened (or will happen) at a particular instant from the perspective of a particular region on Earth.</span> As the broadest Temporal type, <code>Temporal.ZonedDateTime</code> can be considered a combination of <code>{{jsxref('Temporal.TimeZone','Temporal.TimeZone')}}</code>, <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code>, and <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> (which includes <code>{{jsxref('Temporal.Calendar','Temporal.Calendar')}}</code>).</p>
 <p>As the only Temporal type that persists a time zone, Temporal.ZonedDateTime is optimized for use cases that require a time zone.  This means:</p>
 
 <ul>
@@ -102,49 +102,49 @@ tags:
 <dt><code>{{jsxref('Temporal/ZonedDateTime/from','from()')}}</code></dt>
 <dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object from another value.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/compare','compare()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Compares two dates and times, and returns an integer indicating which comes before the other.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/with','with()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a new <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object which is a modification of the original <code>Temporal.ZonedDateTime</code> object using new property values.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/withPlainTime','withPlainTime()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a new <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object which is a modification of the original zoned date and time with a new time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/withPlainDate','withPlainDate()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a new <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object which is a modification of the original zoned date and time with a new date.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/withTimeZone','withTimeZone()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object of a zoned date and time projected into a specified time zone.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/withCalendar','withCalendar()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object of a zoned date and time projected into a specified calendar.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/add','add()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object by adding a duration to a <code>Temporal.ZonedDateTime}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/subtract','subtract()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object by subtracting a duration from a <code>Temporal.ZonedDateTime}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/until','until()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Computes the elapsed time between the <code>Temporal.ZonedDateTime</code> object and another zoned date and time in the future, optionally rounds it, and returns it as a <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/since','since()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Computes the elapsed time between the <code>Temporal.ZonedDateTime</code> object and another zoned date and time in the past, optionally rounds it, and returns it as a <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/round','round()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object by rounding the date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/equals','equals()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Determines whether a <code>Temporal.ZonedDateTime</code> object is exactly the same as another zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toInstant','toInstant()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a new <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code> object that corresponds to the exact instant of the zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainDate','toPlainDate()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a new <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object that corresponds to the date (not time) components of the zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainTime','toPlainTime()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a new <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object that corresponds to the time (not date) components of the zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainDateTime','toPlainDateTime()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a new <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object that corresponds to the date and time (but not time zone) components of the zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainYearMonth','toPlainYearMonth()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> object that corresponds to the year and month components of the zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainMonthDay','toPlainMonthDay()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object that corresponds to the month and day components of the zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toLocaleString','toLocaleString()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a human-readable, language-sensitive representation of the zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toString','toString()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a string representing the zoned date and time in ISO 8601 format.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/toJSON','toJSON()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns a string representing the zoned date and time in ISO 8601 format.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/getISOFields','getISOFields()')}}</code></dt>
-<dd><p></p></dd>
+<dd><p>Returns an object containing the ISO 8601 calendar fields and values corresponding to the zoned date and time.</p></dd>
 <dt><code>{{jsxref('Temporal/ZonedDateTime/valueOf','valueOf()')}}</code></dt>
 <dd><p>Overrides {{jsxref('Object/valueOf','Object.prototype.valueOf')}} and <strong>always</strong> throws an exception.</p></dd>
 </dl>

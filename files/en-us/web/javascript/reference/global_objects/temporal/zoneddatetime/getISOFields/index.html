@@ -1,6 +1,6 @@
 ---
-title: Temporal.PlainDateTime.getISOFields()
-slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime/getISOFields
+title: Temporal.ZonedDateTime.getISOFields()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/getISOFields
 tags:
   - Class
   - Date
@@ -16,7 +16,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-dateTime.getISOFields();
+zonedDateTime.getISOFields();
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -41,13 +41,13 @@ and
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-pd = Temporal.PlainDateTime.from('2021-04-27');
-pd.getISOFields().isoDay;   // => 27
-pd.getISOFields().isoMonth; // => 4
-pd.getISOFields().isoYear;  // => 2021
-</pre>
+// get a Temporal.ZonedDateTime in `hebrew` calendar system
+zdt = Temporal.ZonedDateTime.from('2019-02-23T03:24:30.000003500[Europe/Rome]').withCalendar('hebrew');
 
-<pre class="brush: js">
-pd = new Temporal.PlainDateTime(2021, 04, 27, 'iso8601');
-// same results as above
+// Month in Hebrew calendar is month 6 of leap year 5779
+zdt.month; // => 6
+zdt.getISOFields().isoMonth; // => 2
+
+// Instead of calling getISOFields, the pattern below is recommended for most use cases
+zdt.withCalendar('iso8601').month; // => 2
 </pre>

@@ -1,6 +1,6 @@
 ---
-title: Temporal.PlainDateTime.round()
-slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime/round
+title: Temporal.ZonedDateTime.round()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/round
 tags:
   - Class
   - Date
@@ -13,13 +13,13 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>round()</code></strong> method creates a new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object by rounding a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object.</span></p>
+<p class="summary"><span class="seoSummary">The <strong><code>round()</code></strong> method creates a new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object by rounding the <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.</span></p>
 
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var newTime = PlainDateTime.round(<var>options</var>);
+var newTime = ZonedDateTime.round(<var>options</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -79,20 +79,21 @@ var newTime = PlainDateTime.round(<var>options</var>);
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object representing the rounded-off date and time.
+<p>A new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object representing the rounded-off date and time.
 </p>
 
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-dt = Temporal.PlainDateTime.from('1995-12-07T03:24:30.000003500');
+zdt = Temporal.ZonedDateTime.from('1995-12-07T03:24:30.000003500-08:00[America/Los_Angeles]');
 
 // Round to a particular unit
-dt.round({ smallestUnit: 'hour' }); // => 1995-12-07T03:00:00
+zdt.round({ smallestUnit: 'hour' });
+  // => 1995-12-07T03:00:00-08:00[America/Los_Angeles]
 // Round to an increment of a unit, e.g. half an hour:
-dt.round({ roundingIncrement: 30, smallestUnit: 'minute' });
-  // => 1995-12-07T03:30:00
+zdt.round({ roundingIncrement: 30, smallestUnit: 'minute' });
+  // => 1995-12-07T03:30:00-08:00[America/Los_Angeles]
 // Round to the same increment but round down instead:
-dt.round({ roundingIncrement: 30, smallestUnit: 'minute', roundingMode: 'floor' });
-  // => 1995-12-07T03:00:00
+zdt.round({ roundingIncrement: 30, smallestUnit: 'minute', roundingMode: 'floor' });
+  // => 1995-12-07T03:00:00-08:00[America/Los_Angeles]
 </pre>

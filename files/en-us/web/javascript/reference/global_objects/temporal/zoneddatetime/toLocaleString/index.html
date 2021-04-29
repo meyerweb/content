@@ -1,6 +1,6 @@
 ---
-title: Temporal.PlainDateTime.toLocaleString()
-slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime/toLocaleString
+title: Temporal.ZonedDateTime.toLocaleString()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/toLocaleString
 tags:
   - Class
   - Date
@@ -10,7 +10,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>toLocaleString()</code></strong> method returns a human-readable, language-sensitive representation of the <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> value.</span>  This method overrides {{jsxref('Object/toLocaleString','Object.prototype.toLocaleString()')}}.</p>
+<p class="summary"><span class="seoSummary">The <strong><code>toLocaleString()</code></strong> method returns a human-readable, language-sensitive representation of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> value.</span>  This method overrides {{jsxref('Object/toLocaleString','Object.prototype.toLocaleString()')}}.</p>
 
 <h2 id="syntax">Syntax</h2>
 
@@ -121,8 +121,8 @@ date.toLocaleString(<var>locales</var>, <var>options</var>);
 					href="https://www.iana.org/time-zones">IANA time zone database</a>,
 				such as "<code>Asia/Shanghai</code>", "<code>Asia/Kolkata</code>",
 				"<code>America/New_York</code>".
-				<div class="note">
-				Unlike in <code>{{jsxref('Temporal.Instant/toLocaleString','Temporal.Instant.toLocaleString()')}}</code>, the <code>timeZone</code> property has no effect, because <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> carries no time zone information.
+				<div class="warning">
+				<code>timeZone</code> will be automatically set from the time zone of the <code>zonedDateTime</code> object. If a different time zone ID is provided in the <code>timeZone</code> option, a <code>RangeError</code> will be thrown. To display a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> value in a different time zone, use <code>{{jsxref('Temporal.ZonedDateTime/withTimeZone','Temporal.ZonedDateTime.withTimeZone(<var>otherTimeZone</var>)')}}.toLocaleString()</code>.
 				</div>
 				</dd>
 			<dt><code>hour12</code></dt>
@@ -255,14 +255,18 @@ date.toLocaleString(<var>locales</var>, <var>options</var>);
 
 <h2 id="return-value">Return value</h2>
 
-<p>A string representation of the date and time in a localized format.</p>
+<p>A string representation of the zoned date and time in a localized format.</p>
 
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-dt = Temporal.PlainDateTime.from('1995-12-07T03:24:30.000003500');
-dt.toLocaleString(); // example output: 1995-12-07, 3:24:30 a.m.
-dt.toLocaleString('de-DE'); // example output: 7.12.1995, 03:24:30
-dt.toLocaleString('de-DE', { timeZone: 'Europe/Berlin', weekday: 'long' }); // => 'Donnerstag'
-dt.toLocaleString('en-US-u-nu-fullwide-hc-h12'); // => '１２/７/１９９５, ３:２４:３０ AM'
+zdt = Temporal.ZonedDateTime.from('2019-12-01T12:00+01:00[Europe/Berlin]');
+zdt.toLocaleString(); // example output: 12/1/2019, 12:00:00 PM
+zdt.toLocaleString('de-DE'); // => '1.12.2019, 12:00:00 MEZ'
+options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+zdt.toLocaleString('de-DE', options); // => 'Sonntag, 1. Dezember 2019'
+/* WRONG */ zdt.toLocaleString('de-DE', { timeZone: 'Pacific/Auckland' });
+  // => RangeError: Time zone option Pacific/Auckland does not match actual time zone Europe/Berlin
+zdt.withTimeZone('Pacific/Auckland').toLocaleString('de-DE'); // => '2.12.2019, 0:00:00 GMT+13'
+zdt.toLocaleString('en-US-u-nu-fullwide-hc-h12'); // => '１２/１/２０１９, １２:００:００ PM GMT+１'
 </pre>

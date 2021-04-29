@@ -1,0 +1,36 @@
+---
+title: Temporal.ZonedDateTime.toInstant()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/toInstant
+tags:
+  - Class
+  - JavaScript
+  - Time
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>toInstant()</code></strong> method returns a new <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code> object that corresponds to the exact date and time of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.</span>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var justTheDate = datetime.toInstant();
+</pre>
+
+
+<h3 id="parameters">Parameters</h3>
+
+<p>None.</p>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+zdt = Temporal.ZonedDateTime.from('1995-12-07T03:24:30+02:00[Africa/Johannesburg]');
+zdt.toInstant(); // => 1995-12-07
+</pre>
+
