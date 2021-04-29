@@ -1,0 +1,32 @@
+---
+title: Temporal.Duration.nanoseconds
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Duration/nanoseconds
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>nanoseconds</code></strong> read-only property returns the value of the nanoseconds component of the <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</span></p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var nanoseconds = time.nanoseconds;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>An integer.</p>
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+d = Temporal.Duration.from('P1Y2M3W4DT5H6M7.987654321S');
+d.nanoseconds; // => 321
+</pre>

@@ -13,31 +13,48 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">This is the summary.</span></p>
+<p class="summary"><span class="seoSummary">A <code>Temporal.Duration</code> object represents a span of time that can be used in date/time arithmetic.</span>  A <code>Temporal.Duration</code> object can be constructed directly, or returned from <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>. It can also be obtained from the <code>since()</code> method of any other Temporal type that supports arithmetic, and is used in those types’ <code>add()</code> and <code>subtract()</code> methods.</p>
+
+<p>When printed, a <code>Temporal.Duration</code> object produces a string conforming to the ISO 8601 notation for durations.  Briefly, the ISO 8601 notation consists of a <code>P</code> character, followed by years, months, weeks, and days, followed by a <code>T</code> character, followed by hours, minutes, and seconds with a decimal part, each with a single-letter suffix that indicates the unit. Any zero components may be omitted. For more detailed information, see the ISO 8601 standard or <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">the Wikipedia page</a>.</p>
+
+<div class="warning">
+<p><strong>NOTE:</strong> According to the ISO 8601-1 standard, weeks are not allowed to appear together with any other units, and durations can only be positive, in string notation. As extensions to the standard, ISO 8601-2 allows a sign character at the start of the string, and allows combining weeks with other units, in string notation. If you intend to use strings such as <code>P3W1D</code>, <code>+P1M</code>, or <code>-PT2H</code>, this may cause interoperability problems with legacy codebases.</p>
+</div>
 
 <h2>Constructor</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/Duration/constructor','Temporal.Duration()')}}</code></dt>
-<dd></dd>
+<dt><code>{{jsxref('Temporal/Duration/constructor','new Temporal.Duration()')}}</code></dt>
+<dd><p>Creates a new <code>Temporal.Duration</code> object which represents a span of time.</p></dd>
 </dl>
 
 <h2>Properties</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/Duration/id','id')}}</code> {{readonlyinline}}</dt>
 <dt><code>{{jsxref('Temporal/Duration/years','years')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the years component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/months','months')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the months component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/weeks','weeks')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the weeks component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/days','days')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the days component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/hours','hours')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the hours component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/minutes','minutes')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the minutes component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/seconds','seconds')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the seconds component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/milliseconds','milliseconds')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the milliseconds component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/microseconds','microseconds')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the microseconds component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/nanoseconds','nanoseconds')}}</code> {{readonlyinline}}</dt>
+<dd><p>The value of the nanoseconds component of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/sign','sign')}}</code> {{readonlyinline}}</dt>
+<dd><p>Indicates the sign of the <code>Temporal.Duration</code> object.</p></dd>
 <dt><code>{{jsxref('Temporal/Duration/blank','blank')}}</code> {{readonlyinline}}</dt>
+<dd><p>Indicates whether the <code>Temporal.Duration</code> object represents a duration of zero length.</p></dd>
 </dl>
 
 <h2>Methods</h2>

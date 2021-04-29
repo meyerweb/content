@@ -1,0 +1,42 @@
+---
+title: Temporal.Duration.sign
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Duration/sign
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>sign</code></strong> read-only property returns a value indicating the sign of the <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</span>  If you don’t need to know whether a non-zero-length duration is positive or negative, use the {{jsxref('Temporal.Duration/blank','Temporal.Duration.blank')}} property instead.</p></p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+var sign = time.sign;
+</pre>
+
+
+<h2 id="value">Value</h2>
+
+<p>One of the three following integers:</p>
+<ul>
+	<li><code>–1</code> if the duration is negative</li>
+	<li><code>0</code> if the duration is of zero length</li>
+	<li><code>1</code> if the duration is positive</li>
+</ul>
+
+
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+d = Temporal.Duration.from('P1Y2M3W4DT5H6M7.987654321S');
+d.sign; // => 1
+</pre>
+<pre class="brush: js">
+d = Temporal.Duration.from();  // creates a Duration with all values at zero
+d.sign; // => 0
+</pre>

@@ -1,0 +1,50 @@
+---
+title: Temporal.Duration constructor
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Duration/constructor
+tags:
+  - Class
+  - JavaScript
+  - Time
+  - constructor
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The constructor for a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  Use this constructor directly if you have the correct parameters already as numerical values.  Otherwise, the <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code> method is preferred, because it accepts more kinds of input and provides options for handling overflow.</p>
+
+
+<h2 id="syntax">Syntax</h2>
+
+<pre class="brush: js">
+new Temporal.Duration(<var>years</var>, <var>months</var>, <var>weeks</var>, <var>days</var>, <var>hours</var>, <var>minutes</var>, <var>seconds</var>, <var>milliseconds</var>, <var>microseconds</var>, <var>nanoseconds</var>)
+</pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<p>All parameters are {{optional_inline}} and specified as integers.  Any missing or <code>undefined</code> numerical arguments are taken to be zero.  Any non-integer numerical values is truncated to the nearest integer, towards zero. Non-zero values must all have the same sign.</p>
+
+<ul>
+	<li><code>years</code> – A number of years.</li>
+	<li><code>months</code> – A number of months.</li>
+	<li><code>weeks</code> – A number of weeks.</li>
+	<li><code>days</code> – A number of days.</li>
+	<li><code>hours</code> – A number of hours.</li>
+	<li><code>minutes</code> – A number of minutes.</li>
+	<li><code>seconds</code> – A number of seconds.</li>
+	<li><code>milliseconds</code> – A number of milliseconds.</li>
+	<li><code>microseconds</code> – A number of microseconds.</li>
+	<li><code>nanoseconds</code> – A number of nanoseconds.</li>
+</ul>
+
+
+<h2 id="return-value">Return value</h2>
+
+<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</p>
+
+<h2 id="examples">Examples</h2>
+
+<pre class="brush: js">
+new Temporal.Duration(1, 2, 3, 4, 5, 6, 7, 987, 654, 321); // => P1Y2M3W4DT5H6M7.987654321S
+new Temporal.Duration(0, 0, 0, 40); // => P40D
+new Temporal.Duration(undefined, undefined, undefined, 40); // => P40D
+new Temporal.Duration(); // => PT0S
+</pre>
