@@ -47,8 +47,8 @@ fields(<var>fieldList</var>);
 Temporal.Calendar.from('iso8601').fields(['year']);
 // => [ 'year']
 
-// In the Gregorian calendar, every year value has two possible
-// meanings, so more fields are needed to disambiguate
+// In the Gregorian calendar, every year value could be specified in
+// more than one way, so more fields are needed to disambiguate
 Temporal.Calendar.from('gregory').fields(['year']);
 // => [ 'year', 'era', 'eraYear' ]
 </pre>

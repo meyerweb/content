@@ -22,7 +22,7 @@ var theTime = Temporal.PlainTime.from(<var>time</var>, <var>options</var>);
 
 <dl>
 <dt><code><var>time</var></code></dt>
-<dd>A representation of the desired time.  If the value is another <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object, a new object representing the same time is returned. If the value is any other object, a <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> will be constructed from the values of any <code>hour</code>, <code>minute</code>, <code>second</code>, <code>millisecond</code>, <code>microsecond</code>, and <code>nanosecond</code> properties that are present. Any missing values are assumed to be <code>0</code>.  If the calendar property is present, it must be the string <code>iso8601</code>.</p>
+<dd>A representation of the desired time.  If the value is another <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object, a new object representing the same time is returned. If the value is any other object, a <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> will be constructed from the values of any <code>hour</code>, <code>minute</code>, <code>second</code>, <code>millisecond</code>, <code>microsecond</code>, and <code>nanosecond</code> properties that are present. Any missing values are assumed to be <code>0</code>.  If the <code>calendar</code> property is present, it must be the ISO 8601 calendar or the string <code>iso8601</code>.</p>
 <p>Any non-object value will be converted to a string, which is expected to be in ISO 8601 format. If the string designates a date or a time zone, they will be ignored.</p>
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>

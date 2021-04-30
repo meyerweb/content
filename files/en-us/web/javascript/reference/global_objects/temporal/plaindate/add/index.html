@@ -19,7 +19,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var newDate = oldDate.add(<var>duration</var>, <var>options</var>);
+var newDate = oldDate.add(<var>duration</var>[, <var>options</var>]);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -35,16 +35,13 @@ var newDate = oldDate.add(<var>duration</var>, <var>options</var>);
 <p>An object containing properties that represent options for constructing the new <code>Temporal.PlainDate</code> object. These are:</p>
 <dl>
 <dt><code>overflow</code></dt>
-<dd>Determines how out-of-range values in <var>duration</var> are handled.  There are two options:
+<dd>Determines how out-of-range values in the result are handled.  There are two options:
 <dl>
 <dt><code>'constrain'</code> (default)</dt>
 <dd>Out-of-range values are clamped to the nearest in-range value.</dd>
 <dt><code>'reject'</code></dt>
 <dd>Out-of-range values will cause the function to throw a <code>RangeError</code>.</dd>
 </dl>
-<div class="note">
-<strong>Note:</strong> The <code>overflow</code> option has no effect in the default ISO calendar, because a year is always 12 months and therefore not ambiguous. However, <code>overflow</code> may have an effect in calendars where years can be different numbers of months.</p>
-</div>
 </dd>
 </dl>
 </dd>

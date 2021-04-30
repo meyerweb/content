@@ -19,7 +19,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var newTime = PlainTime.subtract(<var>duration</var>);
+var newTime = plainTime.subtract(<var>duration</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -35,7 +35,7 @@ var newTime = PlainTime.subtract(<var>duration</var>);
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object representing the wall-clock time indicated by <code>PlainTime</code> minus <code><var>duration</var></code>.
+<p>A new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object representing the wall-clock time indicated by <code>plainTime</code> minus <code><var>duration</var></code>.
 </p>
 
 <h2 id="examples">Examples</h2>
@@ -43,5 +43,5 @@ var newTime = PlainTime.subtract(<var>duration</var>);
 <pre class="brush: js">
 time = Temporal.PlainTime.from('19:39:09.068346205');
 time.subtract({ minutes: 5, nanoseconds: 800 }); // => 19:34:09.068345405
-time.subtract({ hours: 12 }); // => <07:39:09.068346205>
+time.subtract({ hours: 12 }); // => 07:39:09.068346205
 </pre>

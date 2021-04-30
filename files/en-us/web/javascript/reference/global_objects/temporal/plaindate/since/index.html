@@ -22,7 +22,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var timeBetween = PlainDate.since(<var>otherDate</code> [, <var>options</var>])
+var timeBetween = plainDate.since(<var>otherDate</code> [, <var>options</var>])
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -32,7 +32,7 @@ var timeBetween = PlainDate.since(<var>otherDate</code> [, <var>options</var>])
 <dd>Another date as either a <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object, or a value that can be converted to one as if passed to <code>{{jsxref('Temporal/PlainDate.from()','Temporal.PlainDate.from()')}}</code>.</dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>
-<p>An object with properties defining how the rounding operation should be carried out.  The allowed properties are:</p>
+<p>An object with properties defining how the difference operation should be carried out.  The allowed properties are:</p>
 <dl>
 <dt><code>largestUnit</code></dt>
 <dd>A string defining the largest unit of time allowed in the returned object.  Valid values are:
@@ -56,7 +56,7 @@ var timeBetween = PlainDate.since(<var>otherDate</code> [, <var>options</var>])
 <dd>An integer defining the granularity of the rounding of the unit given by <code>smallestUnit</code>. The default is <code>1</code>.
 <dt><code>roundingMode</code></dt>
 <dd>
-A string defining how to deal with any remainders. If <code>roundingMode</code> is not defined, then no rounding will be performed. The valid values are:
+A string defining how to deal with any remainders. The valid values are:
 <dl>
 <dt><code>'ceil'</code></dt>
 <dd>Always round up, toward the end of time.</dd>

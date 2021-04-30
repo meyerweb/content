@@ -27,9 +27,9 @@ var dateCalendar = date.calendar;
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-md = Temporal.PlainDate.from('2019-02-23');
-md.calendar; // returns a Temporal.Calendar object of the ISO 8601 calendar
+date = Temporal.PlainDate.from('2019-02-23');
+date.calendar; // returns a Temporal.Calendar object of the ISO 8601 calendar
 
-md = Temporal.PlainDate.from('2019-02-23[u-ca=hebrew]');
-md.calendar; // returns a Temporal.Calendar object of the Hebrew calendar
+date = Temporal.PlainDate.from('2019-02-23[u-ca=hebrew]');
+date.calendar; // returns a Temporal.Calendar object of the Hebrew calendar
 </pre>

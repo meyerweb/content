@@ -13,13 +13,13 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>since()</code></strong> method computes the elapsed time from the wall-clock time represented by <code>PlainTime</code> since another wall-clock time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second time is later than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainTime/until','Temporal.PlainTime.until()')}}</code>, but reversed.</p>
+<p class="summary"><span class="seoSummary">The <strong><code>since()</code></strong> method computes the elapsed time from the wall-clock time represented by <code>plainTime</code> since another wall-clock time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second time is later than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainTime/until','Temporal.PlainTime.until()')}}</code>, but reversed.</p>
 
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var timeBetween = PlainTime.since(<var>otherTime</code> [, <var>options</var>])
+var timeBetween = plainTime.since(<var>otherTime</code> [, <var>options</var>])
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -69,7 +69,7 @@ A string defining how to deal with any remainders. If <code>roundingMode</code> 
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object representing the difference between <code>PlainTime</code> and <var>otherTime</var>.</p>
+<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object representing the difference between <code>plainTime</code> and <var>otherTime</var>.</p>
 
 <h2 id="examples">Examples</h2>
 
