@@ -9,6 +9,7 @@ tags:
 - Prototype
 - Reference
 - String
+browser-compat: javascript.builtins.String.anchor
 ---
 <div>{{JSRef}} {{deprecated_header}}</div>
 
@@ -17,7 +18,7 @@ tags:
   <code>&lt;/a&gt;</code> end tag.</p>
 
 <div class="notecard warning">
-  <p>Don't use this method. Use <a href="/en-US/docs/Web/API/Document_Object_Model">DOM
+  <p><strong>Warning:</strong> Don't use this method. Use <a href="/en-US/docs/Web/API/Document_Object_Model">DOM
       APIs</a> instead. Also, the HTML specification no longer allows the
     {{HTMLElement("a")}} element to have a <code>name</code> attribute, so this method
     doesn't even create valid markup.</p>
@@ -79,7 +80,7 @@ document.body.innerHTML = myString.anchor('contents_anchor');
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<p>{{Compat("javascript.builtins.String.anchor")}}</p>
+<p>{{Compat}}</p>
 
 <h2 id="See_also">See also</h2>
 

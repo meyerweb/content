@@ -6,6 +6,7 @@ tags:
 - JavaScript
 - Reference
 - WebAssembly
+browser-compat: javascript.builtins.WebAssembly.Instance.Instance
 ---
 <div>{{JSRef}}</div>
 
@@ -16,7 +17,7 @@ tags:
 <h2 id="Syntax">Syntax</h2>
 
 <div class="warning">
-  <p><strong>Important</strong>: Since instantiation for large modules can be expensive,
+  <p><strong>Warning:</strong> Since instantiation for large modules can be expensive,
     developers should only use the <code>Instance()</code> constructor when synchronous
     instantiation is absolutely required; the asynchronous
     {{jsxref("WebAssembly.instantiateStreaming()")}} method should be used at all other
@@ -94,7 +95,7 @@ WebAssembly.instantiateStreaming(fetch('simple.wasm'), importObject)
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<p>{{Compat("javascript.builtins.WebAssembly.Instance.Instance")}}</p>
+<p>{{Compat}}</p>
 
 <h2 id="See_also">See also</h2>
 

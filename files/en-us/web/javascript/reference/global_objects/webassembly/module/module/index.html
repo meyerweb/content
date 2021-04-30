@@ -7,6 +7,7 @@ tags:
 - Module
 - Reference
 - WebAssembly
+browser-compat: javascript.builtins.WebAssembly.Module.Module
 ---
 <div>{{JSRef}}</div>
 
@@ -23,7 +24,7 @@ tags:
 <h2 id="Syntax">Syntax</h2>
 
 <div class="warning">
-  <p><strong>Important</strong>: Since compilation for large modules can be expensive,
+  <p><strong>Warning:</strong> Since compilation for large modules can be expensive,
     developers should only use the <code>Module()</code> constructor when synchronous
     compilation is absolutely required; the asynchronous
     {{jsxref("WebAssembly.compileStreaming()")}} method should be used at all other times.
@@ -86,7 +87,7 @@ fetch('simple.wasm').then(response =&gt;
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<p>{{Compat("javascript.builtins.WebAssembly.Module.Module")}}</p>
+<p>{{Compat}}</p>
 
 <h2 id="See_also">See also</h2>
 

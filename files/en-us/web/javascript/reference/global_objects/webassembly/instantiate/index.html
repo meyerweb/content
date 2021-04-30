@@ -9,6 +9,7 @@ tags:
 - Reference
 - WebAssembly
 - instantiate
+browser-compat: javascript.builtins.WebAssembly.instantiate
 ---
 <div>{{JSRef}}</div>
 
@@ -29,7 +30,7 @@ tags:
 </ul>
 
 <div class="warning">
-  <p><strong>Important</strong>: This method is not the most efficient way of fetching and
+  <p><strong>Warning:</strong> This method is not the most efficient way of fetching and
     instantiating wasm modules. If at all possible, you should use the newer
     {{jsxref("WebAssembly.instantiateStreaming()")}} method instead, which fetches,
     compiles, and instantiates a module all in one step, directly from the raw bytecode,
@@ -147,7 +148,7 @@ fetch('simple.wasm').then(response =&gt;
 );</pre>
 
 <div class="note">
-  <p><strong>Note</strong>: You can also find this example at <a
+  <p><strong>Note:</strong> You can also find this example at <a
       href="https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/index.html">index.html</a>
     on GitHub (<a href="https://mdn.github.io/webassembly-examples/js-api-examples/">view
       it live also</a>).</p>
@@ -213,7 +214,7 @@ onmessage = function(e) {
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<div>{{Compat("javascript.builtins.WebAssembly.instantiate")}}</div>
+<div>{{Compat}}</div>
 
 <h2 id="See_also">See also</h2>
 

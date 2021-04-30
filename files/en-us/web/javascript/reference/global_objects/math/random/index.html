@@ -8,6 +8,7 @@ tags:
 - Method
 - Random
 - Reference
+browser-compat: javascript.builtins.Math.random
 ---
 <div>{{JSRef}}</div>
 
@@ -20,7 +21,7 @@ tags:
 <div>{{EmbedInteractiveExample("pages/js/math-random.html")}}</div>
 
 <div class="note">
-  <p><code>Math.random()</code> <em>does not</em> provide cryptographically secure random
+  <p><strong>Note:</strong> <code>Math.random()</code> <em>does not</em> provide cryptographically secure random
     numbers. Do not use them for anything related to security. Use the Web Crypto API
     instead, and more precisely the {{domxref("Crypto.getRandomValues",
     "window.crypto.getRandomValues()")}} method.</p>
@@ -79,7 +80,7 @@ tags:
 </pre>
 
 <div class="note">
-  <p>It might be tempting to use <code>Math.round()</code> to accomplish that, but doing
+  <p><strong>Note:</strong> It might be tempting to use <code>Math.round()</code> to accomplish that, but doing
     so would cause your random numbers to follow a non-uniform distribution, which may not
     be acceptable for your needs.</p>
 </div>
@@ -115,12 +116,8 @@ tags:
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<p class="hidden">The compatibility table in this page is generated from structured data.
-  If you'd like to contribute to the data, please check out <a
-    href="https://github.com/mdn/browser-compat-data">https://github.com/mdn/browser-compat-data</a>
-  and send us a pull request.</p>
 
-<p>{{Compat("javascript.builtins.Math.random")}}</p>
+<p>{{Compat}}</p>
 
 <h2 id="See_also">See also</h2>
 

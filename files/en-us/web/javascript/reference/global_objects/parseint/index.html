@@ -6,6 +6,7 @@ tags:
 - Method
 - Reference
 - parseInt
+browser-compat: javascript.builtins.parseInt
 ---
 <div>{{jsSidebar("Objects")}}</div>
 
@@ -18,7 +19,10 @@ tags:
 
 <h2 id="Syntax">Syntax</h2>
 
-<pre class="brush: js">parseInt(<var>string</var> [, <var>radix</var>])</pre>
+<pre class="brush: js">
+parseInt(string)
+parseInt(string, radix)
+</pre>
 
 <h3 id="Parameters">Parameters</h3>
 
@@ -34,8 +38,12 @@ tags:
     <code><var>string</var></code>. Be careful—this does <strong><em>not</em></strong>
     default to <code>10</code>! If the radix value is not of the <code>Number</code> type
     it will be coerced to a <code>Number</code></dd>
-  <dd class="notecard warning">The <a href="#description">description below</a> explains
-    in more detail what happens when <code><var>radix</var></code> is not provided.</dd>
+  <dd><div class="notecard warning">
+    <p><strong>Warning:</strong> The <a href="#description">description below</a> explains
+    in more detail what happens when <code><var>radix</var></code> is not provided.
+    </p>
+    </div>
+  </dd>
 </dl>
 
 <h3 id="Return_value">Return value</h3>
@@ -109,7 +117,7 @@ tags:
   <code><var>thatNumber</var>.toString(<var>radix</var>)</code>.</p>
 
 <div class="notecard warning">
-  <p><strong>{{jsxref("BigInt")}} Warning:</strong> <code>parseInt</code> converts a
+  <p><strong>Warning:</strong> <code>parseInt</code> converts a
     {{jsxref("BigInt")}} to a {{jsxref("Number")}} and loses precision in the process.
     This is because trailing non-numeric values, including "<code>n</code>", are
     discarded.</p>
@@ -265,7 +273,7 @@ parseInt('11', obj); // 11</pre>
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<p>{{Compat("javascript.builtins.parseInt")}}</p>
+<p>{{Compat}}</p>
 
 <h2 id="See_also">See also</h2>
 

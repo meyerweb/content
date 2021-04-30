@@ -5,12 +5,13 @@ tags:
   - JavaScript
   - Method
   - Reference
+browser-compat: javascript.builtins.isNaN
 ---
 <div>{{jsSidebar("Objects")}}</div>
 
 <p>The <code><strong>isNaN()</strong></code> function determines whether a value is
   {{jsxref("NaN")}} or not. Because coercion inside the <code>isNaN</code>
-  function can be <a href="#description">surprising</a>, you may alternatively
+  function can be <a href="#Confusing_special-case_behavior">surprising</a>, you may alternatively
   want to use {{jsxref("Number.isNaN()")}}.</p>
 
 <div>{{EmbedInteractiveExample("pages/js/globalprops-isnan.html")}}</div>
@@ -148,7 +149,7 @@ isNaN('blabla');   // true: "blabla" is converted to a number.
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<p>{{Compat("javascript.builtins.isNaN")}}</p>
+<p>{{Compat}}</p>
 
 <h2 id="See_also">See also</h2>
 
