@@ -15,7 +15,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var invertedTime = time.abs();
+var positivDuration = duration.abs();
 </pre>
 
 
@@ -27,8 +27,8 @@ var invertedTime = time.abs();
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-d = Temporal.Duration.from('P1Y2M3DT4H5M6.987654321S');
-d.sign; // 1
-d.abs(); // -P1Y2M3DT4H5M6.987654321S
-d.abs().sign; // -1
+d = Temporal.Duration.from('-P1Y2M3DT4H5M6.987654321S');
+d.sign; // -1
+d.abs(); // P1Y2M3DT4H5M6.987654321S
+d.abs().sign; // 1
 </pre>

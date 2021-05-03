@@ -15,7 +15,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var newDate = Temporal.PlainDateTime.with(<var>newValues</var>, <var>options</var>);
+var newDate = dateTime.with(<var>newValues</var>, <var>options</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -51,7 +51,6 @@ var newDate = Temporal.PlainDateTime.with(<var>newValues</var>, <var>options</va
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-date = Temporal.PlainDateTime.from('1995-12-07T03:24:30.000003500');
-date.with({ year: 2015, second: 31 }); // => 2015-12-07T03:24:31.0000035
+dateTime = Temporal.PlainDateTime.from('1995-12-07T03:24:30.000003500');
+dateTime.with({ year: 2015, second: 31 }); // => 2015-12-07T03:24:31.000003
 </pre>
-

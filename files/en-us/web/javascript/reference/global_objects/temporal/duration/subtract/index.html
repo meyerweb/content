@@ -28,9 +28,6 @@ var newDuration = Duration.subtract(<var>duration</var>, <var>options</var>);
 <dt><code><var>duration</var></code></dt>
 <dd>
 <p>A <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.  This allows for values such as an object with properties appropriate for a duration, such as <code>{ hours: 5, minutes: 30 }</code>; or a string value such as <code>PT5H30M</code>.</p>
-<div class="warning">
-If <var>duration</var> is larger than the original <code>Temporal.Duration</code> object, meaning the subtraction would result in a negative duration, the method will throw a <code>RangeError</code>.
-</div>
 </dd>
 
 <dt><code><var>options</var></code> {{optional_inline}}(see note)</dt>

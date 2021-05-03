@@ -42,9 +42,6 @@ var newDatetime = oldDatetime.subtract(<var>duration</var>, <var>options</var>);
 <dt><code>'reject'</code></dt>
 <dd>Out-of-range values will cause the function to throw a <code>RangeError</code>.</dd>
 </dl>
-<div class="note">
-<strong>Note:</strong> The <code>overflow</code> option has no effect in the default ISO calendar, because a year is always 12 months and therefore not ambiguous. However, <code>overflow</code> may have an effect in calendars where years can be different numbers of months.</p>
-</div>
 </dd>
 </dl>
 </dd>
@@ -53,7 +50,7 @@ var newDatetime = oldDatetime.subtract(<var>duration</var>, <var>options</var>);
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object representing the calendar date indicated by <code>PlainDateTime</code> minus <code><var>duration</var></code>.
+<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object representing the calendar date indicated by <code><var>oldDateTime</var></code> minus <var>duration</var>.
 </p>
 
 <h2 id="examples">Examples</h2>

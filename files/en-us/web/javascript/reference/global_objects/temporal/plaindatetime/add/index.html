@@ -53,7 +53,7 @@ var newDateTime = oldDateTime.add(<var>duration</var>, <var>options</var>);
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object representing the calendar date indicated by <code>PlainDateTime</code> plus <code><var>duration</var></code>  If the result is earlier or later than the range of dates that <code>Temporal.PlainDateTime</code> can represent (approximately half a million years centered on the Unix epoch), this method will throw a <code>RangeError</code> regardless of value of the <code>overflow</code> option.
+<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object representing the calendar date indicated by <code><var>oldDateTime</var></code> plus <var>duration</var>.  If the result is earlier or later than the range of dates that <code>Temporal.PlainDateTime</code> can represent (approximately half a million years centered on the Unix epoch), this method will throw a <code>RangeError</code> regardless of the value of the <code>overflow</code> option.
 </p>
 
 <h2 id="examples">Examples</h2>
