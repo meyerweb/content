@@ -41,7 +41,7 @@ new Temporal.PlainYearMonth(<var>isoYear</var>, <var>isoMonth</var>, <var>calend
 <dd>
 <p>A calendar to project the ISO 8601 date into, in order to reckon the date by that calendar’s date system.</p>
 <div class="notecard note">
-<p><strong>Note:</strong> if this parameter is anything other than the default value of <code>iso8601</code>, the <var>referenceISODay</var> parameter is <strong>required</strong>, not optional.</p>
+<p><strong>Note:</strong> if this parameter is anything other than the default value of the ISO 8601 calendar, it is also <strong>recommended</strong> to include the <var>referenceISODay</var> parameter.</p>
 </div>
 </dd>
 <dt><code><var>referenceISODay</var></code> {{ optional_inline }}(see note)</dt>
@@ -55,7 +55,7 @@ new Temporal.PlainYearMonth(<var>isoYear</var>, <var>isoMonth</var>, <var>calend
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code> object.  All values are given as reckoned in the ISO 8601 calendar.  If <var>isoYear</var> or <var>isoMonth</var> are outside of the range of allowed values, then a <code>RangeError</code> in thrownn.</p>
+<p>A new <code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code> object.  All values are given as reckoned in the ISO 8601 calendar.  If <var>isoYear</var> or <var>isoMonth</var> are outside of the range of allowed values, then a <code>RangeError</code> is thrown.</p>
 
 <h2 id="examples">Examples</h2>
 

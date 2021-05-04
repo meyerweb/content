@@ -27,7 +27,7 @@ date.equals(<var>otherDate</var>);
 
 <dl>
 <dt><code><var>otherDate</var></code></dt>
-<dd>An object representing the date to which the original date is compared.  If <var>otherdate</var> is not a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object, it is converted to one as if it were passed to <code>{{jsxref('Temporal/PlainMonthDay/from','Temporal.PlainMonthDay.from()')}}</code>.
+<dd>An object representing the date to which the original date is compared.  If <var>otherDate</var> is not a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object, it is converted to one as if it were passed to <code>{{jsxref('Temporal/PlainMonthDay/from','Temporal.PlainMonthDay.from()')}}</code>.
 </dd>
 </dl>
 
@@ -44,4 +44,3 @@ md3 = new Temporal.PlainMonthDay(2, 28);
 md1.equals(md2); // => false (differing calendars)
 md1.equals(md3); // => false (same calendar, different day)
 </pre>
-

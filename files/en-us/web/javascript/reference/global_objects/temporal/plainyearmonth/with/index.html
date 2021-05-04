@@ -20,7 +20,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var newDate = Temporal.PlainYearMonth.with(<var>newValues</var>, <var>options</var>);
+var newYearMonth = yearMonth.with(<var>newValues</var>, <var>options</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -62,7 +62,4 @@ ym.with({ month: 12 }); // => 2021-12
 </pre>
 <pre class="brush: js">
 md = Temporal.PlainYearMonth.from('2021-04');
-// Postpone that by three months
-md.with({ month: md.month + 3 }); // => 2021-07
 </pre>
-

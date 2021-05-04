@@ -13,13 +13,14 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>since()</code></strong> method computes the elapsed time from the month represented by <code>PlainYearMonth</code> until the another month, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second month is later than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainYearMonth/until','Temporal.PlainYearMonth.until()')}}</code>, but reversed.</p>
+<p class="summary"><span class="seoSummary">The <strong><code>since()</code></strong> method computes the elapsed time from the month represented by <code>yearMonth</code> until another month, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second month is later than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainYearMonth/until','Temporal.PlainYearMonth.until()')}}</code>, but reversed.</p>
+
 
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var timeBetween = PlainYearMonth.since(<var>otherYearMonth</code> [, <var>options</var>])
+var timeBetween = yearMonth.since(<var>otherYearMonth</code> [, <var>options</var>])
 </pre>
 
 <h3 id="parameters">Parameters</h3>

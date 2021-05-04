@@ -32,7 +32,7 @@ var theDate = Temporal.PlainDateTime.from(<var>dateTime</var>, <var>options</var
 <li>A <code>day</code> property.</li>
 </ul>
 <p>The object may also contain a <code>calendar</code> property; if omitted, the ISO 8601 calendar is used.  The default value of any omitted date-related property (e.g., {{jsxref('Temporal.PlainDateTime/era','era')}}) is determined by the calendar in use.  The default value of any omitted time-related property (e.g., {{jsxref('Temporal.PlainDateTime/minute','minute')}}) is zero.</p>
-<p>Any non-object, non-string value will be converted to a string, which is expected to be in ISO 8601 format. For other calendars, the calendar is also parsed in addition to date and time. Any other parts of the string, such as a time or time zone, are optional and will be ignored.  If the string is invalid according to ISO 8601, then a <code>RangeError</code> will be thrown regardless of the value of the <code>overflow</code> option (see next).</p>
+<p>Any non-object, non-string value will be converted to a string, which is expected to be in ISO 8601 format. For other calendars, the calendar is also parsed in addition to date and time. Any other parts of the string, such as a time zone, are optional and will be ignored.  If the string is invalid according to ISO 8601, then a <code>RangeError</code> will be thrown regardless of the value of the <code>overflow</code> option (see next).</p>
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>

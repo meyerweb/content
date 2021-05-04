@@ -41,14 +41,14 @@ new Temporal.PlainMonthDay(<var>isoMonth</var>, <var>isoDay</var>, <var>calendar
 <dd>
 <p>A calendar to project the ISO 8601 date into, in order to reckon the date by that calendar’s date system.</p>
 <div class="notecard note">
-<p><strong>Note:</strong> if this parameter is anything other than the default value of <code>iso8601</code>, the <var>referenceISOYear</var> parameter is <strong>required</strong>, not optional.</p>
+<p><strong>Note:</strong> if this parameter is anything other than the ISO 8601 calendar (which is the default), it is <strong>recommended</strong> to include the <var>referenceISOYear</var> parameter.</p>
 </div>
 </dd>
 <dt><code><var>referenceISOYear</var></code> {{ optional_inline }}(see note)</dt>
 <dd>
-<p>A reference year in the ISO 8601 calendar, to be used for disambiguation.  If this parameter is not supplied, the default value is the first leap year after the Unix epoch (i.e., 1972 in the ISO 8601 calendar).  Therefore, if you want to construct a PlainMonthDay object for any other ISO 8601 year, use this parameter.</p>
+<p>A reference year in the ISO 8601 calendar, to be used for disambiguation.  If this parameter is not supplied, the default value is the first leap year after the Unix epoch (i.e., 1972).</p>
 <div class="notecard note">
-<p><strong>Note:</strong> this parameter is optional when using the ISO 8601 calendar, but required for all other calendar systems.  If you’re not sure what value to supply here, use <code>{{jsxref('Temporal/PlainMonthDay/from','Temporal.PlainMonthDay.from()')}}</code> instead.</p>
+<p><strong>Note:</strong> this parameter is optional when using the ISO 8601 calendar, but recommended for all other calendar systems.  If you’re not sure what value to supply here, use <code>{{jsxref('Temporal/PlainMonthDay/from','Temporal.PlainMonthDay.from()')}}</code> instead.</p>
 </div>
 </dd>
 </dl>
@@ -70,6 +70,8 @@ md = new Temporal.PlainMonthDay(3, 14); // => 03-14
 // Leap day
 md = new Temporal.PlainMonthDay(2, 29); // => 02-29
 // Leap day error
+</pre>
+<pre class="brush: js example-bad">
 md = new Temporal.PlainMonthDay(2, 29, 'iso8601', 2021);
   // => Uncaught RangeError: value out of range: 1 <= 29 <= 28
 </pre>

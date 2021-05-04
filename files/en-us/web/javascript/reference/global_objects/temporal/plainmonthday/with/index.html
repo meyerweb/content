@@ -20,7 +20,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var newDate = Temporal.PlainMonthDay.with(<var>newValues</var>, <var>options</var>);
+var newDate = oldDate.with(<var>newValues</var>, <var>options</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -59,7 +59,7 @@ md.with({ day: 31 }); // => 11-30
 </pre>
 <pre class="brush: js">
 md = Temporal.PlainMonthDay.from('01-31');
-// Postpone that by three months
+// Equivalent date in April
 md.with({ monthCode: 'M04' }); // => 04-30
 </pre>
 

@@ -13,19 +13,19 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>until()</code></strong> method computes the elapsed time from the month represented by <code>PlainYearMonth</code> until the another month, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second month is earlier than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainYearMonth/since','Temporal.PlainYearMonth.since()')}}</code>, but reversed.</p>
+<p class="summary"><span class="seoSummary">The <strong><code>until()</code></strong> method computes the elapsed time from the month represented by <code>yearMonth</code> until the another month, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second month is earlier than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainYearMonth/since','Temporal.PlainYearMonth.since()')}}</code>, but reversed.</p>
 
 
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var timeBetween = PlainYearMonth.until(<var>otherMonthYear</var> [, <var>options</var>]);
+var timeBetween = yearMonth.until(<var>otherYearMonth</var> [, <var>options</var>]);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-<dt><code><var>otherMonthYear</var></code></dt>
+<dt><code><var>otherYearMonth</var></code></dt>
 <dd>Another month as either a <code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code> object, or a value that can be converted to one as if passed to <code>{{jsxref('Temporal/PlainYearMonth.from()','Temporal.PlainYearMonth.from()')}}</code>.</dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>
@@ -42,7 +42,7 @@ var timeBetween = PlainYearMonth.until(<var>otherMonthYear</var> [, <var>options
 <p>The returned <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of one year and two months will become 14 months when <code>largestUnit</code> is <code>'months'</code>, for example. However, a difference of one month will still be one month even if <code>largestUnit</code> is <code>'years'</code>.</p>
 <div class="note">
 <p>Unlike other Temporal types, weeks and lower are not allowed for either <code>largestUnit</code> or <code>smallestUnit</code>, because the data model of <code>Temporal.PlainYearMonth</code> doesn't have that accuracy.
-If you need to calculate the difference between two YearMonths in days, convert them to <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> objects and use <code>{{jsxref('Temporal.PlainDate/until','Temporal.PlainDate.until()')}}</code> instead.
+If you need to calculate the difference between two <code>PlainYearMonth</code> objects in days, convert them to <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> objects and use <code>{{jsxref('Temporal.PlainDate/until','Temporal.PlainDate.until()')}}</code> instead.
 </p>
 </div>
 </dd>
@@ -70,7 +70,7 @@ A string defining how to deal with any remainders. If <code>roundingMode</code> 
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object representing the difference between <code>PlainYearMonth</code> and <var>otherMonthYear</var>.</p>
+<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object representing the difference between <code>yearMonth</code> and <var>otherYearMonth</var>.</p>
 
 <h2 id="examples">Examples</h2>
 
