@@ -17,8 +17,6 @@ tags:
 
 <p>In very rare cases, you may choose to use <code>UTC</code> as your time zone ID. This is generally not advised because no humans actually live in the UTC time zone; it's just for computers. Also, UTC has no DST and always has a zero offset, which means that any action you'd take with <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> would return identical results to the same action on <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> or <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code>. Therefore, you should almost always use <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code> to represent UTC times. When you want to convert UTC time to a real time zone, that's when <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> is useful.</p>
 
-<p>Although this property is a <code>TK Temporal.TimeZoneProtocol TK</code> object (which is usually a <code>{{jsxref('Temporal.TimeZone','Temporal.TimeZone')}}</code> except in the case of custom timezones), it is automatically coerced to its string form (e.g. <code>"Europe/Paris"</code>) when displayed by <code>console.log</code>, <code>JSON.stringify</code>, <code>${zonedDateTime.timeZone}</code>, or other similar APIs.</p>
-
 
 <h2 id="syntax">Syntax</h2>
 
@@ -29,7 +27,9 @@ var datetimeZone = datetime.timeZone;
 
 <h2 id="value">Value</h2>
 
+<p>An object representing the time zone of the zoned date and time.  This will depend on what kind of time zone information was used to construct the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object itself.  In most cases, it will be a  <code>{{jsxref('Temporal.TimeZone','Temporal.TimeZone')}}</code> object, but it could possibly be a plain object containing time zone information.</p>
 
+<div class="note"><p>Developers are <strong>strongly</strong> encouraged to make sure they construct the zoned date and time using a <code>{{jsxref('Temporal.TimeZone','Temporal.TimeZone')}}</code> object, or a value that is converted to one at construction time.</p></div>
 
 <h2 id="examples">Examples</h2>
 
