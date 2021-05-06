@@ -19,14 +19,14 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var newDate = Temporal.ZonedDateTime.withPlainTime(<var>plainTime</var>);
+var newDatetime = oldDatetime.withPlainTime(<var>plainTime</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
 
 <dl>
 <dt><code><var>plainTime</var></code></dt>
-<dd>The clock time that should replace the current clock time of the original <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.  An object containing some or all of the properties accepted by <code>{{jsxref('Temporal/ZonedDateTime/from','Temporal.ZonedDateTime.from()')}}</code>.  Valid input to <code>withPlainTime()</code> is the same as valid input to <code>{{jsxref('Temporal.PlainTime.from()','Temporal.PlainTime.from()')}}</code>: strings like <code>12:15:36</code>, plain objects like <code>{ hour: 20, minute: 30 }</code>, or Temporal objects that contain time fields: <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code>, <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, or <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>.
+<dd>The clock time that should replace the current clock time of the original <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.  An object containing some or all of the properties accepted by <code>{{jsxref('Temporal/ZonedDateTime/from','Temporal.ZonedDateTime.from()')}}</code>.  Valid input to <code>withPlainTime()</code> is the same as valid input to <code>{{jsxref('Temporal/PlainTime/from','Temporal.PlainTime.from()')}}</code>: strings like <code>12:15:36</code>, plain objects like <code>{ hour: 20, minute: 30 }</code>, or Temporal objects that contain time fields: <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, or <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>.
 </dd>
 </dl>
 
@@ -46,4 +46,3 @@ zdt.withPlainTime('12:34'); // => 2015-12-07T12:34:00-08:00[America/Los_Angeles]
 // easier for chaining
 zdt.add({ days: 2, hours: 22 }).withPlainTime('00:00'); // => 2015-12-10T00:00:00-08:00[America/Los_Angeles]
 </pre>
-

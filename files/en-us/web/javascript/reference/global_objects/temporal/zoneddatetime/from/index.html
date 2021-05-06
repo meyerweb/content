@@ -15,7 +15,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var theDate = Temporal.ZonedDateTime.from(<var>dateTime</var>, <var>options</var>);
+var theDateTime = Temporal.ZonedDateTime.from(<var>dateTime</var>, <var>options</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -85,7 +85,7 @@ var theDate = Temporal.ZonedDateTime.from(<var>dateTime</var>, <var>options</var
 <li><code>'use'</code> – Evaluate date/time values using the time zone offset if it’s provided in the input. This will keep the exact time unchanged even if local time will be different than what was originally stored.</li>
 <li><code>'ignore'</code> – Never use the time zone offset provided in the input. Instead, calculate the offset from the time zone. This will keep local time unchanged but may result in a different exact time than was originally stored.</li>
 <li><code>'prefer'</code> – Evaluate date/time values using the offset if it’s valid for this time zone. If the offset is invalid, then calculate the offset from the time zone. This option is rarely used when calling <code>from()</code>. See the documentation of <code>{{jsxref('Temporal.ZonedDateTime/with','with()')}}</code> for more details about why this option is used.</li>
-<li><code>'reject'</code> <strong>(default)</strong> – Throw a `RangeError` if the offset is not valid for the provided date and time in the provided time zone.</li>
+<li><code>'reject'</code> <strong>(default)</strong> – Throw a <code>RangeError</code> if the offset is not valid for the provided date and time in the provided time zone.</li>
 </ul>
 
 </dd>

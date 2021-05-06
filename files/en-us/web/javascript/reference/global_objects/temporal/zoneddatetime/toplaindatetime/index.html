@@ -15,7 +15,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-var justTheDate = datetime.toPlainDateTime();
+var dateTimeWithoutTimeZone = datetime.toPlainDateTime();
 </pre>
 
 
@@ -26,7 +26,7 @@ var justTheDate = datetime.toPlainDateTime();
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object.</p>
+<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object.</p>
 
 <h2 id="examples">Examples</h2>
 
@@ -34,4 +34,3 @@ var justTheDate = datetime.toPlainDateTime();
 zdt = Temporal.ZonedDateTime.from('1995-12-07T03:24:30+02:00[Africa/Johannesburg]');
 zdt.toPlainDateTime(); // => 1995-12-07T03:24:30
 </pre>
-

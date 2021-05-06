@@ -46,7 +46,7 @@ var newDatetime = oldDatetime.subtract(<var>duration</var>, <var>options</var>);
 <dt><code><var>duration</var></code></dt>
 <dd>
 <p>An object with properties denoting a duration, such as <code>{ days: 5 }</code>, or a string value such as <code>P5D</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to a string as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
-<p>Some subtractions may be ambiguous, because months have different lengths. For example, subtracting <code>{ month: 1 }</code> from October 31 would result in September 31, which doesn’t exist. In such cases, the <code>overflow</code> option (see below) governs the result.</p>
+<p>Some subtractions may be ambiguous, because months have different lengths. For example, subtracting <code>{ months: 1 }</code> from October 31 would result in September 31, which doesn’t exist. In such cases, the <code>overflow</code> option (see below) governs the result.</p>
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>
@@ -71,7 +71,7 @@ var newDatetime = oldDatetime.subtract(<var>duration</var>, <var>options</var>);
 
 <h2 id="return-value">Return value</h2>
 
-<p>A new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object representing the calendar date indicated by <code>ZonedDateTime</code> minus <code><var>duration</var></code>.
+<p>A new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object representing the calendar date indicated by <code>oldDateTime</code> minus <code><var>duration</var></code>.
 </p>
 
 <h2 id="examples">Examples</h2>
