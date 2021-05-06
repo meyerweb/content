@@ -46,9 +46,6 @@ Either a <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</co
 
 <p>The comparison uses exact time, not clock time, because sorting is almost always based on when events happened in the real world.  During the hour before and after DST (Daylight Saving Time) transitions, sorting of clock time may not match the order the events actually occurred.</p>
 
-<div class="warning">
-<p>Note that this function will not return <code>0</code> if the two objects have different <code>calendar</code> or <code>timeZone</code> properties, even if the exact timestamps are equal.</p>
-</div>
 
 <h2 id="examples">Examples</h2>
 
@@ -64,24 +61,4 @@ Temporal.PlainDateTime.compare(one.toPlainDateTime(), two.toPlainDateTime());
 Temporal.Instant.compare(one.toInstant(), two.toInstant());
   // => -1
   // (because `Temporal.Instant` and `Temporal.ZonedDateTime` both compare real-world exact times)
-</pre>
-
-<p>In cases where the exact timestamps are equal, but the calendar or time zone portions are different, then the calendar <code>id</code>s will be compared lexicographically, in order to ensure a deterministic sort order.  If those are the same, then the time zone <code>id</code>s will be compared lexicographically.</p>
-
-<pre class="brush: js">
-arr = [
-  Temporal.ZonedDateTime.from('2020-02-01T12:30-05:00[America/Toronto]'),
-  Temporal.ZonedDateTime.from('2020-02-01T12:30-05:00[America/New_York]'),
-  Temporal.ZonedDateTime.from('2020-02-01T12:30+01:00[Europe/Brussels]'),
-  Temporal.ZonedDateTime.from('2020-02-01T12:30+00:00[Europe/London]')
-];
-sorted = arr.sort(Temporal.ZonedDateTime.compare);
-JSON.stringify(sorted, undefined, 2);
-// =>
-// '[
-//   "2020-02-01T12:30+01:00[Europe/Brussels]",
-//   "2020-02-01T12:30+00:00[Europe/London]",
-//   "2020-02-01T12:30-05:00[America/New_York]",
-//   "2020-02-01T12:30-05:00[America/Toronto]"
-// ]'
 </pre>
