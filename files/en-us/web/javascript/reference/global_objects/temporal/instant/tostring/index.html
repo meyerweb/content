@@ -25,12 +25,6 @@ instant.toString(<var>options</var>);
 <dl>
 <dt><code>timeZone</code></dt>
 <dd><p>The time zone in which to express the instant.  This can be a `Temporal.TimeZone` object, an object implementing the Temporal time zone protocol, or a string.  The default is to use UTC.  If a time zone other than UTC is supplied, the string will be the date and time in the given time zone, and include the time zone's UTC offset.</p></dd>
-<dt><code>calendarName</code></dt>
-<dd><p>Whether to show the calendar annotation in the return value. Valid values are <code>'auto'</code>, <code>'always'</code>, and <code>'never'</code>. The default is <code>'auto'</code>.</p>
-<div class="note">
-<p>Normally, a calendar annotation is shown when the <code>Instant</code>'s calendar is not the ISO 8601 calendar. By setting the <code>calendarName</code> option to <code>'always'</code> or <code>'never'</code>, this can be overridden to always or never show the annotation, respectively.</p>
-</div>
-</dd>
 <dt><code>fractionalSecondDigits</code></dt>
 <dd><p>An single-digit integer or the string <code>'auto'</code> defining how many digits to print after the decimal point in the output string. The default is <code>'auto'</code>, which omits any trailing zeroes after the decimal point.</p></dd>
 <dt><code>smallestUnit</code></dt>

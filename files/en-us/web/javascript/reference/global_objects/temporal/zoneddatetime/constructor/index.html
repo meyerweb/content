@@ -15,12 +15,16 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-new Temporal.ZonedDateTime(<var>timeZone</var>, <var>calendar</var>)
+new Temporal.ZonedDateTime(<var>epochNanoseconds</var>, <var>timeZone</var>, <var>calendar</var>)
 </pre>
 
 <h3 id="parameters">Parameters</h3>
 
 <dl>
+<dt><code><var>epochNanoseconds</var></code></dt>
+<dd>
+<p>A {{jsxref('BigInt')}} number of nanoseconds.</p>
+</dd>
 <dt><code><var>timeZone</var></code></dt>
 <dd>
 <p>The time zone, either a <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object, or a value that can be converted to one with <code>{{jsxref('Temporal/TimeZone/from','Temporal.TimeZone.from()')}}</code>.

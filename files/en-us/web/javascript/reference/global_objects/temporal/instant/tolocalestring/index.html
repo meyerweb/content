@@ -121,9 +121,6 @@ instant.toLocaleString(<var>locales</var>, <var>options</var>);
 					href="https://www.iana.org/time-zones">IANA time zone database</a>,
 				such as "<code>Asia/Shanghai</code>", "<code>Asia/Kolkata</code>",
 				"<code>America/New_York</code>".
-				<div class="warning">
-				<code>timeZone</code> will be automatically set from the time zone of the <code>zonedDateTime</code> object. If a different time zone ID is provided in the <code>timeZone</code> option, a <code>RangeError</code> will be thrown. To display a <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code> value in a different time zone, use <code>{{jsxref('Temporal.Instant/withTimeZone','Temporal.Instant.withTimeZone(<var>otherTimeZone</var>)')}}.toLocaleString()</code>.
-				</div>
 				</dd>
 			<dt><code>hour12</code></dt>
 			<dd>Whether to use 12-hour time (as opposed to 24-hour time). Possible values

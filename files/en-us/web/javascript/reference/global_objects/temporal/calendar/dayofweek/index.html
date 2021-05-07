@@ -10,7 +10,7 @@ tags:
 {{JSRef}}
 
 <p class="summary"><span class="seoSummary">The <strong><code>dayOfWeek()</code></strong> method returns the day-of-week component of the supplied date, as determined by the calendar system associated with that date.</span></p>
-<p>This method is called indirectly when reading the <code>dayOfWeek</code> properties of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code>, and <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.dayOfWeek()</code> directly.</p>
+<p>This method is called indirectly when reading the <code>dayOfWeek</code> properties of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, and <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.dayOfWeek()</code> directly.</p>
 <p>Note that the number of a given day of the week is determined by the calendar system; for example, the ISO 8601 calendar defines the days of the week as a value of 1 to 7 inclusive, with Monday being 1, and Sunday 7.</p>
 
 <h2 id="syntax">Syntax</h2>
@@ -29,9 +29,8 @@ var weekday = date.dayOfWeek(<var>date</var>);
 <li><code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code></li>
 <li><code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code></li>
 <li><code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code></li>
-<li><code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code></li>
 </ul>
-<p>If the parameter’s value is not one of those objects, it will be converted to a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> as if it were passed to <code>{{jsxref('Temporal.PlainDate.from()','Temporal.PlainDate.from()')}}</code>.</p>
+<p>If the parameter’s value is not one of those objects, it will be converted to a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> as if it were passed to <code>{{jsxref('Temporal.PlainDate/from','Temporal.PlainDate.from()')}}</code>.</p>
 </dd>
 </dl>
 
