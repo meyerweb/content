@@ -34,7 +34,7 @@ var theDateTime = Temporal.ZonedDateTime.from(<var>dateTime</var>, <var>options<
 <li>A <code>timeZone</code> property.</li>
 </ul>
 <p>The object may also contain a <code>calendar</code> property; if omitted, the ISO 8601 calendar is used.  For non-ISO 8601 calendars, the calendar is also parsed in addition to year and month.</p>
-<p>Any non-object, non-string value will be converted to a string, which is expected to be in ISO 8601 format.  Missing optional properties’ values default to <code>0</code>. Any other parts of the string, such as those relating to time or time zone, are optional.  If the string is invalid according to ISO 8601, then a <code>RangeError</code> will be thrown regardless of the value of the <code>overflow</code> option (see next).</p>
+<p>Any non-object, non-string value will be converted to a string, which is expected to be in ISO 8601 format.  Missing optional properties' values default to <code>0</code>. Any other parts of the string, such as those relating to time or time zone, are optional.  If the string is invalid according to ISO 8601, then a <code>RangeError</code> will be thrown regardless of the value of the <code>overflow</code> option (see next).</p>
 </dd>
 
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
@@ -55,7 +55,7 @@ var theDateTime = Temporal.ZonedDateTime.from(<var>dateTime</var>, <var>options<
 </ul>
 
 <div class="note">
-<p>If <var>dateTime</var> is a string, the <code>overflow</code> property’s value is ignored.</p>
+<p>If <var>dateTime</var> is a string, the <code>overflow</code> property's value is ignored.</p>
 </div>
 
 <div class="warning">
@@ -82,9 +82,9 @@ var theDateTime = Temporal.ZonedDateTime.from(<var>dateTime</var>, <var>options<
 <dd><p>How to interpret a provided time zone offset (e.g., <code>-02:00</code>) if it conflicts with the provided time zone (e.g., <code>America/Sao_Paulo</code>).  Allowed values are:</p>
 
 <ul>
-<li><code>'use'</code> – Evaluate date/time values using the time zone offset if it’s provided in the input. This will keep the exact time unchanged even if local time will be different than what was originally stored.</li>
+<li><code>'use'</code> – Evaluate date/time values using the time zone offset if it's provided in the input. This will keep the exact time unchanged even if local time will be different than what was originally stored.</li>
 <li><code>'ignore'</code> – Never use the time zone offset provided in the input. Instead, calculate the offset from the time zone. This will keep local time unchanged but may result in a different exact time than was originally stored.</li>
-<li><code>'prefer'</code> – Evaluate date/time values using the offset if it’s valid for this time zone. If the offset is invalid, then calculate the offset from the time zone. This option is rarely used when calling <code>from()</code>. See the documentation of <code>{{jsxref('Temporal.ZonedDateTime/with','with()')}}</code> for more details about why this option is used.</li>
+<li><code>'prefer'</code> – Evaluate date/time values using the offset if it's valid for this time zone. If the offset is invalid, then calculate the offset from the time zone. This option is rarely used when calling <code>from()</code>. See the documentation of <code>{{jsxref('Temporal.ZonedDateTime/with','with()')}}</code> for more details about why this option is used.</li>
 <li><code>'reject'</code> <strong>(default)</strong> – Throw a <code>RangeError</code> if the offset is not valid for the provided date and time in the provided time zone.</li>
 </ul>
 

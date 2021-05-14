@@ -68,7 +68,7 @@ A string defining how the rounding is conducted.  The valid values are:
 <dt><code>'ceil'</code></dt>
 <dd>Always round up, toward positive infinity. For negative durations, this option will <strong>decrease</strong> the absolute value of the duration, which may be unexpected; e.g., <code>-3.7</code> will be rounded to <code>-3</code>. To round away from zero, use <code>'ceil'</code> for positive durations and <code>'floor'</code> for negative durations.</dd>
 <dt><code>'floor'</code></dt>
-<dd>Always round down, toward negative infinity. For negative durations, this option will <strong>increase</strong> the absolute value of the result, which may be unexpected; e.g., <code>-3.2</code> will be rounded to <code>-4</code>. For this reason, <code>'trunc'</code> is recommended for most “round down” use cases.</dd>
+<dd>Always round down, toward negative infinity. For negative durations, this option will <strong>increase</strong> the absolute value of the result, which may be unexpected; e.g., <code>-3.2</code> will be rounded to <code>-4</code>. For this reason, <code>'trunc'</code> is recommended for most "round down" use cases.</dd>
 <dt><code>'trunc'</code></dt>
 <dd>Always round toward zero.  This will decrease the absolute value of all durations, positive or negative.</dd>
 <dt><code>'halfExpand'</code> (default)</dt>

@@ -9,7 +9,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>monthCode()</code></strong> method returns a string label for the month component of the supplied date, as determined by the calendar system associated with that date.</span>  This is <strong>not</strong> the month’s common name, such as “March”, but instead a label for the month, such as “M03”.</p>
+<p class="summary"><span class="seoSummary">The <strong><code>monthCode()</code></strong> method returns a string label for the month component of the supplied date, as determined by the calendar system associated with that date.</span>  This is <strong>not</strong> the month's common name, such as "March", but instead a label for the month, such as "M03".</p>
 <p>This method is called indirectly when reading the <code>monthCode</code> properties of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code>, and <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.monthCode()</code> directly.</p>
 
 <h2 id="syntax">Syntax</h2>
@@ -31,13 +31,13 @@ var calMonthString = date.monthCode(<var>date</var>);
 <li><code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code></li>
 <li><code>{{jsxref('Temporal/PlainMonthDay','Temporal.PlainMonthDay')}}</code></li>
 </ul>
-<p>If the parameter’s value is not one of those objects, it will be converted to a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> as if it were passed to <code>{{jsxref('Temporal.PlainDate/from','Temporal.PlainDate.from()')}}</code>.</p>
+<p>If the parameter's value is not one of those objects, it will be converted to a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> as if it were passed to <code>{{jsxref('Temporal.PlainDate/from','Temporal.PlainDate.from()')}}</code>.</p>
 </dd>
 </dl>
 
 <h2 id="return-value">Return value</h2>
 
-<p>A string representing the date’s month code as determined by the date’s calendar system.</p>
+<p>A string representing the date's month code as determined by the date's calendar system.</p>
 
 <h2 id="examples">Examples</h2>
 

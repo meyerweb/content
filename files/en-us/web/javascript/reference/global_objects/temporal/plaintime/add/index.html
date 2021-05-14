@@ -28,7 +28,7 @@ var newTime = plainTime.add(<var>duration</var>);
 <dt><code><var>duration</var></code></dt>
 <dd>
 <p>An object with properties denoting a duration, such as <code>{ hours: 5, minutes: 30 }</code>, or a string value such as <code>PT5H30M</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to a string as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
-<p>If the addition of the <var>duration</var> to the original time takes it past 24 hours, the time will be “wrapped around” to zero.  Thus, the returned wall-clock time may be either in the future or in the past relative to the original time, or even the same time.</p>
+<p>If the addition of the <var>duration</var> to the original time takes it past 24 hours, the time will be "wrapped around" to zero.  Thus, the returned wall-clock time may be either in the future or in the past relative to the original time, or even the same time.</p>
 </dd>
 </dl>
 
