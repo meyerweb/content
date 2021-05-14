@@ -14,7 +14,7 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-time.toString(<var>options</var>);
+duration.toString(<var>options</var>);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -66,11 +66,11 @@ A string defining how to deal with any remainder.  The valid values are:
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-time = Temporal.Duration.from('19:39:09.068346205');
-time.toString(); // => '19:39:09.068346205'
-time.toString({ smallestUnit: 'minute' }); // => '19:39'
-time.toString({ fractionalSecondDigits: 0 }); // => '19:39:09'
-time.toString({ fractionalSecondDigits: 4 }); // => '19:39:09.0683'
-time.toString({ fractionalSecondDigits: 5, roundingMode: 'halfExpand' });
+duration = Temporal.Duration.from('19:39:09.068346205');
+duration.toString(); // => '19:39:09.068346205'
+duration.toString({ smallestUnit: 'minute' }); // => '19:39'
+duration.toString({ fractionalSecondDigits: 0 }); // => '19:39:09'
+duration.toString({ fractionalSecondDigits: 4 }); // => '19:39:09.0683'
+duration.toString({ fractionalSecondDigits: 5, roundingMode: 'halfExpand' });
   // => '19:39:09.06835'
 </pre>
