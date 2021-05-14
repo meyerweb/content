@@ -9,7 +9,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>timeZone</code></strong> read-only property represents the persistent time zone of the <code>{{jsxref('Temporal.zonedDateTime','Temporal.zonedDateTime')}}</code> object.</span>  By storing its time zone, <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> is able to use that time zone when deriving other values, e.g. to automatically perform DST (Daylight Saving Time) adjustment when adding or subtracting time.</p>
+<p class="summary"><span class="seoSummary">The <strong><code>timeZone</code></strong> read-only property represents the persistent time zone of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.</span>  By storing its time zone, <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> is able to use that time zone when deriving other values, e.g. to automatically perform DST (Daylight Saving Time) adjustment when adding or subtracting time.</p>
 
 <p>The time zone is a required property when creating <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> instances. If you don't know the time zone of your underlying data, use <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code> and/or <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, neither of which have awareness of time zones.  To change the time zone while keeping the exact time constant, use the <code>{{jsxref('Temporal.ZonedDateTime/withTimeZone','Temporal.ZonedDateTime.withTimeZone()')}}</code> method.</p>
 

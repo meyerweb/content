@@ -26,9 +26,9 @@ var dayBegins = datetime.startOfDay;
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-zdt = Temporal.ZonedDateTime.from('2020-01-01T12:00-08:00[America/Los_Angeles]').startOfDay();
+zdt = Temporal.ZonedDateTime.from('2020-01-01T12:00-08:00[America/Los_Angeles]').startOfDay;
   // => 2020-01-01T00:00:00-08:00[America/Los_Angeles]
-zdt = Temporal.ZonedDateTime.from('2018-11-04T12:00-02:00[America/Sao_Paulo]').startOfDay();
+zdt = Temporal.ZonedDateTime.from('2018-11-04T12:00-02:00[America/Sao_Paulo]').startOfDay;
   // => 2018-11-04T01:00:00-02:00[America/Sao_Paulo]
   // Note the 1:00AM start time because the first clock hour was skipped due to DST transition
   // that started at midnight.
