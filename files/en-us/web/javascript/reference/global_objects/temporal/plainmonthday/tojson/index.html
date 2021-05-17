@@ -9,8 +9,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">Returns a string representing the month and day in ISO 8601 format.</span>  This method provides a useful value when a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object is passed to <code>{{jsxref('JSON.stringify','JSON.stringify()')}}</code>.  It is rarely useful in any other context.  If you simply need a string containing the calendar's ID, use <code>{{jsxref('Temporal/PlainMonthDay/toString','Temporal.PlainMonthDay.toString()')}}</code> instead.</p>
-</p>
+<p class="summary"><span class="seoSummary">Returns a string representing the month and day in ISO 8601 format.</span>  This method provides a useful value when a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object is passed to <code>{{jsxref('JSON.stringify','JSON.stringify()')}}</code>.  It is rarely useful in any other context.  If you simply need to serialize the month and day to an ISO 8601 string, use <code>{{jsxref('Temporal/PlainMonthDay/toString','Temporal.PlainMonthDay.toString()')}}</code> instead.</p>
 <p>
 The reverse operation, recovering a <code>{{jsxref('Temporal/PlainMonthDay','Temporal.PlainMonthDay')}}</code> object from a string, is accomplished by using <code>{{jsxref('Temporal/PlainMonthDay/from','Temporal.PlainMonthDay.from()')}}</code>, but that method cannot be called automatically by <code>{{jsxref('JSON.parse','JSON.parse()')}}</code>. If you need to rebuild a <code>{{jsxref('Temporal/PlainMonthDay','Temporal.PlainMonthDay')}}</code> object from a JSON string, then you need to know the names of the keys that should be interpreted as <code>{{jsxref('Temporal/PlainMonthDay','Temporal.PlainMonthDay')}}</code> properties. In that case, you can build a custom "reviver" function for your use case.
 </p>
@@ -19,7 +18,7 @@ The reverse operation, recovering a <code>{{jsxref('Temporal/PlainMonthDay','Tem
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-Calendar.toJSON();
+monthDay.toJSON();
 </pre>
 
 <h3 id="parameters">Parameters</h3>
