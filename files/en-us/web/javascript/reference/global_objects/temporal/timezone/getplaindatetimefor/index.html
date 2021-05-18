@@ -20,7 +20,8 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-timeZone.getPlainDateTimeFor(<var>instant</var> [, <var>calendar</var>]);
+getPlainDateTimeFor(<var>instant</var>)
+getPlainDateTimeFor(<var>instant</var>, <var>calendar</var>)
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -28,7 +29,7 @@ timeZone.getPlainDateTimeFor(<var>instant</var> [, <var>calendar</var>]);
 <dl>
 <dt><code><var>instant</var></code></dt>
 <dd>The point in time to yield a time zone offset from <abbr title="Coordinated Universal Time">UTC</abbr> in nanoseconds. If <code>instant</code> is not a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/Instant/from','Temporal.Instant.from()')}}</code>.</dd>
-<dt><code><var>calendar</var></code></dt>
+<dt><code><var>calendar</var></code>  {{optional_inline}}</dt>
 <dd> A <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object, or a plain object, or a calendar identifier. If no <code><var>calendar</var></code> is supplied, the ISO 8601 calendar will be used.</dd>
 </dl>
 
