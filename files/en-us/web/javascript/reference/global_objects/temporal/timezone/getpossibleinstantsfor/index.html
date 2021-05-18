@@ -40,6 +40,12 @@ var possibleTimes = timeZone.getPossibleInstantsFor(<var>dateTime</var>);
 <pre class="brush: js">
 let dateTime = Temporal.PlainDateTime.from('2021-05-18T11:58:58');
 let timeZone = Temporal.TimeZone.from('Asia/Baghdad');
-timeZone.getInstantFor(dateTime);
-// => Temporal.Instant <2021-05-18T08:58:58Z>
+timeZone.getPossibleInstantsFor(dateTime);
+// => Array [Temporal.Instant <2021-05-18T08:58:58Z>]
+</pre>
+<pre class="brush: js">
+let dateTime = Temporal.PlainDateTime.from('2020-11-01T01:34:37');
+let timeZone = Temporal.TimeZone.from('America/Chicago');
+timeZone.getPossibleInstantsFor(dateTime);
+// => Array [Temporal.Instant <2020-11-01T06:34:37Z>, Temporal.Instant <2020-11-01T07:34:37Z>]
 </pre>
