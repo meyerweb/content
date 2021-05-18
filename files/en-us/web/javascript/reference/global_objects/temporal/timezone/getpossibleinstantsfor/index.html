@@ -38,5 +38,8 @@ var possibleTimes = timeZone.getPossibleInstantsFor(<var>dateTime</var>);
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+let dateTime = Temporal.PlainDateTime.from('2021-05-18T11:58:58');
+let timeZone = Temporal.TimeZone.from('Asia/Baghdad');
+timeZone.getInstantFor(dateTime);
+// => Temporal.Instant <2021-05-18T08:58:58Z>
 </pre>

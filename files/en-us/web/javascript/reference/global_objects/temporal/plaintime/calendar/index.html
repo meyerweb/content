@@ -28,5 +28,7 @@ var timeCalendar = time.calendar;
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+time = Temporal.PlainTime.from('19:39:09.068346205');
+time.calendar.id;  // => iso8601
+// (the only possible calendar for PlainTime)
 </pre>

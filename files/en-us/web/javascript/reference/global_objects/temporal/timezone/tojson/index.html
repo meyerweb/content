@@ -36,5 +36,26 @@ var tzID = timeZone.toJSON();
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+const user = {
+  id: 775,
+  username: 'robotcat',
+  password: 'hunter2', // Note: Don't really store passwords like that
+  userTimeZone: Temporal.TimeZone.from('Europe/Madrid')
+};
+const str = JSON.stringify(user, null, 2);
+console.log(str);
+// =>
+// {
+//   "id": 775,
+//   "username": "robotcat",
+//   "password": "hunter2",
+//   "userTimeZone": "Europe/Madrid"
+// }
+
+// To rebuild from the string:
+function reviver(key, value) {
+  if (key.endsWith('TimeZone')) return Temporal.TimeZone.from(value);
+  return value;
+}
+JSON.parse(str, reviver);
 </pre>

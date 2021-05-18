@@ -63,5 +63,10 @@ During "skipped" clock time like the hour after <abbr title="Daylight Saving Tim
 <h2 id="examples">Examples</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+var now = Temporal.PlainDateTime.from('2021-05-18T11:58:58');
+// =>
+now.toZonedDateTime('America/New_York');
+// => 2021-05-18T11:58:58-04:00[America/New_York]
+now.toZonedDateTime('Japan');
+// => 2021-05-18T11:58:58+09:00[Asia/Tokyo]
 </pre>

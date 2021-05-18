@@ -37,5 +37,18 @@ A <code>Temporal.ZonedDateTime</code> object representing the current system dat
 <h2 id="examples">Example</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+financialCentres = {
+  'New York': 'America/New_York',
+  London: 'Europe/London',
+  Tokyo: 'Asia/Tokyo'
+};
+console.log(`Here: ${Temporal.now.zonedDateTime('gregory')}`);
+Object.entries(financialCentres).forEach(([name, timeZone]) => {
+  console.log(`${name}: ${Temporal.now.zonedDateTime('gregory',timeZone)}`);
+});
+// example output:
+// Here: 2020-09-18T01:17:48.431957915-07:00[America/Los_Angeles][u-ca=gregory]
+// New York: 2020-09-18T04:17:48.435068431-04:00[America/New_York][u-ca=gregory]
+// London: 2020-09-18T09:17:48.438068435+01:00[Europe/London][u-ca=gregory]
+// Tokyo: 2020-09-18T17:17:48.441068438+09:00[Asia/Tokyo][u-ca=gregory]
 </pre>

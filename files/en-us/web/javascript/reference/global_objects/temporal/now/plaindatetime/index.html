@@ -37,5 +37,18 @@ A <code>Temporal.PlainDateTime</code> object representing the current system dat
 <h2 id="examples">Example</h2>
 
 <pre class="brush: js">
-// EXAMPLE TK
+financialCentres = {
+  'New York': 'America/New_York',
+  'London': 'Europe/London',
+  'Tokyo': 'Asia/Tokyo',
+};
+console.log(`Here: ${Temporal.now.plainDateTime('gregory')}`);
+Object.entries(financialCentres).forEach(([name, timeZone]) => {
+  console.log(`${name}: ${Temporal.now.plainDateTime('gregory',timeZone)}`);
+});
+// example output:
+// Here: 2020-01-24T21:51:02.142905166[u-ca=gregory]
+// New York: 2020-01-25T00:52:14.756462142[u-ca=gregory]
+// London: 2020-01-25T05:52:14.758534756[u-ca=gregory]
+// Tokyo: 2020-01-25T14:52:14.759534758[u-ca=gregory]
 </pre>
