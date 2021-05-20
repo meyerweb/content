@@ -72,11 +72,11 @@ two = Temporal.Duration.from({ days: 3, hours: 7, seconds: 630 });
 three = Temporal.Duration.from({ days: 3, hours: 6, minutes: 50 });
 sorted = [one, two, three].sort(Temporal.Duration.compare);
 sorted.join(' | ');
-// => 'P3DT6H50M | PT79H10M | P3DT7H630S'
+// => "P3DT6H50M | PT79H10M | P3DT7H630S"
 
 // Sorting relative to a date, taking DST changes into account:
 relativeTo = Temporal.ZonedDateTime.from('2020-11-01T00:00-07:00[America/Los_Angeles]');
 sorted = [one, two, three].sort((one, two) => Temporal.Duration.compare(one, two, {relativeTo}));
 sorted.join(' | ');
-// => 'PT79H10M | P3DT6H50M | P3DT7H630S'
+// => "PT79H10M | P3DT6H50M | P3DT7H630S"
 </pre>

@@ -46,15 +46,17 @@ tz = new Temporal.TimeZone('america/VANCOUVER');
 tz = new Temporal.TimeZone('Asia/Katmandu'); // alias of Asia/Kathmandu
 tz = new Temporal.TimeZone('-04:00');
 tz = new Temporal.TimeZone('+0645');
+</pre>
 
+<pre class="brush: js example-bad">
 /* WRONG */
-tz = new Temporal.TimeZone('local'); // not a time zone, so throws a RangeError
+tz = new Temporal.TimeZone('local'); // throws, not a time zone
 </pre>
 
 <pre class="brush: js">
 tz1 = new Temporal.TimeZone('-08:00');
 tz2 = new Temporal.TimeZone('America/Vancouver');
 inst = Temporal.ZonedDateTime.from({ year: 2020, month: 1, day: 1, timeZone: tz2 }).toInstant();
-tz1.getNextTransition(inst); // => null; UTC offsets do not have DST schedules
+tz1.getNextTransition(inst); // => null, UTC offsets do not have DST schedules
 tz2.getPreviousTransition(inst); // => 2020-03-08T10:00Z
 </pre>

@@ -124,11 +124,12 @@ zdt = Temporal.ZonedDateTime.from('1995-12-07T03:24:30+02:00[+02:00]');  // OK (
 // Different overflow modes
 zdt = Temporal.ZonedDateTime.from({ timeZone: 'Europe/Paris', year: 2001, month: 13, day: 1 }, { overflow: 'constrain' })
   // => 2001-12-01T00:00:00+01:00[Europe/Paris]
-zdt = Temporal.ZonedDateTime.from({ timeZone: 'Europe/Paris', year: 2001, month: 13, day: 1 }, { overflow: 'reject' })
-  // => throws RangeError
 </pre>
 
 <pre class="brush: js example-bad">
+zdt = Temporal.ZonedDateTime.from({ timeZone: 'Europe/Paris', year: 2001, month: 13, day: 1 }, { overflow: 'reject' })
+  // => throws RangeError: value out of range
+
 zdt = Temporal.ZonedDateTime.from('1995-12-07T03:24:30');
   // => throws RangeError: time zone ID required
 

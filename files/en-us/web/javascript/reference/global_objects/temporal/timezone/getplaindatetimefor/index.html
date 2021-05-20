@@ -36,8 +36,7 @@ getPlainDateTimeFor(<var>instant</var>, <var>calendar</var>)
 
 <h2 id="return-value">Return value</h2>
 
-<p>A number indicating the UTC offset of the given time in nanoseconds.
-</p>
+<p>A <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object.</p>
 
 <h2 id="examples">Examples</h2>
 
@@ -45,17 +44,16 @@ getPlainDateTimeFor(<var>instant</var>, <var>calendar</var>)
 // Getting the UTC offset for a time zone at a particular time
 timestamp = Temporal.Instant.fromEpochSeconds(1553993100);
 tz = Temporal.TimeZone.from('Europe/Berlin');
-tz.getPlainDateTimeFor(timestamp); // => 3600000000000
-
+tz.getPlainDateTimeFor(timestamp); // => 2019-03-31T01:45:00
 // TimeZone with a fixed UTC offset
 tz = Temporal.TimeZone.from('-08:00');
-tz.getPlainDateTimeFor(timestamp); // => -28800000000000
+tz.getPlainDateTimeFor(timestamp); // => 2019-03-30T16:45:00
 // UTC is always 0 offset
 tz = Temporal.TimeZone.from('UTC');
-tz.getPlainDateTimeFor(timestamp); // => 0
+tz.getPlainDateTimeFor(timestamp); // => 2019-03-31T00:45:00
 
 // Differences between DST and non-DST
 tz = Temporal.TimeZone.from('Europe/London');
-tz.getPlainDateTimeFor('2020-08-06T15:00Z'); // => 3600000000000
-tz.getPlainDateTimeFor('2020-11-06T01:00Z'); // => 0
+tz.getPlainDateTimeFor('2020-08-06T15:00Z'); // => 2020-08-06T16:00:00
+tz.getPlainDateTimeFor('2020-11-06T01:00Z'); // => 2020-11-06T01:00:00
 </pre>

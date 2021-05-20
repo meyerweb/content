@@ -41,9 +41,9 @@ getOffsetStringFor(<var>instant</var>)
 // Getting the UTC offset for a time zone at a particular time
 timestamp = Temporal.Instant.fromEpochSeconds(1553993100);
 tz = Temporal.TimeZone.from('Europe/Berlin');
-tz.getOffsetStringFor(timestamp); // => +01:00
+tz.getOffsetStringFor(timestamp); // => "+01:00"
 
 // TimeZone with a fixed UTC offset
 tz = Temporal.TimeZone.from('-08:00');
-tz.getOffsetStringFor(timestamp); // => -08:00
+tz.getOffsetStringFor(timestamp); // => "-08:00"
 </pre>

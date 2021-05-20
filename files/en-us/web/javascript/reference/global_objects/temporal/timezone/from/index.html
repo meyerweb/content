@@ -72,9 +72,9 @@ tz4 = Temporal.TimeZone.from(properties);  // tz4 === tz
 
 <pre class="brush: js">
 /* WRONG */
-tz = Temporal.TimeZone.from('local'); // not a time zone
+tz = Temporal.TimeZone.from('local'); // throws, not a time zone
 /* WRONG */
-tz = Temporal.TimeZone.from('2020-01-14T00:31:00'); // ISO 8601 string without time zone offset part
+tz = Temporal.TimeZone.from('2020-01-14T00:31:00'); // throws, ISO 8601 string without time zone offset part
 /* WRONG */
-tz = Temporal.TimeZone.from('-08:00[America/Vancouver]'); // ISO 8601 string without date-time part
+tz = Temporal.TimeZone.from('-08:00[America/Vancouver]'); // throws, ISO 8601 string without date-time part
 </pre>
