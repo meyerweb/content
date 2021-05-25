@@ -48,7 +48,7 @@ getInstantFor(<var>dateTime</var>, <var>options</var>)
 <p>During "skipped" clock time like the hour after DST starts in the Spring, this method interprets invalid times using the pre-transition time zone offset if <code>compatible</code> or <code>later</code> is used, or the post-transition time zone offset if <code>earlier</code> is used. This behavior avoids exceptions when converting non-existent <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> values to <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code>, but it also means that values during these periods will result in a different <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> in "round-trip" conversions to <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> and back again.</p>
 
 
-<h2 id="return-value">Return value</h2>
+<h3 id="return-value">Return value</h3>
 
 <p>A <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object indicating the exact time in <code>timeZone</code> at the time of the calendar date and wall-clock time at <code><var>dateTime</var></code>. If <code><var>dateTime</var></code> is not a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>.</p>
 <p>If the result is earlier or later than the range that <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> can represent (approximately half a million years centered on the Unix epoch), then a <code>RangeError</code> will be thrown, no matter the value of disambiguation.</p>

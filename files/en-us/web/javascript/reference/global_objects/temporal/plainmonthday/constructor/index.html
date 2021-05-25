@@ -60,7 +60,7 @@ new Temporal.PlainMonthDay(<var>isoMonth</var>, <var>isoDay</var>, <var>calendar
 The <var>calendar</var> and <var>referenceISOYear</var> parameters should generally be avoided because <code>equals()</code> or <code>compare()</code> will consider <code>new Temporal.PlainMonthDay(3, 14, 'iso8601', 1977)</code> and <code>new Temporal.PlainMonthDay(3, 14, 'iso8601', 2000)</code> unequal, even though they refer to the same month and day, because of the different years.  When creating instances for non-ISO-8601 calendars (except when implementing a custom calendar) use the <code>from()</code> method which will automatically set a valid and equals-compatible reference year.
 </p>
 
-<h2 id="return-value">Return value</h2>
+<h3 id="return-value">Return value</h3>
 
 <p>A new <code>{{jsxref('Temporal/PlainMonthDay','Temporal.PlainMonthDay')}}</code> object.</p>
 

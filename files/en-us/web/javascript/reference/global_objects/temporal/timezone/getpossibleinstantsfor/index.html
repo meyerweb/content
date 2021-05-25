@@ -30,7 +30,7 @@ getPossibleInstantsFor(<var>dateTime</var>)
 </dl>
 
 
-<h2 id="return-value">Return value</h2>
+<h3 id="return-value">Return value</h3>
 
 <p>An array of <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> objects, which may be empty. Each object indicates the exact time in <code>timeZone</code> at the time of the calendar date and wall-clock time at <code><var>dateTime</var></code>. If <code><var>dateTime</var></code> is not a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>.</p>
 <p>If the result is earlier or later than the range that <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> can represent (approximately half a million years centered on the Unix epoch), then a <code>RangeError</code> will be thrown, no matter the value of disambiguation.</p>
