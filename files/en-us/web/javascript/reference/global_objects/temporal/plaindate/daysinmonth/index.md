@@ -1,0 +1,34 @@
+---
+title: Temporal.PlainDate.prototype.daysInMonth
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/daysInMonth
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>daysInMonth</code></strong> read-only property gives the number of days in the month containing the date.</span></p>
+
+## Syntax
+
+```js
+date.daysInMonth
+```
+
+### Value
+
+An integer representing the number of days in the month. In the ISO 8601
+calendar, this is `28`, `29`, `30`, or `31`, depending on the month and whether
+the year is a leap year.
+
+## Examples
+
+```js
+date = Temporal.PlainDate.from('2019-02-23');
+date.daysInMonth; // => 28
+
+date = Temporal.PlainDate.from('2019-02-23[u-ca=hebrew]');
+date.daysInMonth; // => 30
+```

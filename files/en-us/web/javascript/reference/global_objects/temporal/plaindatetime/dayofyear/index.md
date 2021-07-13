@@ -1,0 +1,32 @@
+---
+title: Temporal.PlainDateTime.prototype.dayOfYear
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime/dayOfYear
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>dayOfYear</code></strong> read-only property gives the ordinal day of the year on which the date falls.</span> In the ISO 8601 and Gregorian calendars, this will be a number from <code>1</code> to <code>365</code> or <code>366</code> inclusive. In other calendars, such as those which use leap months, the upper bound can vary widely.</p>
+
+## Syntax
+
+```js
+datetime.dayOfYear
+```
+
+### Value
+
+An integer representing the ordinal day of the year on which the date falls.
+
+## Examples
+
+```js
+datetime = Temporal.PlainDateTime.from('2019-02-23');
+datetime.dayOfYear; // => 54
+
+datetime = Temporal.PlainDateTime.from('2019-02-23[u-ca=hebrew]');
+datetime.dayOfYear; // => 243
+```

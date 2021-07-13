@@ -1,0 +1,83 @@
+---
+title: Temporal.TimeZone.from()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/TimeZone/from
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>from()</code></strong> static method creates a new <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object from another value.</span></p>
+
+## Syntax
+
+```js
+from(timeZoneObject);
+```
+
+### Parameters
+
+- `timeZoneObject`
+  - : A time zone object, a Temporal object that carries a time zone, or a
+    string value from which to create a
+    `{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}`.
+    - If the value is another
+      `{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}`
+      object, or an object that implements the time zone protocol, the same
+      object is returned.
+    - If the value is another Temporal object that carries a time zone, or an
+      object with a `timeZone` property, such as
+      `{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}`,
+      the object's time zone is returned.
+    - Any other value is converted to a string, which is expected to be either a
+      string that is accepted by `new Temporal.TimeZone()`, or a string in the
+      ISO 8601 format including a time zone offset part. Note that an ISO 8601
+      string can optionally be extended with an IANA time zone name in square
+      brackets appended to it.
+
+### Return value
+
+A `{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}` object.
+
+## Examples
+
+```js
+// IANA time zone names and UTC offsets
+tz = Temporal.TimeZone.from('UTC');
+tz = Temporal.TimeZone.from('Africa/Cairo');
+tz = Temporal.TimeZone.from('america/VANCOUVER');
+tz = Temporal.TimeZone.from('Asia/Katmandu'); // alias of Asia/Kathmandu
+tz = Temporal.TimeZone.from('-04:00');
+tz = Temporal.TimeZone.from('+0645');
+
+// ISO 8601 string with time zone offset part
+tz = Temporal.TimeZone.from('2020-01-14T00:31:00.065858086Z');
+tz = Temporal.TimeZone.from('2020-01-13T16:31:00.065858086-08:00');
+tz = Temporal.TimeZone.from('2020-01-13T16:31:00.065858086-08:00[America/Vancouver]');
+
+// Existing TimeZone object
+tz2 = Temporal.TimeZone.from(tz);
+
+// Temporal object carrying a time zone
+properties = { year: 2020, month: 1, day: 13, hour: 16, minute: 31, timeZone: tz };
+zonedDateTime = Temporal.ZonedDateTime.from(properties);
+tz3 = Temporal.TimeZone.from(zonedDateTime);  // tz3 === tz
+
+// Object with a timeZone property
+tz4 = Temporal.TimeZone.from(properties);  // tz4 === tz
+```
+
+```js
+/* WRONG */
+tz = Temporal.TimeZone.from('local'); // throws, not a time zone
+/* WRONG */
+tz = Temporal.TimeZone.from('2020-01-14T00:31:00'); // throws, ISO 8601 string without time zone offset part
+/* WRONG */
+tz = Temporal.TimeZone.from('-08:00[America/Vancouver]'); // throws, ISO 8601 string without date-time part
+```

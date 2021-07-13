@@ -1,0 +1,50 @@
+---
+title: Temporal.PlainDate.prototype.withCalendar()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/PlainDate/withCalendar
+tags:
+  - Class
+  - JavaScript
+  - Time
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>withCalendar()</code></strong> method returns a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object of a date projected into a specified calendar.</span></p>
+
+## Syntax
+
+```js
+withCalendar(calendar)
+```
+
+### Parameters
+
+- `calendar`
+  - : The calendar into which to project the date. Can be represented by a
+    `{{jsxref('Temporal.Calendar','Temporal.Calendar')}}`
+    object, an object that implements the Temporal calendar protocol, or a
+    string identifying a calendar.
+
+### Return value
+
+A new `{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}`
+object representing the date projected into the specified calendar.
+
+## Examples
+
+```js
+date = Temporal.PlainDate.from('2006-08-24');
+jaDate = date.withCalendar('japanese');
+ilDate = date.withCalendar('hebrew');
+
+jaDate.day;     // => 24
+jaDate.month;   // => 8
+jaDate.year;    // => 2006
+jaDate.era;     // => "heisei"
+jaDate.eraYear; // => 18
+
+ilDate.day;     // => 30
+ilDate.month;   // => 11
+ilDate.year;    // => 5766
+ilDate.era;     // => undefined
+ilDate.eraYear; // => undefined
+```

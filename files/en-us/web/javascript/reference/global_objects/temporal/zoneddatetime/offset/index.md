@@ -1,0 +1,49 @@
+---
+title: Temporal.ZonedDateTime.prototype.offset
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/offset
+tags:
+  - Class
+  - Date
+  - JavaScript
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>offset</code></strong> read-only property is the offset (formatted as a string) relative to UTC of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object's time zone.</span> The value of this field will change after DST (Daylight Saving Time) transitions or after political changes to a time zone, e.g. a country switching to a new time zone.</p>
+
+This field is used to uniquely map date/time fields to an exact date/time in
+cases where the calendar date and clock time are ambiguous due to time zone
+offset transitions. Therefore, this field is accepted by
+`{{jsxref('Temporal/ZonedDateTime/with','.with()')}}` and
+`{{jsxref('Temporal/ZonedDateTime/from','.from()')}}`. The
+presence of this field means that
+`{{jsxref('Temporal/ZonedDateTime/toInstant','.toInstant()')}}`
+requires no parameters.
+
+## Syntax
+
+```js
+datetime.offset
+```
+
+### Value
+
+An integer.
+
+## Examples
+
+```js
+zdt = Temporal.ZonedDateTime.from('2020-11-01T01:30-07:00[America/Los_Angeles]');
+zdt.offset;
+  // => '-07:00'
+zdt.withTimeZone('Asia/Kolkata').offset;
+  // => '+05:30'
+
+minus8Hours = '-08:00';
+daylightTime0130 = Temporal.ZonedDateTime.from('2020-11-01T01:30-07:00[America/Los_Angeles]');
+  // => 2020-11-01T01:30:00-07:00[America/Los_Angeles]
+  // This is Pacific Daylight Time 1:30AM
+repeated0130 = daylightTime0130.with({ offset: minus8Hours });
+  // => 2020-11-01T01:30:00-08:00[America/Los_Angeles]
+  // This is Pacific Standard Time 1:30AM
+```

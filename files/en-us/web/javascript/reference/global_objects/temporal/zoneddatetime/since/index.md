@@ -1,0 +1,129 @@
+---
+title: Temporal.ZonedDateTime.prototype.since()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/since
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+<p class="summary"><span class="seoSummary">The <strong><code>since()</code></strong> method computes the elapsed time between the date and time represented by <code>zonedDateTime</code> and another date and time in the past, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span> If the second date and time is later than the first, then the resulting duration will be negative. This method is similar to <code>{{jsxref('Temporal.ZonedDateTime/until','Temporal.ZonedDateTime.until()')}}</code>, but reversed.</p>
+
+The duration returned is a "hybrid" duration. This means that the duration's
+date portion represents full calendar days like
+`{{jsxref('Temporal.PlainDateTime/until','Temporal.PlainDateTime.until()')}}`
+would return, while its time portion represents real-world elapsed time like
+`{{jsxref('Temporal.Instant/until','Temporal.Instant.until()')}}`
+would return. This "hybrid duration" approach automatically adjusts for DST and
+matches widely-adopted industry standards like RFC 5545 (iCalendar). It also
+matches the behavior of popular JavaScript libraries like moment.js and
+date-fns.
+
+Examples:
+
+- The difference between 2:30AM on the day before DST starts and 3:30AM on the
+  day DST starts results in `P1DT1H`, even though it's only 24 hours of
+  real-world elapsed time
+- The difference between 1:45AM on the day before DST starts and the "second"
+  1:15AM on the day DST ends results in `PT24H30M` because it hasn't been a full
+  calendar day even though it's been 24.5 real-world hours.
+
+<div class="warning"><p>Computing the difference between dates and times in different calendar systems is not supported. If you need to do this, choose the calendar in which the computation takes place by converting one of the dates and times using the method <code>{{jsxref('Temporal.ZonedDateTime/withCalendar','.withCalendar()')}}</code>.</p></div>
+
+## Syntax
+
+```js
+since(otherZonedDateTime)
+since(otherZonedDateTime, options)
+```
+
+### Parameters
+
+- `otherZonedDateTime`
+  - : Another month as either a
+    `{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}`
+    object, or a value that can be converted to one as if passed to
+    `{{jsxref('Temporal/ZonedDateTime.from()','Temporal.ZonedDateTime.from()')}}`.
+- `options` {{optional_inline}}
+
+  - : An object with properties defining how the rounding operation should be
+    carried out. The allowed properties are:
+
+    - `largestUnit`
+
+      - : A string defining the largest unit of time allowed in the returned
+        object. Valid values are:
+
+        - `'auto'` (default)
+        - `'years'`
+        - `'months'`
+        - `'weeks'`
+        - `'days'`
+        - `'hours'`
+        - `'minutes'`
+        - `'seconds'`
+        - `'milliseconds'`
+        - `'microseconds'`
+        - `'nanoseconds'` The `largestUnit` option controls how the resulting
+          duration is expressed. A value of `'auto'` means `'hours'` unless the
+          value of `smallestUnit` is `'years'`, `'months'`, `'weeks'`, or
+          `'days'`, in which case `'auto'` means to match the value of
+          `smallestUnit`.
+
+        The returned
+        `{{jsxref('Temporal/Duration','Temporal.Duration')}}`
+        object will not have any nonzero fields that are larger than the unit in
+        `largestUnit`. A difference of one year and two months will become 14
+        months when `largestUnit` is `'months'`, for example. However, a
+        difference of one month will still be one month even if `largestUnit` is
+        `'years'`.
+        <div class="warning">Take care when using <code>'milliseconds'</code>, <code>'microseconds'</code>, or <code>'nanoseconds'</code> as the largest unit. For some durations, the resulting value may overflow <code>{{jsxref('Number/MAX_SAFE_INTEGER','Number.MAX_SAFE_INTEGER')}}</code> and lose precision in its least significant digit(s). Nanoseconds values will overflow and lose precision after about 104 days. Microseconds can fit about 285 years without losing precision, and milliseconds can handle about 285,000 years without losing precision.</div>
+
+    - `smallestUnit`
+      - : A string defining the smallest unit of time allowed in the returned
+        object. Valid values are the same as for `largestUnit`, except the
+        default value is `'nanoseconds'`, which means no rounding will occur.
+    - `roundingIncrement`
+      - : An integer defining the granularity of the rounding of the unit given
+        by `smallestUnit`. The default is `1`.
+    - `roundingMode`
+
+      - : A string defining how to deal with any remainders. If `roundingMode`
+        is not defined, then no rounding will be performed. The valid values
+        are:
+
+        - `'ceil'`
+          - : Always round up, toward the end of time.
+        - `'floor'`
+
+          `'trunc'` (default)
+
+          - : Always round down, toward the beginning of time. These two
+            rounding modes behave identically, but are included for consistency
+            with
+            `{{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}`,
+            where they do **not** behave identically.
+
+        - `'halfExpand'`
+          - : Round to the nearest of the values allowed by `roundingIncrement`
+            and `smallestUnit`. If there is a tie, round up, toward the end of
+            time.
+
+### Return value
+
+A new `{{jsxref('Temporal/Duration','Temporal.Duration')}}`
+object representing the difference between the two dates and times.
+
+## Examples
+
+```js
+zdt1 = Temporal.ZonedDateTime.from('1995-12-07T03:24:30.000003500+05:30[Asia/Kolkata]');
+zdt2 = Temporal.ZonedDateTime.from('2019-01-31T15:30+05:30[Asia/Kolkata]');
+zdt2.since(zdt1); // => PT202956H5M29.9999965S
+```
