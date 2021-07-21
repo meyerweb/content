@@ -6,8 +6,9 @@ tags:
   - Advanced
   - WebHID
   - WebHID API
+browser-compat: api.HID
 ---
-<div>{{ APIRef("WebHID API") }}{{SeeCompatTable}}</div>
+<div>{{securecontext_header}}{{DefaultAPISidebar("WebHID API")}}</div>
 
 <p>The <strong><code>HID</code></strong> interface provides methods for connecting to <em>HID devices</em>, listing attached HID devices and event handlers for connected HID devices.</p>
 
@@ -32,34 +33,18 @@ tags:
  <dt>{{domxref("HID.getDevices","getDevices()")}}</dt>
  <dd>Returns a {{jsxref("Promise")}} that resolves with an array of connected {{domxref("HIDDevice")}} objects.
  </dd>
- <dt>{{domxref("HID.requestDevices","requestDevice()")}}</dt>
- <dd>Returns a {{jsxref("Promise")}} that resolves with an array of connected {{domxref("HIDDevice")}} objects from the HID device selected from popup.
- <div class="note">You can only select one HID device from the popup at a time from this {{jsxref("Promise")}}, but the array might contain multiple {{domxref("HIDDevice")}}s.</div>
+ <dt>{{domxref("HID.requestDevice","requestDevice()")}}</dt>
+ <dd>Returns a {{jsxref("Promise")}} that resolves with an array of connected {{domxref("HIDDevice")}} objects. Calling this function will trigger the user agent's permission flow in order to gain permission to access one selected device from the returned list of devices.
  </dd>
 </dl>
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-   <tr>
-    <th scope="col">Specification</th>
-    <th scope="col">Status</th>
-    <th scope="col">Comment</th>
-   </tr>
-  </thead>
-  <tbody>
-   <tr>
-     <td>{{SpecName('WebHID', '#dom-hid', 'HID')}}</td>
-     <td>{{Spec2('WebHID')}}</td>
-    <td>Initial definition.</td>
-   </tr>
-  </tbody>
- </table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<p>{{Compat("api.HID")}}</p>
+<p>{{Compat}}</p>
 
 <h2 id="See_also">See also</h2>
 
