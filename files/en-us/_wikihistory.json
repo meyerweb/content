@@ -94324,13 +94324,6 @@
       "bershanskiy"
     ]
   },
-  "Web/API/XRHandedness": {
-    "modified": "2020-12-06T13:01:26.637Z",
-    "contributors": [
-      "Wind1808",
-      "Sheppy"
-    ]
-  },
   "Web/API/XRInputSource": {
     "modified": "2020-10-15T22:22:14.250Z",
     "contributors": [
@@ -94439,24 +94432,6 @@
       "Sheppy"
     ]
   },
-  "Web/API/XRInputSourceEventInit": {
-    "modified": "2020-10-15T22:28:03.039Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRInputSourceEventInit/frame": {
-    "modified": "2020-10-15T22:28:03.243Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRInputSourceEventInit/inputSource": {
-    "modified": "2020-10-15T22:28:03.981Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
   "Web/API/XRInputSourcesChangeEvent": {
     "modified": "2020-10-15T22:27:48.967Z",
     "contributors": [
@@ -94487,30 +94462,6 @@
     "modified": "2020-10-15T22:27:49.155Z",
     "contributors": [
       "sideshowbarker",
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRInputSourcesChangeEventInit": {
-    "modified": "2020-10-15T22:27:51.490Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRInputSourcesChangeEventInit/added": {
-    "modified": "2020-10-15T22:27:51.338Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRInputSourcesChangeEventInit/removed": {
-    "modified": "2020-10-15T22:27:51.869Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRInputSourcesChangeEventInit/session": {
-    "modified": "2020-10-15T22:27:49.445Z",
-    "contributors": [
       "Sheppy"
     ]
   },
@@ -94623,24 +94574,6 @@
     "modified": "2020-10-15T22:28:05.140Z",
     "contributors": [
       "sideshowbarker",
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRReferenceSpaceEventInit": {
-    "modified": "2020-10-15T22:28:04.831Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRReferenceSpaceEventInit/referenceSpace": {
-    "modified": "2020-10-15T22:28:04.989Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRReferenceSpaceEventInit/transform": {
-    "modified": "2020-10-15T22:28:05.005Z",
-    "contributors": [
       "Sheppy"
     ]
   },
@@ -94935,18 +94868,6 @@
       "Sheppy"
     ]
   },
-  "Web/API/XRSessionEventInit": {
-    "modified": "2020-10-15T22:27:48.801Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRSessionEventInit/session": {
-    "modified": "2020-10-15T22:27:48.954Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
   "Web/API/XRSpace": {
     "modified": "2020-10-15T22:22:29.366Z",
     "contributors": [
@@ -94988,13 +94909,6 @@
       "bershanskiy",
       "Sheppy",
       "sideshowbarker"
-    ]
-  },
-  "Web/API/XRTargetRayMode": {
-    "modified": "2020-12-08T08:59:04.844Z",
-    "contributors": [
-      "Wind1808",
-      "Sheppy"
     ]
   },
   "Web/API/XRView": {
@@ -95119,48 +95033,6 @@
   },
   "Web/API/XRWebGLLayer/ignoreDepthValues": {
     "modified": "2020-10-15T22:25:34.594Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRWebGLLayerInit": {
-    "modified": "2020-10-15T22:25:30.391Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRWebGLLayerInit/alpha": {
-    "modified": "2020-10-15T22:25:34.957Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRWebGLLayerInit/antialias": {
-    "modified": "2020-10-15T22:25:35.189Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRWebGLLayerInit/depth": {
-    "modified": "2020-10-15T22:25:33.463Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRWebGLLayerInit/framebufferScaleFactor": {
-    "modified": "2020-10-15T22:25:35.259Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRWebGLLayerInit/ignoreDepthValues": {
-    "modified": "2020-10-15T22:25:35.737Z",
-    "contributors": [
-      "Sheppy"
-    ]
-  },
-  "Web/API/XRWebGLLayerInit/stencil": {
-    "modified": "2020-10-15T22:25:34.539Z",
     "contributors": [
       "Sheppy"
     ]
