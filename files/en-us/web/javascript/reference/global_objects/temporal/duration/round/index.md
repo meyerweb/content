@@ -1,0 +1,97 @@
+---
+title: Temporal.Duration.prototype.round()
+slug: Web/JavaScript/Reference/Global_Objects/Temporal/Duration/round
+tags:
+  - Class
+  - Date
+  - Epoch
+  - JavaScript
+  - Time
+  - Time Zone
+  - Unix Epoch
+  - timeStamp
+---
+{{JSRef}}
+
+The **`round()`** method creates a new
+{{jsxref('Temporal/Duration','Temporal.Duration')}} object by
+rounding a {{jsxref('Temporal/Duration','Temporal.Duration')}}
+object.
+
+## Syntax
+
+```js
+round(options)
+```
+
+### Parameters
+
+- `options`
+  - : An object with properties defining how the rounding operation should be
+    carried out. The allowed properties are:
+    <dl><dt><code>largestUnit</code></dt><dd>A string defining the largest unit of time to allow in the rounded result. Valid values are:<ul><li><code>'auto'</code> <strong>(default)</strong></li><li><code>'years'</code></li><li><code>'months'</code></li><li><code>'weeks'</code></li><li><code>'days'</code></li><li><code>'hours'</code></li><li><code>'minutes'</code></li><li><code>'seconds'</code></li><li><code>'milliseconds'</code></li><li><code>'microseconds'</code></li><li><code>'nanoseconds'</code></li></ul><p>The <code>largestUnit</code> value determines the largest unit allowed in the result. It causes units larger than <code>largestUnit</code> to be converted into smaller units, and units smaller than <code>largestUnit</code> to be converted into larger units as much as possible. For example, with <code>largestUnit: 'minutes'</code>, a duration of 1 hour and 125 seconds will be converted into a duration of 62 minutes and 5 seconds.</p><p>A <code>largestUnit</code> value of <code>'auto'</code> means that <code>largestUnit</code> will use largest nonzero unit in the duration that is larger than <code>smallestUnit</code>. For example, in a duration of 3 days and 12 hours, <code>largestUnit: 'auto'</code> would mean the same as <code>largestUnit: 'days'</code>.</p></dd><dt><code>smallestUnit</code></dt><dd><p>A string defining the unit of time to which to round. Valid values are the same as for <code>largestUnit</code>, with two exceptions: there is no <code>'auto'</code> value, and the default value is <code>'nanoseconds'</code> (which means no rounding is performed).</p></dd><div class="warning"><strong>NOTE:</strong> At least one of <code>largestUnit</code> and <code>smallestUnit</code> is <strong>required</strong>.</div><dt><code>relativeTo</code></dt><dd><p>The starting point to use when converting between years, months, weeks, and days, expressed as a {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object, or else a value convertible to one.</p></dd><div class="warning"><strong>NOTE:</strong> If either <code>largestUnit</code> or <code>smallestUnit</code> is <code>'years'</code>, <code>'months'</code>, or <code>'weeks'</code>, or if the base duration has nonzero value for any of years, months, or weeks, then the <code>relativeTo</code> option is <strong>required</strong>.</div><dt><code>roundingIncrement</code> {{ optional_inline }}</dt><dd><p>An integer defining the granularity of the rounding of the unit given by <code>smallestUnit</code>. The default is <code>1</code>. This value must divide evenly into the next highest unit after <code>smallestUnit</code>, and must not be equal to it. For example, if <code>smallestUnit</code> is <code>'minutes'</code>, then the number of minutes given by <code>roundingIncrement</code> must divide evenly into 60 minutes, which is one hour. The valid values in this case are 1 (default), 2, 3, 4, 5, 6, 10, 12, 15, 20, and 30. Instead of 60 minutes, use 1 hour.)</p></dd><dt><code>roundingMode</code> {{ optional_inline }}</dt><dd>A string defining how the rounding is conducted. The valid values are:<dl><dt><code>'ceil'</code></dt><dd>Always round up, toward positive infinity. For negative durations, this option will <strong>decrease</strong> the absolute value of the duration, which may be unexpected; e.g., <code>-3.7</code> will be rounded to <code>-3</code>. To round away from zero, use <code>'ceil'</code> for positive durations and <code>'floor'</code> for negative durations.</dd><dt><code>'floor'</code></dt><dd>Always round down, toward negative infinity. For negative durations, this option will <strong>increase</strong> the absolute value of the result, which may be unexpected; e.g., <code>-3.2</code> will be rounded to <code>-4</code>. For this reason, <code>'trunc'</code> is recommended for most "round down" use cases.</dd><dt><code>'trunc'</code></dt><dd>Always round toward zero. This will decrease the absolute value of all durations, positive or negative.</dd><dt><code>'halfExpand'</code> (default)</dt><dd>Round to the nearest of the values allowed by <code>roundingIncrement</code> and <code>smallestUnit</code>. When there is a tie, round away from zero like <code>'ceil'</code> for positive durations and like <code>'floor'</code> for negative durations.</dd></dl></dd></dl>
+
+### Return value
+
+A new {{jsxref('Temporal/Duration','Temporal.Duration')}}
+object representing the rounded-off duration.
+
+## Examples
+
+```js
+// Balance a duration as far as possible without knowing a starting point
+d = Temporal.Duration.from({ minutes: 130 });
+d.round({ largestUnit: 'days' }); // => PT2H10M
+
+// Round to the nearest unit
+d = Temporal.Duration.from({ minutes: 10, seconds: 52 });
+d.round({ smallestUnit: 'minutes' }); // => PT11M
+d.round({ smallestUnit: 'minutes', roundingMode: 'trunc' }); // => PT10M
+
+// How many seconds in a multi-unit duration?
+d = Temporal.Duration.from('PT2H34M18S');
+d.round({ largestUnit: 'seconds' }).seconds; // => 9258
+
+// Normalize, with and without taking DST into account
+d = Temporal.Duration.from({ hours: 2756 });
+d.round({
+   relativeTo: '2020-01-01T00:00+01:00[Europe/Rome]',
+   largestUnit: 'years'
+}); // => P114DT21H
+    // (one hour longer because DST skipped an hour)
+d.round({
+  relativeTo: '2020-01-01',
+  largestUnit: 'years'
+}); // => P114DT20H
+    // (one hour shorter if ignoring DST)
+
+// Normalize days into months or years
+d = Temporal.Duration.from({ days: 190 });
+refDate = Temporal.PlainDate.from('2020-01-01');
+d.round({ relativeTo: refDate, largestUnit: 'years' }); // => P6M8D
+
+// Same, but in a different calendar system
+d.round({
+  relativeTo: refDate.withCalendar('hebrew'),
+  largestUnit: 'years'
+}); // => P6M13D
+
+// Round a duration up to the next 5-minute billing period
+d = Temporal.Duration.from({ minutes: 6 });
+d.round({
+  smallestUnit: 'minutes',
+  roundingIncrement: 5,
+  roundingMode: 'ceil'
+}); // => PT10M
+
+// How many full 3-month quarters of this year, are in this duration?
+d = Temporal.Duration.from({ months: 10, days: 15 });
+d = d.round({
+  smallestUnit: 'months',
+  roundingIncrement: 3,
+  roundingMode: 'trunc',
+  relativeTo: Temporal.now.plainDateISO()
+});
+quarters = d.months / 3;
+quarters; // => 3
+```
