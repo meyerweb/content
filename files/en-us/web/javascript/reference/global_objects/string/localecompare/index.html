@@ -26,8 +26,11 @@ browser-compat: javascript.builtins.String.localeCompare
 
 <h2 id="Syntax">Syntax</h2>
 
-<pre
-  class="brush: js"><code><var>referenceStr</var>.localeCompare(<var>compareString</var>[, <var>locales</var>[, <var>options</var>]])</code></pre>
+<pre class="brush: js">
+localeCompare(compareString)
+localeCompare(compareString, locales)
+localeCompare(compareString, locales, options)
+</pre>
 
 <h3 id="Parameters">Parameters</h3>
 
@@ -153,34 +156,18 @@ console.log('ä'.localeCompare('a', 'sv', { sensitivity: 'base' })); // a positi
 <h3 id="Numeric_sorting">Numeric sorting</h3>
 
 <pre class="brush: js">// by default, "2" &gt; "10"
-console.log(<span class="message-body-wrapper"><span class="message-flex-body"><span class="devtools-monospace message-body">"2".localeCompare("10")</span></span></span>); // 1
+console.log("2".localeCompare("10")); // 1
 
 // numeric using options:
-console.log(<span class="message-body-wrapper"><span class="message-flex-body"><span class="devtools-monospace message-body">"2".localeCompare("10", undefined, {numeric: true})</span></span></span>); // -1
+console.log("2".localeCompare("10", undefined, {numeric: true})); // -1
 
 // numeric using locales tag:
-console.log(<span class="message-body-wrapper"><span class="message-flex-body"><span class="devtools-monospace message-body">"2".localeCompare("10", "en-u-kn-true")</span></span></span>); // -1
+console.log("2".localeCompare("10", "en-u-kn-true")); // -1
 </pre>
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-string.prototype.localecompare',
-        'String.prototype.localeCompare')}}</td>
-    </tr>
-    <tr>
-      <td>{{SpecName('ES Int Draft', '#sup-String.prototype.localeCompare',
-        'String.prototype.localeCompare')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 

@@ -7,6 +7,7 @@ tags:
   - Method
   - Object
   - Prototype
+  - Polyfill
 browser-compat: javascript.builtins.Object.lookupSetter
 ---
 <div>{{JSRef}} {{deprecated_header}}</div>
@@ -61,19 +62,7 @@ Object.getOwnPropertyDescriptor(obj, 'foo').set;
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-object.prototype.__lookupSetter__',
-        'Object.prototype.__lookupSetter__()')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
@@ -82,6 +71,7 @@ Object.getOwnPropertyDescriptor(obj, 'foo').set;
 <h2 id="See_also">See also</h2>
 
 <ul>
+  <li>A polyfill of <code>Object.prototype.__lookupSetter__</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-object"><code>core-js</code></a></li>
   <li>{{jsxref("Object.prototype.__lookupGetter__()")}}</li>
   <li>{{jsxref("Functions/set", "set")}} operator</li>
   <li>{{jsxref("Object.getOwnPropertyDescriptor()")}} and

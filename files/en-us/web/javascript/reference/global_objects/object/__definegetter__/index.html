@@ -7,6 +7,7 @@ tags:
   - Method
   - Object
   - Prototype
+  - Polyfill
 browser-compat: javascript.builtins.Object.defineGetter
 ---
 <div>{{JSRef}}</div>
@@ -73,19 +74,7 @@ console.log(o.gimmeFive); // 5
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-object.prototype.__defineGetter__',
-        'Object.prototype.__defineGetter__()')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
@@ -94,6 +83,7 @@ console.log(o.gimmeFive); // 5
 <h2 id="See_also">See also</h2>
 
 <ul>
+  <li>A polyfill of <code>Object.prototype.__defineGetter__</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-object"><code>core-js</code></a></li>
   <li>{{jsxref("Object.prototype.__defineSetter__()")}}</li>
   <li>{{jsxref("Functions/get", "get")}} operator</li>
   <li>{{jsxref("Object.defineProperty()")}}</li>

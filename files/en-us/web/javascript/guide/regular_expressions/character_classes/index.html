@@ -110,7 +110,7 @@ tags:
   <tr>
    <td><code>\c<em>X</em></code></td>
    <td>
-    <p>Matches a control character using <a href="https://en.wikipedia.org/wiki/Caret_notation">caret notation</a>, where "X" is a letter from A–Z (corresponding to codepoints <code>U+0001</code><em>–</em><code>U+001F</code>). For example, <code>/\cM/</code> matches "\r" in "\r\n".</p>
+    <p>Matches a control character using <a href="https://en.wikipedia.org/wiki/Caret_notation">caret notation</a>, where "X" is a letter from A–Z (corresponding to codepoints <code>U+0001</code><em>–</em><code>U+001A</code>). For example, <code>/\cM\cJ/</code> matches "\r\n".</p>
    </td>
   </tr>
   <tr>
@@ -185,24 +185,6 @@ console.table(nonEnglishText.match(regexpBMPWord));
 [ 'Приключения', 'Алисы', 'в', 'Стране', 'чудес' ]
 </pre>
 
-
-<h2 id="Specifications">Specifications</h2>
-
-<table class="standard-table">
- <tbody>
-  <tr>
-   <th scope="col">Specification</th>
-  </tr>
-  <tr>
-   <td>{{SpecName('ESDraft', '#sec-characterclass', 'RegExp: Character classes')}}</td>
-  </tr>
- </tbody>
-</table>
-
-<h2 id="Browser_compatibility">Browser compatibility</h2>
-
-<p>For browser compatibility information, check out the <a href="/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#browser_compatibility">main Regular Expressions compatibility table</a>.</p>
-
 <h2 id="See_also">See also</h2>
 
 <ul>
@@ -216,4 +198,5 @@ console.table(nonEnglishText.match(regexpBMPWord));
   </ul>
  </li>
  <li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">The <code>RegExp()</code> constructor</a></li>
+ <li><a href="https://tc39.es/ecma262/#sec-characterclass">CharacterClass in the ECMAScript specification</a></li>
 </ul>

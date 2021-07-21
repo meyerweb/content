@@ -21,8 +21,10 @@ browser-compat: javascript.builtins.String.substr
 
 <h2 id="Syntax">Syntax</h2>
 
-<pre
-  class="brush: js"><var>str</var>.substr(<var>start</var>[, <var>length</var>])</pre>
+<pre class="brush: js">
+substr(start)
+substr(start, length)
+</pre>
 
 <h3 id="Parameters">Parameters</h3>
 
@@ -43,7 +45,7 @@ browser-compat: javascript.builtins.String.substr
   <code><var>str</var></code>, counting from the <code><var>start</var></code> index.</p>
 
 <ul>
-  <li>If <code><var>start</var></code> is a positive number, the index starts counting at
+  <li>If <code><var>start</var></code> is a non-negative number, the index starts counting at
     the start of the string. Its value is capped at <code><var>str</var>.length</code>.
   </li>
   <li>If <code><var>start</var></code> is a negative number, the index starts counting
@@ -105,19 +107,7 @@ console.log(aString.substr(20, 2));  // ''
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-string.prototype.substr',
-        'String.prototype.substr')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 

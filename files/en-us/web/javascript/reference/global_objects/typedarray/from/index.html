@@ -8,6 +8,7 @@ tags:
 - TypedArray
 - TypedArrays
 - from
+- Polyfill
 browser-compat: javascript.builtins.TypedArray.from
 ---
 <div>{{JSRef}}</div>
@@ -22,7 +23,20 @@ browser-compat: javascript.builtins.TypedArray.from
 
 <h2 id="Syntax">Syntax</h2>
 
-<pre class="brush: js"><var>TypedArray</var>.from(<var>source</var>[, <var>mapFn</var>[, <var>thisArg</var>]])
+<pre class="brush: js">
+// Arrow function
+TypedArray.from(arrayLike, (element) => { ... } )
+TypedArray.from(arrayLike, (element, index) => { ... } )
+
+// Mapping function
+TypedArray.from(arrayLike, mapFn)
+TypedArray.from(arrayLike, mapFn, thisArg)
+
+// Inline mapping function
+TypedArray.from(arrayLike, function mapFn(element) { ... })
+TypedArray.from(arrayLike, function mapFn(element, index) { ... })
+TypedArray.from(arrayLike, function mapFn(element) { ... }, thisArg)
+TypedArray.from(arrayLike, function mapFn(element, index) { ... }, thisArg)
 </pre>
 
 <p>Where <code><var>TypedArray</var></code> is one of:</p>
@@ -46,7 +60,7 @@ browser-compat: javascript.builtins.TypedArray.from
 <h3 id="Parameters">Parameters</h3>
 
 <dl>
-    <dt><code><var>source</var></code></dt>
+    <dt><code><var>arrayLike</var></code></dt>
     <dd>An array-like or iterable object to convert to a typed array.</dd>
     <dt><code><var>mapFn</var></code> {{optional_inline}}</dt>
     <dd>Map function to call on every element of the typed array.</dd>
@@ -144,67 +158,9 @@ Uint8Array.from(s);
 // Uint8Array [ 0, 1, 2, 3, 4 ]
 </pre>
 
-<h2 id="Polyfill">Polyfill</h2>
-
-<p>You can partially work around this by inserting the following code at the beginning of
-    your scripts, allowing use of much of the functionality of <code>from()</code> in
-    implementations that do not natively support it.</p>
-
-<pre class="brush: js">if (!Int8Array.__proto__.from) {
-    (function () {
-        Int8Array.__proto__.from = function (obj, func, thisObj) {
-
-            var typedArrayClass = Int8Array.__proto__;
-            if(typeof this !== 'function') {
-                throw new TypeError('# is not a constructor');
-            }
-            if (this.__proto__ !== typedArrayClass) {
-                throw new TypeError('this is not a typed array.');
-            }
-
-            func = func || function (elem) {
-                    return elem;
-                };
-
-            if (typeof func !== 'function') {
-                throw new TypeError('specified argument is not a function');
-            }
-
-            obj = Object(obj);
-            if (!obj['length']) {
-                return new this(0);
-            }
-            var copy_data = [];
-            for(var i = 0; i &lt; obj.length; i++) {
-                copy_data.push(obj[i]);
-            }
-
-            copy_data = copy_data.map(func, thisObj);
-
-            var typed_array = new this(copy_data.length);
-            for(var i = 0; i &lt; typed_array.length; i++) {
-                typed_array[i] = copy_data[i];
-            }
-            return typed_array;
-        }
-    })();
-}</pre>
-
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-    <thead>
-        <tr>
-            <th scope="col">Specification</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{SpecName('ESDraft', '#sec-%typedarray%.from', '%TypedArray%.from')}}
-            </td>
-        </tr>
-    </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
@@ -213,7 +169,9 @@ Uint8Array.from(s);
 <h2 id="See_also">See also</h2>
 
 <ul>
+    <li>A polyfill of <code>TypedArray.from</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays"><code>core-js</code></a></li>
     <li>{{jsxref("TypedArray.of()")}}</li>
     <li>{{jsxref("Array.from()")}}</li>
     <li>{{jsxref("Array.prototype.map()")}}</li>
+    <li><a href="https://github.com/behnammodi/polyfill/blob/v0.0.1/int-8-array.polyfill.js">A polyfill</a></li>
 </ul>

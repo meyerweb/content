@@ -8,6 +8,7 @@ tags:
 - Prototype
 - TypedArray
 - TypedArrays
+- Polyfill
 browser-compat: javascript.builtins.TypedArray.reverse
 ---
 <div>{{JSRef}}</div>
@@ -24,7 +25,7 @@ browser-compat: javascript.builtins.TypedArray.reverse
 
 <h2 id="Syntax">Syntax</h2>
 
-<pre class="brush: js"><var>typedarray</var>.reverse();</pre>
+<pre class="brush: js">reverse()</pre>
 
 <h3 id="Return_value">Return value</h3>
 
@@ -42,19 +43,7 @@ console.log(uint8); // Uint8Array [3, 2, 1]
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-%typedarray%.prototype.reverse',
-        'TypedArray.prototype.reverse')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
@@ -63,5 +52,6 @@ console.log(uint8); // Uint8Array [3, 2, 1]
 <h2 id="See_also">See also</h2>
 
 <ul>
+  <li>A polyfill of <code>TypedArray.prototype.reverse</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays"><code>core-js</code></a></li>
   <li>{{jsxref("Array.prototype.reverse()")}}</li>
 </ul>

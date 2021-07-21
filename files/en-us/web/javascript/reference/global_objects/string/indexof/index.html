@@ -11,10 +11,10 @@ browser-compat: javascript.builtins.String.indexOf
 ---
 <div>{{JSRef}}</div>
 
-<p><span class="seoSummary">The <strong><code>indexOf()</code></strong> method returns the
+<p>The <strong><code>indexOf()</code></strong> method returns the
     index within the calling {{jsxref("String")}} object of the first occurrence of the
     specified value, starting the search at <code>fromIndex</code>. Returns
-    <code>-1</code> if the value is not found.</span></p>
+    <code>-1</code> if the value is not found.</p>
 
 <div>{{EmbedInteractiveExample("pages/js/string-indexof.html")}}</div>
 
@@ -24,7 +24,9 @@ browser-compat: javascript.builtins.String.indexOf
 
 <h2 id="Syntax">Syntax</h2>
 
-<pre class="brush: js"><var>str</var>.indexOf(<var>searchValue [</var>, <var>fromIndex]</var>)
+<pre class="brush: js">
+indexOf(searchValue)
+indexOf(searchValue, fromIndex)
 </pre>
 
 <h3 id="Parameters">Parameters</h3>
@@ -122,7 +124,6 @@ browser-compat: javascript.builtins.String.indexOf
 
 <pre class="brush: js">'Blue Whale'.indexOf('Blue') !== -1  // true
 'Blue Whale'.indexOf('Bloe') !== -1  // false
-~('Blue Whale'.indexOf('Bloe')) // 0, which is falsy
 </pre>
 
 <h2 id="Examples">Examples</h2>
@@ -177,19 +178,7 @@ console.log(count)  // displays 4
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-string.prototype.indexof',
-        'String.prototype.indexOf')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 

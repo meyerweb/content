@@ -6,19 +6,21 @@ tags:
   - Method
   - Object
   - Reference
+  - Polyfill
 browser-compat: javascript.builtins.Object.entries
 ---
 <div>{{JSRef}}</div>
 
 <p>The <code><strong>Object.entries()</strong></code> method returns an array of a given
   object's own enumerable string-keyed property
-  <code>[<var>key</var>, <var>value</var>]</code> pairs, in the same order as that
-  provided by a {{jsxref("Statements/for...in", "for...in")}} loop. (The only important
-  difference is that a <code>for...in</code> loop enumerates properties in the prototype
+  <code>[<var>key</var>, <var>value</var>]</code> pairs. This is the same as iterating
+  with a {{jsxref("Statements/for...in", "for...in")}} loop, except that a
+  <code>for...in</code> loop enumerates properties in the prototype
   chain as well). </p>
 
-<p>The order of the array returned by <code><strong>Object.entries()</strong></code> does
-  not depend on how an object is defined. If there is a need for certain ordering, then
+<p>The order of the array returned by <code><strong>Object.entries()</strong></code> is
+  the same as that provided by a {{jsxref("Statements/for...in", "for...in")}} loop. If
+  there is a need for different ordering, then
   the array should be sorted first, like
   <code>Object.entries(obj).sort((a, b) =&gt; b[0].localeCompare(a[0]));</code>.</p>
 
@@ -140,18 +142,7 @@ Object.entries(obj).forEach(([key, value]) =&gt; console.log(`${key}: ${value}`)
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-object.entries', 'Object.entries')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
@@ -160,6 +151,7 @@ Object.entries(obj).forEach(([key, value]) =&gt; console.log(`${key}: ${value}`)
 <h2 id="See_also">See also</h2>
 
 <ul>
+  <li>A polyfill of <code>Object.entries</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-object"><code>core-js</code></a></li>
   <li><a
       href="/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties">Enumerability
       and ownership of properties</a></li>

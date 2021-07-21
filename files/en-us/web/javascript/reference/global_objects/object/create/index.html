@@ -8,7 +8,7 @@ tags:
   - 'Null'
   - Object
   - Reference
-  - polyfill
+  - Polyfill
 browser-compat: javascript.builtins.Object.create
 ---
 <p>{{JSRef}}</p>
@@ -185,11 +185,10 @@ ocn.prototype.toString = Object.toString; // since new object lacks method then 
 </pre>
 
 <p><br>
-  Adding the missing object-method by using the standard-object as new object's prototype
-  does not work either:</p>
+  Adding the missing object-method by calling <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf"><code>Object.setPrototypeOf()</code></a> with the name of the standard-object itself as the second argument does not work either:</p>
 
 <pre class="brush: js">ocn = Object.create( null );        // create "null" object (same as before)
-Object.setPrototypeOf(ocn, Object); // set new object's prototype to the standard-object
+Object.setPrototypeOf(ocn, Object); // wrong; sets new object's prototype to the Object() function
 
 &gt; ocn.toString() // error: Function.prototype.toString requires that 'this' be a Function
 </pre>
@@ -314,7 +313,7 @@ rect.move(1, 1); // Outputs, 'Shape moved.'
 // inherit one class
 MyClass.prototype = Object.create(SuperClass.prototype);
 // mixin another
-Object.assign(MyClass.prototype, OtherSuperClass.prototype);
+Object.assign(Object.getPrototypeOf(MyClass.prototype), OtherSuperClass.prototype);
 // re-assign constructor
 MyClass.prototype.constructor = MyClass;
 
@@ -411,18 +410,7 @@ o2 = Object.create({p: 42}) */
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-object.create', 'Object.create')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
@@ -431,6 +419,7 @@ o2 = Object.create({p: 42}) */
 <h2 id="See_also">See also</h2>
 
 <ul>
+  <li>A polyfill of <code>Object.create</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-object"><code>core-js</code></a></li>
   <li>{{jsxref("Object.defineProperty()")}}</li>
   <li>{{jsxref("Object.defineProperties()")}}</li>
   <li>{{jsxref("Object.prototype.isPrototypeOf()")}}</li>

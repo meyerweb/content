@@ -11,6 +11,7 @@ tags:
   - Media
   - Reference
   - Video
+browser-compat: api.HTMLMediaElement
 ---
 <div>{{APIRef("HTML DOM")}}</div>
 
@@ -59,8 +60,6 @@ tags:
  <dd>Returns a {{domxref("MediaError")}} object for the most recent error, or <code>null</code> if there has not been an error.</dd>
  <dt>{{domxref("HTMLMediaElement.loop")}}</dt>
  <dd>A {{jsxref('Boolean')}} that reflects the {{htmlattrxref("loop", "video")}} HTML attribute, which indicates whether the media element should start over when it reaches the end.</dd>
- <dt>{{domxref("HTMLMediaElement.mediaGroup")}}</dt>
- <dd>A {{domxref("DOMString")}} that reflects the {{ htmlattrxref("mediagroup", "video")}} HTML attribute, which indicates the name of the group of elements it belongs to. A group of media elements shares a common {{domxref('MediaController')}}.</dd>
  <dt>{{domxref("HTMLMediaElement.mediaKeys")}} {{readonlyinline}} {{experimental_inline}}</dt>
  <dd>Returns a {{domxref("MediaKeys")}} object or <code>null</code>. MediaKeys is a set of keys that an associated HTMLMediaElement can use for decryption of media data during playback.</dd>
  <dt>{{domxref("HTMLMediaElement.muted")}}</dt>
@@ -106,13 +105,13 @@ tags:
  <dd>Sets the {{domxref('EventHandler')}} called when playback is blocked while waiting for an encryption key.</dd>
 </dl>
 
-<h2 id="Obsolete_attributes">Obsolete attributes</h2>
+<h2 id="Obsolete_attributes">Obsolete properties</h2>
 
-<p>These attributes are obsolete and should not be used, even if a browser still supports them.</p>
+<p>These properties are obsolete and should not be used, even if a browser still supports them.</p>
 
 <dl>
- <dt>{{domxref("HTMLMediaElement.initialTime")}} {{readonlyinline}} {{non-standard_inline}} {{deprecated_inline}}</dt>
- <dd>Returns a <code>double</code> that indicates the initial playback position in seconds.</dd>
+<dt>{{domxref("HTMLMediaElement.mediaGroup")}} {{deprecated_inline}}</dt>
+ <dd>A {{domxref("DOMString")}} that reflects the {{ htmlattrxref("mediagroup", "video")}} HTML attribute, which indicates the name of the group of elements it belongs to. A group of media elements shares a common {{domxref('MediaController')}}.</dd>
  <dt>{{domxref("HTMLMediaElement.mozAudioCaptured")}} {{readonlyinline}} {{non-standard_inline}} {{deprecated_inline}}</dt>
  <dd>Returns a {{jsxref('Boolean')}}. Related to audio stream capture.</dd>
  <dt>{{domxref("HTMLMediaElement.mozChannels")}} {{readonlyinline}} {{non-standard_inline}} {{deprecated_inline}}</dt>
@@ -133,7 +132,7 @@ tags:
 
 <dl>
  <dt>{{domxref("HTMLMediaElement.onmozinterruptbegin")}} {{non-standard_inline}} {{deprecated_inline}}</dt>
- <dd>Sets the {{domxref("EventHandler")}} called when the media element is interrupted because of the Audio Channel manager. This was Firefox-specific, having been implemented for Firefox OS, and was removed in Firefox 55.</dd>
+ <dd>Sets the <a href="/en-US/docs/Web/Events/Event_handlers">event handler</a> called when the media element is interrupted because of the Audio Channel manager. This was Firefox-specific, having been implemented for Firefox OS, and was removed in Firefox 55.</dd>
  <dt>{{domxref("HTMLMediaElement.onmozinterruptend")}} {{non-standard_inline}} {{deprecated_inline}}</dt>
  <dd>Sets the {{domxref('EventHandler')}} called when the interruption is concluded. This was Firefox-specific, having been implemented for Firefox OS, and was removed in Firefox 55.</dd>
 </dl>
@@ -233,36 +232,11 @@ tags:
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
- <thead>
-  <tr>
-   <th scope="col">Specification</th>
-   <th scope="col">Status</th>
-   <th scope="col">Comment</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>{{SpecName('EME', '#introduction', 'Encrypted Media Extensions')}}</td>
-   <td>{{Spec2('EME')}}</td>
-   <td>Adds {{domxref("MediaKeys")}}, {{domxref("MediaEncryptedEvent")}}, {{domxref("setMediaKeys")}}, {{domxref("onencrypted")}}, and {{domxref("onwaitingforkey")}}.</td>
-  </tr>
-  <tr>
-   <td>{{SpecName('HTML WHATWG', "the-video-element.html#htmlmediaelement", "HTMLMediaElement")}}</td>
-   <td>{{Spec2('HTML WHATWG')}}</td>
-   <td>No change from {{SpecName('HTML5 W3C')}}</td>
-  </tr>
-  <tr>
-   <td>{{SpecName('HTML5 W3C', "embedded-content-0.html#htmlmediaelement", "HTMLMediaElement")}}</td>
-   <td>{{Spec2('HTML5 W3C')}}</td>
-   <td>Initial definition.</td>
-  </tr>
- </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
-<p>{{Compat("api.HTMLMediaElement")}}</p>
+<p>{{Compat}}</p>
 
 <h2 id="See_also">See also</h2>
 

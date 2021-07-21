@@ -227,7 +227,7 @@ console.log("Hello world");
 </div>
 
 <div class="notecard warning">
-<p><strong>Warning:</strong> Although <a href="https://en.wikipedia.org/wiki/Byte_order_mark">BOM</a> before hashbang comment will work in a browser it is not advised to use BOM in a script with hasbang. BOM will not work when you try to run the script in Unix/Linux. So use UTF-8 without BOM if you want to run scripts directly from shell.</p>
+<p><strong>Warning:</strong> If you want scripts to be runnable directly in a shell environment, encode them in UTF-8 without a <a href="https://en.wikipedia.org/wiki/Byte_order_mark">BOM</a>. Although a BOM  will not cause any problems for code running in a browser, it is not advised to use a BOM with a hashbang in a script — because the BOM will prevent the script from working when you try to run it in a Unix/Linux shell environment. So if you want scripts to be runnable directly in a shell environment, encode them in UTF-8 without a BOM.</p>
 </div>
 
 <p>You must only use the <code>#!</code> comment style to specify a JavaScript interpreter. In all other cases just use a <code>//</code> comment (or mulitiline comment).</p>
@@ -622,21 +622,6 @@ return;
 a + b;
 </pre>
 
-<h2 id="Specifications">Specifications</h2>
-
-<table class="standard-table">
-	<thead>
-		<tr>
-			<th scope="col">Specification</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>{{SpecName('ESDraft', '#sec-ecmascript-language-lexical-grammar', 'Lexical Grammar')}}</td>
-		</tr>
-	</tbody>
-</table>
-
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
 <p>{{Compat}}</p>
@@ -644,7 +629,8 @@ a + b;
 <h2 id="See_also">See also</h2>
 
 <ul>
-	<li><a href="http://whereswalden.com/2013/08/12/micro-feature-from-es6-now-in-firefox-aurora-and-nightly-binary-and-octal-numbers/">Jeff Walden: Binary and octal numbers</a></li>
+	<li><a href="https://tc39.es/ecma262/#sec-ecmascript-language-lexical-grammar">Lexical grammar in the ECMAScript specification</a></li>
+  <li><a href="http://whereswalden.com/2013/08/12/micro-feature-from-es6-now-in-firefox-aurora-and-nightly-binary-and-octal-numbers/">Jeff Walden: Binary and octal numbers</a></li>
 	<li><a href="http://mathiasbynens.be/notes/javascript-escapes">Mathias Bynens: JavaScript character escape sequences</a></li>
 	<li>{{jsxref("Boolean")}}</li>
 	<li>{{jsxref("Number")}}</li>

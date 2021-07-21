@@ -10,7 +10,7 @@ browser-compat: javascript.builtins.BigInt
 ---
 <div>{{JSRef}}</div>
 
-<p><strong><code>BigInt</code></strong> is a built-in object whose constructor returns a <code>bigint</code> {{Glossary("Primitive", "primitive")}} — also called a <strong>BigInt value</strong>, or sometimes just a <strong>BigInt</strong> — to represent whole numbers larger than  2<sup>53</sup> - 1 (<a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER"><code>Number.MAX_SAFE_INTEGER</code></a>), which is the largest number JavaScript can represent with a <code>number</code> {{Glossary("Primitive", "primitive")}} (or <em>Number value</em>). BigInt values can be used for arbitrarily large integers.</p>
+<p><strong><code>BigInt</code></strong> is a built-in object whose constructor returns a <code>bigint</code> {{Glossary("Primitive", "primitive")}} — also called a <strong>BigInt value</strong>, or sometimes just a <strong>BigInt</strong> — to represent whole numbers larger than  2^53 - 1 (<a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER"><code>Number.MAX_SAFE_INTEGER</code></a>), which is the largest number JavaScript can represent with a <code>number</code> {{Glossary("Primitive", "primitive")}} (or <em>Number value</em>). BigInt values can be used for arbitrarily large integers.</p>
 
 <h2 id="Description">Description</h2>
 
@@ -71,7 +71,7 @@ const theFuture = previousMaxSafe + 2n
 const multi = previousMaxSafe * 2n
 // ↪ 18014398509481982n
 
-const subtr = multi – 10n
+const subtr = multi - 10n
 // ↪ 18014398509481972n
 
 const mod = multi % 10n
@@ -81,7 +81,7 @@ const bigN = 2n ** 54n
 // ↪ 18014398509481984n
 
 bigN * -1n
-// ↪ –18014398509481984n
+// ↪ -18014398509481984n
 </pre>
 
 <p>The <code>/</code> operator also works as expected with whole numbers — but operations with a fractional result will be truncated when used with a BigInt value — they won’t return any fractional digits.</p>
@@ -89,7 +89,7 @@ bigN * -1n
 <pre class="brush: js">const expected = 4n / 2n
 // ↪ 2n
 
-const rounded = 5n / 2n
+const truncated = 5n / 2n
 // ↪ 2n, not 2.5n
 
 </pre>
@@ -217,13 +217,13 @@ Boolean(12n)
 
 <p>Because coercing between Number values and BigInt values can lead to loss of precision, the following are recommended:</p>
 <ul>
-  <li>Only use a BigInt value when values greater than 2<sup>53</sup> are reasonably expected.</li>
+  <li>Only use a BigInt value when values greater than 2^53 are reasonably expected.</li>
   <li>Don’t coerce between BigInt values and Number values.</li>
 </ul>
 
 <h3 id="Cryptography">Cryptography</h3>
 
-<p>The operations supported on BigInt values are not constant-time. BigInt values are therefore <a href="https://www.chosenplaintext.ca/articles/beginners-guide-constant-time-cryptography.html">unsuitable for use in cryptography</a>.</p>
+<p>The operations supported on BigInt values are not constant-time, and are thus open to <a href="https://en.wikipedia.org/wiki/Timing_attack">timing attacks</a>. JavaScript BigInts are therefore not well-suited for use in cryptography.</p>
 
 <h3 id="Use_within_JSON">Use within JSON</h3>
 
@@ -269,18 +269,7 @@ nthPrime(20n)
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
- <thead>
-  <tr>
-   <th scope="col">Specification</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>{{SpecName("ESDraft", "#sec-bigint-objects", "<code>BigInt</code> objects")}}</td>
-  </tr>
- </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 

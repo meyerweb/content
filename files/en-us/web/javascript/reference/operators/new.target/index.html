@@ -85,7 +85,7 @@ class D extends C { constructor() { super()  } }
 let c = new C()  // logs class C{constructor(){console.log(new.target);}}
 let d = new D()  // logs class D extends C{constructor(){super();}}</pre>
 
-<p class="summary">Thus from the above example of class <code>C</code> and <code>D</code>,
+<p>Thus from the above example of class <code>C</code> and <code>D</code>,
   it seems that <code>new.target</code> points to the class definition of class which is
   initialized. For example, when <code>d</code> was initialized using
   <code>new D()</code>, the class definition of <code>D</code> was printed; and similarly,
@@ -93,17 +93,7 @@ let d = new D()  // logs class D extends C{constructor(){super();}}</pre>
 
 <h2 id="Specifications">Specifications</h2>
 
-<table class="standard-table">
-  <tbody>
-    <tr>
-      <th scope="col">Specification</th>
-    </tr>
-    <tr>
-      <td>{{SpecName('ESDraft', '#sec-built-in-function-objects', 'Built-in Function
-        Objects')}}</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 <h2 id="Browser_compatibility">Browser compatibility</h2>
 
