@@ -85,10 +85,8 @@ toLocaleString(<var>locales</var>, <var>options</var>)
 					<li>"<code>medium</code>"</li>
 					<li>"<code>short</code>"</li>
 				</ul>
-			</dd>
-			<dd>
 				<div class="notecard note">
-					<p><code>timeStyle</code> can be used with <code>dateStyle</code>, but
+					<p><strong>Note:</strong> <code>timeStyle</code> can be used with <code>dateStyle</code>, but
 						not with other options (e.g. <code>weekday</code>,
 						<code>hour</code>, <code>month</code>, etc.).</p>
 				</div>
@@ -125,7 +123,7 @@ toLocaleString(<var>locales</var>, <var>options</var>)
 				such as "<code>Asia/Shanghai</code>", "<code>Asia/Kolkata</code>",
 				"<code>America/New_York</code>".
 				<div class="warning">
-				<code>timeZone</code> will be automatically set from the time zone of the <code>zonedDateTime</code> object. If a different time zone ID is provided in the <code>timeZone</code> option, a <code>RangeError</code> will be thrown. To display a {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} value in a different time zone, use <code>{{jsxref('Temporal.ZonedDateTime/withTimeZone','Temporal.ZonedDateTime.withTimeZone(<var>otherTimeZone</var>)')}}.toLocaleString()</code>.
+				<p><strong>Warning:</strong> <code>timeZone</code> will be automatically set from the time zone of the <code>zonedDateTime</code> object. If a different time zone ID is provided in the <code>timeZone</code> option, a <code>RangeError</code> will be thrown. To display a {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} value in a different time zone, use <code>{{jsxref('Temporal.ZonedDateTime/withTimeZone','Temporal.ZonedDateTime.withTimeZone(<var>otherTimeZone</var>)')}}.toLocaleString()</code>.</p>
 				</div>
 				</dd>
 			<dt><code>hour12</code></dt>
