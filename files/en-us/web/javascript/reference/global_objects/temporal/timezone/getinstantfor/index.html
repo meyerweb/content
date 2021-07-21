@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>getInstantFor()</code></strong> method finds the exact time in a time zone at the time of a given calendar date and wall-clock time, even those which may be "skipped" by a change to or from Daylight Saving Time (DST).</span></p>
+<p>The <strong><code>getInstantFor()</code></strong> method finds the exact time in a time zone at the time of a given calendar date and wall-clock time, even those which may be "skipped" by a change to or from Daylight Saving Time (DST).</p>
 <p>This method is one way to convert a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> to a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code>. The result is identical to <code>dateTime.toZonedDateTime(timeZone, { disambiguation }).toInstant()</code>.  When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this method doesn't need to be overridden because the default implementation calls <code>{{jsxref('Temporal/TimeZone/getPossibleInstantsFor','timeZone.getPossibleInstantsFor()')}}</code>, and if there is more than one possible instant, uses <code>disambiguation</code> to pick which one to return.</p>
 
 <h2 id="syntax">Syntax</h2>

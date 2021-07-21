@@ -10,7 +10,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>toLocaleString()</code></strong> method returns a human-readable, language-sensitive representation of the <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> value.</span>  This method overrides {{jsxref('Object/toLocaleString','Object.prototype.toLocaleString()')}}.</p>
+<p>The <strong><code>toLocaleString()</code></strong> method returns a human-readable, language-sensitive representation of the <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> value.This method overrides {{jsxref('Object/toLocaleString','Object.prototype.toLocaleString()')}}.</p>
 <p>The calendar in the output locale (which is given by <code>new Intl.DateTimeFormat(locales, options).resolvedOptions().calendar</code>) <strong>must</strong> match the calendar of the <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object, or this method will throw an exception. This is because it's not possible to convert a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object from one calendar to another without more information. In order to ensure that the output always matches the <code>PlainMonthDay</code>'s internal calendar, you must either explicitly construct the <code>PlainMonthDay</code> with the locale's calendar, or explicitly specify the calendar in the <var>options</var> parameter (below).</p>
 
 <h2 id="syntax">Syntax</h2>

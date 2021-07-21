@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>until()</code></strong> method computes the elapsed time from the date and time represented by <code><var>dateTime</var></code> until another date and time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second date and time is earlier than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainDateTime/since','Temporal.PlainDateTime.since()')}}</code>, but reversed.</p>
+<p>The <strong><code>until()</code></strong> method computes the elapsed time from the date and time represented by <code><var>dateTime</var></code> until another date and time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.If the second date and time is earlier than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainDateTime/since','Temporal.PlainDateTime.since()')}}</code>, but reversed.</p>
 <div class="warning">
 <p><strong>Warning:</strong> Computing the difference between dates and times in different calendar systems is not supported.  If you need to do this, choose the calendar in which the computation takes place by converting one of the dates and times using the method <code>{{jsxref('Temporal.PlainDateTime/withCalendar','withCalendar()')}}</code>.</p>
 </div>

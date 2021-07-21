@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p class="summary"><span class="seoSummary">The <strong><code>getPlainDateTimeFor()</code></strong> method returns a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object indicating the calendar date and wall-clock time in <code>timeZone</code>, according to the reckoning of <code><var>calendar</var></code>, at the exact time indicated by <code><var>instant</var></code>.</span></p>
+<p>The <strong><code>getPlainDateTimeFor()</code></strong> method returns a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object indicating the calendar date and wall-clock time in <code>timeZone</code>, according to the reckoning of <code><var>calendar</var></code>, at the exact time indicated by <code><var>instant</var></code>.</p>
 <p>This method is one way to convert a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> to a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code>.  When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone</code>')}}, this method doesn't need to be overridden because the default implementation creates a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> from <code>instant</code> using the result of calling <code>{{jsxref('Temporal/TimeZone/getOffsetNanosecondsFor','timeZone.getOffsetNanosecondsFor()')}}</code>.</p>
 
 
