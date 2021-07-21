@@ -15,7 +15,7 @@ tags:
 The reverse operation, recovering a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object from a string, is accomplished by using <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>, but that method cannot be called automatically by <code>{{jsxref('JSON.parse','JSON.parse()')}}</code>. If you need to rebuild a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object from a JSON string, then you need to know the names of the keys that should be interpreted as <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> properties. In that case, you can build a custom "reviver" function for your use case.
 </p>
 <div class="warning">
-<p><strong>NOTE:</strong> If any of <code>duration.milliseconds</code>, <code>duration.microseconds</code>, or <code>duration.nanoseconds</code> are over 999, then deserializing from the result of <code>duration.toJSON()</code> will yield an equal but different object.</p>
+<p><strong>Warning:</strong> If any of <code>duration.milliseconds</code>, <code>duration.microseconds</code>, or <code>duration.nanoseconds</code> are over 999, then deserializing from the result of <code>duration.toJSON()</code> will yield an equal but different object.</p>
 </div>
 
 

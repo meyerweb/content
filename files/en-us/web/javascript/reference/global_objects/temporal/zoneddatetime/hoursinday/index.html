@@ -12,7 +12,7 @@ tags:
 <p class="summary"><span class="seoSummary">The <strong><code>hoursInDay</code></strong> read-only property gives the number of real-world hours between the start of the current day (usually midnight) to the start of the next calendar day in the same time zone.</span>  Normally days will be 24 hours long, but on days where there are DST (Daylight Saving Time) changes or other time zone transitions, this property may return <code>23</code> or <code>25</code>.  In rare cases, other integers or even non-integer values may be returned; e.g., when time zone definitions change by less than one hour.</p>
 
 <div class="note">
-<p>Note that transitions that skip entire days (like the 2011 change of <code>Pacific/Apia</code> to the opposite side of the International Date Line) will return <code>24</code>, because there are 24 real-world hours between one day's midnight and the next day's midnight.</p>
+<p><strong>Note:</strong> Note that transitions that skip entire days (like the 2011 change of <code>Pacific/Apia</code> to the opposite side of the International Date Line) will return <code>24</code>, because there are 24 real-world hours between one day's midnight and the next day's midnight.</p>
 </div>
 
 <h2 id="syntax">Syntax</h2>

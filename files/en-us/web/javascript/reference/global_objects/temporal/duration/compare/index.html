@@ -19,8 +19,8 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-compare(<var>durationOne</var>, <var>durationTwo</code>);
-compare(<var>durationOne</var>, <var>durationTwo</code>, <var>options</var>);
+compare(durationOne, durationTwo);
+compare(durationOne, durationTwo, options);
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -47,7 +47,7 @@ Either a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object
 </dl>
 
 <div class="note">
-If any of the <code>years</code>, <code>months</code>, or <code>weeks</code> properties of either of the durations are nonzero, then the <code>relativeTo</code> option (and thus the <var>options</var> object) is <strong>required</strong>.  This is because comparing durations with years, months, or weeks requires a point on the calendar to figure out how long they are.
+<p><strong>Note:</strong> If any of the <code>years</code>, <code>months</code>, or <code>weeks</code> properties of either of the durations are nonzero, then the <code>relativeTo</code> option (and thus the <var>options</var> object) is <strong>required</strong>.  This is because comparing durations with years, months, or weeks requires a point on the calendar to figure out how long they are.</p>
 </div>
 
 </dd>

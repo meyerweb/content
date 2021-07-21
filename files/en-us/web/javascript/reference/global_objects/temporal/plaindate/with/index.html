@@ -25,7 +25,7 @@ with(<var>newValues</var>, <var>options</var>)
 <dt><code><var>newValues</var></code></dt>
 <dd>An object containing some or all of the properties accepted by <code>{{jsxref('Temporal/PlainDate/from','Temporal.PlainDate.from()')}}</code>.
 <div class="note">
-<strong>Note:</strong> <code>calendar</code> and <code>timeZone</code> properties are not allowed on <var>newValues</var>.  See the methods <code>{{jsxref('Temporal/PlainDate/withCalendar','withCalendar()')}}</code> and <code>{{jsxref('Temporal/PlainDate/toZonedDateTime','toZonedDateTime()')}}</code>.</p>
+<p><strong>Note:</strong> <code>calendar</code> and <code>timeZone</code> properties are not allowed on <var>newValues</var>.  See the methods <code>{{jsxref('Temporal/PlainDate/withCalendar','withCalendar()')}}</code> and <code>{{jsxref('Temporal/PlainDate/toZonedDateTime','toZonedDateTime()')}}</code>.</p>
 </div>
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
@@ -59,4 +59,3 @@ date.with({ day: 1 }); // => 2006-01-01
 const nextMonthDate = date.add({ months: 1 });
 nextMonthDate.with({ day: nextMonthDate.daysInMonth }); // => 2006-02-28
 </pre>
-

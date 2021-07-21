@@ -18,7 +18,7 @@ tags:
 <p>When printed, a <code>Temporal.Duration</code> object produces a string conforming to the ISO 8601 notation for durations.  Briefly, the ISO 8601 notation consists of a <code>P</code> character, followed by years, months, weeks, and days, followed by a <code>T</code> character, followed by hours, minutes, and seconds with a decimal part, each with a single-letter suffix that indicates the unit. Any zero components may be omitted. For more detailed information, see the ISO 8601 standard or <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">the Wikipedia page</a>.</p>
 
 <div class="warning">
-<p><strong>NOTE:</strong> According to the ISO 8601-1 standard, weeks are not allowed to appear together with any other units, and durations can only be positive, in string notation. As extensions to the standard, ISO 8601-2 allows a sign character at the start of the string, and allows combining weeks with other units, in string notation. If you intend to use strings such as <code>P3W1D</code>, <code>+P1M</code>, or <code>-PT2H</code>, this may cause interoperability problems with legacy codebases.</p>
+<p><strong>Warning:</strong> According to the ISO 8601-1 standard, weeks are not allowed to appear together with any other units, and durations can only be positive, in string notation. As extensions to the standard, ISO 8601-2 allows a sign character at the start of the string, and allows combining weeks with other units, in string notation. If you intend to use strings such as <code>P3W1D</code>, <code>+P1M</code>, or <code>-PT2H</code>, this may cause interoperability problems with legacy codebases.</p>
 </div>
 
 <h2>Constructor</h2>

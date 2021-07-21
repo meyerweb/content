@@ -56,11 +56,11 @@ from(<var>dateTime</var>, <var>options</var>)
 </ul>
 
 <div class="note">
-<p>If <var>dateTime</var> is a string, the <code>overflow</code> property's value is ignored.</p>
+<p><strong>Note:</strong> If <var>dateTime</var> is a string, the <code>overflow</code> property's value is ignored.</p>
 </div>
 
 <div class="warning">
-<strong>NOTE:</strong> Although Temporal does not deal with leap seconds, times coming from other software may have a <code>second</code> value of <code>60</code>. In the default <code>constrain</code> mode, this will be converted to <code>59</code>. In <code>reject</code> mode, the constructor will throw, so if you have to interoperate with times that may contain leap seconds, don't use <code>reject</code>. However, if parsing an ISO 8601 string with a seconds component of <code>:60</code>, then it will always result in a <code>second</code> value of <code>59</code>, in accordance with POSIX.
+<p><strong>Warning:</strong> Although Temporal does not deal with leap seconds, times coming from other software may have a <code>second</code> value of <code>60</code>. In the default <code>constrain</code> mode, this will be converted to <code>59</code>. In <code>reject</code> mode, the constructor will throw, so if you have to interoperate with times that may contain leap seconds, don't use <code>reject</code>. However, if parsing an ISO 8601 string with a seconds component of <code>:60</code>, then it will always result in a <code>second</code> value of <code>59</code>, in accordance with POSIX.
 </div>
 
 </dd>
@@ -76,8 +76,9 @@ from(<var>dateTime</var>, <var>options</var>)
 <p>When interoperating with existing code or services, <code>'compatible'</code> disambiguation matches the behavior of legacy {{jsxref('Date','Date')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).</p>
 
 <div class="note">
-<p><code>disambiguation</code> is only used if there is no offset in the input, or if the offset is ignored by using the <code>offset</code> option as described above. If the offset in the input is used, then there is no ambiguity and the <code>disambiguation</code> option is ignored.</p></dd>
+<p><strong>Note:</strong> <code>disambiguation</code> is only used if there is no offset in the input, or if the offset is ignored by using the <code>offset</code> option as described above. If the offset in the input is used, then there is no ambiguity and the <code>disambiguation</code> option is ignored.</p>
 </div>
+</dd>
 
 <dt><code>offset</code></dt>
 <dd><p>How to interpret a provided time zone offset (e.g., <code>-02:00</code>) if it conflicts with the provided time zone (e.g., <code>America/Sao_Paulo</code>).  Allowed values are:</p>

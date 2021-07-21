@@ -39,14 +39,14 @@ from(<var>time</var>, <var>options</var>)
 <dd>Out-of-range values will cause the function to throw a <code>RangeError</code>.</dd>
 </dl>
 <div class="note">
-<p>If the <var>time</var> value is a string, <code>overflow</code> is ignored.</p>
+<p><strong>Note:</strong> If the <var>time</var> value is a string, <code>overflow</code> is ignored.</p>
 </div>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="warning">
-<strong>NOTE:</strong> Although Temporal does not deal with leap seconds, times coming from other software may have a <code>second</code> value of <code>60</code>. In the default <code>constrain</code> mode, this will be converted to <code>59</code>. In <code>reject</code> mode, the constructor will throw, so if you have to interoperate with times that may contain leap seconds, don't use <code>reject</code>. However, if parsing an ISO 8601 string with a seconds component of <code>:60</code>, then it will always result in a <code>second</code> value of <code>59</code>, in accordance with POSIX.
+<p><strong>Warning:</strong> Although Temporal does not deal with leap seconds, times coming from other software may have a <code>second</code> value of <code>60</code>. In the default <code>constrain</code> mode, this will be converted to <code>59</code>. In <code>reject</code> mode, the constructor will throw, so if you have to interoperate with times that may contain leap seconds, don't use <code>reject</code>. However, if parsing an ISO 8601 string with a seconds component of <code>:60</code>, then it will always result in a <code>second</code> value of <code>59</code>, in accordance with POSIX.
 </div>
 
 <h3 id="return-value">Return value</h3>
