@@ -20,8 +20,8 @@ tags:
 <h2 id="syntax">Syntax</h2>
 
 <pre class="brush: js">
-since(<var>otherYearMonth</code>)
-since(<var>otherYearMonth</code>, <var>options</var>)
+since(otherYearMonth)
+since(otherYearMonth, options)
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -43,7 +43,7 @@ since(<var>otherYearMonth</code>, <var>options</var>)
 <p>The <code>largestUnit</code> option controls how the resulting duration is expressed. A value of <code>'auto'</code> means <code>'years'</code>.</p>
 <p>The returned <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of one year and two months will become 14 months when <code>largestUnit</code> is <code>'months'</code>, for example. However, a difference of one month will still be one month even if <code>largestUnit</code> is <code>'years'</code>.</p>
 <div class="note">
-<p>Unlike other Temporal types, weeks and lower are not allowed for either <code>largestUnit</code> or <code>smallestUnit</code>, because the data model of <code>Temporal.PlainYearMonth</code> doesn't have that accuracy.
+<p><strong>Note:</strong> Unlike other Temporal types, weeks and lower are not allowed for either <code>largestUnit</code> or <code>smallestUnit</code>, because the data model of <code>Temporal.PlainYearMonth</code> doesn't have that accuracy.
 If you need to calculate the difference between two YearMonths in days, convert them to <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> objects and use <code>{{jsxref('Temporal.PlainDate/until','Temporal.PlainDate.until()')}}</code> instead.
 </p>
 </div>

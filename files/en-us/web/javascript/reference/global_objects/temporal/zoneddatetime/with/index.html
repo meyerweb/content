@@ -25,7 +25,7 @@ with(<var>newValues</var>, <var>options</var>)
 <dt><code><var>newValues</var></code></dt>
 <dd>An object containing some of the properties accepted by <code>{{jsxref('Temporal/ZonedDateTime/from','Temporal.ZonedDateTime.from()')}}</code>.
 <div class="note">
-<strong>Note:</strong> <code>calendar</code> and <code>timeZone</code> properties are not allowed on <var>newValues</var>.  See the methods <code>{{jsxref('Temporal/ZonedDateTime/withCalendar','withCalendar()')}}</code> and <code>{{jsxref('Temporal/ZonedDateTime/withTimeZone','withTimeZone()')}}</code>.</p>
+<p><strong>Note:</strong> <code>calendar</code> and <code>timeZone</code> properties are not allowed on <var>newValues</var>.  See the methods <code>{{jsxref('Temporal/ZonedDateTime/withCalendar','withCalendar()')}}</code> and <code>{{jsxref('Temporal/ZonedDateTime/withTimeZone','withTimeZone()')}}</code>.</p>
 </div>
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
@@ -50,8 +50,10 @@ with(<var>newValues</var>, <var>options</var>)
 <p>When interoperating with existing code or services, <code>'compatible'</code> disambiguation matches the behavior of legacy {{jsxref('Date','Date')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).</p>
 
 <div class="note">
-<p><code>disambiguation</code> is only used if there is no offset in the input, or if the offset is ignored by using the <code>offset</code> option as described above. If the offset in the input is used, then there is no ambiguity and the <code>disambiguation</code> option is ignored.</p></dd>
+<p><strong>Note:</strong> <code>disambiguation</code> is only used if there is no offset in the input, or if the offset is ignored by using the <code>offset</code> option as described above. If the offset in the input is used, then there is no ambiguity and the <code>disambiguation</code> option is ignored.</p>
 </div>
+</dd>
+
 
 <dt><code>offset</code></dt>
 <dd><p>How to interpret a provided time zone offset (e.g., <code>-02:00</code>) if it conflicts with the provided time zone (e.g., <code>America/Sao_Paulo</code>).  Allowed values are:

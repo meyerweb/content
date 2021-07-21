@@ -15,7 +15,7 @@ tags:
 
 <p class="summary"><span class="seoSummary">The <strong><code>until()</code></strong> method computes the elapsed time from the date and time represented by <code><var>dateTime</var></code> until another date and time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</span>  If the second date and time is earlier than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainDateTime/since','Temporal.PlainDateTime.since()')}}</code>, but reversed.</p>
 <div class="warning">
-<p>Computing the difference between dates and times in different calendar systems is not supported.  If you need to do this, choose the calendar in which the computation takes place by converting one of the dates and times using the method <code>{{jsxref('Temporal.PlainDateTime/withCalendar','withCalendar()')}}</code>.</p>
+<p><strong>Warning:</strong> Computing the difference between dates and times in different calendar systems is not supported.  If you need to do this, choose the calendar in which the computation takes place by converting one of the dates and times using the method <code>{{jsxref('Temporal.PlainDateTime/withCalendar','withCalendar()')}}</code>.</p>
 </div>
 
 
@@ -53,7 +53,7 @@ until(<var>otherDateTime</var>, <var>options</var>)
 <p>The <code>largestUnit</code> option controls how the resulting duration is expressed. A value of <code>'auto'</code> means <code>'days'</code> unless the value of <code>smallestUnit</code> is <code>'years'</code>, <code>'months'</code>, or <code>'weeks'</code>, in which case <code>'auto'</code> means to match the value of <code>smallestUnit</code>.</p>
 <p>The returned <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of one year and two months will become 14 months when <code>largestUnit</code> is <code>'months'</code>, for example. However, a difference of one month will still be one month even if <code>largestUnit</code> is <code>'years'</code>.</p>
 <div class="warning">
-Take care when using <code>'milliseconds'</code>, <code>'microseconds'</code>, or <code>'nanoseconds'</code> as the largest unit. For some durations, the resulting value may overflow <code>{{jsxref('Number/MAX_SAFE_INTEGER','Number.MAX_SAFE_INTEGER')}}</code> and lose precision in its least significant digit(s). Nanoseconds values will overflow and lose precision after about 104 days. Microseconds can fit about 285 years without losing precision, and milliseconds can handle about 285,000 years without losing precision.
+<p><strong>Warning:</strong> Take care when using <code>'milliseconds'</code>, <code>'microseconds'</code>, or <code>'nanoseconds'</code> as the largest unit. For some durations, the resulting value may overflow <code>{{jsxref('Number/MAX_SAFE_INTEGER','Number.MAX_SAFE_INTEGER')}}</code> and lose precision in its least significant digit(s). Nanoseconds values will overflow and lose precision after about 104 days. Microseconds can fit about 285 years without losing precision, and milliseconds can handle about 285,000 years without losing precision.</p>
 </div>
 </dd>
 <dt><code>smallestUnit</code></dt>
