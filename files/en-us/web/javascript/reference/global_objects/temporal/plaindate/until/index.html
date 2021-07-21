@@ -13,9 +13,9 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>until()</code></strong> method computes the elapsed time from the date represented by <code>plainDate</code> until another date, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.If the second date is earlier than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainDate/since','Temporal.PlainDate.since()')}}</code>, but reversed.</p>
+<p>The <strong><code>until()</code></strong> method computes the elapsed time from the date represented by <code>plainDate</code> until another date, optionally rounds it, and returns it as a {{jsxref('Temporal/Duration','Temporal.Duration')}} object.If the second date is earlier than the first, then the resulting duration will be negative.  This method is similar to {{jsxref('Temporal.PlainDate/since','Temporal.PlainDate.since()')}}, but reversed.</p>
 <div class="warning">
-<p><strong>Warning:</strong> Computing the difference between dates in different calendar systems is not supported.  If you need to do this, choose the calendar in which the computation takes place by converting one of the dates using the method <code>{{jsxref('Temporal.PlainDate/withCalendar','withCalendar()')}}</code>.</p>
+<p><strong>Warning:</strong> Computing the difference between dates in different calendar systems is not supported.  If you need to do this, choose the calendar in which the computation takes place by converting one of the dates using the method {{jsxref('Temporal.PlainDate/withCalendar','withCalendar()')}}.</p>
 </div>
 
 
@@ -30,7 +30,7 @@ until(<var>otherDate</var>, <var>options</var>)
 
 <dl>
 <dt><code><var>otherDate</var></code></dt>
-<dd>Another date as either a <code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code> object, or a value that can be converted to one as if passed to <code>{{jsxref('Temporal/PlainDate.from()','Temporal.PlainDate.from()')}}</code>.</dd>
+<dd>Another date as either a {{jsxref('Temporal/PlainDate','Temporal.PlainDate')}} object, or a value that can be converted to one as if passed to {{jsxref('Temporal/PlainDate.from()','Temporal.PlainDate.from()')}}.</dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>
 <p>An object with properties defining how the difference operation should be carried out.  The allowed properties are:</p>
@@ -45,7 +45,7 @@ until(<var>otherDate</var>, <var>options</var>)
 <li><code>'days'</code></li>
 </ul>
 <p>The <code>largestUnit</code> option controls how the resulting duration is expressed. A value of <code>'auto'</code> means to match the value of <code>smallestUnit</code>.</p>
-<p>The returned <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of one year and two months will become 14 months when <code>largestUnit</code> is <code>'months'</code>, for example. However, a difference of one month will still be one month even if <code>largestUnit</code> is <code>'years'</code>.</p>
+<p>The returned {{jsxref('Temporal/Duration','Temporal.Duration')}} object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of one year and two months will become 14 months when <code>largestUnit</code> is <code>'months'</code>, for example. However, a difference of one month will still be one month even if <code>largestUnit</code> is <code>'years'</code>.</p>
 <div class="note">
 <p><strong>Note:</strong> Unlike some other Temporal types, hours and lower are not allowed for either <code>largestUnit</code> or <code>smallestUnit</code>, because the data model of <code>Temporal.PlainDate</code> doesn't have that accuracy.
 </p>
@@ -63,7 +63,7 @@ A string defining how to deal with any remainders.  The valid values are:
 <dd>Always round up, toward the end of time.</dd>
 <dt><code>'floor'</code></dt>
 <dt><code>'trunc'</code> (default)</dt>
-<dd>Always round down, toward the beginning of time.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
+<dd>Always round down, toward the beginning of time.  These two rounding modes behave identically, but are included for consistency with {{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}, where they do <strong>not</strong> behave identically.</dd>
 <dt><code>'halfExpand'</code></dt>
 <dd>Round to the nearest of the values allowed by <code>roundingIncrement</code> and <code>smallestUnit</code>. If there is a tie, round up, toward the end of time.</dd>
 </dl>
@@ -75,7 +75,7 @@ A string defining how to deal with any remainders.  The valid values are:
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object representing the difference between the two dates.</p>
+<p>A new {{jsxref('Temporal/Duration','Temporal.Duration')}} object representing the difference between the two dates.</p>
 
 <h2 id="examples">Examples</h2>
 

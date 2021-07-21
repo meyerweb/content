@@ -8,7 +8,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>toPlainDateTime()</code></strong> method returns a new <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object that corresponds to the date and time (but not time zone) components of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.</span><p><strong>NOTE:</strong> After a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> is converted to <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, the resulting object will no longer be aware of its time zone. This means that subsequent operations using methods like <code>.add()</code>, <code>.subtract()</code>, and <code>.with()</code> will not adjust for DST (Daylight Saving Time) and may not yield the same results as equivalent operations with <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>. However, unless you perform those operations across a time zone offset transition, it's impossible to notice the difference. Therefore, be very careful when performing this conversion because subsequent results may look correct most of the time, but fail around time zone transitions like when DST starts or ends.</p>
+<p>The <strong><code>toPlainDateTime()</code></strong> method returns a new {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object that corresponds to the date and time (but not time zone) components of the {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object.</span><p><strong>NOTE:</strong> After a {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} is converted to {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}, the resulting object will no longer be aware of its time zone. This means that subsequent operations using methods like <code>.add()</code>, <code>.subtract()</code>, and <code>.with()</code> will not adjust for DST (Daylight Saving Time) and may not yield the same results as equivalent operations with {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}. However, unless you perform those operations across a time zone offset transition, it's impossible to notice the difference. Therefore, be very careful when performing this conversion because subsequent results may look correct most of the time, but fail around time zone transitions like when DST starts or ends.</p>
 
 <h2 id="syntax">Syntax</h2>
 
@@ -24,7 +24,7 @@ toPlainDateTime()
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object.</p>
+<p>A new {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object.</p>
 
 <h2 id="examples">Examples</h2>
 

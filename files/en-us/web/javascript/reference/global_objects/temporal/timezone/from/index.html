@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>from()</code></strong> static method creates a new <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object from another value.</p>
+<p>The <strong><code>from()</code></strong> static method creates a new {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}} object from another value.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -26,11 +26,11 @@ from(<var>timeZoneObject</var>);
 
 <dl>
 <dt><code><var>timeZoneObject</var></code></dt>
-<dd>A time zone object, a Temporal object that carries a time zone, or a string value from which to create a <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>.
+<dd>A time zone object, a Temporal object that carries a time zone, or a string value from which to create a {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}.
 <ul>
-<li>If the value is another <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object, or an object that implements the time zone protocol, the same object is returned.
+<li>If the value is another {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}} object, or an object that implements the time zone protocol, the same object is returned.
 </li>
-<li>If the value is another Temporal object that carries a time zone, or an object with a <code>timeZone</code> property, such as <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code>, the object's time zone is returned.</li>
+<li>If the value is another Temporal object that carries a time zone, or an object with a <code>timeZone</code> property, such as {{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}, the object's time zone is returned.</li>
 <li>Any other value is converted to a string, which is expected to be either a string that is accepted by <code>new Temporal.TimeZone()</code>, or a string in the ISO 8601 format including a time zone offset part. Note that an ISO 8601 string can optionally be extended with an <abbr title="Internet Assigned Numbers Authority">IANA</abbr> time zone name in square brackets appended to it.
 </li>
 </ul>
@@ -39,7 +39,7 @@ from(<var>timeZoneObject</var>);
 
 <h3 id="return-value">Return value</h3>
 
-<p>A <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object.</p>
+<p>A {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}} object.</p>
 
 <h2 id="examples">Examples</h2>
 

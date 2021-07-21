@@ -13,19 +13,19 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>Temporal.TimeZone</code></strong> class provides an interface to working with <abbr title="Internet Assigned Numbers Authority">IANA</abbr> time zones, a specific <abbr title="Coordinated Universal Time">UTC</abbr> offset, or UTC itself.Time zones translate from a date/time in UTC to a local date/time. Because of this, <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> can be used to convert between <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> and <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> as well as finding out the offset at a specific <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code>.</p>
+<p>The <strong><code>Temporal.TimeZone</code></strong> class provides an interface to working with <abbr title="Internet Assigned Numbers Authority">IANA</abbr> time zones, a specific <abbr title="Coordinated Universal Time">UTC</abbr> offset, or UTC itself.Time zones translate from a date/time in UTC to a local date/time. Because of this, {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}} can be used to convert between {{jsxref('Temporal/Instant','Temporal.Instant')}} and {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} as well as finding out the offset at a specific {{jsxref('Temporal/Instant','Temporal.Instant')}}.</p>
 
 <h2>Constructor</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/TimeZone/constructor','Temporal.Timezone()')}}</code></dt>
+<dt>{{jsxref('Temporal/TimeZone/constructor','Temporal.Timezone()')}}</dt>
 <dd>Creates a new <code>Temporal.TimeZone</code> object which represents a specific time zone.</dd>
 </dl>
 
 <h2 id="instance_properties">Instance Properties</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/TimeZone/id','id')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/TimeZone/id','id')}} {{readonlyinline}}</dt>
 <dd>Returns an unambigious time zone identifier from a <code>Temporal.TimeZone</code> object.</dd>
 
 </dl>
@@ -33,29 +33,29 @@ tags:
 <h2 id="static_methods">Static Methods</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/TimeZone/from','from()')}}</code></dt>
+<dt>{{jsxref('Temporal/TimeZone/from','from()')}}</dt>
 <dd>A static method to create a new <code>Temporal.TimeZone</code> object from another value.</dd>
 </dl>
 
 <h2 id="instance_methods">Instance Methods</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/TimeZone/getOffsetNanosecondsFor','getOffsetNanosecondsFor()')}}</code></dt>
+<dt>{{jsxref('Temporal/TimeZone/getOffsetNanosecondsFor','getOffsetNanosecondsFor()')}}</dt>
 <dd>A method to return a number indicating the UTC offset of a given time in nanoseconds.</dd>
-<dt><code>{{jsxref('Temporal/TimeZone/getOffsetStringFor','getOffsetStringFor()')}}</code></dt>
+<dt>{{jsxref('Temporal/TimeZone/getOffsetStringFor','getOffsetStringFor()')}}</dt>
 <dd>A method to return a formatted string indicating the UTC offset of a given time.</dd>
-<dt><code>{{jsxref('Temporal/TimeZone/getPlainDateTimeFor','getPlainDateTimeFor()')}}</code></dt>
-<dd>A method to return a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object indicating the calendar date and wall-clock time of a given point in time.</dd>
-<dt><code>{{jsxref('Temporal/TimeZone/getInstantFor','getInstantFor()')}}</code></dt>
+<dt>{{jsxref('Temporal/TimeZone/getPlainDateTimeFor','getPlainDateTimeFor()')}}</dt>
+<dd>A method to return a {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object indicating the calendar date and wall-clock time of a given point in time.</dd>
+<dt>{{jsxref('Temporal/TimeZone/getInstantFor','getInstantFor()')}}</dt>
 <dd>A method to find the exact time in a time zone at the time of a given calendar date and wall-clock time, even those which may be "skipped" by a change to or from Daylight Saving Time (DST).</dd>
-<dt><code>{{jsxref('Temporal/TimeZone/getPossibleInstantsFor','getPossibleInstantsFor()')}}</code></dt>
+<dt>{{jsxref('Temporal/TimeZone/getPossibleInstantsFor','getPossibleInstantsFor()')}}</dt>
 <dd>A method to find all the possible exact times that could correspond to a given calendar date and wall-clock time, even those which may be "skipped" by a change to or from Daylight Saving Time (DST)..</dd>
-<dt><code>{{jsxref('Temporal/TimeZone/getNextTransition','getNextTransition()')}}</code></dt>
-<dd>A method to return a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the next DST (Daylight Saving Time) transition in a given time zone.</dd>
-<dt><code>{{jsxref('Temporal/TimeZone/getPreviousTransition','getPreviousTransition()')}}</code></dt>
-<dd>A method to return a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the most recent past DST (Daylight Saving Time) transition in a given time zone.</dd>
-<dt><code>{{jsxref('Temporal/TimeZone/toString','toString()')}}</code></dt>
+<dt>{{jsxref('Temporal/TimeZone/getNextTransition','getNextTransition()')}}</dt>
+<dd>A method to return a {{jsxref('Temporal/Instant','Temporal.Instant')}} object representing the next DST (Daylight Saving Time) transition in a given time zone.</dd>
+<dt>{{jsxref('Temporal/TimeZone/getPreviousTransition','getPreviousTransition()')}}</dt>
+<dd>A method to return a {{jsxref('Temporal/Instant','Temporal.Instant')}} object representing the most recent past DST (Daylight Saving Time) transition in a given time zone.</dd>
+<dt>{{jsxref('Temporal/TimeZone/toString','toString()')}}</dt>
 <dd>A method that returns the string of the time zone's ID.</dd>
-<dt><code>{{jsxref('Temporal/TimeZone/toJSON','toJSON()')}}</code></dt>
+<dt>{{jsxref('Temporal/TimeZone/toJSON','toJSON()')}}</dt>
 <dd>A method that returns the string of the time zone's ID.</dd>
 </dl>

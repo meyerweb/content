@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>add()</code></strong> method creates a new <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object by adding a span of time to a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object.Adding a negative duration to the instant is equivalent to {{jsxref('Temporal.Instant/subtract','subtracting')}} the absolute value of that duration.</p>
+<p>The <strong><code>add()</code></strong> method creates a new {{jsxref('Temporal/Instant','Temporal.Instant')}} object by adding a span of time to a {{jsxref('Temporal/Instant','Temporal.Instant')}} object.Adding a negative duration to the instant is equivalent to {{jsxref('Temporal.Instant/subtract','subtracting','','nocode')}} the absolute value of that duration.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -27,15 +27,15 @@ add(<var>duration</var>)
 <dl>
 <dt><code><var>duration</var></code></dt>
 <dd>
-<p>An object with properties denoting a duration, such as <code>{ hours: 5, minutes: 30 }</code>, or a string such as <code>PT5H30M</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
-<p>Note that the <code>years</code>, <code>months</code>, <code>weeks</code>, and <code>days</code> fields of <code><var>duration</var></code> must be zero. <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> is independent of time zones and calendars, and so years, months, weeks, and days may be different lengths depending on which calendar or time zone they are reckoned in. This makes an addition with those units ambiguous. If you need to do this, convert the <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> to a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> by specifying the desired calendar and time zone, add the duration with <code>{{jsxref('Temporal/PlainDateTime/add','Temporal.PlainDateTime.add()')}}</code>, and then convert it back to <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code>.</p>
+<p>An object with properties denoting a duration, such as <code>{ hours: 5, minutes: 30 }</code>, or a string such as <code>PT5H30M</code>, or a {{jsxref('Temporal/Duration','Temporal.Duration')}} object. If <code><var>duration</var></code> is not such a string nor a {{jsxref('Temporal/Duration','Temporal.Duration')}} object, then it will be converted to one as if it were passed to {{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}.</p>
+<p>Note that the <code>years</code>, <code>months</code>, <code>weeks</code>, and <code>days</code> fields of <code><var>duration</var></code> must be zero. {{jsxref('Temporal/Instant','Temporal.Instant')}} is independent of time zones and calendars, and so years, months, weeks, and days may be different lengths depending on which calendar or time zone they are reckoned in. This makes an addition with those units ambiguous. If you need to do this, convert the {{jsxref('Temporal/Instant','Temporal.Instant')}} to a {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} by specifying the desired calendar and time zone, add the duration with {{jsxref('Temporal/PlainDateTime/add','Temporal.PlainDateTime.add()')}}, and then convert it back to {{jsxref('Temporal/Instant','Temporal.Instant')}}.</p>
 </dd>
 </dl>
 
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the exact time indicated by <code>instant</code> plus <code><var>duration</var></code>. If the result is earlier or later than the range that <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> can represent (just over half a million years centered on the Unix epoch), a <code>RangeError</code> will be thrown.
+<p>A new {{jsxref('Temporal/Instant','Temporal.Instant')}} object representing the exact time indicated by <code>instant</code> plus <code><var>duration</var></code>. If the result is earlier or later than the range that {{jsxref('Temporal/Instant','Temporal.Instant')}} can represent (just over half a million years centered on the Unix epoch), a <code>RangeError</code> will be thrown.
 </p>
 
 <h2 id="examples">Examples</h2>

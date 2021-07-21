@@ -13,18 +13,18 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>subtract()</code></strong> method creates a new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object by subtracting a duration from a <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.Subtracting a negative duration is equivalent to {{jsxref('Temporal.ZonedDateTime/add','adding')}} the absolute value of that duration.</p>
+<p>The <strong><code>subtract()</code></strong> method creates a new {{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}} object by subtracting a duration from a {{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}} object.Subtracting a negative duration is equivalent to {{jsxref('Temporal.ZonedDateTime/add','adding','','nocode')}} the absolute value of that duration.</p>
 
 <p>Subtraction is performed according to rules defined in RFC 5545 (iCalendar):</p>
 
 <ul>
-	<li>Subtract the date portion of a duration using calendar days, as in <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>. The result will automatically adjust for DST (Daylight Saving Time) using the rules of this instance's <code>{{jsxref('Temporal.ZonedDateTime/timeZone','timeZone')}}</code> property.</li>
-	<li>Subtract the time portion of a duration using real-world time, as in <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code>.</li>
+	<li>Subtract the date portion of a duration using calendar days, as in {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}. The result will automatically adjust for DST (Daylight Saving Time) using the rules of this instance's {{jsxref('Temporal.ZonedDateTime/timeZone','timeZone')}} property.</li>
+	<li>Subtract the time portion of a duration using real-world time, as in {{jsxref('Temporal.Instant','Temporal.Instant')}}.</li>
 	<li>Subtraction (even when using a negative duration) is performed in order from largest unit to smallest unit.</li>
-	<li>If a result is ambiguous or invalid due to a time zone offset transition, the later of the two possible instants will be used for time-skipped transitions and the earlier of the two possible instants will be used for time-repeated transitions. This behavior corresponds to the default <code>disambiguation: 'compatible'</code> option used in {{jsxref('Temporal.ZonedDateTime/from','.from()')}}</code>, and used by legacy {{jsxref('Date')}} and moment.js.</li>
+	<li>If a result is ambiguous or invalid due to a time zone offset transition, the later of the two possible instants will be used for time-skipped transitions and the earlier of the two possible instants will be used for time-repeated transitions. This behavior corresponds to the default <code>disambiguation: 'compatible'</code> option used in {{jsxref('Temporal.ZonedDateTime/from','.from()')}}</code>, and used by legacy {{jsxref('Date','Date','','nocode')}} and moment.js.</li>
 </ul>
 
-<p>These rules make arithmetic with <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> "DST-safe", which means that the results most closely match the expectations of both real-world users and implementers of other standards-compliant calendar applications. These expectations include:</p>
+<p>These rules make arithmetic with {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} "DST-safe", which means that the results most closely match the expectations of both real-world users and implementers of other standards-compliant calendar applications. These expectations include:</p>
 
 <ul>
 	<li>Subtracting days should keep clock time consistent across DST transitions.</li>
@@ -46,7 +46,7 @@ subtract(<var>duration</var>, <var>options</var>)
 <dl>
 <dt><code><var>duration</var></code></dt>
 <dd>
-<p>An object with properties denoting a duration, such as <code>{ days: 5 }</code>, or a string value such as <code>P5D</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to a string as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
+<p>An object with properties denoting a duration, such as <code>{ days: 5 }</code>, or a string value such as <code>P5D</code>, or a {{jsxref('Temporal/Duration','Temporal.Duration')}} object. If <code><var>duration</var></code> is not such a string nor a {{jsxref('Temporal/Duration','Temporal.Duration')}} object, then it will be converted to a string as if it were passed to {{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}.</p>
 <p>Some subtractions may be ambiguous, because months have different lengths. For example, subtracting <code>{ months: 1 }</code> from October 31 would result in September 31, which doesn't exist. In such cases, the <code>overflow</code> option (see below) governs the result.</p>
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
@@ -72,7 +72,7 @@ subtract(<var>duration</var>, <var>options</var>)
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object representing the calendar date indicated by <code>oldDateTime</code> minus <code><var>duration</var></code>.
+<p>A new {{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}} object representing the calendar date indicated by <code>oldDateTime</code> minus <code><var>duration</var></code>.
 </p>
 
 <h2 id="examples">Examples</h2>

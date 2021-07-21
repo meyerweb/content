@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>since()</code></strong> method computes the elapsed time from the wall-clock time represented by <code>plainTime</code> since another wall-clock time, optionally rounds it, and returns it as a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.If the second time is later than the first, then the resulting duration will be negative.  This method is similar to <code>{{jsxref('Temporal.PlainTime/until','Temporal.PlainTime.until()')}}</code>, but reversed.</p>
+<p>The <strong><code>since()</code></strong> method computes the elapsed time from the wall-clock time represented by <code>plainTime</code> since another wall-clock time, optionally rounds it, and returns it as a {{jsxref('Temporal/Duration','Temporal.Duration')}} object.If the second time is later than the first, then the resulting duration will be negative.  This method is similar to {{jsxref('Temporal.PlainTime/until','Temporal.PlainTime.until()')}}, but reversed.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -27,7 +27,7 @@ since(<var>otherTime</code>, <var>options</var>)
 
 <dl>
 <dt><code><var>otherTime</var></code></dt>
-<dd>Another wall-clock time as either a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object, or a value that can be converted to one as if passed to <code>{{jsxref('Temporal/PlainTime.from()','Temporal.PlainTime.from()')}}</code>.</dd>
+<dd>Another wall-clock time as either a {{jsxref('Temporal/PlainTime','Temporal.PlainTime')}} object, or a value that can be converted to one as if passed to {{jsxref('Temporal/PlainTime.from()','Temporal.PlainTime.from()')}}.</dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>
 <p>An object with properties defining how the rounding operation should be carried out.  The allowed properties are:</p>
@@ -44,7 +44,7 @@ since(<var>otherTime</code>, <var>options</var>)
 <li><code>'nanoseconds'</code> (default)</li>
 </ul>
 <p>The <code>largestUnit</code> option controls how the resulting duration is expressed. A value of <code>'auto'</code> means <code>'years'</code>.</p>
-<p>The returned <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of two hours will become 7200 seconds when <code>largestUnit</code> is <code>'seconds'</code>, for example. However, a difference of 30 seconds will still be 30 seconds even if <code>largestUnit</code> is <code>'hours'</code>.  <code>'auto'</code> is treated as <code>'hours'</code></p>
+<p>The returned {{jsxref('Temporal/Duration','Temporal.Duration')}} object will not have any nonzero fields that are larger than the unit in <code>largestUnit</code>. A difference of two hours will become 7200 seconds when <code>largestUnit</code> is <code>'seconds'</code>, for example. However, a difference of 30 seconds will still be 30 seconds even if <code>largestUnit</code> is <code>'hours'</code>.  <code>'auto'</code> is treated as <code>'hours'</code></p>
 </dd>
 <dt><code>smallestUnit</code></dt>
 <dd>A string defining the smallest unit of time allowed in the returned object.  Valid and default values are the same as for <code>largestUnit</code>.</dd>
@@ -58,7 +58,7 @@ A string defining how to deal with any remainders. If <code>roundingMode</code> 
 <dd>Always round up, toward 23:59:59.999999999.</dd>
 <dt><code>'floor'</code></dt>
 <dt><code>'trunc'</code> (default)</dt>
-<dd>Always round down, toward 0:00.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
+<dd>Always round down, toward 0:00.  These two rounding modes behave identically, but are included for consistency with {{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}, where they do <strong>not</strong> behave identically.</dd>
 <dt><code>'halfExpand'</code></dt>
 <dd>Round to the nearest of the values allowed by <code>roundingIncrement</code> and <code>smallestUnit</code>. If there is a tie, round up, toward 23:59:59.999999999.</dd>
 </dl>
@@ -70,7 +70,7 @@ A string defining how to deal with any remainders. If <code>roundingMode</code> 
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object representing the difference between <code>plainTime</code> and <var>otherTime</var>.</p>
+<p>A new {{jsxref('Temporal/Duration','Temporal.Duration')}} object representing the difference between <code>plainTime</code> and <var>otherTime</var>.</p>
 
 <h2 id="examples">Examples</h2>
 

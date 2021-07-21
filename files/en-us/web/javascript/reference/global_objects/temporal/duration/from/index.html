@@ -8,7 +8,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>from()</code></strong> static method creates a new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object from another value.</p>
+<p>The <strong><code>from()</code></strong> static method creates a new {{jsxref('Temporal/Duration','Temporal.Duration')}} object from another value.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -21,7 +21,7 @@ from(<var>duration</var>)
 
 <dl>
 <dt><code><var>duration</var></code></dt>
-<dd>A representation of the desired duration.  If the value is another <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object, a new <code>Temporal.Duration</code> object representing the same length of time is returned. If the value is any other object, a <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> will be constructed from the values of any <code>years</code>, <code>months</code>, <code>weeks</code>, <code>days</code>, <code>hours</code>, <code>minutes</code>, <code>seconds</code>, <code>milliseconds</code>, <code>microseconds</code>, and <code>nanoseconds</code> properties that are present. Any missing values are assumed to be <code>0</code>.</p>
+<dd>A representation of the desired duration.  If the value is another {{jsxref('Temporal.Duration','Temporal.Duration')}} object, a new <code>Temporal.Duration</code> object representing the same length of time is returned. If the value is any other object, a {{jsxref('Temporal.Duration','Temporal.Duration')}} will be constructed from the values of any <code>years</code>, <code>months</code>, <code>weeks</code>, <code>days</code>, <code>hours</code>, <code>minutes</code>, <code>seconds</code>, <code>milliseconds</code>, <code>microseconds</code>, and <code>nanoseconds</code> properties that are present. Any missing values are assumed to be <code>0</code>.</p>
 
 <div class="warning">
 <p><strong>Warning:</strong> All non-zero values must have the same sign, and must not be infinite. Otherwise, the function will throw a <code>RangeError</code>.</p>
@@ -33,7 +33,7 @@ from(<var>duration</var>)
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object.</p>
+<p>A new {{jsxref('Temporal/Duration','Temporal.Duration')}} object.</p>
 
 <h2 id="examples">Examples</h2>
 

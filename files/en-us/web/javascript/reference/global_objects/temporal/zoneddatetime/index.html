@@ -13,145 +13,145 @@ tags:
 ---
 {{JSRef}}
 
-<p><code>Temporal.ZonedDateTime</code> is a time-zone-aware, calendar-aware date-and-time type that represents a real event that has happened (or will happen) at a particular instant from the perspective of a particular region on Earth.As the broadest Temporal type, <code>Temporal.ZonedDateTime</code> can be considered a combination of <code>{{jsxref('Temporal.TimeZone','Temporal.TimeZone')}}</code>, <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code>, and <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> (which includes <code>{{jsxref('Temporal.Calendar','Temporal.Calendar')}}</code>).</p>
+<p><code>Temporal.ZonedDateTime</code> is a time-zone-aware, calendar-aware date-and-time type that represents a real event that has happened (or will happen) at a particular instant from the perspective of a particular region on Earth.As the broadest Temporal type, <code>Temporal.ZonedDateTime</code> can be considered a combination of {{jsxref('Temporal.TimeZone','Temporal.TimeZone')}}, {{jsxref('Temporal.Instant','Temporal.Instant')}}, and {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} (which includes {{jsxref('Temporal.Calendar','Temporal.Calendar')}}).</p>
 <p>As the only Temporal type that persists a time zone, <code>Temporal.ZonedDateTime</code> is optimized for use cases that require a time zone.  This means:</p>
 
 <ul>
 	<li>Arithmetic automatically adjusts for DST (Daylight Saving Time), using the rules defined in RFC 5545 (iCalendar) and adopted in JavaScript libraries like moment.js.</li>
 	<li>Creating derived values (e.g. change time to 2:30AM) can avoid worrying that the result will be invalid due to the time zone's DST rules.</li>
 	<li>Properties are available to easily measure attributes like "length of day" or "starting time of day", which may not be the same on all days in all time zones due to DST transitions or political changes to the definitions of time zones.</li>
-	<li>It's easy to flip back and forth between a human-readable representation (like <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>) and the UTC timeline (like <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code>) without having to do any work to keep the two in sync.</li>
+	<li>It's easy to flip back and forth between a human-readable representation (like {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}) and the UTC timeline (like {{jsxref('Temporal.Instant','Temporal.Instant')}}) without having to do any work to keep the two in sync.</li>
 	<li>A date/time, an offset, a time zone, and an optional calendar can be persisted in a single string that can be sorted alphabetically by the exact time they happened. This behavior is also helpful for developers who are not sure which of those components will be needed by later readers of the data.</li>
 	<li>Multiple time-zone-sensitive operations can be performed in a chain without having to repeatedly provide the same time zone.</li>
 </ul>
-<p>A <code>Temporal.ZonedDateTime</code> instance can be losslessly converted into every other Temporal type except <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code>.</p>
+<p>A <code>Temporal.ZonedDateTime</code> instance can be losslessly converted into every other Temporal type except {{jsxref('Temporal.Duration','Temporal.Duration')}}.</p>
 
 <h2>Constructor</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/constructor','new Temporal.ZonedDateTime()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/constructor','new Temporal.ZonedDateTime()')}}</dt>
 <dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object which represents a time-zone-aware time on a specific date.</p></dd>
 </dl>
 
 <h2 id="instance_properties">Instance Properties</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/year','year')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/year','year')}} {{readonlyinline}}</dt>
 <dd><p>The year in which the date and time occurs.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/month','month')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/month','month')}} {{readonlyinline}}</dt>
 <dd><p>The number of the month in which the date and time occurs.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/monthCode','monthCode')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/monthCode','monthCode')}} {{readonlyinline}}</dt>
 <dd><p>A calendar-specific string identifying the date and time's month in a year-independent manner.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/day','day')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/day','day')}} {{readonlyinline}}</dt>
 <dd><p>The day of the month on which the date and time occurs.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/hour','hour')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/hour','hour')}} {{readonlyinline}}</dt>
 <dd><p>A number that identifies the hour component of the date and time.</p>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/minute','minute')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/minute','minute')}} {{readonlyinline}}</dt>
 <dd><p>A number that identifies the minute component of the date and time.</p>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/second','second')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/second','second')}} {{readonlyinline}}</dt>
 <dd><p>A number that identifies the second component of the date and time.</p>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/millisecond','millisecond')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/millisecond','millisecond')}} {{readonlyinline}}</dt>
 <dd><p>A number that identifies the millisecond component of the date and time.</p>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/microsecond','microsecond')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/microsecond','microsecond')}} {{readonlyinline}}</dt>
 <dd><p>A number that identifies the microsecond component of the date and time.</p>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/nanosecond','nanosecond')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/nanosecond','nanosecond')}} {{readonlyinline}}</dt>
 <dd><p>A number that identifies the nanosecond component of the date and time.</p>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/epochSeconds','epochSeconds')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/epochSeconds','epochSeconds')}} {{readonlyinline}}</dt>
 <dd><p>The number of full seconds between the <code>Temporal.zonedDateTime</code> object and the UNIX Epoch.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/epochMilliseconds','epochMilliseconds')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/epochMilliseconds','epochMilliseconds')}} {{readonlyinline}}</dt>
 <dd><p>The number of full milliseconds between the <code>Temporal.zonedDateTime</code> object and the UNIX Epoch.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/epochMicroseconds','epochMicroseconds')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/epochMicroseconds','epochMicroseconds')}} {{readonlyinline}}</dt>
 <dd><p>The number of full microseconds between the <code>Temporal.zonedDateTime</code> object and the UNIX Epoch.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/epochNanoseconds','epochNanoseconds')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/epochNanoseconds','epochNanoseconds')}} {{readonlyinline}}</dt>
 <dd><p>The number of full nanoseconds between the <code>Temporal.zonedDateTime</code> object and the UNIX Epoch.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/calendar','calendar')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/calendar','calendar')}} {{readonlyinline}}</dt>
 <dd><p>An object containing the calendar in which the date and time properties are interpreted.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/timeZone','timeZone')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/timeZone','timeZone')}} {{readonlyinline}}</dt>
 <dd><p>The persistent time zone of the date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/era','era')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/era','era')}} {{readonlyinline}}</dt>
 <dd><p>The era in which the date and time occurs, in calendar systems that use eras.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/eraYear','eraYear')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/eraYear','eraYear')}} {{readonlyinline}}</dt>
 <dd><p>The year of the era in which the date and time occurs, in calendar systems that use eras.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/dayOfWeek','dayOfWeek')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/dayOfWeek','dayOfWeek')}} {{readonlyinline}}</dt>
 <dd><p>The weekday number on which the date and time falls.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/dayOfYear','dayOfYear')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/dayOfYear','dayOfYear')}} {{readonlyinline}}</dt>
 <dd><p>The ordinal day of the year on which the date and time falls.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/weekOfYear','weekOfYear')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/weekOfYear','weekOfYear')}} {{readonlyinline}}</dt>
 <dd><p>The ISO week number in which the date and time falls.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/daysInWeek','daysInWeek')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/daysInWeek','daysInWeek')}} {{readonlyinline}}</dt>
 <dd><p>The number of days in the week containing the date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/daysInMonth','daysInMonth')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/daysInMonth','daysInMonth')}} {{readonlyinline}}</dt>
 <dd><p>The number of days in the month containing the date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/daysInYear','daysInYear')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/daysInYear','daysInYear')}} {{readonlyinline}}</dt>
 <dd><p>The number of days in the year containing the date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/monthsInYear','monthsInYear')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/monthsInYear','monthsInYear')}} {{readonlyinline}}</dt>
 <dd><p>The number of months in the year containing the date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/inLeapYear','inLeapYear')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/inLeapYear','inLeapYear')}} {{readonlyinline}}</dt>
 <dd><p>Indicates whether the date and time occurs in a leap year.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/hoursInDay','hoursInDay')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/hoursInDay','hoursInDay')}} {{readonlyinline}}</dt>
 <dd><p>The number of real-world hours between the start of the <code>Temporal.zonedDateTime</code> object's day to the start of the next calendar day in the same time zone.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/startOfDay','startOfDay')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/startOfDay','startOfDay')}} {{readonlyinline}}</dt>
 <dd><p>The earliest valid local clock time during the given calendar day and time zone. </p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/offsetNanoseconds','offsetNanoseconds')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/offsetNanoseconds','offsetNanoseconds')}} {{readonlyinline}}</dt>
 <dd><p>The offset (in nanoseconds) relative to UTC of the <code>Temporal.ZonedDateTime</code> object's time zone</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/offset','offset')}}</code> {{readonlyinline}}</dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/offset','offset')}} {{readonlyinline}}</dt>
 <dd><p>The offset (formatted as a string) relative to UTC of the <code>Temporal.ZonedDateTime</code> object's time zone.</p></dd>
 </dl>
 
 <h2 id="static_methods">Static Methods</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/from','from()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/from','from()')}}</dt>
 <dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object from another value.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/compare','compare()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/compare','compare()')}}</dt>
 <dd><p>Compares two dates and times, and returns an integer indicating which comes before the other.</p></dd>
 </dl>
 
 <h2 id="instance_methods">Instance Methods</h2>
 
 <dl>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/with','with()')}}</code></dt>
-<dd><p>Returns a new <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object which is a modification of the original <code>Temporal.ZonedDateTime</code> object using new property values.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/withPlainTime','withPlainTime()')}}</code></dt>
-<dd><p>Returns a new <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object which is a modification of the original zoned date and time with a new time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/withPlainDate','withPlainDate()')}}</code></dt>
-<dd><p>Returns a new <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object which is a modification of the original zoned date and time with a new date.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/withTimeZone','withTimeZone()')}}</code></dt>
-<dd><p>Returns a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object of a zoned date and time projected into a specified time zone.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/withCalendar','withCalendar()')}}</code></dt>
-<dd><p>Returns a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object of a zoned date and time projected into a specified calendar.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/add','add()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/with','with()')}}</dt>
+<dd><p>Returns a new {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object which is a modification of the original <code>Temporal.ZonedDateTime</code> object using new property values.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/withPlainTime','withPlainTime()')}}</dt>
+<dd><p>Returns a new {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object which is a modification of the original zoned date and time with a new time.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/withPlainDate','withPlainDate()')}}</dt>
+<dd><p>Returns a new {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object which is a modification of the original zoned date and time with a new date.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/withTimeZone','withTimeZone()')}}</dt>
+<dd><p>Returns a {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object of a zoned date and time projected into a specified time zone.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/withCalendar','withCalendar()')}}</dt>
+<dd><p>Returns a {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object of a zoned date and time projected into a specified calendar.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/add','add()')}}</dt>
 <dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object by adding a duration to a <code>Temporal.ZonedDateTime}</code> object.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/subtract','subtract()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/subtract','subtract()')}}</dt>
 <dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object by subtracting a duration from a <code>Temporal.ZonedDateTime}</code> object.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/until','until()')}}</code></dt>
-<dd><p>Computes the elapsed time between the <code>Temporal.ZonedDateTime</code> object and another zoned date and time in the future, optionally rounds it, and returns it as a <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/since','since()')}}</code></dt>
-<dd><p>Computes the elapsed time between the <code>Temporal.ZonedDateTime</code> object and another zoned date and time in the past, optionally rounds it, and returns it as a <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/round','round()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/until','until()')}}</dt>
+<dd><p>Computes the elapsed time between the <code>Temporal.ZonedDateTime</code> object and another zoned date and time in the future, optionally rounds it, and returns it as a {{jsxref('Temporal.Duration','Temporal.Duration')}} object.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/since','since()')}}</dt>
+<dd><p>Computes the elapsed time between the <code>Temporal.ZonedDateTime</code> object and another zoned date and time in the past, optionally rounds it, and returns it as a {{jsxref('Temporal.Duration','Temporal.Duration')}} object.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/round','round()')}}</dt>
 <dd><p>Creates a new <code>Temporal.ZonedDateTime</code> object by rounding the date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/equals','equals()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/equals','equals()')}}</dt>
 <dd><p>Determines whether a <code>Temporal.ZonedDateTime</code> object is exactly the same as another zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toInstant','toInstant()')}}</code></dt>
-<dd><p>Returns a new <code>{{jsxref('Temporal.Instant','Temporal.Instant')}}</code> object that corresponds to the exact instant of the zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainDate','toPlainDate()')}}</code></dt>
-<dd><p>Returns a new <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object that corresponds to the date (not time) components of the zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainTime','toPlainTime()')}}</code></dt>
-<dd><p>Returns a new <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object that corresponds to the time (not date) components of the zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainDateTime','toPlainDateTime()')}}</code></dt>
-<dd><p>Returns a new <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object that corresponds to the date and time (but not time zone) components of the zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainYearMonth','toPlainYearMonth()')}}</code></dt>
-<dd><p>Returns a <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> object that corresponds to the year and month components of the zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toPlainMonthDay','toPlainMonthDay()')}}</code></dt>
-<dd><p>Returns a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object that corresponds to the month and day components of the zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toLocaleString','toLocaleString()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/toInstant','toInstant()')}}</dt>
+<dd><p>Returns a new {{jsxref('Temporal.Instant','Temporal.Instant')}} object that corresponds to the exact instant of the zoned date and time.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/toPlainDate','toPlainDate()')}}</dt>
+<dd><p>Returns a new {{jsxref('Temporal.PlainDate','Temporal.PlainDate')}} object that corresponds to the date (not time) components of the zoned date and time.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/toPlainTime','toPlainTime()')}}</dt>
+<dd><p>Returns a new {{jsxref('Temporal.PlainTime','Temporal.PlainTime')}} object that corresponds to the time (not date) components of the zoned date and time.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/toPlainDateTime','toPlainDateTime()')}}</dt>
+<dd><p>Returns a new {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object that corresponds to the date and time (but not time zone) components of the zoned date and time.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/toPlainYearMonth','toPlainYearMonth()')}}</dt>
+<dd><p>Returns a {{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}} object that corresponds to the year and month components of the zoned date and time.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/toPlainMonthDay','toPlainMonthDay()')}}</dt>
+<dd><p>Returns a {{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}} object that corresponds to the month and day components of the zoned date and time.</p></dd>
+<dt>{{jsxref('Temporal/ZonedDateTime/toLocaleString','toLocaleString()')}}</dt>
 <dd><p>Returns a human-readable, language-sensitive representation of the zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toString','toString()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/toString','toString()')}}</dt>
 <dd><p>Returns a string representing the zoned date and time in ISO 8601 format.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/toJSON','toJSON()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/toJSON','toJSON()')}}</dt>
 <dd><p>Returns a string representing the zoned date and time in ISO 8601 format.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/getISOFields','getISOFields()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/getISOFields','getISOFields()')}}</dt>
 <dd><p>Returns an object containing the ISO 8601 calendar fields and values corresponding to the zoned date and time.</p></dd>
-<dt><code>{{jsxref('Temporal/ZonedDateTime/valueOf','valueOf()')}}</code></dt>
+<dt>{{jsxref('Temporal/ZonedDateTime/valueOf','valueOf()')}}</dt>
 <dd><p>Overrides {{jsxref('Object/valueOf','Object.prototype.valueOf')}} and <strong>always</strong> throws an exception.</p></dd>
 </dl>

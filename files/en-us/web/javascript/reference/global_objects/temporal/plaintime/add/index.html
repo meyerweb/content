@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>add()</code></strong> method creates a new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object by adding a duration to a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object.Adding a negative duration is equivalent to {{jsxref('Temporal.PlainTime/subtract','subtracting')}} the absolute value of that duration.</p>
+<p>The <strong><code>add()</code></strong> method creates a new {{jsxref('Temporal/PlainTime','Temporal.PlainTime')}} object by adding a duration to a {{jsxref('Temporal/PlainTime','Temporal.PlainTime')}} object.Adding a negative duration is equivalent to {{jsxref('Temporal.PlainTime/subtract','subtracting','','nocode')}} the absolute value of that duration.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -27,7 +27,7 @@ add(<var>duration</var>)
 <dl>
 <dt><code><var>duration</var></code></dt>
 <dd>
-<p>An object with properties denoting a duration, such as <code>{ hours: 5, minutes: 30 }</code>, or a string value such as <code>PT5H30M</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to a string as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
+<p>An object with properties denoting a duration, such as <code>{ hours: 5, minutes: 30 }</code>, or a string value such as <code>PT5H30M</code>, or a {{jsxref('Temporal/Duration','Temporal.Duration')}} object. If <code><var>duration</var></code> is not such a string nor a {{jsxref('Temporal/Duration','Temporal.Duration')}} object, then it will be converted to a string as if it were passed to {{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}.</p>
 <p>If the addition of the <var>duration</var> to the original time takes it past 24 hours, the time will be "wrapped around" to zero.  Thus, the returned wall-clock time may be either in the future or in the past relative to the original time, or even the same time.</p>
 </dd>
 </dl>
@@ -35,7 +35,7 @@ add(<var>duration</var>)
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object representing the wall-clock time indicated by <code>PlainTime</code> plus <code><var>duration</var></code>.
+<p>A new {{jsxref('Temporal/PlainTime','Temporal.PlainTime')}} object representing the wall-clock time indicated by <code>PlainTime</code> plus <code><var>duration</var></code>.
 </p>
 
 <h2 id="examples">Examples</h2>

@@ -9,9 +9,9 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>offset</code></strong> read-only property is the offset (formatted as a string) relative to UTC of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object's time zone.The value of this field will change after DST (Daylight Saving Time) transitions or after political changes to a time zone, e.g. a country switching to a new time zone.</p>
+<p>The <strong><code>offset</code></strong> read-only property is the offset (formatted as a string) relative to UTC of the {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object's time zone.The value of this field will change after DST (Daylight Saving Time) transitions or after political changes to a time zone, e.g. a country switching to a new time zone.</p>
 
-<p>This field is used to uniquely map date/time fields to an exact date/time in cases where the calendar date and clock time are ambiguous due to time zone offset transitions. Therefore, this field is accepted by <code>{{jsxref('Temporal/ZonedDateTime/with','.with()')}}</code> and <code>{{jsxref('Temporal/ZonedDateTime/from','.from()')}}</code>. The presence of this field means that <code>{{jsxref('Temporal/ZonedDateTime/toInstant','.toInstant()')}}</code> requires no parameters.
+<p>This field is used to uniquely map date/time fields to an exact date/time in cases where the calendar date and clock time are ambiguous due to time zone offset transitions. Therefore, this field is accepted by {{jsxref('Temporal/ZonedDateTime/with','.with()')}} and {{jsxref('Temporal/ZonedDateTime/from','.from()')}}. The presence of this field means that {{jsxref('Temporal/ZonedDateTime/toInstant','.toInstant()')}} requires no parameters.
 
 
 <h2 id="syntax">Syntax</h2>

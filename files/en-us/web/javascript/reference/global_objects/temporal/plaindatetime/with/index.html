@@ -8,7 +8,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>with()</code></strong> method returns a new <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object which is a modification of the original object using new property values.</p>
+<p>The <strong><code>with()</code></strong> method returns a new {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object which is a modification of the original object using new property values.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -22,9 +22,9 @@ with(<var>newValues</var>, <var>options</var>)
 
 <dl>
 <dt><code><var>newValues</var></code></dt>
-<dd>An object containing some or all of the properties accepted by <code>{{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>.
+<dd>An object containing some or all of the properties accepted by {{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}.
 <div class="note">
-<p><strong>Note:</strong> <code>calendar</code> and <code>timeZone</code> properties are not allowed on <var>newValues</var>.  See the methods <code>{{jsxref('Temporal/PlainDateTime/withCalendar','withCalendar()')}}</code> and <code>{{jsxref('Temporal/PlainDateTime/toZonedDateTime','toZonedDateTime()')}}</code>.</p>
+<p><strong>Note:</strong> <code>calendar</code> and <code>timeZone</code> properties are not allowed on <var>newValues</var>.  See the methods {{jsxref('Temporal/PlainDateTime/withCalendar','withCalendar()')}} and {{jsxref('Temporal/PlainDateTime/toZonedDateTime','toZonedDateTime()')}}.</p>
 </div>
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
@@ -46,7 +46,7 @@ with(<var>newValues</var>, <var>options</var>)
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object.  If the result is earlier or later than the range of dates <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> can represent (approximately half a million years centered on the Unix epoch), this method will throw a <code>RangeError</code> regardless of the value of <code>overflow</code>.</p>
+<p>A new {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object.  If the result is earlier or later than the range of dates {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} can represent (approximately half a million years centered on the Unix epoch), this method will throw a <code>RangeError</code> regardless of the value of <code>overflow</code>.</p>
 
 <h2 id="examples">Examples</h2>
 

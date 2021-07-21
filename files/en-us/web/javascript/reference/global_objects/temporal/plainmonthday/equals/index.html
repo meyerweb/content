@@ -13,8 +13,8 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>equals()</code></strong> method compares two <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> objects to determine if they are the same.This method is provided because it's impossible to compare using <code>monthDay == other</code> or <code>monthDay === other</code>, due to ambiguity in the primitive representation and between Temporal types.</p>
-<p>Note that two <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code>s expressed in different calendar systems will never be considered equal, because it's impossible to tell whether they fall on the same day without knowing the year.</p>
+<p>The <strong><code>equals()</code></strong> method compares two {{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}} objects to determine if they are the same.This method is provided because it's impossible to compare using <code>monthDay == other</code> or <code>monthDay === other</code>, due to ambiguity in the primitive representation and between Temporal types.</p>
+<p>Note that two {{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}s expressed in different calendar systems will never be considered equal, because it's impossible to tell whether they fall on the same day without knowing the year.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -27,7 +27,7 @@ date.equals(<var>otherDate</var>)
 
 <dl>
 <dt><code><var>otherDate</var></code></dt>
-<dd>An object representing the date to which the original date is compared.  If <var>otherDate</var> is not a <code>{{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}}</code> object, it is converted to one as if it were passed to <code>{{jsxref('Temporal/PlainMonthDay/from','Temporal.PlainMonthDay.from()')}}</code>.
+<dd>An object representing the date to which the original date is compared.  If <var>otherDate</var> is not a {{jsxref('Temporal.PlainMonthDay','Temporal.PlainMonthDay')}} object, it is converted to one as if it were passed to {{jsxref('Temporal/PlainMonthDay/from','Temporal.PlainMonthDay.from()')}}.
 </dd>
 </dl>
 

@@ -14,7 +14,7 @@ tags:
 {{JSRef}}
 
 <p>The <strong><code>getInstantFor()</code></strong> method finds the exact time in a time zone at the time of a given calendar date and wall-clock time, even those which may be "skipped" by a change to or from Daylight Saving Time (DST).</p>
-<p>This method is one way to convert a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> to a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code>. The result is identical to <code>dateTime.toZonedDateTime(timeZone, { disambiguation }).toInstant()</code>.  When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this method doesn't need to be overridden because the default implementation calls <code>{{jsxref('Temporal/TimeZone/getPossibleInstantsFor','timeZone.getPossibleInstantsFor()')}}</code>, and if there is more than one possible instant, uses <code>disambiguation</code> to pick which one to return.</p>
+<p>This method is one way to convert a {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} to a {{jsxref('Temporal/Instant','Temporal.Instant')}}. The result is identical to <code>dateTime.toZonedDateTime(timeZone, { disambiguation }).toInstant()</code>.  When subclassing {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}, this method doesn't need to be overridden because the default implementation calls {{jsxref('Temporal/TimeZone/getPossibleInstantsFor','timeZone.getPossibleInstantsFor()')}}, and if there is more than one possible instant, uses <code>disambiguation</code> to pick which one to return.</p>
 
 <h2 id="syntax">Syntax</h2>
 
@@ -27,7 +27,7 @@ getInstantFor(<var>dateTime</var>, <var>options</var>)
 
 <dl>
 <dt><code><var>dateTime</var></code></dt>
-<dd>A calendar date and wall-clock time to convert, represented as a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object or value convertible to one.</dd>
+<dd>A calendar date and wall-clock time to convert, represented as a {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object or value convertible to one.</dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>An object with properties representing options for the operation. The following option is recognized:
 <dl>
@@ -39,19 +39,19 @@ getInstantFor(<var>dateTime</var>, <var>options</var>)
 <li><code>'later'</code> - The later of two possible times.</li>
 <li><code>'reject'</code> - Throw a <code>RangeError</code> instead.</li>
 </ul>
-<p>When interoperating with existing code or services, <code>'compatible'</code> disambiguation matches the behavior of legacy {{jsxref('Date','Date')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).</p>
+<p>When interoperating with existing code or services, <code>'compatible'</code> disambiguation matches the behavior of legacy {{jsxref('Date','Date','','nocode')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).</p>
 </dd>
 </dl>
 </dd>
 </dl>
 
-<p>During "skipped" clock time like the hour after DST starts in the Spring, this method interprets invalid times using the pre-transition time zone offset if <code>compatible</code> or <code>later</code> is used, or the post-transition time zone offset if <code>earlier</code> is used. This behavior avoids exceptions when converting non-existent <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> values to <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code>, but it also means that values during these periods will result in a different <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> in "round-trip" conversions to <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> and back again.</p>
+<p>During "skipped" clock time like the hour after DST starts in the Spring, this method interprets invalid times using the pre-transition time zone offset if <code>compatible</code> or <code>later</code> is used, or the post-transition time zone offset if <code>earlier</code> is used. This behavior avoids exceptions when converting non-existent {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} values to {{jsxref('Temporal/Instant','Temporal.Instant')}}, but it also means that values during these periods will result in a different {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} in "round-trip" conversions to {{jsxref('Temporal/Instant','Temporal.Instant')}} and back again.</p>
 
 
 <h3 id="return-value">Return value</h3>
 
-<p>A <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object indicating the exact time in <code>timeZone</code> at the time of the calendar date and wall-clock time at <code><var>dateTime</var></code>. If <code><var>dateTime</var></code> is not a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>.</p>
-<p>If the result is earlier or later than the range that <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> can represent (approximately half a million years centered on the Unix epoch), then a <code>RangeError</code> will be thrown, no matter the value of disambiguation.</p>
+<p>A {{jsxref('Temporal/Instant','Temporal.Instant')}} object indicating the exact time in <code>timeZone</code> at the time of the calendar date and wall-clock time at <code><var>dateTime</var></code>. If <code><var>dateTime</var></code> is not a {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object, then it will be converted to one as if it were passed to {{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}.</p>
+<p>If the result is earlier or later than the range that {{jsxref('Temporal/Instant','Temporal.Instant')}} can represent (approximately half a million years centered on the Unix epoch), then a <code>RangeError</code> will be thrown, no matter the value of disambiguation.</p>
 
 <h2 id="examples">Examples</h2>
 

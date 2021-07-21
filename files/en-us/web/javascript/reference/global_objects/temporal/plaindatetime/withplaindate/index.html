@@ -8,11 +8,11 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>withPlainDate()</code></strong> method returns a new <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object which is a modification of the original date and time with a new date.This method is similar to <code>{{jsxref('Temporal.PlainDateTime/with','with()')}}</code>, but with a few important differences:</p>
+<p>The <strong><code>withPlainDate()</code></strong> method returns a new {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object which is a modification of the original date and time with a new date.This method is similar to {{jsxref('Temporal.PlainDateTime/with','with()')}}, but with a few important differences:</p>
 
 <ul>
-	<li><code>withPlainDate()</code> accepts strings, Temporal objects, or objects. <code>{{jsxref('Temporal.PlainDateTime/with','with()')}}</code> only accepts objects, and does not accept strings nor <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> objects, because they can contain calendar information.</li>
-	<li><code>withPlainDate()</code> updates all date units, whereas <code>{{jsxref('Temporal.PlainDateTime/with','with()')}}</code> only changes units that are present in the input object.</li>
+	<li><code>withPlainDate()</code> accepts strings, Temporal objects, or objects. {{jsxref('Temporal.PlainDateTime/with','with()')}} only accepts objects, and does not accept strings nor {{jsxref('Temporal.PlainDate','Temporal.PlainDate')}} objects, because they can contain calendar information.</li>
+	<li><code>withPlainDate()</code> updates all date units, whereas {{jsxref('Temporal.PlainDateTime/with','with()')}} only changes units that are present in the input object.</li>
 </ul>
 
 
@@ -26,13 +26,13 @@ withPlainDate(<var>plainDate</var>)
 
 <dl>
 <dt><code><var>plainDate</var></code></dt>
-<dd>The date that should replace the date of the original <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object.  Valid input to <code>withPlainDate()</code> is the same as valid input to <code>{{jsxref('Temporal.PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>: strings like <code>2021-04-28</code>, plain objects like <code>{ year: 2021, month: 4, day: 28 }</code>, or Temporal objects that contain date unit properties, including <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, or <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>.  All three date units (<code>year</code>, <code>month</code>, and <code>day</code>) are required.
+<dd>The date that should replace the date of the original {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object.  Valid input to <code>withPlainDate()</code> is the same as valid input to {{jsxref('Temporal.PlainDateTime/from','Temporal.PlainDateTime.from()')}}: strings like <code>2021-04-28</code>, plain objects like <code>{ year: 2021, month: 4, day: 28 }</code>, or Temporal objects that contain date unit properties, including {{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}, {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}, or {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}.  All three date units (<code>year</code>, <code>month</code>, and <code>day</code>) are required.
 </dd>
 </dl>
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object.</p>
+<p>A new {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object.</p>
 
 <h2 id="examples">Examples</h2>
 

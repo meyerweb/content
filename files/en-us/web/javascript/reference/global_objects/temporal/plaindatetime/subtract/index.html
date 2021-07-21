@@ -13,7 +13,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>subtract()</code></strong> method creates a new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object by subtracting a duration from a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object.Subtracting a negative duration is equivalent to {{jsxref('Temporal.PlainDateTime/add','adding')}} the absolute value of that duration.</p>
+<p>The <strong><code>subtract()</code></strong> method creates a new {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object by subtracting a duration from a {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object.Subtracting a negative duration is equivalent to {{jsxref('Temporal.PlainDateTime/add','adding','','nocode')}} the absolute value of that duration.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -28,7 +28,7 @@ subtract(<var>duration</var>, <var>options</var>)
 <dl>
 <dt><code><var>duration</var></code></dt>
 <dd>
-<p>An object with properties denoting a duration, such as <code>{ days: 5 }</code>, or a string value such as <code>P5D</code>, or a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object. If <code><var>duration</var></code> is not such a string nor a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, then it will be converted to a string as if it were passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.</p>
+<p>An object with properties denoting a duration, such as <code>{ days: 5 }</code>, or a string value such as <code>P5D</code>, or a {{jsxref('Temporal/Duration','Temporal.Duration')}} object. If <code><var>duration</var></code> is not such a string nor a {{jsxref('Temporal/Duration','Temporal.Duration')}} object, then it will be converted to a string as if it were passed to {{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}.</p>
 <p>Some subtractions may be ambiguous, because months have different lengths. For example, subtracting <code>{ month: 1 }</code> from October 31 would result in September 31, which doesn't exist. In such cases, the <code>overflow</code> option (see below) governs the result.</p>
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
@@ -51,7 +51,7 @@ subtract(<var>duration</var>, <var>options</var>)
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object representing the calendar date indicated by <code><var>oldDateTime</var></code> minus <var>duration</var>.
+<p>A new {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object representing the calendar date indicated by <code><var>oldDateTime</var></code> minus <var>duration</var>.
 </p>
 
 <h2 id="examples">Examples</h2>

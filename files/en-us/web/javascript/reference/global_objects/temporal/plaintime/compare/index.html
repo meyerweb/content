@@ -14,10 +14,10 @@ tags:
 {{JSRef}}
 
 <p>The <strong><code>compare()</code></strong> static method compares two times and returns an integer indicating which comes before the other.</p>
-<p>If you don't care about the order in which the two times occur, but instead merely want to know if they're the same or not, use <code>{{jsxref('Temporal/PlainTime/equals','Temporal.PlainTime.equals()')}}</code> instead.</p>
+<p>If you don't care about the order in which the two times occur, but instead merely want to know if they're the same or not, use {{jsxref('Temporal/PlainTime/equals','Temporal.PlainTime.equals()')}} instead.</p>
 
 <p>Note that time zone offset transitions, such as when Daylight Saving Time starts or ends, can produce unexpected results when comparing times.  This is because in those situations, clock times can be skipped or repeated.
-Therefore, <code>{{jsxref('Temporal.ZonedDateTime.compare','Temporal.ZonedDateTime.compare')}}</code> (not <code>Temporal.PlainTime.compare</code>) should be used if the caller's actual intent is to compare specific instants; e.g., the arrivals of two airplane flights.</p>
+Therefore, {{jsxref('Temporal.ZonedDateTime.compare','Temporal.ZonedDateTime.compare')}} (not <code>Temporal.PlainTime.compare</code>) should be used if the caller's actual intent is to compare specific instants; e.g., the arrivals of two airplane flights.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -32,7 +32,7 @@ compare(<var>timeOne</var>, <var>timeTwo</code>)
 <dt><code><var>timeOne</var></code></dt>
 <dt><code><var>timeTwo</var></code></dt>
 <dd>
-Either a <code>{{jsxref('Temporal/PlainTime','Temporal.PlainTime')}}</code> object, or a value that can be converted to one as if passed to <code>{{jsxref('Temporal/PlainTime/from','Temporal.PlainTime.from()')}}</code>.
+Either a {{jsxref('Temporal/PlainTime','Temporal.PlainTime')}} object, or a value that can be converted to one as if passed to {{jsxref('Temporal/PlainTime/from','Temporal.PlainTime.from()')}}.
 </dd>
 </dl>
 
@@ -55,7 +55,7 @@ two = Temporal.PlainTime.from('01:24');
 Temporal.PlainTime.compare(one, two); // => 1
 </pre>
 
-<p>In the following example, <code>compare()</code> is used to sort an array of <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> objects.</p>
+<p>In the following example, <code>compare()</code> is used to sort an array of {{jsxref('Temporal.PlainTime','Temporal.PlainTime')}} objects.</p>
 
 <pre class="brush: js">
 one = Temporal.PlainTime.from('03:24');
@@ -65,7 +65,7 @@ sorted = [one, two, three].sort(Temporal.PlainTime.compare);
 sorted.join(' | '); // => "01:24:00 | 01:24:05 | 03:24:00"
 </pre>
 
-<p>The following examples demonstrate differences between <code>Temporal.PlainTime.compare</code> and <code>{{jsxref('Temporal.ZonedDateTime.compare','Temporal.ZonedDateTime.compare')}}</code>.</p>
+<p>The following examples demonstrate differences between <code>Temporal.PlainTime.compare</code> and {{jsxref('Temporal.ZonedDateTime.compare','Temporal.ZonedDateTime.compare')}}.</p>
 
 <pre class="brush: js">
 // Backward transitions will repeat clock times

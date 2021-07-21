@@ -8,7 +8,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>toString()</code></strong> method returns a string representing the wall-clock time in ISO 8601 format.This method overrides the <code>{{jsxref('Object.toString','Object.prototype.toString()')}}</code> method and provides a convenient, unambiguous string representation of a wall-clock time. The string can be passed to <code>{{jsxref('Temporal.PlainTime/from','Temporal.PlainTime.from()')}}</code> to create a new <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> object.</p>
+<p>The <strong><code>toString()</code></strong> method returns a string representing the wall-clock time in ISO 8601 format.This method overrides the {{jsxref('Object.toString','Object.prototype.toString()')}} method and provides a convenient, unambiguous string representation of a wall-clock time. The string can be passed to {{jsxref('Temporal.PlainTime/from','Temporal.PlainTime.from()')}} to create a new {{jsxref('Temporal.PlainTime','Temporal.PlainTime')}} object.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -47,7 +47,7 @@ A string defining how to deal with any remainder.  The valid values are:
 <dd>Always round up, toward 23:59:59.999999999.</dd>
 <dt><code>'floor'</code></dt>
 <dt><code>'trunc'</code></dt>
-<dd>Always round down, toward 00:00.  These two rounding modes behave identically, but are included for consistency with <code>{{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}</code>, where they do <strong>not</strong> behave identically.</dd>
+<dd>Always round down, toward 00:00.  These two rounding modes behave identically, but are included for consistency with {{jsxref('Temporal/Duration.round()','Temporal.Duration.round()')}}, where they do <strong>not</strong> behave identically.</dd>
 <dt><code>'halfExpand'</code> (default)</dt>
 <dd>Round to the nearest of the values allowed by <code>roundingIncrement</code> and <code>smallestUnit</code>. If there is a tie, round up, toward 23:59:59.999999999.</dd>
 </dl>

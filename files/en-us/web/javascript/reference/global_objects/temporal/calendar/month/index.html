@@ -10,7 +10,7 @@ tags:
 {{JSRef}}
 
 <p>The <strong><code>month()</code></strong> method returns the month component of the supplied date, as determined by the calendar system associated with that date.</p>
-<p>This method is called indirectly when reading the <code>month</code> properties of the <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, and <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.month()</code> directly.</p>
+<p>This method is called indirectly when reading the <code>month</code> properties of the {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}, {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}, {{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}, and {{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}} classes.  It is thus rare for developers to need to call <code>Temporal.Calendar.month()</code> directly.</p>
 
 <h2 id="syntax">Syntax</h2>
 
@@ -25,12 +25,12 @@ month(<var>date</var>);
 <dd>
 <p>The <var>date</var> parameter can be one of the following Temporal objects:
 <ul>
-<li><code>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</code></li>
-<li><code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code></li>
-<li><code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code></li>
-<li><code>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</code></li>
+<li>{{jsxref('Temporal/PlainDate','Temporal.PlainDate')}}</li>
+<li>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</li>
+<li>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</li>
+<li>{{jsxref('Temporal/PlainYearMonth','Temporal.PlainYearMonth')}}</li>
 </ul>
-<p>If the parameter's value is not one of those objects, it will be converted to a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> as if it were passed to <code>{{jsxref('Temporal.PlainDate.from()','Temporal.PlainDate.from()')}}</code>.</p>
+<p>If the parameter's value is not one of those objects, it will be converted to a {{jsxref('Temporal.PlainDate','Temporal.PlainDate')}} as if it were passed to {{jsxref('Temporal.PlainDate.from()','Temporal.PlainDate.from()')}}.</p>
 </dd>
 </dl>
 

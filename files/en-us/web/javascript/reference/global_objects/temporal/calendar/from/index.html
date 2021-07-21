@@ -9,7 +9,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>from()</code></strong> static method creates a new <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object from another value.  This function is often more convenient to use than <code>{{jsxref('Temporal/Calendar','new Temporal.Calendar()')}}</code> because it handles a wider range of input.</p>
+<p>The <strong><code>from()</code></strong> static method creates a new {{jsxref('Temporal/Calendar','Temporal.Calendar')}} object from another value.  This function is often more convenient to use than {{jsxref('Temporal/Calendar','new Temporal.Calendar()')}} because it handles a wider range of input.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -24,10 +24,10 @@ from(<em>input</em>);
 <dt><code><var>input</var></code></dt>
 <dd>
 <p>A Temporal object that implements the calendar protocol, or any value that can be converted to a string.</p>
-<p>If <var>input</var> is another <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object, or a Temporal object that implements the calendar protocol, the same object is returned. If the value is another Temporal object that carries a calendar or an object with a calendar property, such as a <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code>, the object's calendar is returned.</p>
+<p>If <var>input</var> is another {{jsxref('Temporal/Calendar','Temporal.Calendar')}} object, or a Temporal object that implements the calendar protocol, the same object is returned. If the value is another Temporal object that carries a calendar or an object with a calendar property, such as a {{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}, the object's calendar is returned.</p>
 <p>Any other value is converted to a string, which is expected to be either:</p>
 <ul>
-<li>a string that is accepted by new <code>{{jsxref('Temporal/Calendar','Temporal.Calendar()')}}</code>; or</li>
+<li>a string that is accepted by new {{jsxref('Temporal/Calendar','Temporal.Calendar()')}}; or</li>
 <li>a string in the ISO 8601 format</li>
 </ul>
 <p>Note that an ISO 8601 string can be extended with a <code>[u-ca=<var>identifier</var>]</code> annotation appended to it. Without such an annotation, the calendar is assumed to be <code>iso8601</code>.</p>
@@ -36,7 +36,7 @@ from(<em>input</em>);
 
 <h3 id="return-value">Return value</h3>
 
-<p>A <code>{{jsxref('Temporal/Calendar','Temporal.Calendar')}}</code> object.</p>
+<p>A {{jsxref('Temporal/Calendar','Temporal.Calendar')}} object.</p>
 
 <h2 id="examples">Examples</h2>
 

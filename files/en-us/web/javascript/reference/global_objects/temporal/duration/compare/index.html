@@ -29,7 +29,7 @@ compare(durationOne, durationTwo, options);
 <dt><code><var>durationOne</var></code></dt>
 <dt><code><var>durationTwo</var></code></dt>
 <dd>
-Either a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object, or a value that can be converted to one as if passed to <code>{{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}</code>.
+Either a {{jsxref('Temporal/Duration','Temporal.Duration')}} object, or a value that can be converted to one as if passed to {{jsxref('Temporal/Duration/from','Temporal.Duration.from()')}}.
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}(see note)</dt>
 <dd>
@@ -39,9 +39,9 @@ Either a <code>{{jsxref('Temporal/Duration','Temporal.Duration')}}</code> object
 
 <dt><code>relativeTo</code></dt>
 <dd>
-<p>The starting point to use when converting between years, months, weeks, and days, expressed as a <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> or <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> objects, or else a value convertible to one of those.</p>
-<p>If <code>relativeTo</code> is a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object, time zone offset changes will be taken into account when comparing days with hours. If <code>relativeTo</code> is a <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object, then days are always considered equal to 24 hours.</p>
-<p>If <code>relativeTo</code> is neither a <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> nor a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, it will be converted to one of the two as if it were first attempted with <code>{{jsxref('Temporal.ZonedDateTime/from','Temporal.ZonedDateTime.from()')}}</code> and then, if that fails, with <code>{{jsxref('Temporal.PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>.</p>
+<p>The starting point to use when converting between years, months, weeks, and days, expressed as a {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} or {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} objects, or else a value convertible to one of those.</p>
+<p>If <code>relativeTo</code> is a {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object, time zone offset changes will be taken into account when comparing days with hours. If <code>relativeTo</code> is a {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object, then days are always considered equal to 24 hours.</p>
+<p>If <code>relativeTo</code> is neither a {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} nor a {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}, it will be converted to one of the two as if it were first attempted with {{jsxref('Temporal.ZonedDateTime/from','Temporal.ZonedDateTime.from()')}} and then, if that fails, with {{jsxref('Temporal.PlainDateTime/from','Temporal.PlainDateTime.from()')}}.</p>
 </dd>
 
 </dl>

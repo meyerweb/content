@@ -8,11 +8,11 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>withPlainTime()</code></strong> method returns a new <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object which is a modification of the original date and time with a new time.This method is similar to <code>{{jsxref('Temporal.PlainDateTime/with','.with()')}}</code>, but with a few important differences:</p>
+<p>The <strong><code>withPlainTime()</code></strong> method returns a new {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object which is a modification of the original date and time with a new time.This method is similar to {{jsxref('Temporal.PlainDateTime/with','.with()')}}, but with a few important differences:</p>
 
 <ul>
-	<li><code>withPlainTime()</code> accepts strings, Temporal objects, or objects. <code>{{jsxref('Temporal.PlainDateTime/with','.with()')}}</code> only accepts objects, and does not accept strings nor <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code> objects, because they can contain calendar information.</li>
-	<li><code>withPlainTime()</code> defaults all missing time units to zero, whereas <code>{{jsxref('Temporal.PlainDateTime/with','.with()')}}</code> only changes units that are present in the input object.</li>
+	<li><code>withPlainTime()</code> accepts strings, Temporal objects, or objects. {{jsxref('Temporal.PlainDateTime/with','.with()')}} only accepts objects, and does not accept strings nor {{jsxref('Temporal.PlainTime','Temporal.PlainTime')}} objects, because they can contain calendar information.</li>
+	<li><code>withPlainTime()</code> defaults all missing time units to zero, whereas {{jsxref('Temporal.PlainDateTime/with','.with()')}} only changes units that are present in the input object.</li>
 </ul>
 
 
@@ -26,13 +26,13 @@ withPlainTime(<var>plainTime</var>)
 
 <dl>
 <dt><code><var>plainTime</var></code></dt>
-<dd>The clock time that should replace the current clock time of the original <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object.  An object containing some or all of the properties accepted by <code>{{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>.  Valid input to <code>withPlainTime()</code> is the same as valid input to <code>{{jsxref('Temporal/PlainTime/from','Temporal.PlainTime.from()')}}</code>: strings like <code>12:15:36</code>, plain objects like <code>{ hour: 20, minute: 30 }</code>, or Temporal objects that contain time fields: <code>{{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}</code>, <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, or <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>.
+<dd>The clock time that should replace the current clock time of the original {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object.  An object containing some or all of the properties accepted by {{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}.  Valid input to <code>withPlainTime()</code> is the same as valid input to {{jsxref('Temporal/PlainTime/from','Temporal.PlainTime.from()')}}: strings like <code>12:15:36</code>, plain objects like <code>{ hour: 20, minute: 30 }</code>, or Temporal objects that contain time fields: {{jsxref('Temporal.PlainTime','Temporal.PlainTime')}}, {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}, or {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}.
 </dd>
 </dl>
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object.</p>
+<p>A new {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object.</p>
 
 <h2 id="examples">Examples</h2>
 

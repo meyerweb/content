@@ -14,7 +14,7 @@ tags:
 {{JSRef}}
 
 <p>The <strong><code>getPossibleInstantsFor()</code></strong> method finds all the possible exact times that could correspond to a given calendar date and wall-clock time.Normally there is only one possible exact time corresponding to a wall-clock time, but around a daylight saving change, a wall-clock time may not exist, or the same wall-clock time may exist twice in a row.</p>
-<p>Although this method is useful for implementing a custom time zone or custom disambiguation behaviour, usually you won't have to use this method; <code>{{jsxref('Temporal/TimeZone/getInstantFor','Temporal.TimeZone.getInstantFor()')}}</code> will be more convenient for most use cases. During "skipped" clock time like the hour after DST starts in the Spring, <code>{{jsxref('Temporal/TimeZone/getInstantFor','Temporal.TimeZone.getInstantFor()')}}</code> returns a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> (by default interpreting the <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> using the pre-transition time zone offset), while this method returns zero results during those skipped periods.</p>
+<p>Although this method is useful for implementing a custom time zone or custom disambiguation behaviour, usually you won't have to use this method; {{jsxref('Temporal/TimeZone/getInstantFor','Temporal.TimeZone.getInstantFor()')}} will be more convenient for most use cases. During "skipped" clock time like the hour after DST starts in the Spring, {{jsxref('Temporal/TimeZone/getInstantFor','Temporal.TimeZone.getInstantFor()')}} returns a {{jsxref('Temporal/Instant','Temporal.Instant')}} (by default interpreting the {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} using the pre-transition time zone offset), while this method returns zero results during those skipped periods.</p>
 
 <h2 id="syntax">Syntax</h2>
 
@@ -26,14 +26,14 @@ getPossibleInstantsFor(<var>dateTime</var>)
 
 <dl>
 <dt><code><var>dateTime</var></code></dt>
-<dd>A calendar date and wall-clock time to convert, represented as a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object, or a value convertible to one.</dd>
+<dd>A calendar date and wall-clock time to convert, represented as a {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object, or a value convertible to one.</dd>
 </dl>
 
 
 <h3 id="return-value">Return value</h3>
 
-<p>An array of <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> objects, which may be empty. Each object indicates the exact time in <code>timeZone</code> at the time of the calendar date and wall-clock time at <code><var>dateTime</var></code>. If <code><var>dateTime</var></code> is not a <code>{{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}</code>.</p>
-<p>If the result is earlier or later than the range that <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> can represent (approximately half a million years centered on the Unix epoch), then a <code>RangeError</code> will be thrown, no matter the value of disambiguation.</p>
+<p>An array of {{jsxref('Temporal/Instant','Temporal.Instant')}} objects, which may be empty. Each object indicates the exact time in <code>timeZone</code> at the time of the calendar date and wall-clock time at <code><var>dateTime</var></code>. If <code><var>dateTime</var></code> is not a {{jsxref('Temporal/PlainDateTime','Temporal.PlainDateTime')}} object, then it will be converted to one as if it were passed to {{jsxref('Temporal/PlainDateTime/from','Temporal.PlainDateTime.from()')}}.</p>
+<p>If the result is earlier or later than the range that {{jsxref('Temporal/Instant','Temporal.Instant')}} can represent (approximately half a million years centered on the Unix epoch), then a <code>RangeError</code> will be thrown, no matter the value of disambiguation.</p>
 
 <h2 id="examples">Examples</h2>
 

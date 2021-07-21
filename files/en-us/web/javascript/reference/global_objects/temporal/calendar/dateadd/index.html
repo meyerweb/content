@@ -9,7 +9,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>dateAdd()</code></strong> method provides a way to do date arithmetic in the calendar's reckoning.This method does not need to be called directly except in specialized code. It is called indirectly when using the <code>add()</code> and <code>subtract()</code> methods of the <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code>, <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code>, and <code>{{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}}</code> classes.</p>
+<p>The <strong><code>dateAdd()</code></strong> method provides a way to do date arithmetic in the calendar's reckoning.This method does not need to be called directly except in specialized code. It is called indirectly when using the <code>add()</code> and <code>subtract()</code> methods of the {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}, {{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}, and {{jsxref('Temporal.PlainYearMonth','Temporal.PlainYearMonth')}} classes.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -24,11 +24,11 @@ dateAdd(<var>date</var>, <var>duration</var>, <var>options</code>);
 <dl>
 <dt><code><var>date</var></code></dt>
 <dd>
-<p>The date to start from.  If this is not a <code>{{jsxref('Temporal.PlainDate','Temporal.PlainDate')}}</code> object, it will be converted to one as if passed to <code>{{jsxref('Temporal.PlainDate.from()','Temporal.PlainDate.from()')}}</code>.</p>
+<p>The date to start from.  If this is not a {{jsxref('Temporal.PlainDate','Temporal.PlainDate')}} object, it will be converted to one as if passed to {{jsxref('Temporal.PlainDate.from()','Temporal.PlainDate.from()')}}.</p>
 </dd>
 <dt><code><var>duration</var></code></dt>
 <dd>
-<p>A duration (amount of time) to add to the value of <var>date</var>.  If this is not a <code>{{jsxref('Temporal.Duration','Temporal.Duration')}}</code> object, it will be converted to one as if passed to <code>{{jsxref('Temporal.Duration.from()','Temporal.Duration.from()')}}</code>.  To subtract, negative duration values are used.
+<p>A duration (amount of time) to add to the value of <var>date</var>.  If this is not a {{jsxref('Temporal.Duration','Temporal.Duration')}} object, it will be converted to one as if passed to {{jsxref('Temporal.Duration.from()','Temporal.Duration.from()')}}.  To subtract, negative duration values are used.
 </dd>
 <dt><code><var>options</var></code> {{optional_inline}}</dt>
 <dd>
@@ -49,7 +49,7 @@ dateAdd(<var>date</var>, <var>duration</var>, <var>options</code>);
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/plainYearMonth','Temporal.plainYearMonth')}}</code> object representing the new year and month.</p>
+<p>A new {{jsxref('Temporal/plainYearMonth','Temporal.plainYearMonth')}} object representing the new year and month.</p>
 
 <h2 id="examples">Examples</h2>
 

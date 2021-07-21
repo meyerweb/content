@@ -13,8 +13,8 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>getNextTransition()</code></strong> method returns a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the next DST (Daylight Saving Time) transition in a given time zone.</p>
-<p>When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this method should be overridden if the time zone changes offsets. Single-offset time zones can use the default implementation, which returns <code>null</code>.</p>
+<p>The <strong><code>getNextTransition()</code></strong> method returns a {{jsxref('Temporal/Instant','Temporal.Instant')}} object representing the next DST (Daylight Saving Time) transition in a given time zone.</p>
+<p>When subclassing {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}, this method should be overridden if the time zone changes offsets. Single-offset time zones can use the default implementation, which returns <code>null</code>.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -27,13 +27,13 @@ getNextTransition(<var>startingInstant</var>)
 
 <dl>
 <dt><code><var>startingInstant</var></code></dt>
-<dd>Time after which to find the next DST transition. If <code><var>startingInstant</var></code> is not a <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object, then it will be converted to one as if it were passed to <code>{{jsxref('Temporal/Instant/from','Temporal.Instant.from()')}}</code>.</dd>
+<dd>Time after which to find the next DST transition. If <code><var>startingInstant</var></code> is not a {{jsxref('Temporal/Instant','Temporal.Instant')}} object, then it will be converted to one as if it were passed to {{jsxref('Temporal/Instant/from','Temporal.Instant.from()')}}.</dd>
 </dl>
 
 
 <h3 id="return-value">Return value</h3>
 
-<p>A <code>{{jsxref('Temporal/Instant','Temporal.Instant')}}</code> object representing the next DST transition in this time zone, or <code>null</code> if no transitions later than <code><var>startingInstant</var></code> could be found. Note that if the time zone was constructed from a <abbr title="Coordinated Universal Time">UTC</abbr> offset, there will be no DST transitions.
+<p>A {{jsxref('Temporal/Instant','Temporal.Instant')}} object representing the next DST transition in this time zone, or <code>null</code> if no transitions later than <code><var>startingInstant</var></code> could be found. Note that if the time zone was constructed from a <abbr title="Coordinated Universal Time">UTC</abbr> offset, there will be no DST transitions.
 </p>
 
 <h2 id="examples">Examples</h2>

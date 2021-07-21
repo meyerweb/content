@@ -10,7 +10,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>toZonedDateTime()</code></strong> method returns a <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object, by supplying a time zone to be combined with the date and time of the <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> object.</p>
+<p>The <strong><code>toZonedDateTime()</code></strong> method returns a {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object, by supplying a time zone to be combined with the date and time of the {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -24,7 +24,7 @@ toZonedDateTime(<var>timeZone</var>, <var>options</var>)
 
 <dl>
 <dt><code><var>timeZone</var></code></dt>
-<dd>The time zone to be combined with the date and time.  This can be represented by a <code>{{jsxref('Temporal.TimeZone','Temporal.TimeZone')}}</code> object, an object implementing the Temporal time zone protocol, or a value that can be converted to a time zone as if it were passed to <code>{{jsxref('Temporal.TimeZone/from','Temporal.TimeZone.from()')}}</code>.</p></dd>
+<dd>The time zone to be combined with the date and time.  This can be represented by a {{jsxref('Temporal.TimeZone','Temporal.TimeZone')}} object, an object implementing the Temporal time zone protocol, or a value that can be converted to a time zone as if it were passed to {{jsxref('Temporal.TimeZone/from','Temporal.TimeZone.from()')}}.</p></dd>
 
 <dt><code><var>options</var></code> {{ optional_inline }}</dt>
 <dd>
@@ -45,10 +45,10 @@ toZonedDateTime(<var>timeZone</var>, <var>options</var>)
 		<dd>Throw a <code>RangeError</code> instead.</dd>
 </dl>
 <p>
-When interoperating with existing code or services, <code>'compatible'</code> matches the behavior of legacy <code>{{jsxref('Date')}}</code> as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).
+When interoperating with existing code or services, <code>'compatible'</code> matches the behavior of legacy {{jsxref('Date')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).
 </p>
 <p>
-During "skipped" clock time like the hour after <abbr title="Daylight Saving Time">DST</abbr> starts in the Spring, this method interprets invalid times using the pre-transition time zone offset if <code>'compatible'</code> or <code>'later'</code> is used, or if the post-transition time zone offset if <code>'earlier'</code> is used. This behavior avoids exceptions when converting non-existent <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> values to <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code>, but it also means that values during these periods will result in a different <code>{{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}}</code> than doing "round-trip" conversions to <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> and back again.
+During "skipped" clock time like the hour after <abbr title="Daylight Saving Time">DST</abbr> starts in the Spring, this method interprets invalid times using the pre-transition time zone offset if <code>'compatible'</code> or <code>'later'</code> is used, or if the post-transition time zone offset if <code>'earlier'</code> is used. This behavior avoids exceptions when converting non-existent {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} values to {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}, but it also means that values during these periods will result in a different {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} than doing "round-trip" conversions to {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} and back again.
 </p>
 </dd>
 
@@ -59,7 +59,7 @@ During "skipped" clock time like the hour after <abbr title="Daylight Saving Tim
 
 <h3 id="return-value">Return value</h3>
 
-<p>A <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object that represents the combination of date, time, and time zone.  If the result is outside the range that <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> can represent (approximately half a million years centered on the Unix epoch), then a <code>RangeError</code> will be thrown.</p>
+<p>A {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object that represents the combination of date, time, and time zone.  If the result is outside the range that {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} can represent (approximately half a million years centered on the Unix epoch), then a <code>RangeError</code> will be thrown.</p>
 
 <h2 id="examples">Examples</h2>
 

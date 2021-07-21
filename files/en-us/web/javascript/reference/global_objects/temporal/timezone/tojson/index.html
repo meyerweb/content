@@ -13,8 +13,8 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>toJSON()</code></strong> method returns the time zone's ID as a string.It is usually not called directly, but it can be called automatically by <code>JSON.stringify()</code>. The reverse operation, recovering a <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code> object from a string, is <code>{{jsxref('Temporal/TimeZone/from','Temporal.TimeZone.from()')}}</code>, but it cannot be called automatically by <code>JSON.parse()</code>.</p>
-<p>When subclassing <code>{{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}</code>, this method doesn't need to be overridden because the default implementation returns the result of calling <code>timeZone.toString()</code>.
+<p>The <strong><code>toJSON()</code></strong> method returns the time zone's ID as a string.It is usually not called directly, but it can be called automatically by <code>JSON.stringify()</code>. The reverse operation, recovering a {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}} object from a string, is {{jsxref('Temporal/TimeZone/from','Temporal.TimeZone.from()')}}, but it cannot be called automatically by <code>JSON.parse()</code>.</p>
+<p>When subclassing {{jsxref('Temporal/TimeZone','Temporal.TimeZone')}}, this method doesn't need to be overridden because the default implementation returns the result of calling <code>timeZone.toString()</code>.
 </p>
 
 
@@ -31,7 +31,7 @@ toJSON()
 
 <h3 id="return-value">Return value</h3>
 
-<p>The string given by <code>{{jsxref('Temporal/TimeZone/id','timeZone.id')}}</code>.</p>
+<p>The string given by {{jsxref('Temporal/TimeZone/id','timeZone.id')}}.</p>
 
 <h2 id="examples">Examples</h2>
 

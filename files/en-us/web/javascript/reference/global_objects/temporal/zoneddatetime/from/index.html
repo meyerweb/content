@@ -8,7 +8,7 @@ tags:
 ---
 {{JSRef}}
 
-<p>The <strong><code>from()</code></strong> static method creates a new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object from another value.</p>
+<p>The <strong><code>from()</code></strong> static method creates a new {{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}} object from another value.</p>
 
 
 <h2 id="syntax">Syntax</h2>
@@ -23,7 +23,7 @@ from(<var>dateTime</var>, <var>options</var>)
 <dl>
 
 <dt><code><var>dateTime</var></code></dt>
-<dd><p>A representation of the desired date and time, either as an object or as a string in valid ISO 8601 format.  If the value is another <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> object, a new object representing the same date is returned.</p>
+<dd><p>A representation of the desired date and time, either as an object or as a string in valid ISO 8601 format.  If the value is another {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} object, a new object representing the same date is returned.</p>
 <p>If the value is any other object, it must contain, at a minimum:</p>
 <ul>
 <li>A <code>year</code> or <code>eraYear</code> property.
@@ -72,7 +72,7 @@ from(<var>dateTime</var>, <var>options</var>)
 <li><code>'later'</code> – The later of two possible times.</li>
 <li><code>'reject'</code> – Throw a <code>RangeError</code> instead.</li>
 </ul>
-<p>When interoperating with existing code or services, <code>'compatible'</code> disambiguation matches the behavior of legacy {{jsxref('Date','Date')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).</p>
+<p>When interoperating with existing code or services, <code>'compatible'</code> disambiguation matches the behavior of legacy {{jsxref('Date','Date','','nocode')}} as well as libraries like moment.js, Luxon, and date-fns. This mode also matches the behavior of cross-platform standards like RFC 5545 (iCalendar).</p>
 
 <div class="note">
 <p><strong>Note:</strong> <code>disambiguation</code> is only used if there is no offset in the input, or if the offset is ignored by using the <code>offset</code> option as described above. If the offset in the input is used, then there is no ambiguity and the <code>disambiguation</code> option is ignored.</p>
@@ -85,7 +85,7 @@ from(<var>dateTime</var>, <var>options</var>)
 <ul>
 <li><code>'use'</code> – Evaluate date/time values using the time zone offset if it's provided in the input. This will keep the exact time unchanged even if local time will be different than what was originally stored.</li>
 <li><code>'ignore'</code> – Never use the time zone offset provided in the input. Instead, calculate the offset from the time zone. This will keep local time unchanged but may result in a different exact time than was originally stored.</li>
-<li><code>'prefer'</code> – Evaluate date/time values using the offset if it's valid for this time zone. If the offset is invalid, then calculate the offset from the time zone. This option is rarely used when calling <code>from()</code>. See the documentation of <code>{{jsxref('Temporal.ZonedDateTime/with','with()')}}</code> for more details about why this option is used.</li>
+<li><code>'prefer'</code> – Evaluate date/time values using the offset if it's valid for this time zone. If the offset is invalid, then calculate the offset from the time zone. This option is rarely used when calling <code>from()</code>. See the documentation of {{jsxref('Temporal.ZonedDateTime/with','with()')}} for more details about why this option is used.</li>
 <li><code>'reject'</code> <strong>(default)</strong> – Throw a <code>RangeError</code> if the offset is not valid for the provided date and time in the provided time zone.</li>
 </ul>
 
@@ -99,7 +99,7 @@ from(<var>dateTime</var>, <var>options</var>)
 
 <h3 id="return-value">Return value</h3>
 
-<p>A new <code>{{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}}</code> object.  If the result is earlier or later than the range of dates <code>{{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}</code> can represent (approximately half a million years centered on the Unix epoch), this function will throw a <code>RangeError</code> regardless of the value of <code>overflow</code>.</p>
+<p>A new {{jsxref('Temporal/ZonedDateTime','Temporal.ZonedDateTime')}} object.  If the result is earlier or later than the range of dates {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}} can represent (approximately half a million years centered on the Unix epoch), this function will throw a <code>RangeError</code> regardless of the value of <code>overflow</code>.</p>
 
 <h2 id="examples">Examples</h2>
 
