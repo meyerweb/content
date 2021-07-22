@@ -46,19 +46,23 @@ round(<var>options</var>)
 </ul>
 <p>The <code>largestUnit</code> value determines the largest unit allowed in the result. It  causes units larger than <code>largestUnit</code> to be converted into smaller units, and units smaller than <code>largestUnit</code> to be converted into larger units as much as possible. For example, with <code>largestUnit: 'minutes'</code>, a duration of 1 hour and 125 seconds will be converted into a duration of 62 minutes and 5 seconds.</p>
 <p>A <code>largestUnit</code> value of <code>'auto'</code> means that <code>largestUnit</code> will use largest nonzero unit in the duration that is larger than <code>smallestUnit</code>. For example, in a duration of 3 days and 12 hours, <code>largestUnit: 'auto'</code> would mean the same as <code>largestUnit: 'days'</code>.</p>
+<div class="warning">
+<p><strong>Warning:</strong> At least one of <code>largestUnit</code> and <code>smallestUnit</code> is <strong>required</strong>.</p>
+</div>
 </dd>
 <dt><code>smallestUnit</code></dt>
-<dd><p>A string defining the unit of time to which to round.  Valid values are the same as for <code>largestUnit</code>, with two exceptions: there is no <code>'auto'</code> value, and the default value is <code>'nanoseconds'</code> (which means no rounding is performed).</p></dd>
+<dd><p>A string defining the unit of time to which to round.  Valid values are the same as for <code>largestUnit</code>, with two exceptions: there is no <code>'auto'</code> value, and the default value is <code>'nanoseconds'</code> (which means no rounding is performed).</p>
 <div class="warning">
-<strong>NOTE:</strong> At least one of <code>largestUnit</code> and <code>smallestUnit</code> is <strong>required</strong>.
+<p><strong>Warning:</strong> At least one of <code>largestUnit</code> and <code>smallestUnit</code> is <strong>required</strong>.</p>
 </div>
+</dd>
 <dt><code>relativeTo</code></dt>
 <dd>
 <p>The starting point to use when converting between years, months, weeks, and days, expressed as a {{jsxref('Temporal.PlainDateTime','Temporal.PlainDateTime')}} object, or else a value convertible to one.</p>
-</dd>
 <div class="warning">
-<strong>NOTE:</strong> If either <code>largestUnit</code> or <code>smallestUnit</code> is <code>'years'</code>, <code>'months'</code>, or <code>'weeks'</code>, or if the base duration has nonzero value for any of years, months, or weeks, then the <code>relativeTo</code> option is <strong>required</strong>.
+<p><strong>Warning:</strong> If either <code>largestUnit</code> or <code>smallestUnit</code> is <code>'years'</code>, <code>'months'</code>, or <code>'weeks'</code>, or if the base duration has nonzero value for any of years, months, or weeks, then the <code>relativeTo</code> option is <strong>required</strong>.</p>
 </div>
+</dd>
 <dt><code>roundingIncrement</code> {{ optional_inline }}</dt>
 <dd><p>An integer defining the granularity of the rounding of the unit given by <code>smallestUnit</code>. The default is <code>1</code>.  This value must divide evenly into the next highest unit after <code>smallestUnit</code>, and must not be equal to it. For example, if <code>smallestUnit</code> is <code>'minutes'</code>, then the number of minutes given by <code>roundingIncrement</code> must divide evenly into 60 minutes, which is one hour. The valid values in this case are 1 (default), 2, 3, 4, 5, 6, 10, 12, 15, 20, and 30. Instead of 60 minutes, use 1 hour.)</p></dd>
 <dt><code>roundingMode</code> {{ optional_inline }}</dt>
