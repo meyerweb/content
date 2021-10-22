@@ -1,5 +1,5 @@
 ---
-title: Temporal.ZonedDateTime.prototype.startOfDay
+title: Temporal.ZonedDateTime.prototype.startOfDay()
 slug: Web/JavaScript/Reference/Global_Objects/Temporal/ZonedDateTime/startOfDay
 tags:
   - Class
@@ -9,7 +9,7 @@ tags:
 ---
 {{JSRef}}
 
-The **`startOfDay`** read-only property returns a new
+The **`startOfDay`** method returns a new
 {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}
 instance representing the earliest valid local clock time during the given
 calendar day and time zone.The local time of the result is almost always
@@ -19,10 +19,10 @@ Time) starts at midnight in a time zone.
 ## Syntax
 
 ```js
-datetime.startOfDay
+datetime.startOfDay()
 ```
 
-### Value
+### Return value
 
 An
 {{jsxref('Temporal.ZonedDateTime','Temporal.ZonedDateTime')}}

@@ -150,10 +150,6 @@ Temporal type except
   - : The number of real-world hours between the start of the
     `Temporal.zonedDateTime` object's day to the start of the next calendar day
     in the same time zone.
-- {{jsxref('Temporal/ZonedDateTime/startOfDay','startOfDay')}}
-  {{readonlyinline}}
-  - : The earliest valid local clock time during the given calendar day and time
-    zone.
 - {{jsxref('Temporal/ZonedDateTime/offsetNanoseconds','offsetNanoseconds')}}
   {{readonlyinline}}
   - : The offset (in nanoseconds) relative to UTC of the
@@ -218,6 +214,9 @@ Temporal type except
 - {{jsxref('Temporal/ZonedDateTime/equals','equals()')}}
   - : Determines whether a `Temporal.ZonedDateTime` object is exactly the same
     as another zoned date and time.
+- {{jsxref('Temporal/ZonedDateTime/startOfDay','startOfDay')}}
+  - : The earliest valid local clock time during the given calendar day and time
+    zone.
 - {{jsxref('Temporal/ZonedDateTime/toInstant','toInstant()')}}
   - : Returns a new
     {{jsxref('Temporal.Instant','Temporal.Instant')}} object that
