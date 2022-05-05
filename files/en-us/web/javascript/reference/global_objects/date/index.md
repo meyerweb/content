@@ -21,11 +21,11 @@ JavaScript **`Date`** objects represent a single moment in time in a platform-in
 
 ### The ECMAScript epoch and timestamps
 
-A JavaScript date is fundamentally specified as the number of milliseconds that have elapsed since midnight on January 1, 1970, UTC. This date and time are not the same as the **UNIX epoch** (the number of seconds that have elapsed since midnight on January 1, 1970, UTC), which is the predominant base value for computer-recorded date and time values.
+A JavaScript date is fundamentally specified as the number of milliseconds that have elapsed since the [ECMAScript epoch](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-time-values-and-time-range), which is defined as January 1, 1970, UTC (equivalent to the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time)).
 
-**Note:** It's important to keep in mind that while the time value at the heart of a Date object is UTC, the basic methods to fetch the date and time or its components all work in the local (i.e. host system) time zone and offset.
+> **Note:** It's important to keep in mind that while the time value at the heart of a Date object is UTC, the basic methods to fetch the date and time or its components all work in the local (i.e. host system) time zone and offset.
 
-It should be noted that the maximum `Date` is not of the same value as the maximum safe integer (`Number.MAX_SAFE_INTEGER` is 9,007,199,254,740,991). Instead, it is defined in ECMA-262 that a maximum of ±100,000,000 (one hundred million) days relative to January 1, 1970 UTC (that is, April 20, 271821 BCE \~ September 13, 275760 CE) can be represented by the standard `Date` object (equivalent to ±8,640,000,000,000,000 milliseconds).
+It should be noted that the maximum `Date` is not of the same value as the maximum safe integer (`Number.MAX_SAFE_INTEGER` is 9,007,199,254,740,991). Instead, it is defined in ECMA-262 that a maximum of ±100,000,000 (one hundred million) days relative to January 1, 1970 UTC (that is, April 20, 271821 BCE \~ September 13, 275760 CE) can be represented by the standard `Date` object (equivalent to ±8,640,000,000,000,000 milliseconds).
 
 ### Date format and time zone conversions
 
@@ -165,7 +165,7 @@ let birthday = new Date(1995, 11, 17, 3, 24, 0)
 let birthday = new Date(628021800000)            // passing epoch timestamp
 ```
 
-###  To get Date, Month and Year or Time
+### To get Date, Month and Year or Time
 
 ```js
 const date = new Date();
@@ -173,19 +173,27 @@ const [month, day, year]       = [date.getMonth(), date.getDate(), date.getFullY
 const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
 ```
 
-### Two digit years map to 1900 – 1999
+### Interpretation of two-digit years
 
-Values from `0` to `99` map to the years `1900` to `1999`. All other values are the actual year .
-
-In order to create and get dates between the years `0` and `99` the {{jsxref("Date.prototype.setFullYear()")}} and {{jsxref("Date.prototype.getFullYear()")}} methods should be used.
+`new Date()` exhibits legacy undesirable, inconsistent behavior with two-digit year values; specifically, when a `new Date()` call is given a two-digit year value, that year value does not get treated as a literal year and used as-is but instead gets interpreted as a relative offset — in some cases as an offset from the year `1900`, but in other cases, as an offset from the year `2000`.
 
 ```js
-let date = new Date(98, 1)  // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
+let date = new Date(98, 1)         // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
+let date = new Date(22, 1)         // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
+let date = new Date("2/1/22")      // Tue Feb 01 2022 00:00:00 GMT+0000 (GMT)
 
-// Deprecated method; 98 maps to 1998 here as well
-date.setYear(98)            // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
+// Legacy method; always interprets two-digit year values as relative to 1900
+date.setYear(98); date.toString()  // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
+date.setYear(22); date.toString()  // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
+```
 
-date.setFullYear(98)        // Sat Feb 01 0098 00:00:00 GMT+0000 (BST)
+So, to create and get dates between the years `0` and `99`, instead use the preferred {{jsxref("Date.prototype.setFullYear()", "setFullYear()")}} and {{jsxref("Date.prototype.getFullYear()", "getFullYear()")}} methods:.
+
+```js
+// Preferred method; never interprets any value as being a relative offset,
+// but instead uses the year value as-is
+date.setFullYear(98); date.getFullYear()  // 98 (not 1998)
+date.setFullYear(22); date.getFullYear()  // 22 (not 1922, not 2022)
 ```
 
 ### Calculating elapsed time
@@ -228,7 +236,7 @@ function printElapsedTime(fTest) {
 let yourFunctionReturn = printElapsedTime(yourFunction)
 ```
 
-> **Note:** In browsers that support the {{domxref("Window.performance", "Web Performance API", "", 1)}}'s high-resolution time feature, {{domxref("Performance.now()")}} can provide more reliable and precise measurements of elapsed time than {{jsxref("Date.now()")}}.
+> **Note:** In browsers that support the {{domxref("performance_property", "Web Performance API", "", 1)}}'s high-resolution time feature, {{domxref("Performance.now()")}} can provide more reliable and precise measurements of elapsed time than {{jsxref("Date.now()")}}.
 
 ### Get the number of seconds since the ECMAScript Epoch
 

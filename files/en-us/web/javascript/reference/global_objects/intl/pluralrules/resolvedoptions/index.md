@@ -16,7 +16,7 @@ browser-compat: javascript.builtins.Intl.PluralRules.resolvedOptions
 
 The **`Intl.PluralRules.prototype.resolvedOptions()`** method
 returns a new object with properties reflecting the locale and plural formatting
-options computed during initialization of this {{jsxref("Intl/PluralRules")}} object.
+options computed during initialization of this {{jsxref("Intl.PluralRules")}} object.
 
 ## Syntax
 
@@ -27,7 +27,7 @@ resolvedOptions()
 ### Return value
 
 A new object with properties reflecting the locale and plural formatting options
-computed during the initialization of the given {{jsxref("Intl/PluralRules")}} object.
+computed during the initialization of the given {{jsxref("Intl.PluralRules")}} object.
 
 ## Description
 
@@ -39,7 +39,7 @@ The resulting object has the following properties:
     the key-value pairs that were requested and are supported for this locale are
     included in `locale`.
 - `pluralCategories`
-  - : An {{jsxref("Array")}} of plural categories used by the given locale, seleced from
+  - : An {{jsxref("Array")}} of plural categories used by the given locale, selected from
     the list "`zero`", "`one`", "`two`",
     "`few`", "`many`" and "`other`".
 - `type`
@@ -59,7 +59,7 @@ Only one of the following two groups of properties is included:
 
 ## Examples
 
-### Using the `resolvedOptions` method
+### Using the resolvedOptions() method
 
 ```js
 var de = new Intl.PluralRules('de-DE');

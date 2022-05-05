@@ -45,14 +45,14 @@ includes(searchElement, fromIndex)
     positive values of `fromIndex`, or at
     `arr.length + fromIndex` for negative values of
     `fromIndex` (using the {{interwiki("wikipedia", "absolute
-    value")}} of `fromIndex` as the number of elements from the end
+    value")}} of `fromIndex` as the number of elements from the end
     of the array at which to start the search).
 
     Defaults to `0`.
 
 ### Return value
 
-A {{jsxref("Boolean")}} which is `true` if the value
+A boolean value which is `true` if the value
 `searchElement` is found within the array (or the part of the array
 indicated by the index `fromIndex`, if specified).
 
@@ -61,7 +61,7 @@ Values of zero are all considered to be equal, regardless of sign. (That is,
 but `false` is _not_ considered to be the same as `0`.
 
 > **Note:** Technically speaking, `includes()` uses the
-> [`sameValueZero`](/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value-zero_equality)
+> [`sameValueZero`](/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality)
 > algorithm to determine whether the given element is found.
 
 ## Examples
@@ -91,8 +91,8 @@ arr.includes('c', 100)  // false
 
 If `fromIndex` is negative, the computed index is calculated to
 be used as a position in the array at which to begin searching for
-`searchElement`. If the computed index is less or equal than
-`-1 * arr.length`, the entire array will be searched.
+`searchElement`. If the computed index is less than or equal to
+`0`, the entire array will be searched.
 
 ```js
 // array length is 3
@@ -120,7 +120,7 @@ The example below illustrates `includes()` method called on the function's
 (function() {
   console.log(Array.prototype.includes.call(arguments, 'a'))  // true
   console.log(Array.prototype.includes.call(arguments, 'd'))  // false
-})('a','b','c') 
+})('a','b','c')
 ```
 
 ## Specifications
@@ -133,7 +133,7 @@ The example below illustrates `includes()` method called on the function's
 
 ## See also
 
-- A polyfill of `Array.prototype.includes` is available in [`core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Polyfill of `Array.prototype.includes` in `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
 - {{jsxref("TypedArray.prototype.includes()")}}
 - {{jsxref("String.prototype.includes()")}}
 - {{jsxref("Array.prototype.indexOf()")}}

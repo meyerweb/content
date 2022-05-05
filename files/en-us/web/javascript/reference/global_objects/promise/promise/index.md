@@ -35,7 +35,7 @@ new Promise(executor)
         function(resolutionFunc, rejectionFunc){
           // typically, some asynchronous operation.
         }
-        ```
+    ```
 
     `resolutionFunc` and `rejectionFunc` are also functions, and you can give them whatever actual names you want. Their signatures are simple: they accept a single parameter of any type.
 
@@ -43,30 +43,30 @@ new Promise(executor)
     ```js
         resolutionFunc(value) // call on resolved
         rejectionFunc(reason) // call on rejected
-        ```
+    ```
 
     The `resolutionFunc` `value` parameter can be another promise object, in which case the promise gets dynamically inserted into the [promise chain](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#chained_promises).
 
-    About the `executor`, it’s important to understand the following:
+    About the `executor`, it's important to understand the following:
 
     - The `executor` return value is ignored.
     - If an error is thrown in the `executor`, the promise is rejected.
 
-    So the mechanism by which the code within the `executor` has affect is as follows:
+    So the mechanism by which the code within the `executor` has effect is as follows:
 
     - At the time when the constructor generates the new `Promise` object, it also generates a corresponding pair of functions for `resolutionFunc` and `rejectionFunc`; these are "tethered" to the `Promise` object.
     - The code within the `executor` has the opportunity to perform some operation and then reflect the operation's outcome (if the value is not another Promise object) as either "resolved" or "rejected", by terminating with an invocation of either the `resolutionFunc` or the `rejectionFunc`, respectively.
     - In other words, the code within the `executor` communicates via the side effect caused by `resolutionFunc` or `rejectionFunc`. The side effect is that the `Promise` object either becomes "resolved", or "rejected".
 
-    And so, given all the above, here’s a summary of the typical flow:
+    And so, given all the above, here's a summary of the typical flow:
 
-    1.  The operation within `executor` is asynchronous and provides a callback.
-    2.  The callback is defined within the `executor` code.
-    3.  The callback terminates by invoking `resolutionFunc`.
-    4.  The invocation of `resolutionFunc` includes a `value` parameter.
-    5.  The `value` is passed back to the tethered `Promise` object.
-    6.  The `Promise` object (asynchronously) invokes any associated `.then(handleResolved)`.
-    7.  The `value` received by `.then(handleResolved)` is passed to the invocation of `handleResolved` as an input parameter (see [Chained Promises](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#chained_promises)).
+    1. The operation within `executor` is asynchronous and provides a callback.
+    2. The callback is defined within the `executor` code.
+    3. The callback terminates by invoking `resolutionFunc`.
+    4. The invocation of `resolutionFunc` includes a `value` parameter.
+    5. The `value` is passed back to the tethered `Promise` object.
+    6. The `Promise` object (asynchronously) invokes any associated `.then(handleResolved)`.
+    7. The `value` received by `.then(handleResolved)` is passed to the invocation of `handleResolved` as an input parameter (see [Chained Promises](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#chained_promises)).
 
 ### Return value
 
@@ -125,5 +125,5 @@ function myAsyncFunction(url) {
 
 ## See also
 
-- A polyfill of `Promise` is available in [`core-js`](https://github.com/zloirock/core-js#ecmascript-promise)
+- [Polyfill of `Promise` in `core-js`](https://github.com/zloirock/core-js#ecmascript-promise)
 - [Using Promises](/en-US/docs/Web/JavaScript/Guide/Using_promises)

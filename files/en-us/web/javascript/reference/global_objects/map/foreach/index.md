@@ -21,34 +21,34 @@ pair in the `Map` object, in insertion order.
 
 ```js
 // Arrow function
-forEach(() => { ... } )
-forEach((value) => { ... } )
-forEach((value, key) => { ... } )
-forEach((value, key, map) => { ... } )
+forEach(() => { /* ... */ } )
+forEach((value) => { /* ... */ } )
+forEach((value, key) => { /* ... */ } )
+forEach((value, key, map) => { /* ... */ } )
 
 // Callback function
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 
 // Inline callback function
-forEach(function callbackFn() { ... })
-forEach(function callbackFn(value) { ... })
-forEach(function callbackFn(value, key) { ... })
-forEach(function callbackFn(value, key, map) { ... })
-forEach(function callbackFn(value, key, map) { ... }, thisArg)
+forEach(function() { /* ... */ })
+forEach(function(value) { /* ... */ })
+forEach(function(value, key) { /* ... */ })
+forEach(function(value, key, map) { /* ... */ })
+forEach(function(value, key, map) { /* ... */ }, thisArg)
 ```
 
 ### Parameters
 
 - `callbackFn`
-  - : Function to execute for each entry of `myMap`. It takes the following
+  - : Function to execute for each entry in the map. It takes the following
     arguments:
     - `value` {{Optional_Inline}}
       - : Value of each iteration.
     - `key` {{Optional_Inline}}
       - : Key of each iteration.
     - `map` {{Optional_Inline}}
-      - : The map being iterated (`myMap` in the above Syntax box).
+      - : The map being iterated.
 - `thisArg` {{Optional_Inline}}
   - : Value to use as `this` when executing `callback`.
 

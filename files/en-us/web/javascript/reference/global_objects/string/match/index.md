@@ -54,8 +54,7 @@ As explained above, some results contain additional properties as described belo
 - `groups`
   - : An object of named capturing groups whose keys are the names and values are the
     capturing groups or {{jsxref("undefined")}} if no named capturing groups were defined.
-    See [Groups
-    and Ranges](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges) for more information.
+    See [Groups and Ranges](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges) for more information.
 - `index`
   - : The index of the search at which the result was found.
 - `input`
@@ -123,8 +122,7 @@ console.log(matches_array);
 // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
 ```
 
-> **Note:** See also {{jsxref("String.prototype.matchAll()")}} and [Advanced
-> searching with flags](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Advanced_searching_with_flags).
+> **Note:** See also {{jsxref("String.prototype.matchAll()")}} and [Advanced searching with flags](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags).
 
 ### Using named capturing groups
 

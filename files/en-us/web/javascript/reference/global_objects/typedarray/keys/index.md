@@ -15,7 +15,7 @@ browser-compat: javascript.builtins.TypedArray.keys
 ---
 {{JSRef}}
 
-The **`keys()`** method returns a new array iterator object
+The **`keys()`** method returns a new _array iterator_ object
 that contains the keys for each index in the array.
 
 {{EmbedInteractiveExample("pages/js/typedarray-keys.html")}}
@@ -28,7 +28,7 @@ keys()
 
 ### Return value
 
-A new array iterator object.
+A new _array iterator_ object.
 
 ## Examples
 
@@ -66,7 +66,7 @@ console.log(eArr.next().value); // 4
 
 ## See also
 
-- A polyfill of `TypedArray.prototype.keys` is available in [`core-js`](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
+- [Polyfill of `TypedArray.prototype.keys` in `core-js`](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
 - [JavaScript typed arrays](/en-US/docs/Web/JavaScript/Typed_arrays)
 - {{jsxref("TypedArray")}}
 - {{jsxref("TypedArray.prototype.entries()")}}
@@ -74,5 +74,4 @@ console.log(eArr.next().value); // 4
 - {{jsxref("TypedArray.prototype.@@iterator()",
     "TypedArray.prototype[@@iterator]()")}}
 - [for...of](/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-- [Iteration
-  protocols](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
+- [Iteration protocols](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)

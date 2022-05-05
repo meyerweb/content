@@ -62,7 +62,7 @@ Consider the following 32-bit word:
 var a = 32776;   // 00000000000000001000000000001000 (16 leading zeros)
 Math.clz32(a);   // 16
 
-var b = ~32776;  // 11111111111111110111111111110111 (32776 inversed, 0 leading zeros)
+var b = ~32776;  // 11111111111111110111111111110111 (32776 inverted, 0 leading zeros)
 Math.clz32(b);   // 0 (this is equal to how many leading one's there are in a)
 ```
 
@@ -75,12 +75,11 @@ function clon(integer){
 }
 ```
 
-Further, this technique could be extended to create jumpless "Count Trailing Zeros" and
-"Count Trailing Ones" functions as seen below. The `ctrz` function below
+Further, this technique could be extended to create a jumpless "Count Trailing Zeros" function, as seen below. The `ctrz` function below
 fills in all the high bits with the lowest filled bit, then negates the bits to erase
-all higher set bits so that clz can then be used.
+all higher set bits so that `clz` can then be used.
 
-```js
+```js example-bad
 var clz = Math.clz32;
 function ctrz(integer){ // count trailing zeros
     // 1. fill in all the higher bits after the first one
@@ -92,6 +91,22 @@ function ctrz(integer){ // count trailing zeros
     // 2. Now, inversing the bits reveals the lowest bits
     return 32 - clz(~integer) |0; // `|0` ensures integer coercion
 }
+```
+
+However, a simpler and possibly more efficient algorithm is the following:
+
+```js example-good
+function ctrz(integer){
+    integer >>>= 0 // ensures coercion to Uint32
+    if (integer === 0) return 32; // skipping this step would make it return -1
+    integer &= -integer; // equivalent to `int = int & (~int + 1)`
+    return 31 - clz(x);
+}
+```
+
+Then we can define a "Count Trailing Ones" function like so:
+
+```js
 function ctron(integer){ // count trailing ones
     // No shift-filling-in-with-ones operator is available in
     // JavaScript, so the below code is the fastest
@@ -132,7 +147,7 @@ var countTrailsMethods = (function(stdlib, foreign, heap) {
         integer = integer | 0; // coerce to an integer
         return ctrz(~integer) |0;
     }
-    // unfourtunately, ASM.JS demands slow crummy objects:
+    // unfortunately, ASM.JS demands slow crummy objects:
     return {a: ctrz, b: ctron};
 })(window, null, null);
 var ctrz = countTrailsMethods.a;
@@ -185,6 +200,6 @@ if (!Math.clz32) Math.clz32 = (function(log, LN2){
 
 ## See also
 
-- A polyfill of `Math.clz32` is available in [`core-js`](https://github.com/zloirock/core-js#ecmascript-math)
+- [Polyfill of `Math.clz32` in `core-js`](https://github.com/zloirock/core-js#ecmascript-math)
 - {{jsxref("Math")}}
 - {{jsxref("Math.imul")}}

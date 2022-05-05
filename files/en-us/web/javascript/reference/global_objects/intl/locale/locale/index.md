@@ -55,14 +55,9 @@ property of the configuration object to your desired hour cycle type, and then p
 into the constructor:
 
 ```js
-let us12hour = new Intl.Locale("en-US", {hourCycle: "h12"});
-console.log(us12hour.hourCycle); // Prints "h12"
+let locale = new Intl.Locale("en-US", { hourCycle: "h12" });
+console.log(locale.hourCycle); // Prints "h12"
 ```
-
-## Polyfill
-
-[formatjs Intl.Locale
-polyfill](https://formatjs.io/docs/polyfills/intl-locale)
 
 ## Specifications
 
@@ -75,5 +70,5 @@ polyfill](https://formatjs.io/docs/polyfills/intl-locale)
 ## See also
 
 - {{jsxref("Intl.Collator")}}
-- [Unicode
-  locale identifiers spec](https://www.unicode.org/reports/tr35/#Canonical_Unicode_Locale_Identifiers)
+- [Unicode locale identifiers spec](https://www.unicode.org/reports/tr35/#Canonical_Unicode_Locale_Identifiers)
+- [A polyfill of `Intl.Locale` in FormatJS](https://formatjs.io/docs/polyfills/intl-locale/)

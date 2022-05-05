@@ -34,13 +34,13 @@ isNaN(value)
 
 ## Description
 
-### The necessity of an isNaN function
+### The convenience of an isNaN function
 
 Unlike all other possible values in JavaScript, it is not possible to use the equality
 operators (== and ===) to compare a value against {{jsxref("NaN")}} to determine whether
-the value _is_ `NaN` or not, because both `NaN == NaN` and
-`NaN === NaN` evaluate to `false`. Hence, the necessity of an
-`isNaN` function.
+the value _is_ `NaN` or not, because both `NaN == NaN` and
+`NaN === NaN` evaluate to `false`. The `isNaN()` function provides a convenient
+equality check against {{jsxref("NaN")}}.
 
 ### Origin of NaN values
 
@@ -57,7 +57,7 @@ numbers by zero does not.
 
 Since the very earliest versions of the `isNaN` function specification, its
 behavior for non-numeric arguments has been confusing. When the argument to the
-`isNaN` function is not of type [Number](https://es5.github.com/#x8.5), the value is first coerced to a
+`isNaN` function is not of type [Number](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-ecmascript-language-types-number-type), the value is first coerced to a
 Number. The resulting value is then tested to determine whether it is {{jsxref("NaN")}}.
 Thus for non-numbers that when coerced to numeric type result in a valid non-NaN numeric
 value (notably the empty string and boolean primitives, which when coerced give numeric
@@ -70,19 +70,19 @@ when coerced to a numeric value, an IEEE-754 'Not A Number' value?"
 ECMAScript 2015 contains the {{jsxref("Number.isNaN()")}} function.
 `Number.isNaN(x)` is a reliable way to test whether `x` is
 `NaN` or not. Even with `Number.isNaN`, however, the meaning of
-`NaN` remains the precise numeric meaning and not, "not a number".
+`NaN` remains the precise numeric meaning and not, "not a number".
 Alternatively, in the absence of `Number.isNaN`, the expression
 `(x != x)` is a more reliable way to test whether variable `x` is
 `NaN` or not, as the result is not subject to the false positives that make
 `isNaN` unreliable.
 
-A polyfill for `isNaN` would be (the polyfill leverages the unique
+A polyfill for `isNaN` would be (the polyfill leverages the unique
 never-equal-to-itself characteristic of `NaN`):
 
 ```js
 const isNaN = function(value) {
-    const n = Number(value);
-    return n !== n;
+    const n = Number(value);
+    return n !== n;
 };
 ```
 

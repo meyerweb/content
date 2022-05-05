@@ -16,7 +16,7 @@ browser-compat: javascript.builtins.Intl.NumberFormat.resolvedOptions
 
 The **`Intl.NumberFormat.prototype.resolvedOptions()`** method
 returns a new object with properties reflecting the locale and number formatting
-options computed during initialization of this {{jsxref("Intl/NumberFormat")}} object.
+options computed during initialization of this {{jsxref("Intl.NumberFormat")}} object.
 
 {{EmbedInteractiveExample("pages/js/intl-numberformat-prototype-resolvedoptions.html")}}
 
@@ -31,7 +31,7 @@ resolvedOptions()
 ### Return value
 
 A new object with properties reflecting the locale and number formatting options
-computed during the initialization of the given {{jsxref("Intl/NumberFormat")}} object.
+computed during the initialization of the given {{jsxref("Intl.NumberFormat")}} object.
 
 ## Description
 
@@ -43,19 +43,19 @@ The resulting object has the following properties:
     the key-value pairs that were requested and are supported for this locale are
     included in `locale`.
 - `numberingSystem`
-  - : The value provided for this properties in the `options` argument, if
-    present, or the value requested using the Unicode extension key "`nu`"
+  - : The value provided for this properties in the `options` argument, if
+    present, or the value requested using the Unicode extension key "`nu`"
     or filled in as a default.
 - `notation`
-  - : The value provided for this property in the `options` argument, if
-    present, or "`standard`" filled in as a default.
+  - : The value provided for this property in the `options` argument, if
+    present, or "`standard`" filled in as a default.
 - `compactDisplay`
-  - : The value provided for this property in the `options` argument, or
-    "`short`" filled in as a default. 
-    This property is only present if the `notation` is set to "compact".
+  - : The value provided for this property in the `options` argument, or
+    "`short`" filled in as a default.
+    This property is only present if the `notation` is set to "compact".
 - `signDisplay`
-  - : The value provided for this property in the `options` argument, or
-    "`auto`" filled in as a default.
+  - : The value provided for this property in the `options` argument, or
+    "`auto`" filled in as a default.
 - `useGrouping`
   - : The values provided for these properties in the `options` argument or
     filled in as defaults.
@@ -88,7 +88,7 @@ usedOptions.locale;                // "de-DE"
 usedOptions.numberingSystem;       // "latn"
 usedOptions.notation;              // "standard"
 usedOptions.signDisplay;           // "auto"
-usedOption.style;                  // "decimal"
+usedOptions.style;                 // "decimal"
 usedOptions.minimumIntegerDigits;  // 1
 usedOptions.minimumFractionDigits; // 0
 usedOptions.maximumFractionDigits; // 3

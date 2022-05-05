@@ -82,9 +82,9 @@ You can declare a variable in two ways:
 - With the keyword {{jsxref("Statements/var", "var")}}. For example, `var x = 42`. This syntax can be used to declare both **local** and **global** variables, depending on the _execution context_.
 - With the keyword {{jsxref("Statements/const", "const")}} or {{jsxref("Statements/let", "let")}}. For example, `let y = 13`. This syntax can be used to declare a block-scope local variable. (See [Variable scope](#variable_scope) below.)
 
-You can declare variables to unpack values from [Object Literals](#object_literals) using the [Destructuring Assignment](/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax. For example, `let { bar } = foo`. This will create a variable named `bar` and assign to it the value corresponding to the key of the same name from our object `foo`.
+You can declare variables to unpack values from [Object Literals](#object_literals) using the [Destructuring Assignment](/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax. For example, `let { bar } = foo`. This will create a variable named `bar` and assign to it the value corresponding to the key of the same name from our object `foo`.
 
-You can also assign a value to a variable For example, `x = 42`. This form creates an **[undeclared global](/en-US/docs/Web/JavaScript/Reference/Statements/var#description)** variable. It also generates a strict JavaScript warning. Undeclared global variables can often lead to unexpected behavior. Thus, it is discouraged to use undeclared global variables.
+You can also assign a value to a variable. For example, `x = 42`. This form creates an **[undeclared global](/en-US/docs/Web/JavaScript/Reference/Statements/var#description)** variable. It also generates a strict JavaScript warning. Undeclared global variables can often lead to unexpected behavior. Thus, it is discouraged to use undeclared global variables.
 
 ### Evaluating variables
 
@@ -106,7 +106,7 @@ let x;
 console.log('The value of x is ' + x); // The value of x is undefined
 
 console.log('The value of y is ' + y); // Uncaught ReferenceError: y is not defined
-let y; 
+let y;
 ```
 
 You can use `undefined` to determine whether a variable has a value. In the following code, the variable `input` is not assigned a value, and the [`if`](/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement evaluates to `true`.
@@ -223,21 +223,31 @@ let x = 3;
 
 ### Function hoisting
 
-In the case of functions, only function _declarations_ are hoisted—but _not_ the function _expressions_.
+Functions are hoisted if they’re defined using [function _declarations_](/en-US/docs/Web/JavaScript/Reference/Statements/function) — but functions are not hoisted if they’re defined using [function _expressions_](/en-US/docs/Web/JavaScript/Reference/Operators/function).
 
-```js
-/* Function declaration */
+The following example shows how, due to function hoisting, the function `foo` can be called even before it’s defined — because the `foo` function is defined using a function declaration.
 
+```js example-good
 foo(); // "bar"
 
+/* Function declaration */
 function foo() {
   console.log('bar');
 }
+```
+
+In the following example, the variable name `baz` is hoisted — due to [variable hoisting](#variable_hoisting) — but because a function is assigned to `baz` using a function expression rather than `baz` being defined with a function declaration, the function can’t be called before it’s defined, because it’s not hoisted.
+
+Thus, the `baz()` call below throws a [`TypeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) with _“baz is not a function”_, because the function assigned to `baz` isn’t hoisted — while the `console.log(baz)` call doesn’t throw a [`ReferenceError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError) but instead logs [`undefined`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined), because the _variable_ `baz` is still hoisted even though the function assigned to it isn’t. (But the value of `baz` is undefined, since nothing has yet been assigned to it).
+
+```js example-bad
+// Doesn’t throw ReferenceError
+console.log(baz) // undefined
+
+// Throws 'TypeError: baz is not a function'
+baz();
 
 /* Function expression */
-
-baz(); // TypeError: baz is not a function
-
 var baz = function() {
   console.log('bar2');
 };
@@ -304,13 +314,13 @@ The latest ECMAScript standard defines eight data types:
 
 - Seven data types that are {{Glossary("Primitive", "primitives")}}:
 
-  1.  {{Glossary("Boolean")}}. `true` and `false`.
-  2.  {{Glossary("null")}}. A special keyword denoting a null value. (Because JavaScript is case-sensitive, `null` is not the same as `Null`, `NULL`, or any other variant.)
-  3.  {{Glossary("undefined")}}. A top-level property whose value is not defined.
-  4.  {{Glossary("Number")}}. An integer or floating point number. For example: `42` or `3.14159`.
-  5.  {{Glossary("BigInt")}}. An integer with arbitrary precision. For example: `9007199254740992n`.
-  6.  {{Glossary("String")}}. A sequence of characters that represent a text value. For example: "Howdy"
-  7.  {{Glossary("Symbol")}} (new in ECMAScript 2015). A data type whose instances are unique and immutable.
+  1. {{Glossary("Boolean")}}. `true` and `false`.
+  2. {{Glossary("null")}}. A special keyword denoting a null value. (Because JavaScript is case-sensitive, `null` is not the same as `Null`, `NULL`, or any other variant.)
+  3. {{Glossary("undefined")}}. A top-level property whose value is not defined.
+  4. {{Glossary("Number")}}. An integer or floating point number. For example: `42` or `3.14159`.
+  5. {{Glossary("BigInt")}}. An integer with arbitrary precision. For example: `9007199254740992n`.
+  6. {{Glossary("String")}}. A sequence of characters that represent a text value. For example: "Howdy"
+  7. {{Glossary("Symbol")}} (new in ECMAScript 2015). A data type whose instances are unique and immutable.
 
 - and {{Glossary("Object")}}
 
@@ -379,7 +389,6 @@ _Literals_ represent values in JavaScript. These are fixed values—not variable
 
 - [Array literals](#array_literals)
 - [Boolean literals](#boolean_literals)
-- [Floating-point literals](#floating-point_literals)
 - [Numeric literals](#numeric_literals)
 - [Object literals](#object_literals)
 - [RegExp literals](#regexp_literals)
@@ -467,10 +476,12 @@ Integer and {{jsxref("BigInt")}} literals can be written in decimal (base 10), h
 
 Some examples of integer literals are:
 
-    0, 117, 123456789123456789n             (decimal, base 10)
-    015, 0001, 0o777777777777n              (octal, base 8)
-    0x1123, 0x00111, 0x123456789ABCDEFn     (hexadecimal, "hex" or base 16)
-    0b11, 0b0011, 0b11101001010101010101n   (binary, base 2)
+```
+0, 117, 123456789123456789n             (decimal, base 10)
+015, 0001, 0o777777777777n              (octal, base 8)
+0x1123, 0x00111, 0x123456789ABCDEFn     (hexadecimal, "hex" or base 16)
+0b11, 0b0011, 0b11101001010101010101n   (binary, base 2)
+```
 
 For more information, see [Numeric literals in the Lexical grammar reference](/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#numeric_literals).
 
@@ -487,14 +498,18 @@ The exponent part is an "`e`" or "`E`" followed by an integer, which can be sign
 
 More succinctly, the syntax is:
 
-    [digits].[digits][(E|e)[(+|-)]digits]
+```
+[digits].[digits][(E|e)[(+|-)]digits]
+```
 
 For example:
 
-    3.1415926
-    .123456789
-    3.1E+12
-    .1e-23
+```
+3.1415926
+.123456789
+3.1E+12
+.1e-23
+```
 
 ### Object literals
 
@@ -556,7 +571,7 @@ Together, these also bring object literals and class declarations closer togethe
 var obj = {
     // __proto__
     __proto__: theProtoObj,
-    // Shorthand for ‘handler: handler’
+    // Shorthand for 'handler: handler'
     handler,
     // Methods
     toString() {
@@ -617,7 +632,7 @@ var name = 'Bob', time = 'today';
 `Hello ${name}, how are you ${time}?`
 ```
 
-[Tagged templates](/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_template) are a compact syntax for specifying a template literal along with a call to a “tag” function for parsing it; the name of the template tag function precedes the template literal — as in the following example, where the template tag function is named "`myTag`":
+[Tagged templates](/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates) are a compact syntax for specifying a template literal along with a call to a "tag" function for parsing it; the name of the template tag function precedes the template literal — as in the following example, where the template tag function is named "`myTag`":
 
 ```js
 let myTag = (str, name, age) => `${str[0]}${name}${str[1]}${age}${str[2]}`;
@@ -703,12 +718,10 @@ The following table lists the special characters that you can use in JavaScript 
         <code>\x<em>XX</em></code>
       </td>
       <td>
-        <p>
-          The character with the Latin-1 encoding specified by the two
-          hexadecimal digits <em>XX</em> between <code>00</code> and
-          <code>FF</code>.<br />For example, <code>\xA9</code> is the
-          hexadecimal sequence for the copyright symbol.
-        </p>
+        The character with the Latin-1 encoding specified by the two
+        hexadecimal digits <em>XX</em> between <code>00</code> and
+        <code>FF</code>.<br />For example, <code>\xA9</code> is the
+        hexadecimal sequence for the copyright symbol.
       </td>
     </tr>
     <tr>
@@ -750,7 +763,9 @@ console.log(quote);
 
 The result of this would be:
 
-    He read "The Cremation of Sam McGee" by R.W. Service.
+```
+He read "The Cremation of Sam McGee" by R.W. Service.
+```
 
 To include a literal backslash inside a string, you must escape the backslash character. For example, to assign the file path `c:\temp` to a string, use the following:
 
@@ -785,7 +800,7 @@ var poem =
 `Roses are red,
 Violets are blue.
 Sugar is sweet,
-and so is foo.` 
+and so is foo.`
 ```
 
 ## More information

@@ -37,7 +37,7 @@ bind(thisArg, arg1, ... , argN)
     operator. When using `bind` to create a function (supplied as a callback)
     inside a `setTimeout`, any primitive value passed as
     `thisArg` is converted to object. If no arguments are provided
-    to `bind `, or if the `thisArg` is
+    to `bind`, or if the `thisArg` is
     `null` or `undefined`, the
     `this` of the executing scope is treated as the
     `thisArg` for the new function.
@@ -146,15 +146,15 @@ const result1 = addArguments(1, 2);
 //  3
 
 // Create a function with a preset leading argument
-const leadingThirtysevenList = list.bind(null, 37);
+const leadingThirtySevenList = list.bind(null, 37);
 
 // Create a function with a preset first argument.
 const addThirtySeven = addArguments.bind(null, 37);
 
-const list2 = leadingThirtysevenList();
+const list2 = leadingThirtySevenList();
 //  [37]
 
-const list3 = leadingThirtysevenList(1, 2, 3);
+const list3 = leadingThirtySevenList(1, 2, 3);
 //  [37, 1, 2, 3]
 
 const result2 = addThirtySeven(5);
@@ -167,8 +167,7 @@ const result3 = addThirtySeven(5, 10);
 
 ### With `setTimeout()`
 
-By default within {{domxref("WindowOrWorkerGlobalScope.setTimeout()",
-  "window.setTimeout()")}}, the `this` keyword will be set to the
+By default within {{domxref("setTimeout()")}}, the `this` keyword will be set to the
 {{domxref("window")}} (or `global`) object. When working with class methods
 that require `this` to refer to class instances, you may explicitly bind
 `this` to the callback function, in order to maintain the instance.
@@ -304,7 +303,7 @@ slice(arguments);
 
 ## See also
 
-- A polyfill of `Function.prototype.bind` is available in [`core-js`](https://github.com/zloirock/core-js#ecmascript-function)
+- [Polyfill of `Function.prototype.bind` in `core-js`](https://github.com/zloirock/core-js#ecmascript-function)
 - {{jsxref("Function.prototype.apply()")}}
 - {{jsxref("Function.prototype.call()")}}
 - {{jsxref("Functions", "Functions", "", 1)}}

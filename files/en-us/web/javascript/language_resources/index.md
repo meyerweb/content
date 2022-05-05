@@ -49,7 +49,7 @@ tags:
           >,
           <a href="https://ecma-international.org/ecma-262/10.0/index.html"
             >HTML</a
-          >, <a href="https://tc39.github.io/ecma262/">Working draft</a>,
+          >, <a href="https://tc39.github.io/ecma262/">Working draft</a>,
           <a href="https://github.com/tc39/ecma262">repository</a>
         </p>
       </td>
@@ -66,7 +66,7 @@ tags:
           >,
           <a href="http://ecma-international.org/ecma-262/9.0/index.html#Title"
             >HTML</a
-          >, <br /><a href="https://tc39.github.io/ecma262/">Working draft</a>,
+          >, <br /><a href="https://tc39.github.io/ecma262/">Working draft</a>,
           <a href="https://github.com/tc39/ecma262">repository</a>
         </p>
       </td>
@@ -107,7 +107,7 @@ tags:
           >PDF</a
         >
       </td>
-      <td>August 1998</td>
+      <td>August 1998</td>
       <td>
         ECMAScript Language Specification. This is the second revision of the
         ECMAScript standard; also ISO standard 16262.
@@ -121,9 +121,9 @@ tags:
           >PDF</a
         >
       </td>
-      <td>December 1999</td>
+      <td>December 1999</td>
       <td>
-        ECMAScript Language Specification. This is the third revision of the
+        ECMAScript Language Specification. This is the third revision of the
         ECMAScript standard; corresponds to JavaScript 1.5.<br />See also the
         <a href="https://www.mozilla.org/js/language/E262-3-errata.html"
           >errata</a
@@ -138,9 +138,9 @@ tags:
           >PDF</a
         >
       </td>
-      <td>December 2009</td>
+      <td>December 2009</td>
       <td>
-        ECMAScript Language Specification. This is the fifth revision of the
+        ECMAScript Language Specification. This is the fifth revision of the
         ECMAScript standard.<br />See also the
         <a
           href="https://wiki.ecmascript.org/doku.php?id=es3.1:es3.1_proposal_working_draft"
@@ -152,25 +152,6 @@ tags:
           title="JavaScript/ECMAScript 5 support in Mozilla"
           >ECMAScript 5 support in Mozilla</a
         >
-      </td>
-    </tr>
-    <tr>
-      <td>ECMA-357</td>
-      <td>
-        <a
-          href="https://www.ecma-international.org/publications/files/ECMA-ST-WITHDRAWN/ECMA-357,%201st%20edition,%20June%202004.pdf"
-          >PDF</a
-        >
-      </td>
-      <td>June 2004</td>
-      <td>
-        <a href="/en-US/docs/E4X">ECMAScript for XML (E4X)</a>.<br />See also
-        the
-        <a
-          class="link-https"
-          href="https://bugzilla.mozilla.org/attachment.cgi?id=169406"
-          >E4X errata</a
-        >.
       </td>
     </tr>
     <tr>
@@ -265,16 +246,15 @@ tags:
 
 See [Wikipedia ECMAScript entry](https://en.wikipedia.org/wiki/ECMAScript) for more information on ECMAScript history.
 
-You can participate in or just track the work on the next revisions of the ECMAScript Language Specification, code-named "Harmony", and the ECMAScript Internationalization API Specification via public wiki and the [es-discuss mailing list](https://mail.mozilla.org/listinfo/es-discuss) linked from [ecmascript.org](https://www.ecmascript.org/community.php).
+## Related resources
 
-## Implementations
+There are a variety of ways you can participate in or just track current work on the ECMAScript Language Specification and the ECMAScript Internationalization API Specification and related resources:
 
-- [SpiderMonkey](/en-US/docs/SpiderMonkey) - the JavaScript engine used in various Mozilla products, including Firefox;
-- [Rhino](/en-US/docs/Rhino) - the JavaScript engine is written in Java;
-- [Tamarin](/en-US/docs/Tamarin) - the ActionScript virtual machine (used in the Adobe® Flash® Player);
-- [Other implementations](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines) (Wikipedia).
-
-## See also
-
-- [Brendan Eich's blog](https://brendaneich.com/). Brendan is the creator of JavaScript and the SpiderMonkey JS engine. He still works with the ECMA working group to evolve the language.
-- [Dmitry Soshnikov's analysis of ECMA-262 Edition 3 and 5](http://dmitrysoshnikov.com/)
+Resource                          | Description
+----------------------------------|----------------------------------
+https://github.com/tc39/ecma262   | ECMAScript Language Specification repo
+https://github.com/tc39/ecma402   | ECMAScript Internationalization API Specification repo
+https://github.com/tc39/proposals | ECMAScript proposals repo
+https://github.com/tc39/test262   | ECMAScript conformance test suite repo
+https://es.discourse.group/       | ECMAScript spec discussion; current mailing list
+https://esdiscuss.org/            | ECMAScript spec discussion; historical mailing-list archives (until March 2021)

@@ -131,6 +131,7 @@ This part of the JavaScript section on MDN serves as a repository of facts about
 - {{JSxRef("Global_Objects/Intl/NumberFormat", "Intl.NumberFormat")}}
 - {{JSxRef("Global_Objects/Intl/PluralRules", "Intl.PluralRules")}}
 - {{JSxRef("Global_Objects/Intl/RelativeTimeFormat", "Intl.RelativeTimeFormat")}}
+- {{JSxRef("Global_Objects/Intl/Segmenter", "Intl.Segmenter")}}
 
 ### WebAssembly
 
@@ -176,7 +177,6 @@ This part of the JavaScript section on MDN serves as a repository of facts about
 
 - {{jsxref("Statements/do...while", "do...while")}}
 - {{jsxref("Statements/for", "for")}}
-- {{jsxref("Statements/for_each...in", "for each...in")}}
 - {{jsxref("Statements/for...in", "for...in")}}
 - {{jsxref("Statements/for...of", "for...of")}}
 - {{jsxref("Statements/for-await...of", "for await...of")}}

@@ -17,7 +17,7 @@ tags:
 
 > **Note:** For Unicode property escapes to work, a regular expression must use [the `u` flag](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags) which indicates a string must be considered as a series of Unicode code points. See also [`RegExp.prototype.unicode`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode).
 
-> **Note:** Some Unicode properties encompasses much more characters than some [character classes](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes) (such as `\w` which matches only latin letters, `a` to `z`) but the latter is better supported among browsers (as of January 2020).
+> **Note:** Some Unicode properties encompasses many more characters than some [character classes](/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes) (such as `\w` which matches only latin letters, `a` to `z`) but the latter is better supported among browsers (as of January 2020).
 
 ## Syntax
 
@@ -35,23 +35,23 @@ tags:
 ```
 
 - [General_Category](https://unicode.org/reports/tr18/#General_Category_Property) (`gc`)
-- [Script](https://unicode.org/reports/tr24/#Script) (`sc`)
-- [Script_Extensions](https://unicode.org/reports/tr24/#Script_Extensions) (`scx`)
+- [Script](https://unicode.org/reports/tr24/#Script) (`sc`)
+- [Script_Extensions](https://unicode.org/reports/tr24/#Script_Extensions) (`scx`)
 
 See also [PropertyValueAliases.txt](https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt)
 
 - UnicodeBinaryPropertyName
-  - : The name of a [binary property](https://tc39.es/ecma262/#table-binary-unicode-properties). E.g.: [`ASCII`](https://unicode.org/reports/tr18/#General_Category_Property), [`Alpha`](https://unicode.org/reports/tr44/#Alphabetic), `Math`, [`Diacritic`](https://unicode.org/reports/tr44/#Diacritic), [`Emoji`](https://unicode.org/reports/tr51/#Emoji_Properties), [`Hex_Digit`](https://unicode.org/reports/tr44/#Hex_Digit), `Math`, [`White_space`](https://unicode.org/reports/tr44/#White_Space), etc. See [Unicode Data PropList.txt ](https://www.unicode.org/Public/UCD/latest/ucd/PropList.txt)for more info.
+  - : The name of a [binary property](https://tc39.es/ecma262/multipage/text-processing.html#table-binary-unicode-properties). E.g.: [`ASCII`](https://unicode.org/reports/tr18/#General_Category_Property), [`Alpha`](https://unicode.org/reports/tr44/#Alphabetic), `Math`, [`Diacritic`](https://unicode.org/reports/tr44/#Diacritic), [`Emoji`](https://unicode.org/reports/tr51/#Emoji_Properties), [`Hex_Digit`](https://unicode.org/reports/tr44/#Hex_Digit), `Math`, [`White_space`](https://unicode.org/reports/tr44/#White_Space), etc. See [Unicode Data PropList.txt](https://www.unicode.org/Public/UCD/latest/ucd/PropList.txt) for more info.
 - UnicodePropertyName
-  - : The name of a [non-binary](https://tc39.es/ecma262/#table-nonbinary-unicode-properties) property:
+  - : The name of a [non-binary](https://tc39.es/ecma262/multipage/text-processing.html#table-nonbinary-unicode-properties) property:
 - UnicodePropertyValue
-  - : One of the tokens listed in the Values section, below. Many values have aliases or shorthand (e.g. the value `Decimal_Number` for the `General_Category` property may be written `Nd`, `digit`, or `Decimal_Number`). For most values, the *`UnicodePropertyName`* part and equals sign may be omitted. If a *`UnicodePropertyName`* is specified, the value must correspond to the property type given.
+  - : One of the tokens listed in the Values section, below. Many values have aliases or shorthand (e.g. the value `Decimal_Number` for the `General_Category` property may be written `Nd`, `digit`, or `Decimal_Number`). For most values, the *`UnicodePropertyName`* part and equals sign may be omitted. If a *`UnicodePropertyName`* is specified, the value must correspond to the property type given.
 
 > **Note:** As there are many properties and values available, we will not describe them exhaustively here but rather provide various examples
 
 ## Rationale
 
-Before ES2018 there was no performance-efficient way to match characters from different sets based on `scripts` (like Macedonian, Greek, Georgian etc.) or `propertyName` (like Emoji etc) in JavaScript. Check out [tc39 Proposal on Unicode Property Escapes](https://github.com/tc39/proposal-regexp-unicode-property-escapes) for more info.
+Before ES2018 there was no performance-efficient way to match characters from different sets based on `scripts` (like Macedonian, Greek, Georgian etc.) or `propertyName` (like Emoji etc) in JavaScript. Check out [tc39 Proposal on Unicode Property Escapes](https://github.com/tc39/proposal-regexp-unicode-property-escapes) for more info.
 
 ## Examples
 
@@ -63,7 +63,7 @@ They can be used to match letters, numbers, symbols, punctuations, spaces, etc. 
 
 ```js
 // finding all the letters of a text
-let story = "It’s the Cheshire Cat: now I shall have somebody to talk to.";
+let story = "It's the Cheshire Cat: now I shall have somebody to talk to.";
 
 // Most explicit form
 story.match(/\p{General_Category=Letter}/gu);
@@ -97,7 +97,7 @@ mixedCharacters.match(/\p{Script=Greek}/u); // ε
 mixedCharacters.match(/\p{Sc=Cyrillic}/u); // Л
 ```
 
-For more details, please refer to [the Unicode specification](https://unicode.org/reports/tr24/#Script) and the [Scripts table in the ECMAScript specification](https://tc39.es/ecma262/#table-unicode-script-values).
+For more details, please refer to [the Unicode specification](https://unicode.org/reports/tr24/#Script) and the [Scripts table in the ECMAScript specification](https://tc39.es/ecma262/multipage/text-processing.html#table-unicode-script-values).
 
 If a character is used in a limited set of scripts, the `Script` property will only match for the "predominant" used script. If we want to match characters based on a "non-predominant" script, we could use the `Script_Extensions` property (`Scx` for short).
 
@@ -107,7 +107,7 @@ If a character is used in a limited set of scripts, the `Script` property will o
 // it can also be written in the Thaana script
 
 "٢".match(/\p{Script=Thaana}/u);
-// null as Thaana is not the predominant script        super()
+// null as Thaana is not the predominant script
 
 "٢".match(/\p{Script_Extensions=Thaana}/u);
 // ["٢", index: 0, input: "٢", groups: undefined]
@@ -147,4 +147,4 @@ console.table(nonEnglishText.match(regexpUPE));
 - [Unicode character property — Wikipedia](https://en.wikipedia.org/wiki/Unicode_character_property)
 - [A blog post from Axel Rauschmayer about Unicode property escapes](https://2ality.com/2017/07/regexp-unicode-property-escapes.html)
 - [The Unicode document for Unicode properties](https://unicode.org/reports/tr18/#Categories)
-- [UnicodeMatchProperty in the ECMAScript specification](https://tc39.es/ecma262/#sec-runtime-semantics-unicodematchproperty-p)
+- [UnicodeMatchProperty in the ECMAScript specification](https://tc39.es/ecma262/multipage/text-processing.html#sec-runtime-semantics-unicodematchproperty-p)

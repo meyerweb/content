@@ -23,7 +23,7 @@ The **`Uint32Array`** typed array represents an array of 32-bit unsigned integer
 - {{jsxref("TypedArray.BYTES_PER_ELEMENT", "Uint32Array.BYTES_PER_ELEMENT")}}
   - : Returns a number value of the element size. `4` in the case of an `Uint32Array`.
 - {{jsxref("TypedArray.name", "Uint32Array.name")}}
-  - : Returns the string value of the constructor name. In the case of the `Uint32Array` type: "Uint32Array".
+  - : Returns the string value of the constructor name. In the case of the `Uint32Array` type: "`Uint32Array`".
 
 ## Static methods
 
@@ -139,7 +139,7 @@ var uint32 = new Uint32Array(iterable);
 
 ## See also
 
-- A polyfill of `Uint32Array` is available in [`core-js`](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
+- [Polyfill of `Uint32Array` in `core-js`](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
 - [JavaScript typed arrays](/en-US/docs/Web/JavaScript/Typed_arrays)
 - {{jsxref("ArrayBuffer")}}
 - {{jsxref("DataView")}}

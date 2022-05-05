@@ -102,19 +102,18 @@ let result = someInterface.customMethod?.();
 > function, using `?.` will still raise a {{JSxRef("TypeError")}} exception
 > (`someInterface.customMethod is not a function`).
 
-> **Note:** If `someInterface` itself is `null` or
-> `undefined`, a {{JSxRef("TypeError")}} exception will still be
-> raised (`someInterface is null`). If you expect that
-> `someInterface` itself may be `null` or `undefined`,
-> you have to use `?.` at this position as
-> well: `someInterface?.customMethod?.()`
+> **Note:** If `someInterface` itself is `null` or
+> `undefined`, a {{JSxRef("TypeError")}} exception will still be
+> raised (`someInterface is null`). If you expect that
+> `someInterface` itself may be `null` or `undefined`,
+> you have to use `?.` at this position as
+> well: `someInterface?.customMethod?.()`
 
 #### Dealing with optional callbacks or event handlers
 
-If you use callbacks or fetch methods from an object with [a
-destructuring assignment](/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring), you may have non-existent values that you cannot call as
-functions unless you have tested their existence. Using `?.`, you can avoid
-this extra test:
+If you use callbacks or fetch methods from an object with
+[a destructuring assignment](/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#object_destructuring), you may have non-existent values that you cannot call as
+functions unless you have tested their existence. Using `?.`, you can avoid this extra test:
 
 ```js
 // Written as of ES2019
@@ -144,15 +143,16 @@ function doSomething(onContent, onError) {
 
 ### Optional chaining with expressions
 
-You can also use the optional chaining operator when accessing properties with an
-expression using [the
-bracket notation of the property accessor](/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Bracket_notation):
+You can also use the optional chaining operator when accessing properties with an expression using
+[the bracket notation of the property accessor](/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#bracket_notation):
 
 ```js
 let nestedProp = obj?.['prop' + 'Name'];
 ```
 
 ### Optional chaining not valid on the left-hand side of an assignment
+
+It is invalid to try to assign to the result of an optional chaining expression:
 
 ```js
 let object = {};
@@ -161,7 +161,10 @@ object?.property = 1; // Uncaught SyntaxError: Invalid left-hand side in assignm
 
 ### Array item access with optional chaining
 
+You can use [bracket notation](/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#bracket_notation) for optional chaining on arrays:
+
 ```js
+const arr = ['a', 'b', 'c', 'd']
 let arrayItem = arr?.[42];
 ```
 

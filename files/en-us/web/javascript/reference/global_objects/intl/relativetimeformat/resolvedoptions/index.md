@@ -15,7 +15,7 @@ browser-compat: javascript.builtins.Intl.RelativeTimeFormat.resolvedOptions
 ---
 {{JSRef}}
 
-The **`Intl.RelativeTimeFormat.prototype.resolvedOptions()`** method returns a new object with properties reflecting the locale and relative time formatting options computed during initialization of this {{jsxref("Intl/RelativeTimeFormat")}} object.
+The **`Intl.RelativeTimeFormat.prototype.resolvedOptions()`** method returns a new object with properties reflecting the locale and relative time formatting options computed during initialization of this {{jsxref("Intl.RelativeTimeFormat")}} object.
 
 {{EmbedInteractiveExample("pages/js/intl-relativetimeformat-prototype-resolvedoptions.html")}}
 
@@ -29,7 +29,7 @@ resolvedOptions()
 
 ### Return value
 
-A new object with properties reflecting the locale and number formatting options computed during the initialization of the given {{jsxref("Intl/RelativeTimeFormat")}} object.
+A new object with properties reflecting the locale and number formatting options computed during the initialization of the given {{jsxref("Intl.RelativeTimeFormat")}} object.
 
 ## Description
 
@@ -57,7 +57,7 @@ The resulting object has the following properties:
 
 ## Examples
 
-### Using the `resolvedOptions` method
+### Using the resolvedOptions() method
 
 ```js
 var de = new Intl.RelativeTimeFormat('de-DE');

@@ -10,15 +10,15 @@ browser-compat: javascript.builtins.Math
 ---
 {{JSRef}}
 
-**`Math`** is a built-in object that has properties and methods for mathematical constants and functions. It’s not a function object.
+**`Math`** is a built-in object that has properties and methods for mathematical constants and functions. It's not a function object.
 
 `Math` works with the {{jsxref("Number")}} type. It doesn't work with {{jsxref("BigInt")}}.
 
 ## Description
 
-Unlike many other global objects, `Math` is not a constructor. All properties and methods of `Math` are static. You refer to the constant pi as `Math.PI` and you call the sine function as `Math.sin(x)`, where `x` is the method’s argument. Constants are defined with the full precision of real numbers in JavaScript.
+Unlike many other global objects, `Math` is not a constructor. All properties and methods of `Math` are static. You refer to the constant pi as `Math.PI` and you call the sine function as `Math.sin(x)`, where `x` is the method's argument. Constants are defined with the full precision of real numbers in JavaScript.
 
-> **Note:** Many `Math` functions have a precision that’s _implementation-dependent._
+> **Note:** Many `Math` functions have a precision that's _implementation-dependent._
 >
 > This means that different browsers can give a different result. Even the same JavaScript engine on a different OS or architecture can give different results!
 
@@ -35,7 +35,7 @@ Unlike many other global objects, `Math` is not a constructor. All properties an
 - {{jsxref("Math.LOG10E")}}
   - : Base-10 logarithm of `E`; approximately `0.434`.
 - {{jsxref("Math.PI")}}
-  - : Ratio of the a circle's circumference to its diameter; approximately `3.14159`.
+  - : Ratio of a circle's circumference to its diameter; approximately `3.14159`.
 - {{jsxref("Math.SQRT1_2")}}
   - : Square root of ½; approximately `0.707`.
 - {{jsxref("Math.SQRT2")}}
@@ -82,21 +82,9 @@ Unlike many other global objects, `Math` is not a constructor. All properties an
 - {{jsxref("Global_Objects/Math/imul", "Math.imul(<var>x</var>, <var>y</var>)")}}
   - : Returns the result of the 32-bit integer multiplication of `x` and `y`.
 - {{jsxref("Global_Objects/Math/log", "Math.log(<var>x</var>)")}}
-
-  - : Returns the natural logarithm (㏒
-
-    <sub>e</sub>
-
-    ; also, ㏑) of `x`.
-
+  - : Returns the natural logarithm (㏒<sub>e</sub>; also, ㏑) of `x`.
 - {{jsxref("Global_Objects/Math/log1p", "Math.log1p(<var>x</var>)")}}
-
-  - : Returns the natural logarithm (㏒
-
-    <sub>e</sub>
-
-    ; also ㏑) of `1 + x` for the number `x`.
-
+  - : Returns the natural logarithm (㏒<sub>e</sub>; also ㏑) of `1 + x` for the number `x`.
 - {{jsxref("Global_Objects/Math/log10", "Math.log10(<var>x</var>)")}}
   - : Returns the base-10 logarithm of `x`.
 - {{jsxref("Global_Objects/Math/log2", "Math.log2(<var>x</var>)")}}

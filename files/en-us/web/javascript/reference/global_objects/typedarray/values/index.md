@@ -14,7 +14,7 @@ browser-compat: javascript.builtins.TypedArray.values
 ---
 {{JSRef}}
 
-The **`values()`** method returns a new array iterator object
+The **`values()`** method returns a new _array iterator_ object
 that contains the values for each index in the array.
 
 {{EmbedInteractiveExample("pages/js/array-values.html")}}
@@ -27,7 +27,7 @@ values()
 
 ### Return value
 
-A new array iterator object.
+A new _array iterator_ object.
 
 ## Examples
 
@@ -60,7 +60,7 @@ iterator.next()["value"];      // "c"
 iterator.next();               // Object { value: "d", done: false }
 iterator.next();               // Object { value: "e", done: false }
 iterator.next();               // Object { value: undefined, done: true }
-iteraror.next().value;         // undefined 
+iterator.next().value;         // undefined
 ```
 
 > **Warning:** One-use: the array iterator object is one use or temporary object
@@ -78,13 +78,13 @@ console.log(letter);
 } // undefined
 ```
 
-**reason:** When `next().done=true`  or 
-`currentIndex>length` the `for..of` loop ends. See [Iteration
-protocols.](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
+**reason:** When `next().done=true` or
+`currentIndex>length` the `for..of` loop ends.
+See [Iteration protocols.](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
 
 **Value**: there are no values stored in the array Iterator
-object; instead it stores the address of the array used in its creation and so depends
-on the values stored in that array.
+object; instead it stores the address of the array used in its creation and so depends
+on the values stored in that array.
 
 ```js
 var arr = ['a', 'b', 'c', 'd', 'e'];
@@ -107,7 +107,7 @@ iterator.next().value;        //  "n"
 
 ## See also
 
-- A polyfill of `TypedArray.prototype.values` is available in [`core-js`](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
+- [Polyfill of `TypedArray.prototype.values` in `core-js`](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
 - {{jsxref("Array.prototype.keys()")}}
 - {{jsxref("Array.prototype.entries()")}}
 - {{jsxref("Array.prototype.forEach()")}}

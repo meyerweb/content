@@ -12,15 +12,15 @@ browser-compat: javascript.builtins.WebAssembly.RuntimeError.RuntimeError
 
 The **`WebAssembly.RuntimeError()`** constructor creates a new
 WebAssembly `RuntimeError` object — the type that is thrown whenever
-WebAssembly specifies a [trap](https://webassembly.org/docs/semantics/#traps).
+WebAssembly specifies a [trap](https://webassembly.github.io/simd/core/intro/overview.html#trap).
 
 ## Syntax
 
 ```js
-new RuntimeError.LinkError()
-new RuntimeError.LinkError(message)
-new RuntimeError.LinkError(message, fileName)
-new RuntimeError.LinkError(message, fileName, lineNumber)
+new WebAssembly.RuntimeError()
+new WebAssembly.RuntimeError(message)
+new WebAssembly.RuntimeError(message, fileName)
+new WebAssembly.RuntimeError(message, fileName, lineNumber)
 ```
 
 ### Parameters
@@ -65,5 +65,4 @@ try {
 
 - [WebAssembly](/en-US/docs/WebAssembly) overview page
 - [WebAssembly concepts](/en-US/docs/WebAssembly/Concepts)
-- [Using the WebAssembly
-  JavaScript API](/en-US/docs/WebAssembly/Using_the_JavaScript_API)
+- [Using the WebAssembly JavaScript API](/en-US/docs/WebAssembly/Using_the_JavaScript_API)

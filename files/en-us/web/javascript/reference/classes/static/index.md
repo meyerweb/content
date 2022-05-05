@@ -7,28 +7,30 @@ tags:
   - JavaScript
   - Language feature
   - Static
-browser-compat: javascript.classes.static"
+browser-compat: javascript.classes.static
 ---
 {{jsSidebar("Classes")}}
 
-The **`static`** keyword defines a
-static method or property for a class. Neither static methods nor static properties
-can be called on instances of the class. Instead, they're called on the class
-itself.
+The **`static`** keyword defines a [static method or property](/en-US/docs/Web/JavaScript/Reference/Classes#static_methods_and_properties) for a class, or a [class static initialization block](/en-US/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks) (see the link for more information about this usage).
+Neither static methods nor static properties can be called on instances of the class.
+Instead, they're called on the class itself.
 
-Static methods are often utility functions, such as functions to create
-or clone objects, whereas static properties are useful for caches, fixed-configuration,
-or any other data you don't need to be replicated across instances.
+Static methods are often utility functions, such as functions to create or clone objects, whereas static properties are useful for caches, fixed-configuration, or any other data you don't need to be replicated across instances.
 
-Note that the examples throughout this article use [public class fields](/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (including static public class fields), which are not yet part of the ECMAScript specification, but are instead specified in a [Public and private instance fields](https://tc39.es/proposal-class-fields/) proposal at [TC39](https://tc39.es/).
+> **Note:** In the context of classes, MDN Web Docs content uses the terms properties and [fields](/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) interchangeably.
 
 {{EmbedInteractiveExample("pages/js/classes-static.html")}}
 
 ## Syntax
 
 ```js
-static methodName() { ... }
+static methodName() { /* ... */ }
 static propertyName [= value];
+
+// Class static initialization block
+static {
+
+}
 ```
 
 ## Examples
@@ -37,9 +39,9 @@ static propertyName [= value];
 
 The following example demonstrates several things:
 
-1.  How a static member (method or property) is defined on a class.
-2.  That a class with a static member can be sub-classed.
-3.  How a static member can and cannot be called.
+1. How a static member (method or property) is defined on a class.
+2. That a class with a static member can be sub-classed.
+3. How a static member can and cannot be called.
 
 ```js
 class Triple {
@@ -75,10 +77,7 @@ console.log(tp.calculate());                // 'tp.calculate is not a function'
 
 ### Calling static members from another static method
 
-In order to call a static method or property within another static method of the same
-class, you can use the
-[`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this)
-keyword.
+In order to call a static method or property within another static method of the same class, you can use the [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) keyword.
 
 ```js
 class StaticMethodCall {
@@ -103,7 +102,7 @@ Static members are not directly accessible using the {{JSxRef("Operators/this", 
 non-static methods. You need to call them using the class name:
 `CLASSNAME.STATIC_METHOD_NAME()` /
 `CLASSNAME.STATIC_PROPERTY_NAME` or by calling the method as a property of
-the `constructor`: `this.constructor.STATIC_METHOD_NAME() `/
+the `constructor`: `this.constructor.STATIC_METHOD_NAME()` /
 `this.constructor.STATIC_PROPERTY_NAME`
 
 ```js
@@ -132,8 +131,6 @@ class StaticMethodCall {
 
 ## See also
 
-- [`class`
-  expression](/en-US/docs/Web/JavaScript/Reference/Operators/class)
-- [`class`
-  declaration](/en-US/docs/Web/JavaScript/Reference/Statements/class)
+- [`class` expression](/en-US/docs/Web/JavaScript/Reference/Operators/class)
+- [`class` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/class)
 - [Classes](/en-US/docs/Web/JavaScript/Reference/Classes)
